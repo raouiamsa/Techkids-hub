@@ -560,7 +560,9 @@ def run_pedagogical_comp2(
         for model in config.models:
             log(f"Testing {topic} with {model}")
             for repeat_index in range(repeats):
-                run_seed = None if seed_base is None else int(seed_base) + repeat_index
+                # Use topic seed_base when provided, otherwise fall back to config.default_seed
+                topic_seed = seed_base if seed_base is not None else config.default_seed
+                run_seed = int(topic_seed) + repeat_index if topic_seed is not None else None
                 if repeats > 1:
                     log(f"  Repeat {repeat_index + 1}/{repeats} (seed={run_seed if run_seed is not None else 'n/a'})")
 
@@ -594,7 +596,7 @@ def run_pedagogical_comp2(
                 for agent, prompt in phase1_tests:
                     log(f"  > {agent}")
                     max_tok = getattr(config, f"ollama_max_tokens_{agent}", 700)
-                    agent_temp = 0.3 if agent == "writer" else 0.0
+                    agent_temp = config.writer_temperature if agent == "writer" else 0.0
                     response, latency, ttft_ms = call_ollama_api(
                         model,
                         prompt,
@@ -883,8 +885,19 @@ def main() -> None:
     parser.add_argument(
         "--seed-base",
         type=int,
-        default=None,
+        default=42,
         help="Optional base seed used as seed + repeat_index for repeated generations.",
+    )
+    parser.add_argument(
+        "--temp-writer",
+        type=float,
+        default=0.6,
+        help="Temperature for the writer agent (use >0 for storytelling/adaptation).",
+    )
+    parser.add_argument(
+        "--disable-cache",
+        action="store_true",
+        help="Disable RAGAS and related caches for deterministic runs.",
     )
     parser.add_argument(
         "--hybrid-rag",
@@ -912,6 +925,11 @@ def main() -> None:
     config = Config()
     config.models = [m.strip() for m in args.models.split(",") if m.strip()]
     config.use_ragas = not args.no_ragas
+    # Honor CLI cache toggle
+    if args.disable_cache:
+        config.ragas_cache_enabled = False
+    # Writer temperature override
+    config.writer_temperature = float(args.temp_writer)
     config.topics = [{
         "topic": args.topic,
         "age": args.age,

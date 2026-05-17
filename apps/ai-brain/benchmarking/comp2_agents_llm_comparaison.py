@@ -416,7 +416,8 @@ def run_comp2_comparison(config: Config):
 
         for model in config.models:
             for repeat_index in range(repeats):
-                run_seed = None if seed_base is None else int(seed_base) + repeat_index
+                topic_seed = seed_base if seed_base is not None else config.default_seed
+                run_seed = int(topic_seed) + repeat_index if topic_seed is not None else None
                 if repeats > 1:
                     log(f"Testing {topic} with {model} (Repeat {repeat_index + 1}/{repeats}, seed={run_seed if run_seed is not None else 'n/a'})")
                 else:
@@ -453,7 +454,7 @@ def run_comp2_comparison(config: Config):
                     log(f"  > {agent}")
 
                     max_tok = getattr(config, f"ollama_max_tokens_{agent}", 700)
-                    agent_temp = 0.3 if agent == "writer" else 0.0
+                    agent_temp = config.writer_temperature if agent == "writer" else 0.0
                     response, latency, ttft_ms = call_ollama_api(
                         model,
                         prompt,
@@ -748,8 +749,19 @@ if __name__ == "__main__":
     parser.add_argument(
         "--seed-base",
         type=int,
-        default=None,
-        help="Base seed for deterministic runs (if set, runs will use seed, seed+1, seed+2, ... for repeats)"
+        default=42,
+        help="Base seed for deterministic runs (defaults to 42; repeats use seed, seed+1, seed+2, ...)."
+    )
+    parser.add_argument(
+        "--temp-writer",
+        type=float,
+        default=0.6,
+        help="Writer temperature. Keep >0 for storytelling and age adaptation.",
+    )
+    parser.add_argument(
+        "--disable-cache",
+        action="store_true",
+        help="Disable RAGAS and related caches for benchmark runs.",
     )
 
     args = parser.parse_args()
@@ -763,6 +775,9 @@ if __name__ == "__main__":
 
     if args.no_ragas:
         config.use_ragas = False
+    if args.disable_cache:
+        config.ragas_cache_enabled = False
+    config.writer_temperature = float(args.temp_writer)
 
     # If a single topic is provided via CLI, override config.topics for a smoke test
     if args.topic:

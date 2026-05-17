@@ -69,6 +69,10 @@ class Config:
     use_ragas: bool = True
     ragas_model: str = "llama-3.3-70b-versatile"
     ragas_cache_enabled: bool = True
+    # Deterministic benchmarking controls
+    default_seed: int = 42
+    # LLM temperature for the `writer` agent (allow storytelling / adaptation)
+    writer_temperature: float = 0.3
 
     # Ollama configuration
     ollama_url: str = "http://localhost:11434/api/generate"

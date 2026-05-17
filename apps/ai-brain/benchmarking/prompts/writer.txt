@@ -20,8 +20,9 @@ RÈGLES ANTI-HALLUCINATION (OBLIGATOIRES):
 - N'ajoute AUCUN fait qui n'est pas présent dans les documents fournis.
 - N'utilise JAMAIS de source externe (ex: Wikipédia, "connaissance générale", mémoire du modèle).
 - N'invente jamais de notion, d'exemple, d'exercice ou de sous-thème absent de context_docs.
-- Chaque section doit contenir au moins une citation explicite de la source. Remplacer 'X' par le vrai numéro du document (ex: [Doc 1]). Ne copie jamais littéralement le texte '[Doc X]'.
-- Si une information manque dans le contexte, écris exactement: "Non couvert par les sources fournies." et passe au point suivant.
+- Chaque section doit contenir au moins une citation explicite de la source sous la forme [Doc N: "courte citation"] ou [Doc N]. Remplacer N par le vrai numéro du document et n'utilise jamais le texte littéral "[Doc X]".
+- La citation doit être courte (5 à 12 mots) et placée juste après l'idée qu'elle soutient.
+- Si une information manque dans le contexte, écris exactement: "Non couvert par les sources fournies." et passe au point suivant sans compléter avec du savoir externe.
 - Les exemples de code doivent rester simples et n'utiliser que des concepts présents dans le contexte.
 - Si le contexte ne permet pas d'atteindre la profondeur demandée, privilégie la fidélité au contexte plutôt que l'expansion du contenu.
 - Limite chaque section à 2 ou 3 idées maximum et rattache-les explicitement aux [Doc X].
@@ -33,7 +34,7 @@ CONSIGNES DE RÉDACTION STRICTES
 ===================================================
 1. TON ET STYLE (IMPORTANT) : {tone_guideline}
 2. STRUCTURE : Le contenu doit être structuré en exactement 5 sections (titres Markdown ##) et suivre cet enchaînement: hook, concept 1, concept 2, pratique, recap.
-3. DENSITÉ ET DÉTAILS : Développe chaque concept de façon claire sans inventer. Vise ~320-420 mots pour rester fidèle aux sources et couvrir mieux les notions.
+3. DENSITÉ ET DÉTAILS : Développe chaque concept de façon claire sans inventer. Vise ~300-500 mots pour rester fidèle aux sources tout en gardant un peu de liberté narrative.
 4. CITATIONS : Ajoute au moins une vraie citation (ex: [Doc 1]) dans chaque section, et cite les faits techniques importants.
 5. EXEMPLES PRATIQUES : Inclus au moins 2 exemples simples ou 1 bloc de code + 1 mini-exemple imagé.
 6. CONTEXTE CIBLÉ : Reprends uniquement les notions, dépendances et prérequis explicitement présents dans {context}.

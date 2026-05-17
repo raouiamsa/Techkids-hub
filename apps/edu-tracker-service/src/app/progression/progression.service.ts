@@ -43,8 +43,60 @@ export class ProgressionService {
       throw new NotFoundException(`Exercise not found`);
     }
 
-    // 2. Mock Score Evaluation (For now, auto 100 on code/circuit, validate quizzes later)
-    const score = 100;
+    // 2. Évaluation (AI Grading pour le MVP)
+    let score = 0;
+    if (exercise.exerciseType === 'CODE_CHALLENGE') {
+      try {
+        const code = data.answer;
+        let executionOutput = "Aucune exécution effectuée.";
+        
+        // A. Tenter d'exécuter le code via Piston pour donner du contexte à l'IA
+        try {
+          // On utilise python par défaut pour tolérer les algorithmes et pseudo-codes
+          const pistonRes = await fetch('https://emkc.org/api/v2/piston/execute', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              language: 'python',
+              version: '*',
+              files: [{ content: code }],
+            }),
+          });
+          if (pistonRes.ok) {
+            const pistonData = await pistonRes.json() as any;
+            executionOutput = pistonData.run?.stdout || pistonData.run?.stderr || "Exécution réussie sans erreur.";
+          } else {
+            executionOutput = `Erreur d'exécution: ${pistonRes.statusText}`;
+          }
+        } catch (e: any) {
+          executionOutput = `Erreur Piston: ${e.message}`;
+        }
+
+        // B. Demander la correction à l'IA Socratique (ai-brain)
+        const aiRes = await fetch('http://127.0.0.1:8000/grade-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            student_code: code,
+            execution_output: executionOutput,
+            instructions: exercise.instructions || "Évaluer le code.",
+          }),
+        });
+
+        if (aiRes.ok) {
+          const aiData = await aiRes.json() as any;
+          score = typeof aiData.score === 'number' ? aiData.score : 0;
+          console.log(`IA Grading - Score: ${score}, Feedback: ${aiData.feedback}`);
+        } else {
+          score = 50; // Score par défaut si le cerveau IA ne répond pas
+        }
+      } catch (error) {
+        console.error("Erreur lors du grading IA:", error);
+        score = 0;
+      }
+    } else {
+      score = 100; // Pour les autres types (Quiz/Circuit), on laisse 100 par défaut
+    }
 
     // 3. Find current attempt count
     const previousSubmissions = await this.prisma.submission.count({

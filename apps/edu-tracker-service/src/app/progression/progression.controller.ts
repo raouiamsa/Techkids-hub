@@ -13,6 +13,12 @@ export class ProgressionController {
     return this.progressionService.getMyProgress(studentId);
   }
 
+  @MessagePattern(EDU_PATTERNS.MY_SUBMISSIONS)
+  async getMySubmission(@Payload() data: { studentId: string; exerciseId: string }) {
+    console.log('EDU-SERVICE: MY_SUBMISSIONS', data);
+    return this.progressionService.getMySubmissionForExercise(data.studentId, data.exerciseId);
+  }
+
   @MessagePattern(EDU_PATTERNS.CHILD_PROGRESS)
   async getChildProgress(@Payload() data: { parentId: string; childId: string }) {
     console.log('EDU-SERVICE: CHILD_PROGRESS', data);

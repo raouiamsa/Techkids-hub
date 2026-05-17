@@ -8,6 +8,8 @@ import {
   ArrowLeft, Send, CheckCircle2, XCircle, BookOpen,
   Code2, Cpu, HelpCircle, Loader2, History, RefreshCw
 } from 'lucide-react';
+import { VirtualLab } from '../../../../components/VirtualLab';
+import { CircuitLab } from '../../../../components/CircuitLab';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
@@ -121,6 +123,12 @@ export default function ExercisePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!answer.trim()) return;
+    
+    const config = typeConfig[exercise?.exerciseType ?? 'QUIZ'];
+    if (exercise?.exerciseType === 'CODE_CHALLENGE' && answer.trim() === config.placeholder.trim()) {
+      setError("Veuillez écrire votre propre code avant de soumettre !");
+      return;
+    }
 
     setIsSubmitting(true);
     setError(null);
@@ -141,12 +149,16 @@ export default function ExercisePage() {
       }
 
       const submission = await res.json();
-      setResult({ score: submission.score ?? 100, attempt: submission.attempt ?? 1 });
+      
+      // Si le backend renvoie null (pas de correction automatique), on met 0 par défaut au lieu de 100
+      const finalScore = submission.score !== null && submission.score !== undefined ? submission.score : 0;
+      
+      setResult({ score: finalScore, attempt: submission.attempt ?? 1 });
       // Update local previous submission
       setPreviousSubmission({
         id: submission.id,
         answer,
-        score: submission.score,
+        score: finalScore,
         attempt: submission.attempt,
         submittedAt: new Date().toISOString(),
       });
@@ -189,7 +201,7 @@ export default function ExercisePage() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-20">
       {/* Header */}
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-4">
+        <div className="w-full max-w-[1600px] mx-auto flex items-center gap-4">
           <Link
             href={`/courses/${courseId}`}
             className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition-colors"
@@ -210,7 +222,7 @@ export default function ExercisePage() {
       </div>
 
       {/* Exercise Content */}
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
+      <div className="w-full max-w-[1600px] mx-auto px-6 py-12 space-y-8">
         {/* Type Badge + Title */}
         <div className="space-y-4">
           <div className="flex items-center justify-between flex-wrap gap-2">
@@ -305,14 +317,32 @@ export default function ExercisePage() {
             <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               {previousSubmission ? 'Modifier votre réponse' : 'Votre réponse'}
             </h2>
-            <textarea
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              placeholder={config.placeholder}
-              rows={exercise.exerciseType === 'CODE_CHALLENGE' ? 12 : 6}
-              className={`w-full px-4 py-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-y ${exercise.exerciseType === 'CODE_CHALLENGE' ? 'font-mono text-sm' : ''}`}
-              required
-            />
+            {exercise.exerciseType === 'CODE_CHALLENGE' ? (
+              <VirtualLab
+                exerciseId={exercise.id}
+                studentId={user?.id || 'anonymous'}
+                starterCode={config.placeholder}
+                instructions={exercise.instructions}
+                value={answer}
+                onChange={setAnswer}
+              />
+            ) : exercise.exerciseType === 'CIRCUIT_BUILD' ? (
+              <div className="min-h-[800px] w-full mb-6">
+                <CircuitLab
+                  exerciseId={exercise.id}
+                  studentId={user?.id || 'anonymous'}
+                />
+              </div>
+            ) : (
+              <textarea
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                placeholder={config.placeholder}
+                rows={6}
+                className="w-full px-4 py-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-y"
+                required
+              />
+            )}
 
             {error && (
               <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl flex items-center gap-3 text-red-700 dark:text-red-400 text-sm">

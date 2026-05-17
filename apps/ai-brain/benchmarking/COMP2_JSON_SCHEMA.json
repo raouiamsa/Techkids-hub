@@ -1,0 +1,433 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TechKids Course Module - COMP 2 Final Structure",
+  "description": "Unified JSON structure for all agents: Architect, Writer, Enricher, Critic",
+  "type": "object",
+  
+  "definitions": {
+    "ageGroup": {
+      "enum": ["8-10", "11-13", "14+"],
+      "description": "Age group determines word count and complexity"
+    },
+    "wordCountRange": {
+      "type": "object",
+      "properties": {
+        "8-10": {"type": "object", "properties": {"min": 100, "max": 150}},
+        "11-13": {"type": "object", "properties": {"min": 150, "max": 250}},
+        "14+": {"type": "object", "properties": {"min": 250, "max": 400}}
+      }
+    }
+  },
+
+  "required": [
+    "metadata",
+    "learning_objectives",
+    "summary",
+    "concept_cards",
+    "content",
+    "code_examples",
+    "visual_aids",
+    "quiz",
+    "exercises",
+    "warnings",
+    "call_to_action"
+  ],
+
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["title", "level", "domain", "age_group", "estimated_duration", "tags"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Module title (engaging, clear)"
+        },
+        "level": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"],
+          "description": "Pedagogical level"
+        },
+        "domain": {
+          "type": "string",
+          "description": "Subject domain (python, web, etc.)"
+        },
+        "age_group": {
+          "$ref": "#/definitions/ageGroup"
+        },
+        "estimated_duration": {
+          "type": "string",
+          "pattern": "^\\d+ (min|hour)s?$",
+          "description": "Estimated reading + practice time"
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Keywords for search/categorization"
+        }
+      }
+    },
+
+    "learning_objectives": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "description": "Action-oriented learning outcome (e.g., 'Declare a variable')"
+      }
+    },
+
+    "summary": {
+      "type": "object",
+      "required": ["short", "long"],
+      "properties": {
+        "short": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "1-sentence summary (for preview)"
+        },
+        "long": {
+          "type": "string",
+          "minLength": 200,
+          "maxLength": 500,
+          "description": "3-5 sentences detailed summary"
+        }
+      }
+    },
+
+    "concept_cards": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description", "icon"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^concept-[0-9]+$",
+            "description": "Unique identifier for tracking"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Concept name"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 200,
+            "description": "Brief explanation"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Emoji or icon name (e.g., 'list', 'code', 'star')"
+          }
+        }
+      }
+    },
+
+    "content": {
+      "type": "object",
+      "required": ["sections"],
+      "properties": {
+        "markdown": {
+          "type": "string",
+          "description": "Full content in markdown (1500+ words, backup format)"
+        },
+        "sections": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "subtitle", "icon", "preview", "content", "difficulty", "estimated_read_time"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^section-[0-9]+$",
+                "description": "Unique section identifier"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 60,
+                "description": "Section heading"
+              },
+              "subtitle": {
+                "type": "string",
+                "maxLength": 40,
+                "description": "Section subheading"
+              },
+              "icon": {
+                "type": "string",
+                "description": "Visual emoji (📖, ⚙️, 💡, etc.)"
+              },
+              "preview": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 100,
+                "description": "1-2 sentence teaser (always visible)"
+              },
+              "content": {
+                "type": "string",
+                "description": "Detailed explanation (age-adapted word count)"
+              },
+              "word_count": {
+                "type": "integer",
+                "description": "Actual word count (for validation)"
+              },
+              "difficulty": {
+                "type": "string",
+                "enum": ["easy", "medium", "hard"],
+                "description": "Section difficulty level"
+              },
+              "estimated_read_time": {
+                "type": "string",
+                "pattern": "^[0-9]+ min$",
+                "description": "Time to read full section"
+              },
+              "has_visual": {
+                "type": "boolean",
+                "description": "Section includes diagram/image"
+              },
+              "has_code": {
+                "type": "boolean",
+                "description": "Section includes code example"
+              },
+              "has_question": {
+                "type": "boolean",
+                "description": "Section includes reflection question"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "code_examples": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["language", "title", "code", "explanation", "output_expected"],
+        "properties": {
+          "language": {
+            "type": "string",
+            "enum": ["python", "javascript", "java", "cpp", "other"],
+            "description": "Programming language"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Example title"
+          },
+          "code": {
+            "type": "string",
+            "description": "Runnable code snippet"
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 30,
+            "maxLength": 200,
+            "description": "What does this code do?"
+          },
+          "output_expected": {
+            "type": "string",
+            "description": "Expected output when code runs"
+          }
+        }
+      }
+    },
+
+    "visual_aids": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "title", "description"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["diagram", "flowchart", "illustration", "animation", "infographic"],
+            "description": "Visual type"
+          },
+          "title": {
+            "type": "string",
+            "description": "Visual title"
+          },
+          "description": {
+            "type": "string",
+            "description": "What does this visual show?"
+          },
+          "url_or_placeholder": {
+            "type": "string",
+            "description": "URL or reference to visual"
+          }
+        }
+      }
+    },
+
+    "quiz": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "answer", "choices", "difficulty", "explanation"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^quiz-[0-9]+$",
+            "description": "Unique quiz question ID"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Question text (clear, concise)"
+          },
+          "answer": {
+            "type": "string",
+            "description": "Correct answer"
+          },
+          "choices": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 4,
+            "items": {"type": "string"},
+            "description": "Multiple choice options"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"],
+            "description": "Question difficulty"
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 50,
+            "description": "Why is this the correct answer? (pedagogical feedback)"
+          }
+        }
+      }
+    },
+
+    "exercises": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title", "instructions", "difficulty"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^exercise-[0-9]+$",
+            "description": "Unique exercise ID"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["code", "qcm", "fill_blank", "project"],
+            "description": "Exercise type"
+          },
+          "title": {
+            "type": "string",
+            "description": "Engaging exercise title"
+          },
+          "instructions": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Clear, concise instructions (max 3 sentences)"
+          },
+          "starterCode": {
+            "type": "string",
+            "description": "Pre-written code template (if code exercise)"
+          },
+          "solution": {
+            "type": "string",
+            "description": "Complete, correct solution"
+          },
+          "hints": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Progressive hints for learner"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"],
+            "description": "Exercise difficulty"
+          },
+          "estimated_time": {
+            "type": "string",
+            "pattern": "^[0-9]+ min$",
+            "description": "Time to complete"
+          }
+        }
+      }
+    },
+
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "message"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["attention", "error_prone", "best_practice", "gotcha"],
+            "description": "Warning type"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Clear warning message"
+          }
+        }
+      }
+    },
+
+    "call_to_action": {
+      "type": "object",
+      "required": ["label", "action"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Button label (e.g., 'Try an exercise')"
+        },
+        "action": {
+          "type": "string",
+          "description": "Action target (e.g., 'start_exercise', 'next_module')"
+        }
+      }
+    },
+
+    "evaluation": {
+      "type": "object",
+      "description": "Added by Critic agent - optional until COMP 2 is run",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Overall quality score"
+        },
+        "approved": {
+          "type": "boolean",
+          "description": "Is this module ready for students?"
+        },
+        "module_issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "section_id": {"type": "string"},
+              "issue": {"type": "string"}
+            }
+          }
+        },
+        "global_issues": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

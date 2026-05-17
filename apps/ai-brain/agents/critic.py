@@ -295,7 +295,7 @@ def critic_node(state: AgentState):
     # --- Telemetrie NestJS ---
     if draft_id:
         try:
-            status_msg = "✅ [Critique] Cours approuvé et finalisé !" if final_approved else "🔄 [Critique] Des corrections sont nécessaires..."
+            status_msg = " [Critique] Cours approuvé et finalisé !" if final_approved else "🔄 [Critique] Des corrections sont nécessaires..."
             headers = {"x-ai-secret": internal_secret}
             requests.patch(
                 f"http://localhost:3000/api/ai/internal/drafts/{draft_id}/progress",
@@ -336,7 +336,7 @@ def critic_node(state: AgentState):
             feedback_auto = (
                 f"CRITIQUE TECHNIQUE : Les modules suivants sont insuffisants ou vides : {modules_list_str}. "
                 f"Sophie, tu dois RE-GENERER le contenu de ces modules specifiquement. "
-                f"Assure-toi d'atteindre au moins 800-1000 mots, inclure 2+ citations (Source:...) "
+                f"Assure-toi d'atteindre au moins 500-1000 mots, inclure 2+ citations (Source:...) "
                 + ("et que les exercices de code testent exactement ce que le module enseigne." if include_code_exercises
                    else "et que les exercices QCM testent exactement ce que le module enseigne. Les exercices de CODE ne sont PAS requis.")
             )

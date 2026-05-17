@@ -1,0 +1,175 @@
+{
+  "topic": "Python",
+  "age": 12,
+  "level": "beginner",
+  "language": "French",
+  "generated_at": "2026-05-16T00:36:15.422637",
+  "model_name": "mistral:latest",
+  "modules": {
+    "m1": {
+      "id": "m1",
+      "name": "Ma première introduction à Python",
+      "description": "Apprenez les bases de Python",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "variables"
+      ],
+      "learning_objectives": [
+        "obj_m1_1",
+        "obj_m1_2"
+      ],
+      "exercises": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "prerequisites_modules": [],
+      "estimated_duration": 60,
+      "order_in_curriculum": 1
+    },
+    "m2": {
+      "id": "m2",
+      "name": "Mon premier code Python",
+      "description": "Créez votre premier code en Python !",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "code_python"
+      ],
+      "learning_objectives": [
+        "obj_m2_1"
+      ],
+      "exercises": [
+        "ex_m2_1"
+      ],
+      "prerequisites_modules": [
+        "m1"
+      ],
+      "estimated_duration": 60,
+      "order_in_curriculum": 2
+    }
+  },
+  "concepts": {
+    "variables": {
+      "id": "variables",
+      "name": "Variables de base en Python",
+      "definition": "Les variables sont des noms utilisés pour stocker des données dans un programme.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "code_python": {
+      "id": "code_python",
+      "name": "Mon premier code en Python",
+      "definition": "Un code Python est un ensemble d'instructions pour le programmeur.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "variables"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    }
+  },
+  "objectives": {
+    "obj_m1_1": {
+      "id": "obj_m1_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les variables de base en Python",
+      "associated_concepts": [
+        "variables"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m1_2": {
+      "id": "obj_m1_2",
+      "type": "apply",
+      "description": "L'étudiant peut utiliser des variables dans du code simple en Python",
+      "associated_concepts": [
+        "variables"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_1": {
+      "id": "obj_m2_1",
+      "type": "apply",
+      "description": "L'étudiant peut créer un code simple en Python",
+      "associated_concepts": [
+        "code_python"
+      ],
+      "assessment_criteria": null
+    }
+  },
+  "exercises": {
+    "ex_m1_1": {
+      "id": "ex_m1_1",
+      "type": "qcm",
+      "question": "Qu'est-ce qu'une variable en Python ?",
+      "answer": "Un nom utilisé pour stocker des données",
+      "options": [
+        "Ceci n'est pas une variable",
+        "Un nom utilisé pour stocker des données",
+        "Ce n'est pas ce que je cherche",
+        "Il s'agit d'un programme"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "variables",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 5
+    },
+    "ex_m1_2": {
+      "id": "ex_m1_2",
+      "type": "fill_blank",
+      "question": "Remplis le trou: Une variable en Python est un _____ pour stocker des données.",
+      "answer": "nom",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "variables",
+      "tests_objective": "obj_m1_2",
+      "estimated_time": 3
+    },
+    "ex_m2_1": {
+      "id": "ex_m2_1",
+      "type": "qcm",
+      "question": "Écrivez un code Python pour afficher 'Bonjour le monde !'",
+      "answer": "print('Bonjour le monde !')",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "code_python",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 20
+    }
+  },
+  "relationships": {
+    "concept_prerequisites": {
+      "variables": [],
+      "code_python": [
+        "variables"
+      ]
+    },
+    "concept_exercises": {
+      "variables": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "code_python": [
+        "ex_m2_1"
+      ]
+    },
+    "objective_concepts": {
+      "obj_m1_1": [
+        "variables"
+      ],
+      "obj_m1_2": [
+        "variables"
+      ],
+      "obj_m2_1": [
+        "code_python"
+      ]
+    }
+  }
+}

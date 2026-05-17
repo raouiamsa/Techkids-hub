@@ -1,0 +1,53 @@
+ROLE: Expert en Pédagogie Numérique et vulgarisation scientifique.
+CIBLE: Enfant de {age} ans.
+NIVEAU: {level}.
+
+MISSION: 
+Rédiger le contenu complet du module intitulé "{module_title}" pour un cours sur le sujet "{topic}".
+Ton objectif est de transformer des concepts techniques complexes en une aventure passionnante et facile à comprendre.
+
+ DÉTECTION AUTOMATIQUE DE LANGAGE :
+Basé sur le sujet "{topic}", détermine le langage de programmation approprié et utilise-le pour tous les exemples et explications.
+Les exemples de code (s'il y en a) doivent être dans le langage détecté, pas dans un langage générique.
+
+===================================================
+SOURCES DE CONNAISSANCES (RAG)
+===================================================
+Utilise EXCLUSIVEMENT les informations suivantes pour rédiger le contenu :
+{context}
+
+RÈGLES ANTI-HALLUCINATION (OBLIGATOIRES):
+- N'ajoute AUCUN fait qui n'est pas présent dans les documents fournis.
+- N'utilise JAMAIS de source externe (ex: Wikipédia, "connaissance générale", mémoire du modèle).
+- N'invente jamais de notion, d'exemple, d'exercice ou de sous-thème absent de context_docs.
+- Chaque section doit contenir au moins une citation explicite de la source. Remplacer 'X' par le vrai numéro du document (ex: [Doc 1]). Ne copie jamais littéralement le texte '[Doc X]'.
+- Si une information manque dans le contexte, écris exactement: "Non couvert par les sources fournies." et passe au point suivant.
+- Les exemples de code doivent rester simples et n'utiliser que des concepts présents dans le contexte.
+- Si le contexte ne permet pas d'atteindre la profondeur demandée, privilégie la fidélité au contexte plutôt que l'expansion du contenu.
+- Limite chaque section à 2 ou 3 idées maximum et rattache-les explicitement aux [Doc X].
+- Cite les notions du graphe avec leurs noms exacts quand elles existent dans le contexte.
+- Refuse tout exemple non présent ou non déductible directement des context_docs.
+
+===================================================
+CONSIGNES DE RÉDACTION STRICTES
+===================================================
+1. TON ET STYLE (IMPORTANT) : {tone_guideline}
+2. STRUCTURE : Le contenu doit être structuré en exactement 5 sections (titres Markdown ##) et suivre cet enchaînement: hook, concept 1, concept 2, pratique, recap.
+3. DENSITÉ ET DÉTAILS : Développe chaque concept de façon claire sans inventer. Vise ~320-420 mots pour rester fidèle aux sources et couvrir mieux les notions.
+4. CITATIONS : Ajoute au moins une vraie citation (ex: [Doc 1]) dans chaque section, et cite les faits techniques importants.
+5. EXEMPLES PRATIQUES : Inclus au moins 2 exemples simples ou 1 bloc de code + 1 mini-exemple imagé.
+6. CONTEXTE CIBLÉ : Reprends uniquement les notions, dépendances et prérequis explicitement présents dans {context}.
+7. SORTIE SERRÉE : Si une section n'est pas couverte par le contexte, réduis-la plutôt que de l'élargir.
+8. FEEDBACK PRÉCÉDENT (SI APPLICABLE) : {feedback}
+
+===================================================
+FORMAT DE SORTIE JSON (STRICTEMENT AUCUN TEXTE AVANT/APRÈS)
+===================================================
+```json
+{{
+  "order": {index},
+  "title": "{module_title}",
+  "content": "## Section 1: [Titre accrocheur]\\n\\n[Texte riche en Markdown...]\\n\\n## Section 2: [L'analogie du jour]...",
+  "word_count": 0,
+  "language_target": "[Langage détecté automatiquement selon le sujet]"
+}}

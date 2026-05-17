@@ -1,0 +1,34 @@
+# Résumé des Modifications : Dynamic Tone Prompting & Anti-Hallucination
+
+Nous avons implémenté avec succès les modifications discutées pour rendre la génération du contenu de cours beaucoup plus intelligente et adaptée à l'enfant.
+
+## Changements Effectués
+
+### 1. ⚙️ Configuration du Ton Dynamique (`config.py`)
+- Ajout de la fonction `get_tone_guideline(age)` qui génère des consignes de rédaction sur-mesure pour 3 tranches d'âge :
+  - **<= 9 ans :** Phrases très courtes (max 10 mots), tutoiement, emojis, analogies avec des jouets/bonbons.
+  - **10 à 13 ans :** Phrases de longueur moyenne, langage cool, analogies avec les jeux vidéos/collège.
+  - **>= 14 ans :** Langage mature et précis, pas de ton enfantin, analogies avec le monde professionnel.
+
+### 2. 🤖 Prompts IA (`writer.txt`)
+- Injection dynamique de la variable `{tone_guideline}`.
+- **Correction des Hallucinations :** La règle demandant d'utiliser `[Doc X]` a été remplacée par une consigne stricte imposant à l'IA de remplacer le 'X' par le *vrai* numéro du document (ex: `[Doc 1]`), empêchant ainsi l'IA de copier/coller bêtement "Doc X" dans son résultat.
+
+### 3. 🎯 Évaluation Dynamique (`tone_judge.py` & `writer.py`)
+- L'évaluateur (Groq LLM-as-judge) reçoit maintenant l'âge cible en paramètre.
+- Le prompt d'évaluation `_SYSTEM_PROMPT` a été mis à jour pour dire : *"Tu analyses des textes destinés à des enfants de {age} ans"* au lieu de la constante codée en dur "10-14 ans".
+- Cela garantit que le juge ne pénalisera pas un texte pour être "trop simpliste" si l'enfant a 8 ans.
+
+### 4. 🔗 Orchestrateurs (`comp2_agents_llm_comparaison.py` & `comp2_pedagogical_graph_comparison.py`)
+- Les deux scripts de tests comparatifs injectent désormais la règle de ton dynamique au moment où ils chargent le prompt du Writer via `config.get_tone_guideline(age)`.
+
+## Prochaines Étapes
+
+> [!TIP]
+> Vous pouvez maintenant relancer vos tests `COMP2` !
+> 
+> ```powershell
+> python comp2_agents_llm_comparaison.py --models mistral:latest --topic "Python" --age 12 --level beginner
+> ```
+> 
+> Vous constaterez que le score de **Faithfulness (RAGAS)** remonte (car il ne citera plus "Doc X") et que le **Tone Engagement** sera plus adapté.

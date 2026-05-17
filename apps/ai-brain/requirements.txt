@@ -24,3 +24,4 @@ langchain_groq
 youtube-transcript-api
 beautifulsoup4
 langchain-cerebras
+neo4j

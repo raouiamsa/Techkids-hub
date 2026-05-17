@@ -1,0 +1,110 @@
+[
+  {
+    "resource_id": "python_basics_pdf",
+    "source_type": "pdf",
+    "title": "Les bases de Python - Zenk Security",
+    "domain": "Python",
+    "status": "ready",
+    "path_or_url": "C:\\Users\\raoui\\OneDrive\\Bureau\\TechKids\\techkids-hub\\apps\\ai-brain\\benchmarking\\dataset\\Les bases de PYTHON.pdf",
+    "notes": "PDF complet couvrant les bases de Python: listes, classes, fonctions"
+  },
+  {
+    "resource_id": "python_lists_web",
+    "source_type": "web",
+    "title": "Python Lists - Google Developers",
+    "domain": "Python",
+    "status": "ready",
+    "path_or_url": "https://developers.google.com/edu/python/lists",
+    "notes": "Article officiel Google sur les listes Python"
+  },
+  {
+    "resource_id": "python_youtube_Ro",
+    "source_type": "youtube",
+    "title": "Learn Python in Only 30 Minutes (Beginner Tutorial)",
+    "domain": "Python",
+    "status": "ready",
+    "path_or_url": "https://www.youtube.com/watch?v=Ro_MScTDfU4",
+    "notes": "Tutoriel video Python: boucles, fonctions, contrôle de flux"
+  },
+  {
+    "resource_id": "ml_formation_pdf",
+    "source_type": "pdf",
+    "title": "Formation Machine Learning - CICC",
+    "domain": "Data Science & Machine Learning & AI",
+    "status": "ready",
+    "path_or_url": "C:\\Users\\raoui\\OneDrive\\Bureau\\TechKids\\techkids-hub\\apps\\ai-brain\\benchmarking\\dataset\\formation_ML_cicc-2.pdf",
+    "notes": "PDF complet sur ML: regression, classification, deep learning"
+  },
+  {
+    "resource_id": "ml_regression_web",
+    "source_type": "web",
+    "title": "Linear Regression Equation - Toward Data Science",
+    "domain": "Data Science & Machine Learning & AI",
+    "status": "ready",
+    "path_or_url": "https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares/",
+    "notes": "Article expliquant la régression linéaire et ses applications"
+  },
+  {
+    "resource_id": "ml_youtube_wgf",
+    "source_type": "youtube",
+    "title": "What are Word Embeddings?",
+    "domain": "Data Science & Machine Learning & AI",
+    "status": "ready",
+    "path_or_url": "https://www.youtube.com/watch?v=wgfSDrqYMJ4",
+    "notes": "Tutoriel video: embeddings, word2vec, NLP"
+  },
+  {
+    "resource_id": "arduino_pinout_pdf",
+    "source_type": "pdf",
+    "title": "Arduino Pinout Guide - Official",
+    "domain": "Embedded Systems & Arduino",
+    "status": "ready",
+    "path_or_url": "C:\\Users\\raoui\\OneDrive\\Bureau\\TechKids\\techkids-hub\\apps\\ai-brain\\benchmarking\\dataset\\A000066-full-pinout.pdf",
+    "notes": "Guide officiel des pins Arduino UNO: digital, analog, power"
+  },
+  {
+    "resource_id": "arduino_blink_web",
+    "source_type": "web",
+    "title": "Arduino Blink Tutorial - Official Documentation",
+    "domain": "Embedded Systems & Arduino",
+    "status": "ready",
+    "path_or_url": "https://learn.sparkfun.com/tutorials/digital-sandbox-arduino-companion/blinking-an-led",
+    "notes": "Tutoriel officiel Arduino: allumer une LED, digitalWrite, setup/loop"
+  },
+  {
+    "resource_id": "arduino_youtube_F5",
+    "source_type": "youtube",
+    "title": "What are IoT (Internet of Things) Sensors and How do They Work?",
+    "domain": "Embedded Systems & Arduino",
+    "status": "ready",
+    "path_or_url": "https://www.youtube.com/watch?v=F5_XXPTkurY",
+    "notes": "Tutoriel video: IoT sensors, Arduino, capteurs"
+  },
+  {
+    "resource_id": "electronics_ohm_pdf",
+    "source_type": "pdf",
+    "title": "Ohm's Law and Electrical Basics",
+    "domain": "Electronics & Circuits",
+    "status": "ready",
+    "path_or_url": "C:\\Users\\raoui\\OneDrive\\Bureau\\TechKids\\techkids-hub\\apps\\ai-brain\\benchmarking\\dataset\\UGLYOHMSLaw.pdf",
+    "notes": "PDF sur la loi d'Ohm: V=R×I, puissance, calculs de résistance"
+  },
+  {
+    "resource_id": "electronics_allabout_web",
+    "source_type": "web",
+    "title": "Basic DC Circuit Theory - EE Power",
+    "domain": "Electronics & Circuits",
+    "status": "ready",
+    "path_or_url": "https://eepower.com/power-electronics-textbook/vol-i-electrical-power-systems-design/chapter-1-introduction-power/basic-dc-circuit-theory/#",
+    "notes": "Article complet: voltage, current, resistance, DC circuit theory"
+  },
+  {
+    "resource_id": "electronics_youtube_x2E",
+    "source_type": "youtube",
+    "title": "Series and Parallel Circuits",
+    "domain": "Electronics & Circuits",
+    "status": "ready",
+    "path_or_url": "https://www.youtube.com/watch?v=x2EuYqj_0Uk",
+    "notes": "Tutoriel video: circuits série/parallèle, courant, tension"
+  }
+]

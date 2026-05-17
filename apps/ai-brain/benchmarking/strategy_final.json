@@ -1,0 +1,23 @@
+{
+  "name": "retrieval_baseline_comp1_to_comp5",
+  "retrieval": {
+    "name": "hybrid_lexical_winner",
+    "backend": "hybrid",
+    "limit": 5,
+    "reranker": "lexical",
+    "weights": {
+      "vector": 0.6,
+      "graph": 0.4
+    },
+    "total_candidate_budget": null,
+    "vector_candidate_k": null,
+    "graph_candidate_k": null,
+    "rrf_k": 60,
+    "rerank_top_k": 100
+  },
+  "index_provenance": {
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "embeddings_model": "intfloat/multilingual-e5-small"
+  }
+}

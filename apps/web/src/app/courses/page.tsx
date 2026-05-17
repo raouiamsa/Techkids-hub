@@ -98,11 +98,11 @@ export default async function CoursesCatalogPage() {
 
                 {/* Content */}
                 <CardContent className="flex flex-col flex-1 p-6">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {course.title}
                   </h3>
 
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 line-clamp-3">
+                  <p className="text-slate-400 text-sm mb-6 line-clamp-3">
                     {course.description || "Aucune description fournie pour ce cours."}
                   </p>
 

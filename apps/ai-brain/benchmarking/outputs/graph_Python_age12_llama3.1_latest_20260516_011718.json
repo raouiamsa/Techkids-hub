@@ -1,0 +1,240 @@
+{
+  "topic": "Python",
+  "age": 12,
+  "level": "beginner",
+  "language": "French",
+  "generated_at": "2026-05-16T01:17:18.673092",
+  "model_name": "llama3.1:latest",
+  "modules": {
+    "m1": {
+      "id": "m1",
+      "name": "Introduction à Python",
+      "description": "Apprendre les bases de Python pour les débutants.",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_1",
+        "concept_2"
+      ],
+      "learning_objectives": [
+        "obj_m1_1",
+        "obj_m1_2"
+      ],
+      "exercises": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "prerequisites_modules": [],
+      "estimated_duration": 60,
+      "order_in_curriculum": 1
+    },
+    "m2": {
+      "id": "m2",
+      "name": "Conditionnels et boucles",
+      "description": "Apprendre les conditions et les boucles pour les débutants.",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_3",
+        "concept_4"
+      ],
+      "learning_objectives": [
+        "obj_m2_1",
+        "obj_m2_2"
+      ],
+      "exercises": [
+        "ex_m2_1",
+        "ex_m2_2"
+      ],
+      "prerequisites_modules": [
+        "m1"
+      ],
+      "estimated_duration": 60,
+      "order_in_curriculum": 2
+    }
+  },
+  "concepts": {
+    "concept_1": {
+      "id": "concept_1",
+      "name": "Variables et types de données",
+      "definition": "Les variables sont utilisées pour stocker des valeurs, les types de données déterminent la manière dont les valeurs sont traitées.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_2": {
+      "id": "concept_2",
+      "name": "Opérateurs arithmétiques",
+      "definition": "Les opérateurs sont utilisés pour effectuer des calculs, ils peuvent être utilisés avec les variables ou directement.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_3": {
+      "id": "concept_3",
+      "name": "Conditions",
+      "definition": "Les conditions sont utilisées pour vérifier les valeurs, elles peuvent être utilisées avec les variables ou directement.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_1"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_4": {
+      "id": "concept_4",
+      "name": "Boucles",
+      "definition": "Les boucles sont utilisées pour répéter des actions, elles peuvent être utilisées avec les variables ou directement.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_1"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    }
+  },
+  "objectives": {
+    "obj_m1_1": {
+      "id": "obj_m1_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les concepts de base de Python.",
+      "associated_concepts": [
+        "concept_1",
+        "concept_2"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m1_2": {
+      "id": "obj_m1_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer dans des cas simples.",
+      "associated_concepts": [
+        "concept_1"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_1": {
+      "id": "obj_m2_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les conditions et les boucles.",
+      "associated_concepts": [
+        "concept_3",
+        "concept_4"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_2": {
+      "id": "obj_m2_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer dans des cas simples.",
+      "associated_concepts": [
+        "concept_3"
+      ],
+      "assessment_criteria": null
+    }
+  },
+  "exercises": {
+    "ex_m1_1": {
+      "id": "ex_m1_1",
+      "type": "qcm",
+      "question": "Quel est le type de données pour une variable qui stocke un nom?",
+      "answer": "str",
+      "options": [
+        "str",
+        "int",
+        "float"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_1",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 5
+    },
+    "ex_m1_2": {
+      "id": "ex_m1_2",
+      "type": "fill_blank",
+      "question": "Remplis le trou: __________ est utilisé pour effectuer des calculs.",
+      "answer": "+",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_2",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 3
+    },
+    "ex_m2_1": {
+      "id": "ex_m2_1",
+      "type": "qcm",
+      "question": "Quel est le type de condition pour vérifier si une variable est supérieure à 5?",
+      "answer": "supérieur",
+      "options": [
+        "supérieur",
+        "inférieur",
+        "égal"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_3",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 5
+    },
+    "ex_m2_2": {
+      "id": "ex_m2_2",
+      "type": "fill_blank",
+      "question": "Remplis le trou: __________ est utilisé pour répéter des actions.",
+      "answer": "for",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_4",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 3
+    }
+  },
+  "relationships": {
+    "concept_prerequisites": {
+      "concept_1": [],
+      "concept_2": [],
+      "concept_3": [
+        "concept_1"
+      ],
+      "concept_4": [
+        "concept_1"
+      ]
+    },
+    "concept_exercises": {
+      "concept_1": [
+        "ex_m1_1"
+      ],
+      "concept_2": [
+        "ex_m1_2"
+      ],
+      "concept_3": [
+        "ex_m2_1"
+      ],
+      "concept_4": [
+        "ex_m2_2"
+      ]
+    },
+    "objective_concepts": {
+      "obj_m1_1": [
+        "concept_1",
+        "concept_2"
+      ],
+      "obj_m1_2": [
+        "concept_1"
+      ],
+      "obj_m2_1": [
+        "concept_3",
+        "concept_4"
+      ],
+      "obj_m2_2": [
+        "concept_3"
+      ]
+    }
+  }
+}

@@ -8,6 +8,8 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from .shared import EMBEDDINGS, CHROMA_PERSIST_DIR
+from .neo4j_store import get_neo4j_store
+from .ingest_config import CHUNK_SIZE, CHUNK_OVERLAP
 
 def report_progress(source_id: str, percent: int):
     """Envoie la progression de l'indexation au Hub NestJS."""
@@ -23,7 +25,13 @@ def format_timestamp(seconds: float) -> str:
     secs = int(seconds % 60)
     return f"{mins:02d}:{secs:02d}"
 
-def process_youtube(url: str, source_id: str):
+def process_youtube(
+    url: str,
+    source_id: str,
+    title: str | None = None,
+    domain: str | None = None,
+    source_metadata: dict | None = None,
+):
     """
     Méthode robuste avec intégration Deepgram (Audio-to-Text) et progression.
     Le source_id permet de lier la progression à l'interface utilisateur.
@@ -32,7 +40,7 @@ def process_youtube(url: str, source_id: str):
     report_progress(source_id, 10) # Démarrage
     
     documents = []
-    video_title = "Vidéo YouTube"
+    video_title = title or "Vidéo YouTube"
 
     # 1. Récupération du titre réel de la vidéo pour les citations futures
     try:
@@ -128,10 +136,22 @@ def process_youtube(url: str, source_id: str):
                 if "timestamp" not in doc.metadata:
                     doc.metadata["timestamp"] = "00:00"
             
-            splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
+            splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
             docs = splitter.split_documents(documents)
+            for index, chunk in enumerate(docs):
+                chunk.metadata["doc_id"] = f"{source_id}::youtube::{index:04d}"
+                if domain:
+                    chunk.metadata["domain"] = domain
             
             Chroma.from_documents(documents=docs, embedding=EMBEDDINGS, persist_directory=CHROMA_PERSIST_DIR)
+            get_neo4j_store().index_documents(
+                resource_id=source_id,
+                source_type="youtube",
+                title=video_title,
+                domain=domain,
+                source_path_or_url=url,
+                documents=docs,
+            )
             
             report_progress(source_id, 100)
             print(f" Vidéo indexée avec succès ({len(docs)} segments).")

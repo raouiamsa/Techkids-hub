@@ -139,7 +139,7 @@ def writer_node(state: AgentState):
         try:
             requests.patch(
                 f"http://localhost:3000/api/ai/internal/drafts/{state['draft_id']}/progress",
-                json={"progressPercent": 35, "agent_status": f"✍️ [Rédacteur] Début de la rédaction des {total_modules} chapitres..."},
+                json={"progressPercent": 35, "agent_status": f" [Rédacteur] Début de la rédaction des {total_modules} chapitres..."},
                 headers={"x-ai-secret": internal_secret}, timeout=3
             )
         except: pass
@@ -158,7 +158,7 @@ def writer_node(state: AgentState):
                     f"http://localhost:3000/api/ai/internal/drafts/{state['draft_id']}/progress",
                     json={
                         "progressPercent": current_percent, 
-                        "agent_status": f"✍️ [Rédacteur] Rédaction du module {index + 1}/{total_modules} : {mod_title[:30]}..."
+                        "agent_status": f" [Rédacteur] Rédaction du module {index + 1}/{total_modules} : {mod_title[:30]}..."
                     },
                     headers={"x-ai-secret": internal_secret}, timeout=2
                 )
@@ -172,7 +172,7 @@ def writer_node(state: AgentState):
             wc = _word_count(prev_mod.get("content", ""))
             
             # On réutilise si : pas dans la blacklist de longueur ET longueur correcte (> 800 mots)
-            if mod_title not in blacklist and wc > 800:
+            if mod_title not in blacklist and wc > 500:
                 print(f"    [Recycle Chirurgical] : {mod_title} ({wc} mots)")
                 course_data["modules"].append(prev_mod)
                 continue
@@ -204,13 +204,13 @@ def writer_node(state: AgentState):
                     prev_text_context=prev_text, index=index, attempt=attempt
                 )
                 
-                # 🚀 LOGIQUE ANTI-PARESSE
+                #  LOGIQUE ANTI-PARESSE
                 if attempt == 1:
-                    current_prompt += "\n\n⚠️ CRITIQUE : Ton essai précédent était BEAUCOUP TROP COURT. Tu dois ABSOLUMENT développer chaque point en profondeur. Vise au minimum 800 mots. Ajoute des explications détaillées."
+                    current_prompt += "\n\n CRITIQUE : Ton essai précédent était BEAUCOUP TROP COURT. Tu dois ABSOLUMENT développer chaque point en profondeur. Vise au minimum 800 mots. Ajoute des explications détaillées."
                 elif attempt == 2:
-                    current_prompt += "\n\n🚨 ALERTE : C'est ton dernier essai. Ton texte doit être EXTRÊMEMENT LONG ET DÉTAILLÉ. Ne résume absolument rien. Vise 1000 mots."
+                    current_prompt += "\n\n ALERTE : C'est ton dernier essai. Ton texte doit être EXTRÊMEMENT LONG ET DÉTAILLÉ. Ne résume absolument rien. Vise 1000 mots."
 
-                # 🧠 MIXTURE OF EXPERTS : On bascule sur Llama 70B (Groq) au 3ème essai si Nemotron est fainéant
+                #  MIXTURE OF EXPERTS : On bascule sur Llama 70B (Groq) au 3ème essai si Nemotron est fainéant
                 if attempt == 2 and _groq_fallback:
                     print(f"       Essai {attempt+1}/3 : Basculement sur Llama 3.3 70B (Groq) pour forcer la longueur...")
                     res = _groq_fallback.invoke(current_prompt)
@@ -231,7 +231,7 @@ def writer_node(state: AgentState):
                     mod_best = cand
                 
                 # On accepte le module dès qu'il atteint 850 mots pour éviter de boucler pour rien
-                if wc >= 850: 
+                if wc >= 600: 
                     break 
             except Exception as e:
                 print(f"       [Avertissement] Erreur Essai {attempt+1} : {e}")

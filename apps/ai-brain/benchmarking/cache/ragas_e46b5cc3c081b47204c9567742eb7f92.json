@@ -1,0 +1,7 @@
+{
+  "faithfulness": 0.2353,
+  "answer_relevancy": 0.8514,
+  "context_precision": 1.0,
+  "context_recall": 0.8,
+  "ground_truth_type": "silver"
+}

@@ -14,7 +14,7 @@ class ModelGateway:
         self.nvidia_key = os.getenv("NVIDIA_API_KEY")
         self.openrouter_key = os.getenv("OPENROUTER_API_KEY")
         self.groq_key = os.getenv("GROQ_API_KEY")
-        self.google_key = os.getenv("GOOGLE_API_KEY")
+        self.google_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
 
         # Verification minimale des cles essentielles
         if not self.groq_key:

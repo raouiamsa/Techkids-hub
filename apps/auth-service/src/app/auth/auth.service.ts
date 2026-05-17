@@ -85,7 +85,10 @@ export class AuthService {
     }
 
     async login(email: string, password: string) {
-        const user = await prisma.user.findUnique({ where: { email } });
+        const user = await prisma.user.findUnique({ 
+            where: { email },
+            include: { profile: true }
+        });
         if (!user) throw new RpcException({ statusCode: 401, message: 'Identifiants invalides', error: 'Unauthorized' });
 
         const valid = await bcrypt.compare(password, user.passwordHash);
@@ -98,7 +101,13 @@ export class AuthService {
         const payload = { sub: user.id, email: user.email, role: user.role };
         return {
             access_token: this.jwtService.sign(payload),
-            user: { id: user.id, email: user.email, role: user.role },
+            user: { 
+                id: user.id, 
+                email: user.email, 
+                role: user.role,
+                firstName: user.profile?.firstName,
+                lastName: user.profile?.lastName
+            },
         };
     }
 }

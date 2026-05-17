@@ -32,6 +32,12 @@
     },
     {
       "path": "./apps/edu-tracker-service"
+    },
+    {
+      "path": "./apps/virtual-lab-service-e2e"
+    },
+    {
+      "path": "./apps/virtual-lab-service"
     }
   ]
 }

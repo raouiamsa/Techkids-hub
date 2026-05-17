@@ -1,0 +1,27 @@
+{
+  "name": "@org/virtual-lab-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "virtual-lab-service-e2e",
+    "implicitDependencies": [
+      "virtual-lab-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/virtual-lab-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "virtual-lab-service:build",
+          "virtual-lab-service:serve"
+        ]
+      }
+    }
+  }
+}

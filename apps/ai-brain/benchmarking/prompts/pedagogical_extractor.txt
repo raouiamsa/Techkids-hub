@@ -1,0 +1,167 @@
+# Prompt for COMP3: Generating Pedagogical Course Structure
+# Used by LLM to generate courses with explicit learning objectives, prerequisites, and exercise-objective mapping
+
+Tu es un expert en pédagogie et en design curriculaire. Tu vas générer un cours structuré sur "{topic}" 
+pour des étudiants de {age} ans, au niveau "{level}".
+
+## Règles de base universelles
+
+- Le sujet peut être n'importe quel domaine; n'assume jamais qu'il s'agit de Python, du code, de mathématiques ou d'un thème particulier.
+- Adapte le vocabulaire, les exemples et la difficulté à l'âge {age} et au niveau {level}.
+- Les concepts doivent être atomiques, concrets et reliés à un seul objectif d'apprentissage principal.
+- Chaque module doit progresser clairement du simple vers le plus complexe, sans sauts implicites.
+- Chaque exercice doit servir à vérifier un concept précis et un seul objectif principal.
+
+## Instructions Précises
+
+1. **Structure Pédagogique**: Divise le contenu en MODULES logiques (2-4 modules recommandés).
+   Chaque module doit représenter une unité cohérente d'apprentissage.
+  - Pour {level}, choisis une progression adaptée:
+    * beginner: 2-3 modules, concepts très concrets, petites étapes.
+    * intermediate: 3-4 modules, plus de transfert et de mise en pratique.
+    * advanced: 4-5 modules, plus d'analyse, de comparaison et de synthèse.
+
+2. **Objectifs d'Apprentissage**: Pour chaque module, définis 2-3 objectifs SMART:
+   - Comprendre (Understand): Connaissance de base
+   - Appliquer (Apply): Utilisation pratique
+   - Analyser (Analyze): Pensée critique (optionnel pour débutants)
+   
+   Format: "L'étudiant peut [verbe d'action] [concept]"
+
+3. **Concepts**: Identifie les concepts clés pour chaque module.
+   Assure-toi que chaque concept est explicitement nommé.
+
+4. **Prérequis**: Spécifie clairement les prérequis entre modules.
+   - Module 1 n'a PAS de prérequis
+   - Module 2 peut dépendre de Module 1
+   - Etc.
+  - Pour beginner, garde les prérequis TRÈS plats: un concept ne doit dépendre que d'un concept racine déjà vu, jamais d'une chaîne A -> B -> C.
+  - Pour intermediate, limite la profondeur à 2 et évite les chaînes longues.
+  - Pour advanced, garde une structure lisible: pas de cycles, pas de dépendances inutiles.
+  - Si un concept a des prérequis, référence directement un concept d'un module précédent déjà maîtrisé.
+  - Évite les listes longues de prérequis: 1 seul prérequis direct par concept suffit dans la majorité des cas.
+
+5. **Exercices**: Génère 2-3 exercices par module, FORTEMENT LIÉS aux objectifs.
+   Variation recommandée:
+  - Niveau {level}: adapte les formats à l'âge et au sujet, mais privilégie les questions simples et explicites pour beginner.
+  - Les exercices DOIVENT spécifier quel concept/objectif ils testent.
+  - Chaque exercice doit rester centré sur un seul concept principal et un seul objectif principal.
+
+6. **Alignement Exercice-Objectif**: CRITIQUE
+   Chaque exercice DOIT être associé à un objectif spécifique.
+   - Exercice qui teste "Comprendre X" → objective_type: "understand"
+   - Exercice qui teste "Appliquer Y" → objective_type: "apply"
+  - Exercice qui demande comparaison, choix de stratégie ou justification → objective_type: "analyze" si pertinent pour le niveau.
+  - Le concept testé et l'objectif testé doivent être cohérents entre eux.
+
+7. **Couverture Complète**: OBLIGATOIRE
+   CHAQUE CONCEPT doit avoir au MINIMUM 1 exercice qui le teste.
+   - Aucun concept sans exercice n'est acceptable.
+   - TOUS les champs "tests_concept" ET "tests_objective" doivent être remplis.
+   - Si vous ne pouvez pas générer un exercice pour un concept, ne créez pas ce concept.
+  - Chaque concept non racine doit aussi avoir au plus 1 prérequis direct.
+  - Si un exercice ne peut pas être aligné proprement, régénère-le au lieu de le laisser partiel.
+
+## Format de sortie (JSON STRICTEMENT structuré)
+
+```json
+{
+  "topic": "{topic}",
+  "age": {age},
+  "level": "{level}",
+  "language": "{language}",
+  "modules": [
+    {
+      "module_id": "m1",
+      "name": "Nom du Module 1",
+      "description": "Description claire du module",
+      "order": 1,
+      "duration_minutes": 60,
+      "prerequisites_module_ids": [],
+      "learning_objectives": [
+        {
+          "objective_id": "obj_m1_1",
+          "type": "understand",
+          "description": "L'étudiant comprend les concepts de base",
+          "associated_concepts": ["concept_1", "concept_2"]
+        },
+        {
+          "objective_id": "obj_m1_2",
+          "type": "apply",
+          "description": "L'étudiant peut appliquer dans des cas simples",
+          "associated_concepts": ["concept_1"]
+        }
+      ],
+      "concepts": [
+        {
+          "concept_id": "concept_1",
+          "name": "Concept Name",
+          "definition": "Clear definition",
+          "difficulty": "{level}",
+          "prerequisites": []
+        }
+      ],
+      "exercises": [
+        {
+          "exercise_id": "ex_m1_1",
+          "type": "qcm",
+          "question": "Question texte",
+          "options": ["Option A", "Option B", "Option C", "Option D"],
+          "correct_answer": "Option A",
+          "tests_concept": "concept_1",
+          "tests_objective": "obj_m1_1",
+          "difficulty": "{level}",
+          "estimated_time_minutes": 5
+        },
+        {
+          "exercise_id": "ex_m1_2",
+          "type": "fill_blank",
+          "question": "Remplis le trou: _____ est utilisé pour...",
+          "correct_answer": "concept_1",
+          "tests_concept": "concept_1",
+          "tests_objective": "obj_m1_1",
+          "difficulty": "{level}",
+          "estimated_time_minutes": 3
+        }
+      ]
+    },
+    {
+      "module_id": "m2",
+      "name": "Nom du Module 2",
+      "description": "Description",
+      "order": 2,
+      "duration_minutes": 60,
+      "prerequisites_module_ids": ["m1"],  <-- DÉPEND de m1
+      "learning_objectives": [...],
+      "concepts": [...],
+      "exercises": [...]
+    }
+  ]
+}
+```
+
+## Contraintes de qualité pour {level}
+
+Niveau {level}:
+- Nombre de modules: adapte-toi au niveau et au sujet, sans dépasser la lisibilité pédagogique.
+- Exercices par module: 2-3, avec plus de guidage pour beginner.
+- Types d'exercices: choisis le format le plus naturel pour le sujet, mais garde des exercices simples et évaluables.
+- Prérequis par concept: max 1 pour beginner, max 2 pour intermediate, max 3 pour advanced.
+- Profondeur prérequis: max 1 pour beginner, 2 pour intermediate, 3 pour advanced.
+
+Réponds UNIQUEMENT avec du JSON valide, sans explanation.
+Assure-toi que:
+- CHAQUE concept a AU MOINS 1 exercice
+- CHAQUE exercice a TOUS les champs: tests_concept ET tests_objective
+- Les IDs de tests_concept et tests_objective existent réellement dans le JSON
+- Les exercices doivent être cohérents avec le niveau {level} et l'âge {age}
+
+SI TU NE PEUX PAS GÉNÉRER UN COURS AVEC CES CONTRAINTES:
+Réponds avec exactement ceci (json valide):
+{{
+  "error": "cannot_cover_all_concepts",
+  "missing_concepts": ["concept_1", "concept_2"],
+  "reason": "explanation courte"
+}}
+
+NE PAS GÉNÉRER de contenu partiel ou sans les champs requis.

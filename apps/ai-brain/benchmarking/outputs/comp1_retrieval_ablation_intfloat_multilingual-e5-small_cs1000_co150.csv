@@ -1,0 +1,946 @@
+question_id,strategy,evaluation_k,recall_at_k,precision_at_k,mrr,ndcg_at_k,coverage,latency_ms,total_candidate_budget,vector_candidate_k,graph_candidate_k,rrf_k,weights,reranker,embedding_tag,chunk_size,chunk_overlap
+1,Chroma (Vector) k=3,3,1.0,1.0,1.0,1.0,0.4,180.2194999763742,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,49.04049995820969,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,96.9762000022456,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Chroma (Vector) k=3,3,0.5,0.5,1.0,0.6131471927654584,0.0,54.23849995713681,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Chroma (Vector) k=3,3,1.0,1.0,1.0,1.0,0.0,58.33550001261756,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.2,44.94610003894195,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.2,41.25840001506731,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.6,33.836200018413365,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,55.82660000072792,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,42.722699989099056,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Chroma (Vector) k=3,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,33.36279996437952,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Chroma (Vector) k=3,3,1.0,1.0,1.0,1.0,0.5714285714285714,25.141699996311218,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Chroma (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,46.24799999874085,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Chroma (Vector) k=3,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,108.5566999972798,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Chroma (Vector) k=3,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,67.24539998685941,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Chroma (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,73.9532999577932,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Chroma (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,30.35950002958998,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Chroma (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.5,35.322100040502846,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Chroma (Vector) k=3,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,28.89740001410246,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Chroma (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,35.20769998431206,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Chroma (Vector) k=3,3,0.5,0.6583333333333333,0.7416666666666667,0.5372309560210021,0.2519047619047619,57.08473999693524,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Vector) k=3,3,1.0,1.0,1.0,1.0,0.4,51.83409998426214,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,40.05350003717467,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,22.31309999478981,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Vector) k=3,3,0.5,0.5,1.0,0.6131471927654584,0.0,48.83039998821914,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Vector) k=3,3,1.0,1.0,1.0,1.0,0.0,30.3937999997288,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.2,32.435900007840246,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.2,35.16020003007725,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.6,38.72569999657571,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,34.28770002210513,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,32.08159998757765,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Vector) k=3,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,30.431799998041242,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Vector) k=3,3,1.0,1.0,1.0,1.0,0.5714285714285714,32.699800038244575,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,33.812600013334304,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Vector) k=3,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,29.204499965999275,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Vector) k=3,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,35.05899995798245,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,34.376900002826005,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,35.30479996697977,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Vector) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.5,41.30159999476746,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Vector) k=3,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,44.065099966246635,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Vector) k=3,3,0.0,0.0,0.0,0.0,0.0,32.232799974735826,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Vector) k=3,3,0.5,0.6583333333333333,0.7416666666666667,0.5372309560210021,0.2519047619047619,35.730244996375404,9,9,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Graph) k=3,3,0.5,0.5,1.0,0.6131471927654584,0.4,4.846800002269447,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Graph) k=3,3,0.0,0.0,0.0,0.0,0.2,4.128600005060434,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Graph) k=3,3,0.0,0.0,0.0,0.0,0.6,3.6820999812334776,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Graph) k=3,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.2,4.007500014267862,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Graph) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,3.5420999629423022,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Graph) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.6,4.389000008814037,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Graph) k=3,3,1.0,1.0,1.0,1.0,0.6,3.444199974182993,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.6,5.973099963739514,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Graph) k=3,3,0.0,0.0,0.0,0.0,0.16666666666666666,3.151100012473762,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Graph) k=3,3,1.0,1.0,1.0,1.0,0.25,4.017700033728033,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,0.8,3.7244000122882426,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,4.149199987296015,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Graph) k=3,3,0.0,0.0,0.0,0.0,0.14285714285714285,3.541800018865615,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Graph) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.2,3.5019999486394227,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Graph) k=3,3,0.5,1.0,1.0,0.6131471927654584,0.0,3.3696999889798462,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,1.0,4.379699996206909,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,0.8333333333333334,2.84019997343421,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,1.0,3.4879999584518373,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,1.0,1.0,0.8,3.3559000003151596,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Graph) k=3,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.5,4.110300040338188,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Graph) k=3,3,0.65,0.6083333333333333,0.7416666666666667,0.649272837648774,0.4732142857142857,3.8821699941763654,9,0,9,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Chroma (Vector) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.4,64.90840000333264,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,60.32470002537593,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,34.458199981600046,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Chroma (Vector) k=5,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,37.0835000067018,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Chroma (Vector) k=5,5,1.0,1.0,1.0,1.0,0.0,45.50920001929626,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.2,65.84980001207441,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.2,40.795099979732186,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Chroma (Vector) k=5,5,1.0,1.0,1.0,1.0,0.6,43.59369998564944,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,39.69200002029538,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,34.41319998819381,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Chroma (Vector) k=5,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,30.94349999446422,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Chroma (Vector) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,32.065599982161075,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Chroma (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,38.6030999943614,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Chroma (Vector) k=5,5,1.0,0.5,1.0,0.9197207891481876,0.4,25.912500044796616,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Chroma (Vector) k=5,5,0.5,0.25,0.5,0.38685280723454163,0.6,52.710300020407885,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Chroma (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,40.629399998579174,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Chroma (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,34.661300014704466,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Chroma (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.5,27.92110003065318,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Chroma (Vector) k=5,5,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,37.632199993822724,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Chroma (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,28.241700027137995,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Chroma (Vector) k=5,5,0.55,0.6166666666666667,0.7416666666666667,0.5719022762018656,0.2619047619047619,40.79742500616703,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Vector) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.4,48.288999998476356,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,42.90130001027137,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,36.92440001759678,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Vector) k=5,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,48.355999984778464,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Vector) k=5,5,1.0,1.0,1.0,1.0,0.0,42.03879996202886,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.2,60.66910002846271,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.2,41.905099991708994,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Vector) k=5,5,1.0,1.0,1.0,1.0,0.6,35.376799991354346,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,32.892199989873916,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,41.07269999803975,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Vector) k=5,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,35.67429998656735,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Vector) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,36.50479996576905,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,37.02869999688119,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Vector) k=5,5,1.0,0.5,1.0,0.9197207891481876,0.4,31.667200033552945,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Vector) k=5,5,0.5,0.25,0.5,0.38685280723454163,0.6,39.53489998821169,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,41.257400007452816,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,28.367699997033924,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Vector) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.5,34.19370000483468,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Vector) k=5,5,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,40.00330000417307,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Vector) k=5,5,0.0,0.0,0.0,0.0,0.0,27.57700002985075,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Vector) k=5,5,0.55,0.6166666666666667,0.7416666666666667,0.5719022762018656,0.2619047619047619,39.11171999934595,15,15,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Graph) k=5,5,0.5,0.5,1.0,0.6131471927654584,0.4,3.9932000217959285,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Graph) k=5,5,0.0,0.0,0.0,0.0,0.4,4.718499956652522,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Graph) k=5,5,0.5,0.25,0.25,0.2640681225725909,0.6,4.42700000712648,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Graph) k=5,5,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.2,4.783600044902414,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Graph) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,4.634900018572807,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Graph) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.6,4.192099964711815,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Graph) k=5,5,1.0,1.0,1.0,1.0,0.6,5.1318000187166035,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Graph) k=5,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.6,4.964200023096055,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Graph) k=5,5,0.0,0.0,0.0,0.0,0.16666666666666666,3.9186999783851206,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Graph) k=5,5,1.0,1.0,1.0,1.0,0.25,4.422400030307472,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Graph) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.8,3.6441999836824834,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Graph) k=5,5,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,5.434299993794411,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Graph) k=5,5,0.0,0.0,0.0,0.0,0.14285714285714285,4.992900008801371,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Graph) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.2,4.03439998626709,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Graph) k=5,5,0.5,1.0,1.0,0.6131471927654584,0.0,4.6654000179842114,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Graph) k=5,5,1.0,0.5,1.0,1.0,1.0,4.507299978286028,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Graph) k=5,5,1.0,0.5,1.0,1.0,0.8333333333333334,4.048600036185235,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Graph) k=5,5,1.0,0.4,1.0,1.0,1.0,6.308800016995519,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Graph) k=5,5,1.0,0.5,1.0,1.0,0.8,4.217899986542761,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Graph) k=5,5,1.0,0.5,0.5,0.6934264036172708,0.5,5.007400002796203,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Graph) k=5,5,0.675,0.5741666666666666,0.7541666666666667,0.6624762437774034,0.4832142857142857,4.602380003780127,15,0,15,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Chroma (Vector) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.4,75.5254999967292,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Chroma (Vector) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.2,52.18620004598051,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Chroma (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,37.97359997406602,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Chroma (Vector) k=8,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,42.66229999484494,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Chroma (Vector) k=8,8,1.0,1.0,1.0,1.0,0.0,47.552899981383234,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Chroma (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.2,42.580400011502206,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Chroma (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.2,37.539999990258366,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Chroma (Vector) k=8,8,1.0,1.0,1.0,1.0,0.6,45.135000022128224,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Chroma (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,32.8457000432536,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Chroma (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,40.54359998553991,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Chroma (Vector) k=8,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,46.060899971053004,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Chroma (Vector) k=8,8,1.0,0.5,1.0,1.0,0.5714285714285714,31.84979996876791,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Chroma (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,42.46240004431456,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Chroma (Vector) k=8,8,1.0,0.5,1.0,0.9197207891481876,0.4,30.284900043625385,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Chroma (Vector) k=8,8,0.5,0.25,0.5,0.38685280723454163,0.6,39.833699993323535,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Chroma (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,36.422799981664866,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Chroma (Vector) k=8,8,0.5,0.5,0.5,0.38685280723454163,0.6666666666666666,37.91090002050623,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Chroma (Vector) k=8,8,0.5,0.5,1.0,0.6131471927654584,0.5,68.01460002316162,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Chroma (Vector) k=8,8,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,55.14840001706034,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Chroma (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,33.46360003342852,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Chroma (Vector) k=8,8,0.6,0.5916666666666667,0.7666666666666667,0.6105875569253199,0.3052380952380952,43.79986000712961,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Vector) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.4,73.60980001976714,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Vector) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.2,35.83820001222193,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,32.040700025390834,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Vector) k=8,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,37.15899999951944,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Vector) k=8,8,1.0,1.0,1.0,1.0,0.0,33.93219999270514,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.2,59.38579997746274,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.2,29.63370003271848,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Vector) k=8,8,1.0,1.0,1.0,1.0,0.6,37.485400040168315,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.16666666666666666,31.287900055758655,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Vector) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,32.20730001339689,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Vector) k=8,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,34.03380000963807,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Vector) k=8,8,1.0,0.5,1.0,1.0,0.5714285714285714,26.988299970980734,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,34.316400007810444,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Vector) k=8,8,1.0,0.5,1.0,0.9197207891481876,0.4,34.35850003734231,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Vector) k=8,8,0.5,0.25,0.5,0.38685280723454163,0.6,35.70230002515018,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,53.92800003755838,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Vector) k=8,8,0.5,0.5,0.5,0.38685280723454163,0.6666666666666666,26.956499961670488,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Vector) k=8,8,0.5,0.5,1.0,0.6131471927654584,0.5,77.39290001336485,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Vector) k=8,8,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,40.70539999520406,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Vector) k=8,8,0.0,0.0,0.0,0.0,0.0,29.76409997791052,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Vector) k=8,8,0.6,0.5916666666666667,0.7666666666666667,0.6105875569253199,0.3052380952380952,39.83631001028698,24,24,0,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Graph) k=8,8,0.5,0.5,1.0,0.6131471927654584,0.4,3.9683000068180263,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Graph) k=8,8,0.0,0.0,0.0,0.0,0.4,3.3127000206150115,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Graph) k=8,8,0.5,0.25,0.25,0.2640681225725909,0.6,3.5542999976314604,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Graph) k=8,8,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.2,3.4786000032909214,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Graph) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,3.125599992927164,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Graph) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.6,4.1597000090405345,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Graph) k=8,8,1.0,1.0,1.0,1.0,0.6,3.153099969495088,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Graph) k=8,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.6,5.183100001886487,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Graph) k=8,8,0.0,0.0,0.0,0.0,0.16666666666666666,3.167400020174682,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Graph) k=8,8,1.0,1.0,1.0,1.0,0.25,4.144500009715557,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Graph) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.8,3.841100027784705,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Graph) k=8,8,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,4.198099952191114,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Graph) k=8,8,0.0,0.0,0.0,0.0,0.14285714285714285,4.039700026623905,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Graph) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.2,3.6758999922312796,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Graph) k=8,8,0.5,1.0,1.0,0.6131471927654584,0.0,2.9269999940879643,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Graph) k=8,8,1.0,0.5,1.0,1.0,1.0,4.528999968897551,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Graph) k=8,8,1.0,0.5,1.0,1.0,0.8333333333333334,3.823000006377697,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Graph) k=8,8,1.0,0.4,1.0,1.0,1.0,3.986199968494475,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Graph) k=8,8,1.0,0.5,1.0,1.0,0.8,4.026699985843152,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Graph) k=8,8,1.0,0.5,0.5,0.6934264036172708,0.5,3.9539000135846436,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Graph) k=8,8,0.675,0.5741666666666666,0.7541666666666667,0.6624762437774034,0.4832142857142857,3.812394998385571,24,0,24,,{},off,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,43.73810003744438,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,42.161099961958826,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,36.33229999104515,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,34.388900035992265,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,37.46670001419261,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,36.82699997443706,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,32.43070002645254,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,42.073999997228384,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,35.11220001382753,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,36.70420002890751,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,36.643599974922836,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,35.46609997283667,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,57.73649999173358,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,30.324299994390458,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,69.3707000464201,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,41.15589999128133,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,57.85990000003949,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,38.54859998682514,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,37.31270000571385,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,31.189800007268786,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=60 reranker=lexical,3,0.75,0.575,0.8416666666666666,0.737958118372228,0.4848809523809524,40.642165002645925,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,54.87519997404888,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,44.56690000370145,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,51.32589995628223,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,66.97570002870634,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,31.981199979782104,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,73.4089000034146,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,29.272500018123537,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,40.99269997095689,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,50.425799970980734,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,35.49500001827255,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,67.67479999689385,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,29.872699989937246,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,55.81940000411123,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,41.266400017775595,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,61.13139999797568,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,66.5584999951534,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,30.495400016661733,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,53.705799975432456,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,49.416699970606714,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,76.38440001755953,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=45/55 rrf=30 reranker=lexical,3,0.75,0.575,0.8416666666666666,0.737958118372228,0.4848809523809524,50.58226499531884,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,48.520300013478845,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,55.777099973056465,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,36.80719999829307,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,48.11500001233071,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,40.54170002928004,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,39.300200005527586,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,31.975200050510466,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,40.101799997501075,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,44.25079998327419,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,56.91130005288869,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,81.86639996711165,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,38.60050003277138,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,59.343600005377084,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,32.422599964775145,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,42.70600003656,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,42.5682999775745,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,36.878000013530254,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,43.33229997428134,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,39.25770003115758,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,34.73050001775846,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=60 reranker=lexical,3,0.75,0.575,0.8416666666666666,0.737958118372228,0.4848809523809524,44.700325006851926,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,50.22979999193922,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,52.6887999731116,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,34.84239999670535,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,35.98810004768893,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,31.25439997529611,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,40.016000042669475,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,42.50880004838109,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,33.11820002272725,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,34.085999999661,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,38.260200002696365,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,62.70539999241009,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,35.73030000552535,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,42.17569995671511,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,34.43960001459345,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,33.895500004291534,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,34.83590000541881,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,34.215399995446205,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,41.29409999586642,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.8,38.3929000236094,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,33.02630002144724,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=50/50 rrf=30 reranker=lexical,3,0.75,0.575,0.8416666666666666,0.737958118372228,0.4848809523809524,39.18519000581,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,44.21799996634945,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,36.852900055237114,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,31.71359997941181,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,35.63529998064041,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,26.474100013729185,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,29.745299951173365,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,35.27669998584315,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,39.128399977926165,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,25.722499995026737,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,34.27970001939684,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,37.166699999943376,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,30.748599965590984,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,35.451199975796044,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,26.25690004788339,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,34.83429999323562,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,29.62480002315715,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,26.399900030810386,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,30.458300025202334,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.8,28.011600021272898,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,24.773099983576685,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=60 reranker=lexical,3,0.75,0.575,0.8166666666666667,0.7266433990956822,0.4848809523809524,32.138594999560155,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,27.020799985621125,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.2,29.663799970876426,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,22.63859997037798,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.0,27.98620000248775,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,28.64860004046932,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,34.92609999375418,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,30.876300006639212,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,35.348700010217726,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,29.742499988060445,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,32.6830999692902,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.6,26.483000023290515,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,27.563199982978404,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,29.727499990258366,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.4,23.848399985581636,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.6,31.702700012829155,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,32.51129999989644,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,22.656399989500642,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,29.72230000887066,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.8,31.170199974440038,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.5,26.736000028904527,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=def w=60/40 rrf=30 reranker=lexical,3,0.75,0.575,0.8166666666666667,0.7266433990956822,0.4848809523809524,29.082784996717237,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,39.860200020484626,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,35.10660002939403,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,26.47159999469295,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,36.29319998435676,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,29.844300006516278,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,44.21700001694262,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,27.702599996700883,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,33.44550001202151,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,34.35099998023361,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,32.247999974060804,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,28.2407000195235,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,25.34549997653812,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,32.6653000083752,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,29.25259998301044,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,32.75670000584796,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,36.64299997035414,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,28.22169999126345,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,33.704300003591925,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,35.427300026640296,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,33.4024999756366,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=60 reranker=lexical,3,0.775,0.5833333333333333,0.7916666666666667,0.7266433990956822,0.4298809523809524,32.759979998809285,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,48.059599997941405,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,31.63220005808398,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,27.879000001121312,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,36.473299958743155,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,25.365800014697015,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,32.33319998253137,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,26.75019996240735,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,29.93299998342991,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,24.45530000841245,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,35.57670000009239,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,34.20589998131618,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,28.274499985855073,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,32.30770002119243,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,26.07929997611791,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,40.58279999298975,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,33.581099996808916,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,25.928999995812774,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,49.580999999307096,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,50.252199987880886,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,31.189800007268786,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=45/55 rrf=30 reranker=lexical,3,0.775,0.5833333333333333,0.7916666666666667,0.7266433990956822,0.4298809523809524,33.52207999560051,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,32.50600001774728,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,39.11120002157986,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,29.473000031430274,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,39.89189997082576,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,33.92839996377006,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,37.87470003589988,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,32.29790000477806,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,38.08790002949536,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,34.05950003070757,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,47.121700015850365,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,34.27379997447133,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,35.6566000264138,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,44.02590001700446,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,38.944499974604696,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,46.72580002807081,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,38.53610000805929,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,29.83209997182712,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,33.06909999810159,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,31.679200008511543,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,27.079499966930598,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=60 reranker=lexical,3,0.775,0.5833333333333333,0.7916666666666667,0.7266433990956822,0.4298809523809524,36.208740004803985,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,32.516200037207454,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,30.58910003164783,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,32.15250000357628,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,32.84569998504594,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,24.08780000405386,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,32.734000007621944,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,29.39779998268932,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.6,30.76829999918118,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,26.645799982361495,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,32.59089996572584,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,33.145699999295175,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,31.552599975839257,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,37.151900003664196,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,29.34889995958656,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,31.662900000810623,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,1.0,35.532700014300644,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,27.462200028821826,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,1.0,31.486499996390194,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,36.20569995837286,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,26.450000004842877,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=50/50 rrf=30 reranker=lexical,3,0.775,0.5833333333333333,0.7916666666666667,0.7266433990956822,0.4298809523809524,31.216359997051768,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,38.575699960347265,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,31.886000011581928,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,32.5891999527812,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,30.098199960775673,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,38.194899971131235,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,36.406599974725395,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,27.046400005929172,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.6,34.00299994973466,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,29.040199995506555,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,32.19659999012947,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,37.48449997510761,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,27.71809999831021,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,32.32539998134598,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,31.08859999338165,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,31.65760001866147,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.8333333333333334,31.037200009450316,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,31.489600019995123,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.5,30.548300012014806,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,33.83550001308322,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,24.981700000353158,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=60 reranker=lexical,3,0.725,0.55,0.7666666666666667,0.6766433990956823,0.39654761904761904,32.110164989717305,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,36.129699961747974,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.2,31.68099996400997,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,23.990600020624697,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.2,36.41669999342412,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.0,34.08899996429682,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,37.423100031446666,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.6,31.65139997145161,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,0.9197207891481876,0.6,43.81089995149523,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,24.713699996937066,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,1.0,1.0,1.0,0.25,33.5408000391908,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.6,33.509999979287386,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,1.0,1.0,0.5714285714285714,32.0513000478968,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.0,0.0,0.0,0.0,0.14285714285714285,33.7454000255093,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.2,27.54729997832328,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,32.25450002355501,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.8333333333333334,33.02550001535565,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,1.0,0.6666666666666666,0.5,0.6934264036172708,0.6666666666666666,25.319800013676286,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,1.0,0.6131471927654584,0.5,31.471900001633912,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.3333333333333333,0.3065735963827292,0.8,30.31540004303679,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.5,0.3333333333333333,0.5,0.38685280723454163,0.0,28.356200025882572,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=3 tc=30 w=60/40 rrf=30 reranker=lexical,3,0.725,0.55,0.7666666666666667,0.6766433990956823,0.39654761904761904,32.0522100024391,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,33.15719997044653,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,0.5,0.2,1.0,0.6131471927654584,0.4,70.2824000036344,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,32.66230004373938,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,109.77409995393828,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,32.23990002879873,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,41.030699969269335,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,31.94909996818751,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,49.468599958345294,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,28.493699966929853,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,31.951299984939396,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,33.089399978052825,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,27.020499983336776,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,42.89819998666644,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,33.843400015030056,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,36.9718000292778,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,37.132599973119795,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,31.890700047370046,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,37.76119998656213,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,36.519200017210096,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,30.332399997860193,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=60 reranker=lexical,5,0.875,0.5241666666666667,0.8,0.7808551349494813,0.5232142857142856,40.42343499313574,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,45.89369997847825,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,0.5,0.2,1.0,0.6131471927654584,0.4,28.589900000952184,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,31.996400037314743,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,34.10560003248975,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,31.508499989286065,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,31.985300011001527,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,25.481400021817535,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,31.379399995785207,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,23.886799986939877,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,30.955899972468615,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,33.99820002960041,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,27.458299999125302,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,31.664000009186566,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,34.45279999868944,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,37.043599993921816,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,37.642400013282895,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,53.527899959590286,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,40.020299958996475,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,37.861799995880574,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,33.31379999872297,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=45/55 rrf=30 reranker=lexical,5,0.875,0.5241666666666667,0.8,0.7808551349494813,0.5232142857142856,34.138299999176525,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,40.14969995478168,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,0.5,0.2,1.0,0.6131471927654584,0.4,40.878100029658526,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,29.242000018712133,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,41.36769997421652,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,24.80630000354722,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,35.115999984554946,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,29.187000007368624,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,33.720800012815744,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,28.888800006825477,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,33.099799999035895,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,47.6325000054203,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,32.26479998556897,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,41.85090004466474,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,37.26830001687631,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,33.39390002656728,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,33.08859997196123,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,27.225199970416725,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,30.511699966154993,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,33.587199985049665,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,32.680700009223074,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=60 reranker=lexical,5,0.875,0.5241666666666667,0.8,0.7808551349494813,0.5232142857142856,34.297999998671,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,36.16550000151619,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,0.5,0.2,1.0,0.6131471927654584,0.4,29.71980004804209,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,33.53179997066036,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,35.39959999034181,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,51.26689997268841,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,36.1822999548167,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,33.636200008913875,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,37.61210001539439,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,32.58769999956712,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,36.45190002862364,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,31.85180004220456,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,31.778000004123896,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,32.80690003884956,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,24.921700009144843,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,37.000699958298355,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,41.954500018619,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,31.110300042200834,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,36.73019999405369,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,36.692699999548495,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,32.118799979798496,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=50/50 rrf=30 reranker=lexical,5,0.875,0.5241666666666667,0.8,0.7808551349494813,0.5232142857142856,34.975970003870316,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,36.74960002535954,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.2,33.38209999492392,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,35.6686000013724,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,35.411200020462275,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,29.42330000223592,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,41.7001000023447,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,29.186600004322827,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,36.14709997782484,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,33.9302999782376,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,41.1914000287652,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,39.7767000249587,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,25.631399999838322,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,35.89940001256764,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,28.32979999948293,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,31.674899975769222,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,35.366699972655624,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,35.49959999509156,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,36.40280000399798,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,56.03869998594746,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,28.180499968584627,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=60 reranker=lexical,5,0.9,0.5341666666666667,0.8,0.8001977753112083,0.5132142857142857,35.279539998737164,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,46.53579997830093,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.2,35.568299994338304,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,23.82579998811707,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,28.078600007575005,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,27.737599972169846,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,32.64429996488616,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,26.092300016898662,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,1.0,0.6,30.36689996952191,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,26.90630004508421,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,34.621300001163036,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,38.58380002202466,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,28.0660999706015,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,39.80770002817735,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,28.062299999874085,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,38.27309998450801,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,35.71229998487979,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,26.564800005871803,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,32.059499993920326,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,33.10250001959503,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,0.5,29.222499986644834,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=def w=60/40 rrf=30 reranker=lexical,5,0.9,0.5341666666666667,0.8,0.8001977753112083,0.5132142857142857,32.091589996707626,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,34.00729998247698,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,33.2786999642849,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,26.07919997535646,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,42.749400017783046,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,32.46080002281815,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,36.993700021412224,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,30.02469998318702,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,40.39460001513362,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,23.189499974250793,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,34.97520001837984,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,42.12599998572841,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,31.12240001792088,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,32.11800003191456,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,24.477300001308322,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,35.61189997708425,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,34.99700000975281,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,27.007299999240786,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,36.581800028216094,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,37.421599961817265,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,36.6797000169754,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=60 reranker=lexical,5,0.9,0.515,0.775,0.7835255750019072,0.5232142857142856,33.61480500025209,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,48.18650003289804,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,58.89859999297187,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,45.0635000015609,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,41.99350002454594,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,53.51719999453053,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,44.158299977425486,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,35.117899999022484,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,58.032100030686706,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,47.81819996424019,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,40.625100024044514,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,38.802499999292195,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,34.519199980422854,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,41.146299976389855,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,40.0495000067167,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,40.995399991516024,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,42.62839996954426,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,30.27350001502782,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,48.35669999010861,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,48.007800010964274,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,30.91359999962151,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=45/55 rrf=30 reranker=lexical,5,0.9,0.515,0.775,0.7835255750019072,0.5232142857142856,43.45518999907654,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,45.34499999135733,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,34.409500018227845,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,28.743500006385148,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,40.78730003675446,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,32.30039996560663,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,38.91920001478866,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,22.82429998740554,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,27.8806000133045,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,26.93849999923259,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,30.380700016394258,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,34.33809999842197,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,27.75490004569292,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,41.737599996849895,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,33.806600025855005,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,44.362800021190196,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,46.36819998268038,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,42.49830002663657,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,37.848500011023134,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,41.571500012651086,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,31.69610002078116,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=60 reranker=lexical,5,0.9,0.515,0.775,0.7835255750019072,0.5232142857142856,35.52558000956196,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,36.23410000000149,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,34.90679996320978,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,30.172600003425032,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,32.79639995889738,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,28.524299967102706,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,32.364999991841614,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,30.584099993575364,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,33.430400013457984,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,28.444199997466058,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,37.00150002259761,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,36.88070003408939,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,36.461299983784556,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,40.41680000955239,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,29.85150000313297,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,33.73909997753799,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,34.55569996731356,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,26.87930001411587,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,1.0,35.160599974915385,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,37.02699998393655,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,26.761899993289262,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=50/50 rrf=30 reranker=lexical,5,0.9,0.515,0.775,0.7835255750019072,0.5232142857142856,33.10966499266215,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,42.29859996121377,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,37.01299999374896,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,32.972299959510565,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,33.24620000785217,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,25.245799974072725,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,34.879400045610964,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,31.075500010047108,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,38.07980002602562,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,31.837699993047863,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,31.44980000797659,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,40.75889999512583,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,30.167500022798777,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,40.72390001965687,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,28.698100009933114,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,50.8162000332959,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,1.0,33.08470000047237,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,29.401800013147295,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,43.99599996395409,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,38.6417000554502,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,31.394499994348735,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=60 reranker=lexical,5,0.9,0.515,0.75,0.7660716214922639,0.5232142857142856,35.289070004364476,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,47.351200017146766,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.4,40.41660000802949,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.6,27.727800013963133,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.2,46.263900003395975,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.0,45.257800025865436,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,42.3810999491252,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.6,36.14919999381527,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.5,1.0,0.9197207891481876,0.6,45.10310001205653,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,41.874100046698004,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,1.0,1.0,1.0,0.25,108.196500048507,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,0.8,46.41139996238053,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,1.0,0.5714285714285714,34.436299989465624,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,0.0,0.0,0.0,0.0,0.14285714285714285,34.91059999214485,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.5,0.5,0.6934264036172708,0.4,31.1622999724932,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,35.870199964847416,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6509209298071326,1.0,36.49770002812147,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,31.33450000314042,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,1.0,0.9197207891481876,1.0,38.522400020156056,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,35.61680001439527,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,1.0,0.4,0.5,0.6240505200038379,0.5,24.548000015784055,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=5 tc=30 w=60/40 rrf=30 reranker=lexical,5,0.9,0.515,0.75,0.7660716214922639,0.5232142857142856,41.501575004076585,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,38.454300025478005,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,34.43709999555722,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,30.21429997170344,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,36.89019999001175,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,26.603299949783832,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,35.20000004209578,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,28.231200005393475,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,41.14879999542609,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,31.49429999757558,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,33.907399978488684,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,31.677099992521107,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,24.137900036294013,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,40.14589998405427,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,30.4926999961026,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,33.61799998674542,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,34.366699983365834,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,31.391499971505255,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,66.94119999883696,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,39.70560000743717,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,28.84089999133721,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=60 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,34.894919994985685,,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,40.78450001543388,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,36.79100004956126,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,27.07499999087304,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,30.20839998498559,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,27.897699968889356,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,31.627099961042404,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,29.510199965443462,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,32.552999968174845,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,27.883100032340735,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,30.02619999460876,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,29.438700003083795,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,34.673399990424514,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,34.92710000136867,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,25.445500039495528,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,30.247799993958324,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,30.126199999358505,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,24.99190001981333,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,32.255399972200394,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,31.28270001616329,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,26.39299997827038,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=45/55 rrf=30 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,30.706894997274503,,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,37.56909997900948,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,51.29269999451935,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,27.81110000796616,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,35.651099984534085,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,31.282200012356043,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,33.649599994532764,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,25.89420002186671,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,29.042900016065687,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,26.739200053270906,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,28.921699966304004,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,27.32689998811111,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,26.294499984942377,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,27.578999986872077,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,25.779700023122132,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,35.20990000106394,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,33.887900004629046,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,29.385300003923476,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,38.91379997367039,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,33.822799974586815,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,27.68979995744303,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=60 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,31.68716999643948,,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,35.526399966329336,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,31.969100004062057,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,25.084800028707832,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,31.00829996401444,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,29.02760001597926,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,31.98030003113672,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,27.411600050982088,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,32.39359997678548,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,27.553100022487342,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,33.47650001524016,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,36.14380001090467,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,26.07919997535646,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,27.66740001970902,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,33.62949995789677,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,34.676200011745095,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,27.467200008686632,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,26.564800005871803,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,30.85720003582537,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,33.653799968305975,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,25.72510001482442,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=50/50 rrf=30 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,30.394775004242547,,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,41.205900022760034,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,37.208099965937436,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,26.748400006908923,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,33.06460002204403,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,27.05119998427108,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,29.831000021658838,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,26.419100002385676,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,35.50410002935678,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,24.222299980465323,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,30.78169998480007,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,27.67759998096153,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,25.887599971611053,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,34.26029998809099,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,30.463000002782792,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,36.362600047141314,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,33.06960000190884,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,32.39240002585575,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,35.11799999978393,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,32.30189997702837,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,24.38730001449585,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=60 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,31.19783500151243,,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,35.983100009616464,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,28.518800041638315,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,27.093100012280047,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,31.102399982046336,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,26.173299993388355,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,51.00989999482408,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,29.770099965389818,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,1.0,0.6,50.07990001467988,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,0.5,0.5,1.0,0.6131471927654584,0.16666666666666666,40.45390000101179,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,44.767399958800524,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,33.56730000814423,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,30.97900003194809,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,29.924899979960173,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,28.610099980141968,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,0.5,0.25,0.3333333333333333,0.3065735963827292,0.6,31.14189999178052,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,1.0,34.4092000159435,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,36.931099952198565,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,1.0,1.0,38.25969999888912,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,40.288600022904575,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,27.265599987003952,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=def w=60/40 rrf=30 reranker=lexical,8,0.9,0.5241666666666667,0.8,0.7988542548210436,0.5232142857142856,34.816464997129515,,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,29.777700023259968,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,31.44709998741746,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,25.129699963144958,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,33.21439999854192,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,26.841700018849224,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,41.74710001097992,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,31.195799994748086,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,33.07870001299307,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,27.80229999916628,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,42.327299946919084,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,31.030400015879422,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,31.293199979700148,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,30.719200032763183,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,37.09190001245588,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,29.435400036163628,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,34.139799943659455,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,30.910199973732233,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,1.0,30.825599969830364,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,31.48829995188862,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,25.712299975566566,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=60 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7700855820348546,0.5232142857142856,31.760404992382973,30,,,60,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,33.2062000525184,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,34.63370003737509,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,29.94470001431182,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,36.33889998309314,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,27.890699973795563,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,30.544299981556833,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,22.252700000535697,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,31.34159999899566,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,26.20669995667413,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,33.42289995634928,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,34.3210999853909,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,28.75669999048114,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,32.22150000510737,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,31.919099972583354,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,33.69630000088364,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,31.651900033466518,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,27.046000002883375,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,1.0,33.78779999911785,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,32.98489999724552,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,28.845699969679117,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=45/55 rrf=30 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7700855820348546,0.5232142857142856,31.05066999560222,30,,,30,"{'vector': 0.45, 'graph': 0.55}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,44.331800017971545,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,34.39879999496043,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,23.824899981264025,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,31.065499992109835,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,26.72680001705885,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,47.635799972340465,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,23.66399997845292,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,31.995900033507496,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,27.244600001722574,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,32.6645000022836,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,30.84969997871667,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,23.774200002662838,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,29.74600001471117,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,27.36349997576326,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,28.914400027133524,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,27.065399975981563,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,25.091999967116863,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,1.0,32.50790003221482,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,27.702200051862746,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,32.17989997938275,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=60 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7700855820348546,0.5232142857142856,30.437389999860898,30,,,60,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,39.64520001318306,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,32.79800002928823,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,24.200000043492764,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,31.508799991570413,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,26.859300036448985,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,28.346600010991096,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,25.356900005135685,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,33.30230002757162,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,24.84950004145503,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,32.90320001542568,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,30.03359999274835,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,25.10289999190718,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,34.24040001118556,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,30.389999970793724,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,37.5544999842532,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,26.4156999764964,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,23.826100048609078,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,1.0,34.113299974706024,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,31.098600011318922,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,22.802899999078363,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=50/50 rrf=30 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7700855820348546,0.5232142857142856,29.767390008782968,30,,,30,"{'vector': 0.5, 'graph': 0.5}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,36.181700008455664,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,36.811300029512495,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,25.238000031094998,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,27.82020001905039,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,29.127300018444657,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,34.0550999972038,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,32.99799998058006,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,35.81440000561997,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,29.181400022935122,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,30.50900000380352,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,31.062099966220558,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,29.052399971988052,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,31.22649999568239,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,27.199600008316338,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,34.17749999789521,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,36.79729998111725,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,58.81350004347041,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,1.0,0.9197207891481876,1.0,34.71410000929609,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,32.102900033351034,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,25.394199998117983,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=60 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7660716214922639,0.5232142857142856,32.9138250061078,30,,,60,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+1,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.6666666666666666,1.0,0.9197207891481876,0.4,28.254500008188188,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+2,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.4,27.100900013465434,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+3,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.6,32.07209997344762,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+4,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.2,32.71689999382943,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+5,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.0,27.71639998536557,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+6,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,30.990400002337992,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+7,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.6,25.176399969495833,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+8,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.5,1.0,0.9197207891481876,0.6,31.80709999287501,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+9,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,0.5,0.3333333333333333,0.5,0.38685280723454163,0.16666666666666666,26.96059999288991,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+10,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,1.0,1.0,1.0,0.25,30.480200017336756,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+11,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,1.0,0.9197207891481876,0.8,31.410299998242408,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+12,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,1.0,0.5714285714285714,32.73209999315441,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+13,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,0.0,0.0,0.0,0.0,0.14285714285714285,31.880499969702214,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+14,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.5,0.5,0.6934264036172708,0.4,25.11170000070706,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+15,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,0.5,0.2,0.3333333333333333,0.3065735963827292,0.6,40.74760002549738,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+16,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6509209298071326,1.0,36.83299996191636,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+17,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8333333333333334,31.2129000085406,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+18,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,1.0,0.9197207891481876,1.0,29.509999963920563,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+19,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.4,0.3333333333333333,0.5706417189553201,0.8,32.9508000286296,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+20,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,1.0,0.3333333333333333,0.5,0.6240505200038379,0.5,24.810299975797534,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150
+MEAN,Neo4j (Hybrid) k=8 tc=30 w=60/40 rrf=30 reranker=lexical,8,0.9,0.49833333333333335,0.75,0.7660716214922639,0.5232142857142856,30.523734993766993,30,,,30,"{'vector': 0.6, 'graph': 0.4}",lexical,intfloat/multilingual-e5-small,1000,150

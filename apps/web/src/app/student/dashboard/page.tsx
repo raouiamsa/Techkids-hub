@@ -140,12 +140,24 @@ export default function StudentDashboardPage() {
                   : 0;
 
                 return (
-                  <Card key={enrollment.id} className="group flex flex-col rounded-3xl overflow-hidden hover:shadow-md transition-shadow">
-                    <CardContent className="p-6 flex-1 flex flex-col">
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 line-clamp-1">
+                  <Card key={enrollment.id} className="group flex flex-col rounded-3xl overflow-hidden hover:shadow-md transition-shadow relative">
+                    {/* Circular Progress Badge */}
+                    <div className="absolute top-4 right-4 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-slate-800 shadow-md border border-slate-100 dark:border-slate-700">
+                      <svg className="w-10 h-10 transform -rotate-90">
+                        <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="3" fill="transparent" className="text-slate-200 dark:text-slate-700" />
+                        <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="3" fill="transparent"
+                                strokeDasharray={100}
+                                strokeDashoffset={100 - avgProgress}
+                                className="text-blue-600 dark:text-blue-400 transition-all duration-1000" />
+                      </svg>
+                      <span className="absolute text-[10px] font-bold text-slate-700 dark:text-slate-200">{avgProgress}%</span>
+                    </div>
+
+                    <CardContent className="p-6 flex-1 flex flex-col pt-10">
+                      <h3 className="text-xl font-bold text-white mb-2 pr-10">
                         {enrollment.course?.title || "Cours inconnu"}
                       </h3>
-                      <p className="text-sm text-slate-500 mb-6">
+                      <p className="text-sm text-slate-400 mb-6">
                         Inscrit depuis le {new Date(enrollment.enrolledAt).toLocaleDateString('fr-FR')}
                       </p>
 

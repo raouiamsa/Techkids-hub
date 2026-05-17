@@ -156,15 +156,34 @@ export class DraftsService {
 
     if (!draft) throw new Error('Brouillon introuvable');
 
-    // On récupère la dernière version du contenu généré
+    this.logger.log(`Publication du brouillon ${draftId} — status: ${draft.status}`);
+
+    // Parsing robuste du contenu généré par Sophie Chen
     let courseData: any = {};
-    const contentArray = draft.content as any[] | null;
-    if (contentArray && contentArray.length > 0) {
-      courseData = contentArray[contentArray.length - 1];
+    try {
+      const contentArray = draft.content as any[] | null;
+      if (contentArray && contentArray.length > 0) {
+        let lastEntry = contentArray[contentArray.length - 1];
+        // Si c'est encore une string JSON, on la parse
+        if (typeof lastEntry === 'string') {
+          lastEntry = JSON.parse(lastEntry);
+        }
+        // Si c'est un tableau imbriqué, on prend le dernier
+        if (Array.isArray(lastEntry)) {
+          lastEntry = lastEntry[lastEntry.length - 1];
+          if (typeof lastEntry === 'string') lastEntry = JSON.parse(lastEntry);
+        }
+        courseData = lastEntry || {};
+      }
+    } catch (e: any) {
+      this.logger.error(`Erreur parsing content du draft ${draftId}: ${e.message}`);
+      courseData = {}; // On continue avec un cours vide plutôt que de crasher
     }
 
-    const modules = courseData.modules || [];
+    const modules = Array.isArray(courseData.modules) ? courseData.modules : [];
     const title = courseData.courseTitle || draft.title || draft.source?.title || 'Sans titre';
+
+    this.logger.log(`Cours à créer: "${title}" avec ${modules.length} modules`);
 
     // 1. Création du cours réel (Table Course)
     const course = await this.prisma.course.create({
@@ -182,40 +201,52 @@ export class DraftsService {
 
     // 2. Itération sur les modules et création des entités
     for (const [idx, m] of modules.entries()) {
-      const createdModule = await this.prisma.module.create({
-        data: {
-          title: m.title || `Module ${idx + 1}`,
-          order: m.order || idx + 1,
-          content: m.content || '',
-          courseId: course.id,
-        },
-      });
+      try {
+        // Normalisation du content (peut être array ou string)
+        let moduleContent = m.content || '';
+        if (Array.isArray(moduleContent)) moduleContent = moduleContent.join('\n\n');
+        if (typeof moduleContent === 'object') moduleContent = JSON.stringify(moduleContent);
 
-      // Importation des Quiz (Texte)
-      const exercisesText = Array.isArray(m.exercises_text) ? m.exercises_text : [];
-      for (const ex of exercisesText) {
-        await this.prisma.exercise.create({
+        const createdModule = await this.prisma.module.create({
           data: {
-            title: ex.question ? ex.question.substring(0, 50) : 'Quiz rapide',
-            instructions: JSON.stringify(ex),
-            exerciseType: ExerciseType.QUIZ,
-            moduleId: createdModule.id,
+            title: m.title || `Module ${idx + 1}`,
+            order: m.order || idx + 1,
+            content: String(moduleContent),
+            courseId: course.id,
           },
         });
-      }
 
-      // Importation des Défis de Code (Expert Qwen)
-      const exercisesCode = Array.isArray(m.exercises_code) ? m.exercises_code : [];
-      for (const codeEx of exercisesCode) {
-        await this.prisma.exercise.create({
-          data: {
-            title: codeEx.title || 'Défi de programmation',
-            instructions: codeEx.instructions || '',
-            solution: codeEx.solution || '',
-            exerciseType: ExerciseType.CODE_CHALLENGE,
-            moduleId: createdModule.id,
-          },
-        });
+        // Importation des Quiz (Texte)
+        const exercisesText = Array.isArray(m.exercises_text) ? m.exercises_text : [];
+        for (const ex of exercisesText) {
+          await this.prisma.exercise.create({
+            data: {
+              title: ex.question ? String(ex.question).substring(0, 50) : 'Quiz rapide',
+              instructions: JSON.stringify(ex),
+              exerciseType: ExerciseType.QUIZ,
+              moduleId: createdModule.id,
+            },
+          });
+        }
+
+        // Importation des Défis de Code
+        const exercisesCode = Array.isArray(m.exercises_code) ? m.exercises_code : [];
+        for (const codeEx of exercisesCode) {
+          await this.prisma.exercise.create({
+            data: {
+              title: codeEx.title || 'Défi de programmation',
+              instructions: codeEx.instructions || '',
+              solution: codeEx.solution || '',
+              exerciseType: ExerciseType.CODE_CHALLENGE,
+              moduleId: createdModule.id,
+            },
+          });
+        }
+
+        this.logger.log(`Module ${idx + 1} créé : "${m.title}" avec ${exercisesText.length} quiz et ${exercisesCode.length} défis`);
+      } catch (moduleErr: any) {
+        this.logger.error(`Erreur création module ${idx + 1}: ${moduleErr.message}`);
+        // On continue pour les autres modules
       }
     }
 
@@ -225,6 +256,7 @@ export class DraftsService {
       data: { status: DraftStatus.APPROVED },
     });
 
+    this.logger.log(`Publication réussie — Course ID: ${course.id}`);
     return { courseId: course.id, success: true };
   }
 }

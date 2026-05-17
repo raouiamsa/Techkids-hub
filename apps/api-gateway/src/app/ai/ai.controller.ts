@@ -28,6 +28,8 @@ class GenerateCourseDto {
   @ApiProperty({ default: false, required: false }) @IsOptional() @IsBoolean() include_code_exercises?: boolean;
   @ApiProperty({ default: 'Python', required: false }) @IsOptional() @IsString() programming_language?: string;
   @ApiProperty({ required: false }) @IsOptional() @IsString() teacher_notes?: string;
+  // 🌟 Syllabus approuvé (et potentiellement modifié) par le professeur
+  @ApiProperty({ required: false }) @IsOptional() @IsString() existing_syllabus?: string;
 }
 
 class RectifyDraftDto extends GenerateCourseDto {
@@ -78,7 +80,7 @@ export class AiController {
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
       },
     }),
-    limits: { fileSize: 15 * 1024 * 1024 }, // Limite de 15 Mo par fichier
+    limits: { fileSize: 100 * 1024 * 1024 }, // Limite de 100 Mo par fichier
   }))
   @ApiOperation({ summary: 'Uploader une source et lancer l\'indexation vectorielle' })
   async uploadSource(
@@ -154,8 +156,10 @@ export class AiController {
       this.httpService.post(`${this.AI_BRAIN_URL}/generate`, {
         ...data,
         draft_id: draft.id,
-        initial_prompt: fullInitialPrompt, // Passé aux agents pour contexte RAG
+        initial_prompt: fullInitialPrompt,
         internal_secret: this.INTERNAL_AI_SECRET,
+        // 🌟 Passage du syllabus approuvé si fourni → l'architecte le bypasse et va directement au rédacteur
+        existing_syllabus: data.existing_syllabus || null,
       }).subscribe({
         next: (response) => {
           // Mise à jour finale automatique une fois que Python a terminé

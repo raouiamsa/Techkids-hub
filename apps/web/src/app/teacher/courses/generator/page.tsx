@@ -589,6 +589,12 @@ export default function CourseGeneratorPage() {
                 onChange={async (e) => {
                   const file = e.target.files?.[0];
                   if (!file) return;
+                  // Vérification côté client (100Mo max)
+                  if (file.size > 100 * 1024 * 1024) {
+                    setError(`Le fichier "${file.name}" est trop lourd (${(file.size / 1024 / 1024).toFixed(1)} Mo). Maximum : 100 Mo.`);
+                    e.target.value = '';
+                    return;
+                  }
                   try { await uploadFile(file); }
                   catch (err: any) { setError(err.message); }
                   e.target.value = '';
@@ -1205,9 +1211,10 @@ export default function CourseGeneratorPage() {
         <CardContent className="p-6">
           <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Titre du cours</label>
           <input
-            className="w-full text-xl font-black bg-transparent outline-none border-b-2 border-transparent focus:border-blue-400 transition pb-1 dark:text-white"
+            className="w-full text-xl font-black bg-transparent outline-none border-b-2 border-slate-600 focus:border-blue-400 transition pb-1 text-white placeholder:text-slate-500"
             value={syllabusTitle}
             onChange={e => setSyllabusTitle(e.target.value)}
+            placeholder="Titre du cours..."
           />
         </CardContent>
       </Card>

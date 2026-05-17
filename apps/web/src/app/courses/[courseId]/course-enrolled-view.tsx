@@ -5,10 +5,11 @@ import { useAuth } from '../../contexts/auth.context';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
-  BookOpen, ChevronRight, CheckCircle2, Lock, PlayCircle,
+  BookOpen, ChevronDown, CheckCircle2, Lock, PlayCircle,
   ArrowLeft, Star, Trophy, BookText, AlertCircle
 } from 'lucide-react';
 import { Button } from '@org/ui-components';
+import ReactMarkdown from 'react-markdown';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
@@ -47,6 +48,8 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
   const [isLoading, setIsLoading] = useState(true);
   const [enrollError, setEnrollError] = useState<string | null>(null);
   const [isEnrolling, setIsEnrolling] = useState(false);
+  // Accordion : ID du module ouvert (null = tous fermés)
+  const [expandedModuleId, setExpandedModuleId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user || !token) {
@@ -76,7 +79,7 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
 
         if (progRes.ok) {
           const progs = await progRes.json();
-          setProgressions(progs.filter((p: any) => 
+          setProgressions(progs.filter((p: any) =>
             modules.some(m => m.id === p.moduleId)
           ));
         }
@@ -126,7 +129,6 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
     return progressions.find(p => p.moduleId === moduleId);
   };
 
-  // Nombre de modules complétés à 100% / nombre total de modules
   const completedModules = modules.filter(m => {
     const prog = progressions.find(p => p.moduleId === m.id);
     return prog?.completionPercent === 100 || prog?.status === 'COMPLETED';
@@ -143,7 +145,6 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
     );
   }
 
-  // ─── VIEW: NOT ENROLLED ───────────────────────────────────────────────────
   const hasAccess = isEnrolled || user?.role === 'TEACHER' || user?.role === 'ADMIN';
 
   if (!hasAccess) {
@@ -173,7 +174,6 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
     );
   }
 
-  // ─── VIEW: ENROLLED ──────────────────────────────────────────────────────
   return (
     <div className="w-full space-y-8">
       {/* Overall Progress Bar */}
@@ -214,13 +214,18 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
                 const prog = getModuleProgress(module.id);
                 const percent = prog?.completionPercent ?? 0;
                 const status = prog?.status ?? 'NOT_STARTED';
+                const isExpanded = expandedModuleId === module.id;
 
                 return (
                   <div
                     key={module.id}
-                    className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow"
+                    className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow"
                   >
-                    <div className="p-5 flex items-center gap-4">
+                    {/* ─── En-tête cliquable du module ─── */}
+                    <button
+                      onClick={() => setExpandedModuleId(isExpanded ? null : module.id)}
+                      className="w-full p-5 flex items-center gap-4 text-left group"
+                    >
                       {/* Status Icon */}
                       <div className="shrink-0">
                         {status === 'COMPLETED' ? (
@@ -236,15 +241,14 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
 
                       {/* Module Info */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-slate-900 dark:text-white text-lg truncate">
+                        <h3 className="font-semibold text-slate-900 dark:text-white text-lg truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                           {module.title}
                         </h3>
-                        {module.content && (
+                        {!isExpanded && module.content && (
                           <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-1">
-                            {module.content}
+                            {module.content.replace(/[#*`>\[\]]/g, '').substring(0, 120)}...
                           </p>
                         )}
-                        {/* Mini Progress Bar */}
                         {percent > 0 && (
                           <div className="mt-2 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden max-w-xs">
                             <div
@@ -263,28 +267,48 @@ export function CourseEnrolledView({ courseId, courseTitle, modules }: CourseVie
                         </div>
                       )}
 
-                      {/* Arrow */}
-                      <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all shrink-0" />
-                    </div>
+                      {/* Chevron accordéon */}
+                      <ChevronDown
+                        className={`h-5 w-5 text-slate-400 group-hover:text-blue-500 transition-all duration-300 shrink-0 ${isExpanded ? 'rotate-180 text-blue-500' : ''}`}
+                      />
+                    </button>
 
-                    {/* Exercises Sub-list (collapsed by default, shown on hover or expanded) */}
-                    {module.exercises && module.exercises.length > 0 && (
-                      <div className="px-5 pb-5 pt-0 border-t border-slate-100 dark:border-slate-800 mt-0">
-                        <div className="grid grid-cols-1 gap-2 mt-3">
-                          {module.exercises.map((exercise) => (
-                            <Link
-                              key={exercise.id}
-                              href={`/courses/${courseId}/modules/${module.id}/exercises/${exercise.id}`}
-                              className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
-                            >
-                              <div className="h-6 w-6 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
-                                <Lock className="h-3 w-3 text-blue-500" />
-                              </div>
-                              {exercise.title}
-                              <span className="ml-auto text-xs text-slate-400 uppercase tracking-wide">{exercise.exerciseType.replace('_', ' ')}</span>
-                            </Link>
-                          ))}
-                        </div>
+                    {/* ─── Contenu du module (accordéon) ─── */}
+                    {isExpanded && (
+                      <div className="border-t border-slate-100 dark:border-slate-800">
+                        {module.content ? (
+                          <div className="px-8 py-6 prose prose-slate dark:prose-invert max-w-none text-sm leading-relaxed bg-slate-50 dark:bg-slate-900/50">
+                            <ReactMarkdown>{module.content}</ReactMarkdown>
+                          </div>
+                        ) : (
+                          <div className="px-8 py-6 text-slate-400 italic text-sm">
+                            Le contenu de ce module est en cours de génération...
+                          </div>
+                        )}
+
+                        {/* Exercices */}
+                        {module.exercises && module.exercises.length > 0 && (
+                          <div className="px-5 pb-5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                            <p className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">
+                              Exercices
+                            </p>
+                            <div className="grid grid-cols-1 gap-2">
+                              {module.exercises.map((exercise) => (
+                                <Link
+                                  key={exercise.id}
+                                  href={`/courses/${courseId}/modules/${module.id}/exercises/${exercise.id}`}
+                                  className="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-800/50 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300 border border-slate-100 dark:border-slate-700"
+                                >
+                                  <div className="h-6 w-6 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
+                                    <Lock className="h-3 w-3 text-blue-500" />
+                                  </div>
+                                  {exercise.title}
+                                  <span className="ml-auto text-xs text-slate-400 uppercase tracking-wide">{exercise.exerciseType.replace('_', ' ')}</span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>

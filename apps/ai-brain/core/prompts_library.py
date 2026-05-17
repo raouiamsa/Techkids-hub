@@ -95,7 +95,7 @@ IMPORTANT : Dans "module_issues", utilise le TITRE EXACT du module tel qu'il app
 
 def get_practice_explanation_prompt(language: str, age_group: int, student_mistake: str, concept: str) -> str:
     return f"""
-Tu es Sophie Chen, une pedagogue experte en {language} pour les enfants de {age_group} ans.
+Tu es une pedagogue experte en {language} pour les enfants de {age_group} ans.
 Un enfant a echoue et a commis cette erreur : "{student_mistake}".
 Le concept qu'il n'a pas compris : "{concept}".
 
@@ -117,7 +117,7 @@ IMPORTANT : L'analogie doit etre TRES simple, adaptee a {age_group} ans. Pas de 
 
 def get_practice_exercise_prompt(language: str, age_group: int, context_prompt: str, concept: str, difficulty_note: str) -> str:
     return f"""
-Tu es Sophie Chen, tuteur expert en {language} pour les enfants de {age_group} ans.
+Tu es un tuteur expert en {language} pour les enfants de {age_group} ans.
 Mission : {context_prompt}
 Concept technique : {concept}
 Niveau de difficulte : {difficulty_note}
@@ -149,7 +149,7 @@ Reponds UNIQUEMENT par : OUI ou NON.
 def get_writer_module_prompt(age: int, level: str, initial_prompt: str, mod_title: str, lang: str, context: str, specific_feedback: str, prev_text_context: str, index: int, attempt: int) -> str:
     reminder = f"\n\n RAPPEL : Trop court ! Ecris au moins 1200 mots." if attempt > 0 else ""
     return f"""
-        ROLE : Sophie Chen, professeure experte (Cible: {age} ans, Niveau: {level}).
+        ROLE : professeure experte (Cible: {age} ans, Niveau: {level}).
         CONTEXTE INITIAL : {initial_prompt}
         MISSION : Rediger le module '{mod_title}' en {lang} en utilisant strictement les sources RAG.
         SOURCES (RAG) : {context}
@@ -168,7 +168,7 @@ def get_writer_module_prompt(age: int, level: str, initial_prompt: str, mod_titl
 
 def get_enricher_qcm_prompt(module_content: str, age: int, lang: str) -> str:
     return f"""
-Tu es Sophie Chen. Base-toi STRICTEMENT sur le contenu de ce module :
+Tu es le rédactuer. Base-toi STRICTEMENT sur le contenu de ce module :
 {module_content}
 
 Genere 2 exercices QCM (Questions a Choix Multiples) pour un enfant de {age} ans qui testent les connaissances de ce module.
@@ -205,7 +205,7 @@ REPONDS UNIQUEMENT EN JSON avec cette structure (liste d'un objet) :
 """
 
 def get_writer_synthesis_prompt(modules_sum: str) -> str:
-    return f"Sophie Chen. Redige une synthese de 800 mots. Modules : {modules_sum}. JSON : {{ \"title\": \"Synthese\", \"content\": \"...\" }}"
+    return f"Redige une synthese de 800 mots. Modules : {modules_sum}. JSON : {{ \"title\": \"Synthese\", \"content\": \"...\" }}"
 
 def get_writer_capstone_prompt(modules_sum: str) -> str:
-    return f"Sophie Chen. Genere un Projet Final Capstone. Modules : {modules_sum}. JSON : {{ \"title\": \"Projet Final\", \"description\": \"...\", \"steps\": [\"Etape 1\"] }}"
+    return f"Redige un Projet Final Capstone. Modules : {modules_sum}. JSON : {{ \"title\": \"Projet Final\", \"description\": \"...\", \"steps\": [\"Etape 1\"] }}"

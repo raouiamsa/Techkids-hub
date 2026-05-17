@@ -11,6 +11,10 @@ import { AppModule } from './app/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Augmenter la limite de la taille du body pour accepter les gros fichiers PDF
+  app.use(require('express').json({ limit: '100mb' }));
+  app.use(require('express').urlencoded({ limit: '100mb', extended: true }));
+
   // Active CORS pour le frontend Next.js (tous les origins en dev)
   app.enableCors({
     origin: true, // Autorise toutes les origines en développement

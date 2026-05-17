@@ -1,0 +1,2 @@
+agent,concept_coverage_%,prerequisite_coherence_%,exercise_objective_alignment_%,graph_density_score,graph_density_avg_relations,has_cycles,total_concepts,covered_concepts,total_exercises,aligned_exercises,latency,model,topic,age,level
+pedagogical_graph,100.0,100.0,100.0,100.0,,,,,,,1103.437326669693,llama3.1:latest,Python,12,beginner

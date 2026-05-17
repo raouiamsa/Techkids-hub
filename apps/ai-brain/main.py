@@ -28,15 +28,15 @@ async def notify_gateway(source_id: str, status: str):
     url = f"{API_WEBHOOK}/{source_id}/status"
     async with aiohttp.ClientSession() as session:
         try:
-            # 🔒 SÉCURITÉ : On ajoute le secret attendu par NestJS
+            #  SÉCURITÉ : On ajoute le secret attendu par NestJS
             headers = {"x-ai-secret": INTERNAL_SECRET}
             async with session.patch(url, json={"status": status}, headers=headers) as resp:
                 if resp.status == 200:
-                    print(f"✅ Webhook notifié : source {source_id} -> {status}")
+                    print(f" Webhook notifié : source {source_id} -> {status}")
                 else:
-                    print(f"⚠️ Webhook erreur {resp.status} pour {source_id}")
+                    print(f" Webhook erreur {resp.status} pour {source_id}")
         except Exception as e:
-            print(f"❌ Erreur lors de la notification du statut : {e}")
+            print(f" Erreur lors de la notification du statut : {e}")
 
 async def process_rabbitmq_message(message: aio_pika.IncomingMessage):
     """Traite les messages de RabbitMQ pour lancer l'ingestion asynchrone."""
@@ -56,22 +56,21 @@ async def process_rabbitmq_message(message: aio_pika.IncomingMessage):
             url         = data.get("url")
             
             if not source_id:
-                print("⚠️ Message ignoré : sourceId manquant.")
+                print(" Message ignoré : sourceId manquant.")
                 return
 
-            print(f"🚀 Background : Début indexation pour {source_id} ({source_type})...")
-
+            print(f" Background : Début indexation pour {source_id} ({source_type})...")
             # Détermination du chemin (Fichier local pour PDF, URL pour le reste)
             source_path = file_path if source_type.upper() == "PDF" else url
             
             # Offload vers un thread pour ne pas bloquer l'Event Loop asynchrone
             await asyncio.to_thread(ingest_source, source_type, source_path, str(source_id))
 
-            print(f"✨ Background : Indexation terminée pour {source_id}")
+            print(f" Background : Indexation terminée pour {source_id}")
             await notify_gateway(str(source_id), "READY")
 
         except Exception as e:
-            print(f"🔥 Background Error : {e}")
+            print(f" Background Error : {e}")
             try:
                 # Tentative de notification d'erreur si l'ID est disponible
                 body_err = json.loads(message.body.decode())
@@ -81,7 +80,7 @@ async def process_rabbitmq_message(message: aio_pika.IncomingMessage):
 
 async def start_background_worker():
     """Écoute continue de la file RabbitMQ."""
-    print("👷 Worker RabbitMQ en attente de tâches d'indexation...")
+    print(" Worker RabbitMQ en attente de tâches d'indexation...")
     try:
         connection = await aio_pika.connect_robust(RABBITMQ_URL)
         async with connection:
@@ -92,7 +91,7 @@ async def start_background_worker():
                 async for message in queue_iter:
                     await process_rabbitmq_message(message)
     except Exception as e:
-        print(f"❌ Connexion au Worker impossible : {e}")
+        print(f" Connexion au Worker impossible : {e}")
 
 # --- Gestion du cycle de vie (FastAPI Lifespan) ---
 
@@ -123,7 +122,7 @@ class CourseRequest(BaseModel):
     include_code_exercises: bool = False
     draft_id: Optional[str] = None
     programming_language: Optional[str] = "Python"
-    internal_secret: Optional[str] = "" # 🔑 Passé par le Gateway NestJS
+    internal_secret: Optional[str] = "" #  Passé par le Gateway NestJS
     existing_content: Optional[str] = None
     existing_syllabus: Optional[str] = None
 
@@ -141,7 +140,27 @@ class PracticeRequest(BaseModel):
     level: str = "BEGINNER"
     student_mistake: Optional[str] = ""
     is_success: bool = False
+    language: str = "fr"
+
+class IndexCourseRequest(BaseModel):
+    course_id: str
+    content: str
+    title: Optional[str] = "Untitled Course"
+    student_mistake: Optional[str] = ""
+    is_success: bool = False
     language: str = "Python"
+
+class TutorRequest(BaseModel):
+    code: str
+    question: str
+    language: str = "python"
+    exercise_instructions: str = ""
+
+class GradeCodeRequest(BaseModel):
+    student_code: str
+    execution_output: str
+    instructions: str
+    teacher_solution: Optional[str] = ""
 
 # --- Points d'Entrée (Endpoints) ---
 
@@ -227,6 +246,166 @@ async def api_generate_practice(req: PracticeRequest):
         )
         return {"status": "success", "module": module}
     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/index-course")
+async def api_index_course(req: IndexCourseRequest):
+    """Indexe un cours approuvé dans ChromaDB pour le Tuteur RAG."""
+    try:
+        from core.rag_manager import RAGManager
+        rag = RAGManager()
+        success = await asyncio.to_thread(
+            rag.index_course,
+            req.course_id,
+            req.content,
+            req.title
+        )
+        return {"status": "success", "indexed": success}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/index-course")
+async def api_index_course(req: IndexCourseRequest):
+    """Indexe un cours approuvé dans ChromaDB pour le Tuteur RAG."""
+    try:
+        from core.rag_manager import RAGManager
+        rag = RAGManager()
+        success = await asyncio.to_thread(
+            rag.index_course,
+            req.course_id,
+            req.content,
+            req.title
+        )
+        return {"status": "success", "indexed": success}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/grade-code")
+async def api_grade_code(req: GradeCodeRequest):
+    """Évalue le code de l'élève à l'aide de l'IA Socratique."""
+    try:
+        from core.model_gateway import ModelGateway
+        
+        prompt = f"""
+Tu es un professeur de programmation expert. Évalue le code de l'étudiant.
+Instructions de l'exercice :
+{req.instructions}
+
+Code de l'étudiant :
+{req.student_code}
+
+Sortie console / exécution (peut contenir des erreurs ou la sortie standard) :
+{req.execution_output}
+
+Analyse si le code répond à l'énoncé de manière logique. Si l'exercice demande d'écrire un algorithme ou du code Arduino (comme faire clignoter une LED), prends en compte les fonctions utilisées.
+Le score doit être un entier entre 0 et 100.
+Donne un feedback court, positif et constructif pour l'enfant.
+Retourne UNIQUEMENT un objet JSON valide avec la structure exacte suivante, sans aucun texte autour ni bloc markdown :
+{{"score": 80, "feedback": "Bravo, mais tu as oublié le delay!"}}
+"""
+        gateway = ModelGateway()
+        response = await asyncio.to_thread(
+            gateway.invoke,
+            "gemini-1.5-flash",
+            "google",
+            prompt,
+            "Analyse le code et retourne un JSON."
+        )
+        
+        import json_repair
+        try:
+            parsed = json_repair.loads(response)
+        except Exception:
+            parsed = {"score": 50, "feedback": "L'IA n'a pas pu analyser précisément, mais bel effort !"}
+            
+        # S'assurer que le score est un entier
+        score = int(parsed.get("score", 0)) if str(parsed.get("score", "0")).isdigit() else 0
+        return {"score": score, "feedback": parsed.get("feedback", "")}
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/simulate-circuit")
+async def api_simulate_circuit(req: dict):
+    """Simulateur de circuit électronique."""
+    try:
+        from core.circuit_simulator import CircuitSimulator, CircuitRequest
+        # Parsing manuel pour être souple
+        circuit_req = CircuitRequest(**req)
+        simulator = CircuitSimulator()
+        result = await asyncio.to_thread(simulator.simulate, circuit_req)
+        
+        # Socratic AI Integration !
+        if result.get("led_status") == "EXPLODED":
+            from core.model_gateway import ModelGateway
+            from core.rag_manager import RAGManager
+            
+            # Recherche du contexte dans le cours
+            rag = RAGManager()
+            context = await asyncio.to_thread(rag.search_context, "LED grillée résistance surintensité", top_k=1)
+            
+            context_prompt = f"\n\n--- CONTEXTE DU COURS OFFICIEL ---\n{context}\n--------------------------------\n" if context else ""
+            prompt = f"""
+### SYSTEM ROLE
+Tu es un tuteur expert en ingénierie et pédagogie Socratique pour enfants. 
+Ton objectif est de guider l'élève vers la découverte de l'erreur sans jamais lui donner la solution.
+
+### INPUT DATA
+- Objectif du cours : {context_prompt}
+- Données Physiques (PySpice) : {result}
+
+### ANALYSE PROTOCOL (Interne)
+Avant de répondre, analyse les points suivants :
+1. **Intégrité Physique** : Est-ce que le courant (mA) ou la tension (V) dépasse les limites des composants ?
+2. **Écart Pédagogique** : Quelle est la différence entre le branchement actuel et l'objectif du circuit ?
+
+### RÉPONSE AU PETIT INGÉNIEUR
+Rédige une réponse courte (max 3 phrases) en suivant ces règles :
+- **Langue** : Un mélange fluide de Français et de Tunisien (Darija).
+- **Ton** : Enthousiaste, valorisant ("Ya Batal", "Ya Engenieur").
+- **Stratégie** : Pose une question qui force l'enfant à regarder ses composants (ex: as-tu oublié une résistance ?).
+- **Exemple de style** : "يا بطل، التركيب متاعك طيارة! أما ثبت في الـ LED، حسب الـ Simulator تعدالها {result.get('current_mA')}mA... ما فماش حاجة تنقص في قوة الكهرباء باش ما تتحرقش؟"
+"""
+            
+            """prompt = (
+                "Tu es un tuteur bienveillant d'électronique pour enfants. "
+                "L'enfant vient de lancer une simulation de circuit. "
+                "Le moteur physique (PySpice) a détecté un court-circuit ou une surintensité "
+                f"({result.get('current_mA', 'trop élevé')} mA). La LED a grillé.\n"
+                f"{context_prompt}"
+                "En te basant strictement sur le CONTEXTE DU COURS s'il est fourni, "
+                "dis-lui que son programme Arduino fonctionne bien, mais qu'il a oublié de protéger la LED. "
+                "Guide-le pour qu'il ajoute une résistance, mais NE LUI DONNE PAS LA SOLUTION directement. "
+                "Fais-le réfléchir avec une question. Parle en français ou tunisien."
+            )"""
+            
+            # Appel asynchrone à Gemini via le ModelGateway
+            gateway = ModelGateway()
+            ai_message = await asyncio.to_thread(
+                gateway.invoke,
+                "gemini-1.5-flash", 
+                "google", 
+                prompt, 
+                "Analyse ce résultat et donne moi le retour."
+            )
+            if "ERROR_" in ai_message:
+                ai_message = "Oups, j'ai eu un petit problème de connexion !  Mais attention, ton circuit a un problème : ta LED a grillé car il y a eu trop de courant. As-tu pensé à ajouter une résistance ?"
+            result["message"] = ai_message
+        elif result.get("led_status") == "ON":
+            result["message"] = "Super ! La LED s'allume correctement sans brûler."
+        else:
+            result["message"] = "Le circuit est ouvert, la LED est éteinte."
+            
+        return result
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":

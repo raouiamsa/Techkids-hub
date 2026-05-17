@@ -8,6 +8,8 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from .shared import EMBEDDINGS, CHROMA_PERSIST_DIR
+from .neo4j_store import get_neo4j_store
+from .ingest_config import CHUNK_SIZE, CHUNK_OVERLAP
 from tqdm import tqdm
 
 # ── VISION LOCALE (Florence-2-base) ──
@@ -69,7 +71,13 @@ def report_progress(source_id: str, percent: int):
 # Mots-clés pour détecter si une page contient potentiellement une figure pédagogique
 FIGURE_KEYWORDS = {"figure", "fig.", "tableau", "schéma", "graphique", "graphe", "diagramme", "table"}
 
-def process_pdf(file_path: str, source_id: str):
+def process_pdf(
+    file_path: str,
+    source_id: str,
+    title: str | None = None,
+    domain: str | None = None,
+    source_metadata: dict | None = None,
+):
     """
     Analyse complète d'un PDF : Texte + Images + OCR.
     Le source_id ici correspond à l'ID de la source dans ta base de données.
@@ -78,7 +86,7 @@ def process_pdf(file_path: str, source_id: str):
         print(f"Erreur : Le fichier {file_path} n'existe pas.")
         return
 
-    file_name = os.path.basename(file_path)
+    file_name = title or os.path.basename(file_path)
     print(f"\n📑 Archiviste : Lecture approfondie de {file_name}...")
     
     # 0% -> 10% : Chargement initial
@@ -91,8 +99,8 @@ def process_pdf(file_path: str, source_id: str):
     report_progress(source_id, 30)
     
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1200, 
-        chunk_overlap=200, 
+        chunk_size=CHUNK_SIZE,
+        chunk_overlap=CHUNK_OVERLAP,
         separators=["\n\n", "\n", ".", "!", "?", " "]
     )
     texts = text_splitter.split_documents(documents)
@@ -150,9 +158,13 @@ def process_pdf(file_path: str, source_id: str):
 
     # Fusion des données et ajout des métadonnées de citation
     final_docs = []
-    for t in texts:
+    for index, t in enumerate(texts):
         t.metadata["course_id"] = source_id
         t.metadata["source_name"] = file_name 
+        t.metadata["type"] = t.metadata.get("type", "pdf")
+        t.metadata["doc_id"] = f"{source_id}::pdf::{index:04d}"
+        if domain:
+            t.metadata["domain"] = domain
         page_num = t.metadata.get("page", -1)
         
         # Enrichissement avec le texte extrait des images de la même page
@@ -160,11 +172,24 @@ def process_pdf(file_path: str, source_id: str):
             t.page_content += f"\n\n[TEXTE IMAGE PAGE {page_num}] : {ocr_enrichments[page_num - 1]}"
         final_docs.append(t)
         
+    for index, visual_doc in enumerate(visual_contexts):
+        visual_doc.metadata["doc_id"] = f"{source_id}::visual::{index:04d}"
+        if domain:
+            visual_doc.metadata["domain"] = domain
+
     final_docs.extend(visual_contexts)
 
     # 90% -> 100% : Sauvegarde finale dans ChromaDB
     print(f" Sauvegarde de {len(final_docs)} segments dans le cerveau...")
     Chroma.from_documents(documents=final_docs, embedding=EMBEDDINGS, persist_directory=CHROMA_PERSIST_DIR)
+    get_neo4j_store().index_documents(
+        resource_id=source_id,
+        source_type="pdf",
+        title=file_name,
+        domain=domain,
+        source_path_or_url=file_path,
+        documents=final_docs,
+    )
     
     report_progress(source_id, 100)
     print(f" Ingestion PDF terminée avec succès pour {file_name}.")

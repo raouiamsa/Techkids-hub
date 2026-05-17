@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": 1,
+    "question": "Qu'est-ce qu'une liste en Python et comment l'utiliser ?",
+    "reference_answer": "Une liste est une structure de données ordonnée et modifiable en Python, créée avec des crochets []. On peut ajouter, supprimer et modifier des éléments.",
+    "relevant_documents": ["python_lists_web", "python_basics_pdf"],
+    "concepts": ["list", "ordered", "mutable", "sequence", "append"],
+    "domain": "Python",
+    "difficulty": "easy"
+  },
+  {
+    "question_id": 2,
+    "question": "Qu'est-ce qu'une classe en Python et comment l'utiliser ?",
+    "reference_answer": "Une classe est un modèle pour créer des objets. Elle définit des attributs et des méthodes réutilisables via héritage et encapsulation.",
+    "relevant_documents": ["python_basics_pdf", "python_youtube_Ro"],
+    "concepts": ["class", "object", "attributes", "methods", "inheritance"],
+    "domain": "Python",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 3,
+    "question": "Comment utiliser une boucle for en Python ?",
+    "reference_answer": "Les boucles for itèrent sur une séquence. Syntaxe : for variable in sequence: corps. Permet de parcourir listes, tuples, dictionnaires.",
+    "relevant_documents": ["python_youtube_Ro", "python_basics_pdf"],
+    "concepts": ["loop", "for", "iteration", "sequence", "range"],
+    "domain": "Python",
+    "difficulty": "easy"
+  },
+  {
+    "question_id": 4,
+    "question": "Qu'est-ce qu'une fonction en Python et comment la définir ?",
+    "reference_answer": "Une fonction est un bloc de code réutilisable défini avec 'def'. Elle peut accepter des paramètres et retourner des valeurs pour organiser et moduler le code.",
+    "relevant_documents": ["python_basics_pdf", "python_lists_web"],
+    "concepts": ["function", "def", "parameter", "return", "scope"],
+    "domain": "Python",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 5,
+    "question": "Comment gérer les exceptions et erreurs en Python ?",
+    "reference_answer": "Utiliser try-except pour capturer les erreurs. Syntaxe : try: code, except ErrorType: gestion. Permet un code robuste et prévisible.",
+    "relevant_documents": ["python_youtube_Ro", "python_basics_pdf"],
+    "concepts": ["exception", "try", "except", "error handling", "debugging"],
+    "domain": "Python",
+    "difficulty": "hard"
+  },
+  {
+    "question_id": 6,
+    "question": "Qu'est-ce que la régression linéaire en Data Science ?",
+    "reference_answer": "La régression linéaire modélise la relation entre variables par une ligne : y = mx + b. Elle prédit des valeurs continues à partir de données d'entraînement.",
+    "relevant_documents": ["ml_regression_web", "ml_formation_pdf"],
+    "concepts": ["regression", "linear", "prediction", "supervised learning"],
+    "domain": "Data Science & Machine Learning & AI",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 7,
+    "question": "Qu'est-ce que la classification en Machine Learning ?",
+    "reference_answer": "La classification prédit une catégorie discrète (ex: spam/non-spam). Elle utilise des modèles comme SVM, Random Forest, ou Neural Networks avec des étiquettes.",
+    "relevant_documents": ["ml_formation_pdf", "ml_regression_web"],
+    "concepts": ["classification", "supervised learning", "categorical", "accuracy"],
+    "domain": "Data Science & Machine Learning & AI",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 8,
+    "question": "Qu'est-ce qu'un embedding en IA et NLP ?",
+    "reference_answer": "Un embedding représente des mots ou documents comme vecteurs dans un espace continu. Exemples : Word2Vec, GPT embeddings. Utilisé pour capturer la similarité sémantique.",
+    "relevant_documents": ["ml_youtube_wgf", "ml_formation_pdf"],
+    "concepts": ["embedding", "vector", "NLP", "semantic similarity"],
+    "domain": "Data Science & Machine Learning & AI",
+    "difficulty": "hard"
+  },
+  {
+    "question_id": 9,
+    "question": "Qu'est-ce que le deep learning et ses applications ?",
+    "reference_answer": "Le deep learning utilise des réseaux neuronaux profonds pour extraire des motifs complexes. Applications : reconnaissance d'images, NLP, recommandations, génération de texte.",
+    "relevant_documents": ["ml_formation_pdf", "ml_youtube_wgf"],
+    "concepts": ["deep learning", "neural networks", "layers", "training"],
+    "domain": "Data Science & Machine Learning & AI",
+    "difficulty": "hard"
+  },
+  {
+    "question_id": 10,
+    "question": "Qu'est-ce que l'overfitting et comment le prévenir ?",
+    "reference_answer": "L'overfitting survient quand un modèle s'adapte trop aux données d'entraînement. Prévention : validation croisée, régularisation, dropout, data augmentation.",
+    "relevant_documents": ["ml_formation_pdf", "ml_regression_web"],
+    "concepts": ["overfitting", "generalization", "validation", "regularization"],
+    "domain": "Data Science & Machine Learning & AI",
+    "difficulty": "hard"
+  },
+  {
+    "question_id": 11,
+    "question": "Qu'est-ce qu'un Arduino et à quoi ça sert ?",
+    "reference_answer": "Arduino est une plateforme de prototypage électronique open-source avec microcontrôleur et environnement de programmation pour créer des projets interactifs et autonomes.",
+    "relevant_documents": ["arduino_blink_web", "arduino_youtube_F5"],
+    "concepts": ["Arduino", "microcontroller", "embedded", "prototyping", "IoT"],
+    "domain": "Embedded Systems & Arduino",
+    "difficulty": "easy"
+  },
+  {
+    "question_id": 12,
+    "question": "Comment brancher et allumer une LED sur Arduino ?",
+    "reference_answer": "Connecter le + de la LED (via une résistance limitatrice de courant) à un pin numérique, le - au GND (masse). Utiliser digitalWrite(pin, HIGH) pour l'allumer.",
+    "relevant_documents": ["arduino_pinout_pdf", "arduino_blink_web"],
+    "concepts": ["Arduino", "LED", "pin", "GND", "digitalWrite", "current limiting"],
+    "domain": "Embedded Systems & Arduino",
+    "difficulty": "easy"
+  },
+  {
+    "question_id": 13,
+    "question": "Qu'est-ce qu'un capteur et comment fonctionne-t-il ?",
+    "reference_answer": "Un capteur détecte une grandeur physique (température, lumière, distance, humidité, etc.) et la convertit en signal électrique mesurable par un microcontrôleur.",
+    "relevant_documents": ["arduino_youtube_F5", "arduino_pinout_pdf"],
+    "concepts": ["sensor", "input", "physical quantity", "signal", "analog", "digital"],
+    "domain": "Embedded Systems & Arduino",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 14,
+    "question": "Comment programmer un Arduino pour lire un capteur analogique ?",
+    "reference_answer": "Utiliser analogRead(pin) pour lire une valeur 0-1023 d'un pin analogique. Convertir en unités physiques selon le capteur (V, température, distance, etc.).",
+    "relevant_documents": ["arduino_pinout_pdf", "arduino_blink_web"],
+    "concepts": ["analogRead", "analog", "pin", "sensor", "conversion"],
+    "domain": "Embedded Systems & Arduino",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 15,
+    "question": "Qu'est-ce que la communication série (Serial) sur Arduino et son usage ?",
+    "reference_answer": "La communication série (Serial.begin, Serial.print) permet à Arduino de communiquer avec l'ordinateur ou d'autres appareils. Utile pour le debugging et l'acquisition de données.",
+    "relevant_documents": ["arduino_youtube_F5", "arduino_blink_web"],
+    "concepts": ["Serial", "communication", "baud rate", "debugging"],
+    "domain": "Embedded Systems & Arduino",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 16,
+    "question": "Qu'est-ce que la loi d'Ohm et son application ?",
+    "reference_answer": "V = R × I : la tension (V) est égale à la résistance (R) multipliée par le courant (I). Utilisée pour dimensionner les résistances dans les circuits électroniques.",
+    "relevant_documents": ["electronics_ohm_pdf", "electronics_allabout_web"],
+    "concepts": ["Ohm's law", "voltage", "resistance", "current", "power"],
+    "domain": "Electronics & Circuits",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 17,
+    "question": "Comment calculer la résistance pour protéger une LED ?",
+    "reference_answer": "R = (V_source - V_led) / I. Exemple : (9V - 2V) / 20mA = 350 Ohms. La résistance limite le courant et protège la LED de la surcharge.",
+    "relevant_documents": ["electronics_allabout_web", "electronics_ohm_pdf"],
+    "concepts": ["resistance", "LED", "current limiting", "Ohm's law"],
+    "domain": "Electronics & Circuits",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 18,
+    "question": "Quelle est la différence entre un circuit série et un circuit parallèle ?",
+    "reference_answer": "Série : courant constant, tension se divise entre composants. Parallèle : tension constante, courant se divise entre branches. Applications différentes selon le besoin.",
+    "relevant_documents": ["electronics_youtube_x2E", "electronics_allabout_web"],
+    "concepts": ["series", "parallel", "circuit", "current", "voltage", "resistance"],
+    "domain": "Electronics & Circuits",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 19,
+    "question": "Qu'est-ce que la puissance électrique et comment la calculer ?",
+    "reference_answer": "P = V × I (ou P = I² × R). La puissance mesure l'énergie consommée par seconde. Importante pour dimensionner les composants et éviter la surcharge.",
+    "relevant_documents": ["electronics_ohm_pdf", "electronics_allabout_web"],
+    "concepts": ["power", "watt", "voltage", "current", "energy"],
+    "domain": "Electronics & Circuits",
+    "difficulty": "medium"
+  },
+  {
+    "question_id": 20,
+    "question": "Comment dimensionner une alimentation pour un circuit donné ?",
+    "reference_answer": "Calculer P_total = V × I_total. Choisir une alimentation avec V et I suffisants. Ajouter une marge de sécurité (20-30%) pour éviter la surcharge et prolonger la durée de vie.",
+    "relevant_documents": ["electronics_youtube_x2E", "electronics_ohm_pdf"],
+    "concepts": ["power supply", "voltage", "current", "safety margin"],
+    "domain": "Electronics & Circuits",
+    "difficulty": "hard"
+  }
+]

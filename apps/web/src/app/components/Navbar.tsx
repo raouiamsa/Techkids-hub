@@ -74,7 +74,7 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:block text-left">
                   <p className="text-sm font-semibold text-slate-900 dark:text-white leading-none">
-                    {user.email.split('@')[0]}
+                    {user.firstName ? `${user.firstName} ${user.lastName || ''}`.trim() : user.email.split('@')[0]}
                   </p>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
                     {roleLabels[user.role] ?? user.role}
@@ -103,6 +103,13 @@ export default function Navbar() {
                     >
                       <BookOpen className="h-4 w-4" />
                       Catalogue de cours
+                    </Link>
+                    <Link
+                      href="/profile"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <LogOut className="h-4 w-4" /> {/* TODO: Better icon later */}
+                      Mon Profil
                     </Link>
                   </div>
 

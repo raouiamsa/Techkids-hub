@@ -68,4 +68,48 @@ export class EmailService {
 
         this.logger.log(`📧  Email OTP envoyé à ${email}`);
     }
+
+    async sendPasswordResetCode(email: string, code: string): Promise<void> {
+        if (!this.transporter) {
+            this.logger.log(`📧  [DEV] OTP réinitialisation mdp pour ${email} : ${code}  (valable 15 min)`);
+            return;
+        }
+
+        await this.transporter.sendMail({
+            from: `"TechKids Hub" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+            to: email,
+            subject: '🔑 Réinitialisation de votre mot de passe TechKids',
+            html: `
+        <div style="font-family: 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto;
+                    padding: 32px; background: #f8f8ff; border-radius: 16px;">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <h2 style="color: #6366f1; margin: 0;">🚀 TechKids Hub</h2>
+            <p style="color: #555; margin-top: 8px;">Réinitialisation de mot de passe</p>
+          </div>
+
+          <p style="color: #333;">Vous avez demandé à réinitialiser votre mot de passe.<br>Voici votre code :</p>
+
+          <div style="font-size: 40px; font-weight: 900; letter-spacing: 12px;
+                      text-align: center; padding: 20px;
+                      background: #fff; border-radius: 12px;
+                      border: 2px solid #6366f1; color: #6366f1;
+                      margin: 20px 0; box-shadow: 0 4px 12px rgba(99,102,241,0.15);">
+            ${code}
+          </div>
+
+          <p style="color: #666; font-size: 14px; text-align: center;">
+            ⏱ Ce code expire dans <strong>15 minutes</strong>.
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
+
+          <p style="color: #aaa; font-size: 12px; text-align: center;">
+            Si vous n'avez pas demandé cette réinitialisation, ignorez cet email.
+          </p>
+        </div>
+      `,
+        });
+
+        this.logger.log(`📧  Email réinitialisation mdp envoyé à ${email}`);
+    }
 }

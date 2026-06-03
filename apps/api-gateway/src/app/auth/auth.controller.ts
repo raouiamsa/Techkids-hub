@@ -8,6 +8,8 @@ import {
     LoginDto,
     VerifyEmailDto,
     ResendVerificationDto,
+    ForgotPasswordDto,
+    ResetPasswordDto,
     AUTH_PATTERNS,
 } from '@org/shared-types';
 import { throwRpcError } from '../shared/rpc-error.helper';
@@ -46,6 +48,22 @@ export class AuthController {
     async login(@Body() dto: LoginDto) {
         try {
             return await firstValueFrom(this.client.send(AUTH_PATTERNS.LOGIN, dto));
+        } catch (e) { throwRpcError(e); }
+    }
+
+    @ApiOperation({ summary: 'Demander un code de réinitialisation de mot de passe' })
+    @Post('forgot-password')
+    async forgotPassword(@Body() dto: ForgotPasswordDto) {
+        try {
+            return await firstValueFrom(this.client.send(AUTH_PATTERNS.FORGOT_PASSWORD, dto));
+        } catch (e) { throwRpcError(e); }
+    }
+
+    @ApiOperation({ summary: 'Réinitialiser le mot de passe avec le code OTP' })
+    @Post('reset-password')
+    async resetPassword(@Body() dto: ResetPasswordDto) {
+        try {
+            return await firstValueFrom(this.client.send(AUTH_PATTERNS.RESET_PASSWORD, dto));
         } catch (e) { throwRpcError(e); }
     }
 }

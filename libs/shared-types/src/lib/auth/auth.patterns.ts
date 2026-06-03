@@ -4,4 +4,6 @@ export const AUTH_PATTERNS = {
     LOGIN: { cmd: 'auth.login' },
     VERIFY_EMAIL: { cmd: 'auth.verify-email' },
     RESEND_VERIFICATION: { cmd: 'auth.resend-verification' },
+    FORGOT_PASSWORD: { cmd: 'auth.forgot-password' },
+    RESET_PASSWORD: { cmd: 'auth.reset-password' },
 } as const;

@@ -6,6 +6,8 @@ import {
     LoginDto,
     VerifyEmailDto,
     ResendVerificationDto,
+    ForgotPasswordDto,
+    ResetPasswordDto,
     AUTH_PATTERNS,
 } from '@org/shared-types';
 
@@ -31,5 +33,15 @@ export class AuthController {
     @MessagePattern(AUTH_PATTERNS.LOGIN)
     login(@Payload() dto: LoginDto) {
         return this.authService.login(dto.email, dto.password);
+    }
+
+    @MessagePattern(AUTH_PATTERNS.FORGOT_PASSWORD)
+    forgotPassword(@Payload() dto: ForgotPasswordDto) {
+        return this.authService.forgotPassword(dto.email);
+    }
+
+    @MessagePattern(AUTH_PATTERNS.RESET_PASSWORD)
+    resetPassword(@Payload() dto: ResetPasswordDto) {
+        return this.authService.resetPassword(dto.email, dto.code, dto.newPassword);
     }
 }

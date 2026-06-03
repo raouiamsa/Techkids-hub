@@ -110,4 +110,47 @@ export class AuthService {
             },
         };
     }
+
+    async forgotPassword(email: string) {
+        const user = await prisma.user.findUnique({ where: { email } });
+        // Réponse identique que l'email existe ou non (sécurité)
+        if (!user) return { message: 'Si cet email existe, un code de réinitialisation vous a été envoyé.' };
+
+        const otp = generateOTP();
+        const expires = new Date(Date.now() + 15 * 60 * 1000); // 15 min
+
+        await prisma.user.update({
+            where: { email },
+            data: { emailVerificationToken: otp, emailVerificationExpires: expires },
+        });
+
+        await this.emailService.sendPasswordResetCode(email, otp);
+        return { message: 'Si cet email existe, un code de réinitialisation vous a été envoyé.' };
+    }
+
+    async resetPassword(email: string, code: string, newPassword: string) {
+        const user = await prisma.user.findUnique({ where: { email } });
+        if (!user) throw new RpcException({ statusCode: 400, message: 'Code invalide ou expiré', error: 'Bad Request' });
+
+        if (
+            user.emailVerificationToken !== code ||
+            !user.emailVerificationExpires ||
+            user.emailVerificationExpires < new Date()
+        ) {
+            throw new RpcException({ statusCode: 400, message: 'Code invalide ou expiré', error: 'Bad Request' });
+        }
+
+        const passwordHash = await bcrypt.hash(newPassword, 10);
+
+        await prisma.user.update({
+            where: { email },
+            data: {
+                passwordHash,
+                emailVerificationToken: null,
+                emailVerificationExpires: null,
+            },
+        });
+
+        return { message: 'Mot de passe réinitialisé avec succès.' };
+    }
 }

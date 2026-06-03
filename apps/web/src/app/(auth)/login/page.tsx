@@ -18,6 +18,7 @@ export default function LoginPage() {
 
     const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
     const returnUrl = searchParams?.get('returnUrl');
+    const resetSuccess = searchParams?.get('reset') === 'success';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -71,6 +72,13 @@ export default function LoginPage() {
                 </div>
             </div>
 
+            {/* Succès réinitialisation */}
+            {resetSuccess && (
+                <div className="mb-4 px-4 py-3 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
+                    ✅ Mot de passe réinitialisé avec succès. Connectez-vous.
+                </div>
+            )}
+
             {/* Erreur générique */}
             {error && (
                 <div className="mb-4 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
@@ -114,7 +122,12 @@ export default function LoginPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                    <Label htmlFor="password">Mot de passe</Label>
+                    <div className="flex items-center justify-between">
+                        <Label htmlFor="password">Mot de passe</Label>
+                        <Link href="/forgot-password" className="text-xs text-primary hover:text-primary-hover transition-colors">
+                            Mot de passe oublié ?
+                        </Link>
+                    </div>
                     <Input
                         id="password"
                         type="password"

@@ -50,3 +50,24 @@ export class ResendVerificationDto {
     @IsEmail()
     email!: string;
 }
+
+export class ForgotPasswordDto {
+    @ApiProperty({ example: 'student@techkids.com' })
+    @IsEmail()
+    email!: string;
+}
+
+export class ResetPasswordDto {
+    @ApiProperty({ example: 'student@techkids.com' })
+    @IsEmail()
+    email!: string;
+
+    @ApiProperty({ example: '123456' })
+    @IsString()
+    code!: string;
+
+    @ApiProperty({ example: 'NewPassword123!' })
+    @IsString()
+    @MinLength(6)
+    newPassword!: string;
+}

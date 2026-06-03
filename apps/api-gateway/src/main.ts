@@ -7,9 +7,18 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
+import * as express from 'express';
+import * as path from 'path';
+import * as fs from 'fs';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // ─── Servir les fichiers statiques (uploads/avatars) ─────────────────────
+  const uploadsDir = path.resolve('./uploads');
+  if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+  app.use('/uploads', express.static(uploadsDir));
+  // ─────────────────────────────────────────────────────────────────────────
 
   // Augmenter la limite de la taille du body pour accepter les gros fichiers PDF
   app.use(require('express').json({ limit: '100mb' }));

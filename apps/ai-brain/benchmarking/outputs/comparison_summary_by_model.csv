@@ -1,0 +1,2 @@
+model,final_score_ped,content_coverage_ped,hallucination_rate_ped,ragas_avg_ped,citations_count_ped,critic_approved_ped,final_score_raw,content_coverage_raw,hallucination_rate_raw,ragas_avg_raw,citations_count_raw,critic_approved_raw,final_score_delta,content_coverage_delta,hallucination_rate_delta,ragas_avg_delta,citations_count_delta,critic_approved_delta
+llama3.1:latest,69.25,63.163333333333334,0.28773333333333334,0.891,,0.0,69.03666666666668,71.58,0.5341333333333333,0.7686999999999999,,0.0,0.21333333333332405,-8.416666666666664,-0.2464,0.12230000000000008,,0.0

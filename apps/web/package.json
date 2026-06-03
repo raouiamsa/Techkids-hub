@@ -4,6 +4,7 @@
   "private": true,
   "nx": {
     "name": "web",
+    "implicitDependencies": ["api-gateway"],
     "targets": {
       "serve": {
         "continuous": true,

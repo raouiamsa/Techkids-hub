@@ -514,6 +514,14 @@ def run_pedagogical_comp2(
         "pedagogical_graph_json",
     ]
 
+    # Ensure per-agent default keys for CSV exports
+    agent_default_keys = {
+        "architect": list(ARCHITECT_KEYS),
+        "writer": list(WRITER_KEYS),
+        "enricher": list(ENRICHER_KEYS),
+        "critic": list(CRITIC_KEYS),
+    }
+
     results: List[Dict[str, Any]] = []
     summary_results: List[Dict[str, Any]] = []
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -731,6 +739,56 @@ def run_pedagogical_comp2(
                     else:
                         metrics = critic_metrics(response, latency)
 
+                    # Lightweight critic integration for benchmarking: parse critic JSON
+                    # and attach approval/rejection info to critic metrics and the writer row.
+                    try:
+                        parsed_critic = extract_json_from_text(response) or {}
+                        if isinstance(parsed_critic, list) and parsed_critic and isinstance(parsed_critic[0], dict):
+                            parsed_critic = parsed_critic[0]
+                    except Exception:
+                        parsed_critic = {}
+
+                    approved = None
+                    if isinstance(parsed_critic, dict):
+                        approved = parsed_critic.get("approved")
+                        metrics["critic_parsed_json"] = parsed_critic
+
+                    metrics["approved"] = approved
+                    rejection_reason = ""
+                    if approved is False:
+                        if isinstance(parsed_critic, dict):
+                            issues = parsed_critic.get("global_issues") or parsed_critic.get("module_issues") or []
+                            if isinstance(issues, list) and issues:
+                                first = issues[0]
+                                if isinstance(first, dict):
+                                    rejection_reason = first.get("issue", "")
+                                elif isinstance(first, str):
+                                    rejection_reason = first
+                            else:
+                                rejection_reason = "critic_rejected"
+                        else:
+                            rejection_reason = "critic_rejected"
+
+                    metrics["critic_rejection_reason"] = rejection_reason
+
+                    # Update corresponding writer result row (if present)
+                    try:
+                        writer_run_index = repeat_index + 1
+                        for prev in reversed(results):
+                            if prev.get("agent") == "writer" and prev.get("topic") == topic and prev.get("model") == model and prev.get("run_index") == writer_run_index and prev.get("seed") == run_seed:
+                                try:
+                                    prev_details = json.loads(prev.get("details", "{}"))
+                                except Exception:
+                                    prev_details = {}
+                                prev_details["critic_approved"] = approved
+                                prev_details["critic_rejection_reason"] = rejection_reason
+                                prev["details"] = json.dumps(prev_details, ensure_ascii=False)
+                                prev["critic_approved"] = approved
+                                prev["critic_rejection_reason"] = rejection_reason
+                                break
+                    except Exception:
+                        pass
+
                     llm_score = compute_llm_score(
                         json_valid=bool(metrics.get("json_valid")),
                         hallucination_rate=0.0,
@@ -773,6 +831,8 @@ def run_pedagogical_comp2(
     topic_label = config.topics[0]["topic"].replace(" ", "_") if config.topics else "topic"
     age_label = config.topics[0]["age"] if config.topics else 0
     level_label = config.topics[0]["level"] if config.topics else "level"
+
+    # Write combined CSV (backward-compatible)
     output_path = output_dir / f"comp2_pedagogical_graph_{topic_label}_age{age_label}_{level_label}_{timestamp}.csv"
     summary_output_path = output_dir / f"comp2_pedagogical_graph_{topic_label}_age{age_label}_{level_label}_avg_{timestamp}.csv"
 
@@ -790,6 +850,42 @@ def run_pedagogical_comp2(
 
     log(f"Saved: {output_path}")
     log(f"Saved: {summary_output_path}")
+
+    # Also write a CSV per agent (topic+agent grouping), mirroring comp2_agents_llm_comparaison behaviour
+    results_by_topic_agent = defaultdict(list)
+    for result in results:
+        key = (result["topic"], result["agent"])
+        results_by_topic_agent[key].append(result)
+
+    written_paths = []
+    for (topic_name, agent), agent_results in sorted(results_by_topic_agent.items()):
+        first_result = agent_results[0] if agent_results else {}
+        age_val = first_result.get("age", "")
+        level_val = first_result.get("level", "")
+        out_path = output_dir / f"comp2_{topic_name}_age{age_val}_level{level_val}_{agent}_models-{timestamp}.csv"
+
+        # Determine present keys and include agent default keys
+        present_keys = set()
+        for row in agent_results:
+            present_keys.update(row.keys())
+        default_keys = agent_default_keys.get(agent, [])
+        present_keys.update(default_keys)
+        mandatory = ["topic", "model", "agent", "details"]
+        present_keys.update(mandatory)
+
+        ordered_fieldnames = [h for h in headers if h in present_keys]
+        extra = [k for k in sorted(present_keys) if k not in ordered_fieldnames]
+        ordered_fieldnames.extend(extra)
+
+        with open(out_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=ordered_fieldnames)
+            writer.writeheader()
+            writer.writerows(agent_results)
+
+        written_paths.append(out_path)
+
+    for path in written_paths:
+        log(f"Saved: {path}")
 
     aggregate: Dict[Any, Dict[str, List[float]]] = defaultdict(lambda: {"agent": [], "llm": [], "final": []})
     for result in results:

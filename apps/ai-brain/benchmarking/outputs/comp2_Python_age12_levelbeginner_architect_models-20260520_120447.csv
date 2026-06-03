@@ -1,0 +1,191 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Python,12,beginner,llama3.1:latest,architect,1,42,3,True,True,63143.5,294.05,53.55,100,86.06,1679,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 294.05, ""response_length"": 1679, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""La Qu\u00eate de la Programmation Python\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comprendre les concepts de base de Python\"",\n    \""Apprendre \u00e0 utiliser les variables et les op\u00e9rateurs arithm\u00e9tiques\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment stocker des valeurs dans Python et comprendre les types de donn\u00e9es.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Variables et types de donn\u00e9es\"",\n        \""Op\u00e9rateurs arithm\u00e9tiques\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions et les Boucles\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions et les boucles pour r\u00e9p\u00e9ter des actions.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions\"",\n        \""Boucles\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Petites Victoires Techniques\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Mettez en pratique vos connaissances avec des exercices interactifs.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice 1 : Variables et op\u00e9rateurs arithm\u00e9tiques\"",\n        \""Exercice 2 : Conditions et boucles\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""La Programmation Python en Action\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Cr\u00e9ez votre propre programme pour r\u00e9soudre un probl\u00e8me r\u00e9el.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Projet : Cr\u00e9er un programme pour calculer la somme de deux nombres\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 63143.5, ""llm_score"": 53.55, ""rag_score"": null, ""final_score"": 86.06, ""context_docs_count"": 4}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+
+  ""courseTitle"": ""La Quête de la Programmation Python"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Comprendre les concepts de base de Python"",
+    ""Apprendre à utiliser les variables et les opérateurs arithmétiques""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment stocker des valeurs dans Python et comprendre les types de données."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Variables et types de données"",
+        ""Opérateurs arithmétiques""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions et les Boucles"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à utiliser les conditions et les boucles pour répéter des actions."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions"",
+        ""Boucles""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Petites Victoires Techniques"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Mettez en pratique vos connaissances avec des exercices interactifs."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice 1 : Variables et opérateurs arithmétiques"",
+        ""Exercice 2 : Conditions et boucles""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""La Programmation Python en Action"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Créez votre propre programme pour résoudre un problème réel."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Projet : Créer un programme pour calculer la somme de deux nombres""
+      ]
+    }
+  ]
+
+}",100.0,4,100
+Python,12,beginner,llama3.1:latest,architect,2,43,3,True,True,62578.7,258.31,52.67,100,85.8,1603,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 258.31, ""response_length"": 1603, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""La Qu\u00eate de l'Intelligence Artificielle\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comp\u00e9tence active 1 (ex: Ma\u00eetriser les boucles)\"",\n    \""Comp\u00e9tence active 2\"",\n    \""Comp\u00e9tence active 3\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment stocker et manipuler les informations avec Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Variables et types de donn\u00e9es\"",\n        \""Op\u00e9rateurs arithm\u00e9tiques\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions et les Boucles\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 prendre des d\u00e9cisions et r\u00e9p\u00e9ter des actions avec Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions\"",\n        \""Boucles\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Petites Victoires Techniques\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Mettez en pratique vos connaissances avec des exercices interactifs.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice de conditionnels\"",\n        \""Exercice de boucles\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'Expansion de l'Intelligence Artificielle\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser Python pour cr\u00e9er des programmes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Machine Learning\"",\n        \""Data Science\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 62578.7, ""llm_score"": 52.67, ""rag_score"": null, ""final_score"": 85.8, ""context_docs_count"": 4}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+
+  ""courseTitle"": ""La Quête de l'Intelligence Artificielle"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Compétence active 1 (ex: Maîtriser les boucles)"",
+    ""Compétence active 2"",
+    ""Compétence active 3""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment stocker et manipuler les informations avec Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Variables et types de données"",
+        ""Opérateurs arithmétiques""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions et les Boucles"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à prendre des décisions et répéter des actions avec Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions"",
+        ""Boucles""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Petites Victoires Techniques"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Mettez en pratique vos connaissances avec des exercices interactifs."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice de conditionnels"",
+        ""Exercice de boucles""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'Expansion de l'Intelligence Artificielle"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser Python pour créer des programmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Machine Learning"",
+        ""Data Science""
+      ]
+    }
+  ]
+
+}",100.0,4,100
+Python,12,beginner,llama3.1:latest,architect,3,44,3,True,True,51924.0,247.97,52.67,100,85.8,1603,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 247.97, ""response_length"": 1603, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""La Qu\u00eate de l'Intelligence Artificielle\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comp\u00e9tence active 1 (ex: Ma\u00eetriser les boucles)\"",\n    \""Comp\u00e9tence active 2\"",\n    \""Comp\u00e9tence active 3\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment stocker et manipuler les informations avec Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Variables et types de donn\u00e9es\"",\n        \""Op\u00e9rateurs arithm\u00e9tiques\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions et les Boucles\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 prendre des d\u00e9cisions et r\u00e9p\u00e9ter des actions avec Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions\"",\n        \""Boucles\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Petites Victoires Techniques\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Mettez en pratique vos connaissances avec des exercices interactifs.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice de conditionnels\"",\n        \""Exercice de boucles\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'Expansion de l'Intelligence Artificielle\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser Python pour cr\u00e9er des programmes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Machine Learning\"",\n        \""Data Science\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 51924.0, ""llm_score"": 52.67, ""rag_score"": null, ""final_score"": 85.8, ""context_docs_count"": 4}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+
+  ""courseTitle"": ""La Quête de l'Intelligence Artificielle"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Compétence active 1 (ex: Maîtriser les boucles)"",
+    ""Compétence active 2"",
+    ""Compétence active 3""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment stocker et manipuler les informations avec Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Variables et types de données"",
+        ""Opérateurs arithmétiques""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions et les Boucles"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à prendre des décisions et répéter des actions avec Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions"",
+        ""Boucles""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Petites Victoires Techniques"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Mettez en pratique vos connaissances avec des exercices interactifs."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice de conditionnels"",
+        ""Exercice de boucles""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'Expansion de l'Intelligence Artificielle"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser Python pour créer des programmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Machine Learning"",
+        ""Data Science""
+      ]
+    }
+  ]
+
+}",100.0,4,100

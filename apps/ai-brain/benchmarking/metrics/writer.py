@@ -27,6 +27,10 @@ METRIC_KEYS = [
     "json_valid",
     "schema_compliance",
     "word_count",
+    "citations_count",
+    "citations_present",
+    "citation_coverage",
+    "citation_format_valid",
     "examples_count",
     "readability",
     "lix_value",
@@ -191,6 +195,57 @@ def count_examples(text) -> int:
     code_fences = len(re.findall(r"```", text)) // 2
     example_mentions = len(re.findall(r"\bexample\b", text, re.IGNORECASE)) + len(re.findall(r"\bexemple\b", text, re.IGNORECASE))
     return code_fences + example_mentions
+
+
+def detect_citations(parsed: Any, content: str) -> Dict[str, Any]:
+    """Detect citations from parsed JSON or content heuristics.
+
+    Returns dict with keys: count, present(bool), coverage(0-100), format_valid(bool)
+    """
+    # Prefer explicit citations field in parsed JSON
+    citations = []
+    try:
+        if isinstance(parsed, dict):
+            for key in ("citations", "sources", "references", "source_list"):
+                if key in parsed and isinstance(parsed[key], (list, tuple)):
+                    citations = list(parsed[key])
+                    break
+    except Exception:
+        citations = []
+
+    # Heuristic fallback: look for [Doc N], "Source:", or URLs in the content
+    if not citations:
+        citations = []
+        # bracketed doc pattern like [Doc 1]
+        citations += re.findall(r"\[Doc\s+\d+\]", content)
+        # plain 'Source:' mentions
+        citations += re.findall(r"Source:\s*[^\n]+", content, flags=re.IGNORECASE)
+        # URLs
+        citations += re.findall(r"https?://[\w\-./?=&%]+", content)
+
+    # Normalize
+    citations = [c for c in citations if c]
+    count = len(citations)
+    present = count > 0
+
+    # Coverage: fraction of sentences containing a citation * 100
+    sentences = max(1, content.count(".") + content.count("!") + content.count("?"))
+    sentences_with_cite = 0
+    if present:
+        for sent in re.split(r"(?<=[.!?])\\s+", content):
+            if re.search(r"\[Doc\s+\d+\]|Source:|https?://", sent, flags=re.IGNORECASE):
+                sentences_with_cite += 1
+    coverage = round((sentences_with_cite / sentences) * 100.0, 2) if sentences else 0.0
+
+    # Format validity: basic heuristic — if citations come from explicit parsed list or bracketed/Source patterns
+    format_valid = bool(present and (isinstance(parsed, dict) and any(k in parsed for k in ("citations", "sources")) or any(re.search(r"\[Doc\s+\d+\]|Source:\s*", c, flags=re.IGNORECASE) for c in citations)))
+
+    return {
+        "count": count,
+        "present": present,
+        "coverage": coverage,
+        "format_valid": format_valid,
+    }
 
 
 
@@ -388,5 +443,21 @@ def writer_metrics(
                 "ragas_status": "ok",
 
             })
+    else:
+        # If no ragas_scores, still provide citation info from content
+        pass
+
+    # Final adjustment: reward presence of citations to reduce hallucination impact
+    try:
+        citation_info = detect_citations(parsed if parsed else {}, content)
+        # Award up to +10 points if citations present and format looks valid
+        cite_bonus = 10 if citation_info.get("present") and citation_info.get("format_valid") else (5 if citation_info.get("present") else 0)
+        metrics["citations_count"] = citation_info.get("count", 0)
+        metrics["citations_present"] = citation_info.get("present", False)
+        metrics["citation_coverage"] = citation_info.get("coverage", 0.0)
+        metrics["citation_format_valid"] = citation_info.get("format_valid", False)
+        metrics["agent_score"] = min(100, int(metrics.get("agent_score", 0)) + cite_bonus)
+    except Exception:
+        pass
 
     return metrics

@@ -1,0 +1,192 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Python,12,beginner,llama3.1:latest,architect,1,42,3,True,True,27156.7,257.69,55.48,100,86.64,1783,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 257.69, ""response_length"": 1783, ""agent_score"": 100, ""generated_content"": ""{\n  \""courseTitle\"": \""La Qu\u00eate de l'Intelligence Artificielle\"",\n  \""programmingLanguage\"": \""Python\"",\n  \""level\"": \""beginner\"",\n  \""totalDuration\"": \""6 heures\"",\n  \""objectives\"": [\n    \""Comprendre les conditions et les boucles en Python\"",\n    \""Appliquer les concepts dans des cas simples\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment les ordinateurs peuvent r\u00e9soudre des probl\u00e8mes en suivant des \u00e9tapes logiques.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions: Si, Alors et Sinon\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Fondations de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Comprenez comment les conditions et les boucles fonctionnent en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Boucles: R\u00e9p\u00e9ter des actions\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""La Manipulation de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice: Quel est le type de condition pour v\u00e9rifier si une variable est sup\u00e9rieure \u00e0 5?\"",\n        \""Exercice: Remplis le trou: __________ est utilis\u00e9 pour r\u00e9p\u00e9ter des actions.\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'Expansion de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice: Utilisez les conditions et les boucles pour r\u00e9soudre un probl\u00e8me\""\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 27156.7, ""llm_score"": 55.48, ""rag_score"": null, ""final_score"": 86.64, ""context_docs_count"": 3}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+  ""courseTitle"": ""La Quête de l'Intelligence Artificielle"",
+  ""programmingLanguage"": ""Python"",
+  ""level"": ""beginner"",
+  ""totalDuration"": ""6 heures"",
+  ""objectives"": [
+    ""Comprendre les conditions et les boucles en Python"",
+    ""Appliquer les concepts dans des cas simples""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment les ordinateurs peuvent résoudre des problèmes en suivant des étapes logiques."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions: Si, Alors et Sinon""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Fondations de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Comprenez comment les conditions et les boucles fonctionnent en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Boucles: Répéter des actions""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""La Manipulation de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à utiliser les conditions et les boucles pour résoudre des problèmes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice: Quel est le type de condition pour vérifier si une variable est supérieure à 5?"",
+        ""Exercice: Remplis le trou: __________ est utilisé pour répéter des actions.""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'Expansion de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser les conditions et les boucles pour résoudre des problèmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice: Utilisez les conditions et les boucles pour résoudre un problème""
+      ]
+    }
+  ]
+}",100.0,4,100
+Python,12,beginner,llama3.1:latest,architect,2,43,3,True,True,32333.5,304.21,48.14,100,84.44,2026,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 5, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 304.21, ""response_length"": 2026, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""La Qu\u00eate de l'Intelligence Artificielle\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comprendre les conditions et les boucles\"",\n    \""Appliquer les concepts dans des cas simples\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment les ordinateurs peuvent r\u00e9soudre des probl\u00e8mes complexes en suivant des instructions pr\u00e9cises.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions et boucles : les cl\u00e9s pour la programmation\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions : le pouvoir de d\u00e9cision\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions pour prendre des d\u00e9cisions dans votre programme.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions simples et complexes\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Boucles : la r\u00e9p\u00e9tition est cl\u00e9\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les boucles pour r\u00e9p\u00e9ter des actions dans votre programme.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Boucles for et while\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""La Manipulation : les premi\u00e8res victoires\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes concrets.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercices pratiques sur les conditions et les boucles\""\n      ]\n    },\n    {\n      \""order\"": 5,\n      \""title\"": \""L'Expansion : les concepts avanc\u00e9s\"",\n      \""duration\"": \""60 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions et boucles dans la programmation Python\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 32333.5, ""llm_score"": 48.14, ""rag_score"": null, ""final_score"": 84.44, ""context_docs_count"": 3}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+
+  ""courseTitle"": ""La Quête de l'Intelligence Artificielle"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Comprendre les conditions et les boucles"",
+    ""Appliquer les concepts dans des cas simples""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment les ordinateurs peuvent résoudre des problèmes complexes en suivant des instructions précises."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions et boucles : les clés pour la programmation""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions : le pouvoir de décision"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Apprenez à utiliser les conditions pour prendre des décisions dans votre programme."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions simples et complexes""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Boucles : la répétition est clé"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Découvrez comment utiliser les boucles pour répéter des actions dans votre programme."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Boucles for et while""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""La Manipulation : les premières victoires"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à utiliser les conditions et les boucles pour résoudre des problèmes concrets."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercices pratiques sur les conditions et les boucles""
+      ]
+    },
+    {
+      ""order"": 5,
+      ""title"": ""L'Expansion : les concepts avancés"",
+      ""duration"": ""60 mins"",
+      ""description"": ""Découvrez comment utiliser les conditions et les boucles pour résoudre des problèmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions et boucles dans la programmation Python""
+      ]
+    }
+  ]
+
+}",100.0,5,100
+Python,12,beginner,llama3.1:latest,architect,3,44,3,True,True,38637.4,273.89,48.14,100,84.44,2026,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 5, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 273.89, ""response_length"": 2026, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""La Qu\u00eate de l'Intelligence Artificielle\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comprendre les conditions et les boucles\"",\n    \""Appliquer les concepts dans des cas simples\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment les ordinateurs peuvent r\u00e9soudre des probl\u00e8mes complexes en suivant des instructions pr\u00e9cises.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions et boucles : les cl\u00e9s pour la programmation\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions : le pouvoir de d\u00e9cision\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions pour prendre des d\u00e9cisions dans votre programme.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions simples et complexes\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Boucles : la r\u00e9p\u00e9tition est cl\u00e9\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les boucles pour r\u00e9p\u00e9ter des actions dans votre programme.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Boucles for et while\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""La Manipulation : les premi\u00e8res victoires\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes concrets.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercices pratiques sur les conditions et les boucles\""\n      ]\n    },\n    {\n      \""order\"": 5,\n      \""title\"": \""L'Expansion : les concepts avanc\u00e9s\"",\n      \""duration\"": \""60 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les conditions et les boucles pour r\u00e9soudre des probl\u00e8mes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditions et boucles dans la programmation Python\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 38637.4, ""llm_score"": 48.14, ""rag_score"": null, ""final_score"": 84.44, ""context_docs_count"": 3}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,"{
+
+  ""courseTitle"": ""La Quête de l'Intelligence Artificielle"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Comprendre les conditions et les boucles"",
+    ""Appliquer les concepts dans des cas simples""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment les ordinateurs peuvent résoudre des problèmes complexes en suivant des instructions précises."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions et boucles : les clés pour la programmation""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions : le pouvoir de décision"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Apprenez à utiliser les conditions pour prendre des décisions dans votre programme."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions simples et complexes""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Boucles : la répétition est clé"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Découvrez comment utiliser les boucles pour répéter des actions dans votre programme."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Boucles for et while""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""La Manipulation : les premières victoires"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à utiliser les conditions et les boucles pour résoudre des problèmes concrets."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercices pratiques sur les conditions et les boucles""
+      ]
+    },
+    {
+      ""order"": 5,
+      ""title"": ""L'Expansion : les concepts avancés"",
+      ""duration"": ""60 mins"",
+      ""description"": ""Découvrez comment utiliser les conditions et les boucles pour résoudre des problèmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditions et boucles dans la programmation Python""
+      ]
+    }
+  ]
+
+}",100.0,5,100

@@ -35,4 +35,46 @@
   .spinner {
     @apply inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin-slow;
   }
+
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 5.5s ease-in-out infinite;
+  }
+
+  .animate-shine {
+    animation: shine 4s ease-in-out infinite;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -10px, 0) rotate(-1.5deg); }
+}
+
+@keyframes shine {
+  0%, 100% { opacity: 0.42; transform: translateX(-12px); }
+  50% { opacity: 0.9; transform: translateX(12px); }
+}
+
+/* Hero extras */
+.hero-cta {
+  transform-origin: center;
+  animation: hero-pop 3.2s ease-in-out infinite;
+}
+
+@keyframes hero-pop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
+}
+
+.hero-glow {
+  box-shadow: 0 20px 50px -20px rgba(99,102,241,0.28), 0 8px 30px -20px rgba(59,130,246,0.18);
 }

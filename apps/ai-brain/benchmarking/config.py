@@ -116,6 +116,7 @@ class Config:
         if not prompt_file.exists():
             raise FileNotFoundError(f"Prompt template not found: {prompt_file}")
         template = prompt_file.read_text(encoding="utf-8")
+        kwargs.setdefault("module_count_instructions", "")
         return template.format(**kwargs)
 
     def get_cache_path(self, key: str) -> Path:

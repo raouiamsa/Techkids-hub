@@ -1,0 +1,49 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,answer_index_validity,diversity_score,exercise_count,generated_content,options_validity,schema_validity,valid_exercises
+Python,12,beginner,llama3.1:latest,enricher,1,42,3,True,17119.8,90.01,85.0,100,95.5,597,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 90.01, ""response_length"": 597, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Quel est le type de donn\u00e9es pour une variable qui stocke un nom?"", ""options"": [""str"", ""int"", ""float"", ""bool""], ""correct_index"": 0, ""explanation"": ""Bravo ! En fait, les variables qui stockent des noms sont du type 'str', comme les ch\u00e2sses pour les noms.""}, {""question"": ""Quel op\u00e9rateur est utilis\u00e9 pour effectuer une division?"", ""options"": [""+"", ""-"", ""*"", ""/""], ""correct_index"": 3, ""explanation"": ""Super ! N'oublie pas que le symbole '/' est utilis\u00e9 pour effectuer des calculs de division.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{\n  \""questions\"": [\n    {\n      \""question\"": \""Quel est le type de donn\u00e9es pour une variable qui stocke un nom?\"",\n      \""options\"": [\""str\"", \""int\"", \""float\"", \""bool\""],\n      \""correct_index\"": 0,\n      \""explanation\"": \""Bravo ! En fait, les variables qui stockent des noms sont du type 'str', comme les ch\u00e2sses pour les noms.\""\n    },\n    {\n      \""question\"": \""Quel op\u00e9rateur est utilis\u00e9 pour effectuer une division?\"",\n      \""options\"": [\""+\"", \""-\"", \""*\"", \""/\""],\n      \""correct_index\"": 3,\n      \""explanation\"": \""Super ! N'oublie pas que le symbole '/' est utilis\u00e9 pour effectuer des calculs de division.\""\n    }\n  ]\n}"", ""ttft_ms"": 17119.8, ""llm_score"": 85.0, ""rag_score"": null, ""final_score"": 95.5}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,100.0,100.0,2,"{
+  ""questions"": [
+    {
+      ""question"": ""Quel est le type de données pour une variable qui stocke un nom?"",
+      ""options"": [""str"", ""int"", ""float"", ""bool""],
+      ""correct_index"": 0,
+      ""explanation"": ""Bravo ! En fait, les variables qui stockent des noms sont du type 'str', comme les châsses pour les noms.""
+    },
+    {
+      ""question"": ""Quel opérateur est utilisé pour effectuer une division?"",
+      ""options"": [""+"", ""-"", ""*"", ""/""],
+      ""correct_index"": 3,
+      ""explanation"": ""Super ! N'oublie pas que le symbole '/' est utilisé pour effectuer des calculs de division.""
+    }
+  ]
+}",100.0,100.0,2
+Python,12,beginner,llama3.1:latest,enricher,2,43,3,True,11665.5,77.98,87.0,100,96.1,589,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 77.98, ""response_length"": 589, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Quel est le type de donn\u00e9es pour une variable qui stocke un nom ?"", ""options"": [""str"", ""int"", ""float"", ""bool""], ""correct_index"": 0, ""explanation"": ""Bravo ! En fait, les variables qui stockent des noms sont consid\u00e9r\u00e9es comme des cha\u00eenes de caract\u00e8res (str).""}, {""question"": ""Quel op\u00e9rateur est utilis\u00e9 pour additionner deux nombres ?"", ""options"": [""+"", ""-"", ""*"", ""/""], ""correct_index"": 0, ""explanation"": ""Super ! En fait, l'op\u00e9rateur '+' est utilis\u00e9 pour additionner deux nombres.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""questions\"": [\n    {\n      \""question\"": \""Quel est le type de donn\u00e9es pour une variable qui stocke un nom ?\"",\n      \""options\"": [\""str\"", \""int\"", \""float\"", \""bool\""],\n      \""correct_index\"": 0,\n      \""explanation\"": \""Bravo ! En fait, les variables qui stockent des noms sont consid\u00e9r\u00e9es comme des cha\u00eenes de caract\u00e8res (str).\""\n    },\n    {\n      \""question\"": \""Quel op\u00e9rateur est utilis\u00e9 pour additionner deux nombres ?\"",\n      \""options\"": [\""+\"", \""-\"", \""*\"", \""/\""],\n      \""correct_index\"": 0,\n      \""explanation\"": \""Super ! En fait, l'op\u00e9rateur '+' est utilis\u00e9 pour additionner deux nombres.\""\n    }\n  ]\n}"", ""ttft_ms"": 11665.5, ""llm_score"": 87.0, ""rag_score"": null, ""final_score"": 96.1}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,100.0,100.0,2,"{ 
+  ""questions"": [
+    {
+      ""question"": ""Quel est le type de données pour une variable qui stocke un nom ?"",
+      ""options"": [""str"", ""int"", ""float"", ""bool""],
+      ""correct_index"": 0,
+      ""explanation"": ""Bravo ! En fait, les variables qui stockent des noms sont considérées comme des chaînes de caractères (str).""
+    },
+    {
+      ""question"": ""Quel opérateur est utilisé pour additionner deux nombres ?"",
+      ""options"": [""+"", ""-"", ""*"", ""/""],
+      ""correct_index"": 0,
+      ""explanation"": ""Super ! En fait, l'opérateur '+' est utilisé pour additionner deux nombres.""
+    }
+  ]
+}",100.0,100.0,2
+Python,12,beginner,llama3.1:latest,enricher,3,44,3,True,11321.2,75.21,87.47,100,96.24,555,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 75.21, ""response_length"": 555, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Quel est le type de donn\u00e9es pour une variable qui stocke un nom ?"", ""options"": [""str"", ""int"", ""float"", ""bool""], ""correct_index"": 0, ""explanation"": ""Bravo ! En fait, les cha\u00eenes de caract\u00e8res sont utilis\u00e9es pour stocker des noms.""}, {""question"": ""Quel op\u00e9rateur est utilis\u00e9 pour effectuer des calculs ?"", ""options"": [""+"", ""-"", ""*"", ""/""], ""correct_index"": 2, ""explanation"": ""Super ! En fait, l'op\u00e9rateur '*' est utilis\u00e9 pour effectuer des calculs.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""questions\"": [\n    {\n      \""question\"": \""Quel est le type de donn\u00e9es pour une variable qui stocke un nom ?\"",\n      \""options\"": [\""str\"", \""int\"", \""float\"", \""bool\""],\n      \""correct_index\"": 0,\n      \""explanation\"": \""Bravo ! En fait, les cha\u00eenes de caract\u00e8res sont utilis\u00e9es pour stocker des noms.\""\n    },\n    {\n      \""question\"": \""Quel op\u00e9rateur est utilis\u00e9 pour effectuer des calculs ?\"",\n      \""options\"": [\""+\"", \""-\"", \""*\"", \""/\""],\n      \""correct_index\"": 2,\n      \""explanation\"": \""Super ! En fait, l'op\u00e9rateur '*' est utilis\u00e9 pour effectuer des calculs.\""\n    }\n  ]\n}"", ""ttft_ms"": 11321.2, ""llm_score"": 87.47, ""rag_score"": null, ""final_score"": 96.24}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,100.0,100.0,2,"{ 
+  ""questions"": [
+    {
+      ""question"": ""Quel est le type de données pour une variable qui stocke un nom ?"",
+      ""options"": [""str"", ""int"", ""float"", ""bool""],
+      ""correct_index"": 0,
+      ""explanation"": ""Bravo ! En fait, les chaînes de caractères sont utilisées pour stocker des noms.""
+    },
+    {
+      ""question"": ""Quel opérateur est utilisé pour effectuer des calculs ?"",
+      ""options"": [""+"", ""-"", ""*"", ""/""],
+      ""correct_index"": 2,
+      ""explanation"": ""Super ! En fait, l'opérateur '*' est utilisé pour effectuer des calculs.""
+    }
+  ]
+}",100.0,100.0,2

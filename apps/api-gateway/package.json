@@ -7,6 +7,11 @@
     "start": "ts-node -r tsconfig-paths/register src/main.ts"
   },
   "nx": {
+    "implicitDependencies": [
+      "auth-service",
+      "edu-tracker-service",
+      "virtual-lab-service"
+    ],
     "targets": {
       "build": {
         "executor": "nx:run-commands",

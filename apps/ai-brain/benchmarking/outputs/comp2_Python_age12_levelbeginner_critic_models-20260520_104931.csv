@@ -1,0 +1,89 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,consistency_score,generated_content,issue_completeness,score,score_range_validity
+Python,12,beginner,llama3.1:latest,critic,1,42,3,True,True,15306.5,135.66,42.1,75,65.13,1134,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 135.66, ""response_length"": 1134, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""Section 1: D\u00e9couvrez l'aventure Python !"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop simple et ne convient pas \u00e0 un enfant de 12 ans. Les concepts sont \u00e9galement pr\u00e9sent\u00e9s de mani\u00e8re trop simpliste.""}, {""module"": ""Section 2: Les listes en Python !"", ""issue"": ""L'exemple d'impression des lettres d'une cha\u00eene est trop simple et ne montre pas bien l'utilisation r\u00e9elle des listes en Python.""}, {""module"": ""Section 3: Les boucles !"", ""issue"": ""La fonction range() n'est pas expliqu\u00e9e de mani\u00e8re claire, ce qui peut causer des difficult\u00e9s \u00e0 comprendre les boucles en Python.""}, {""module"": ""Section 4: Pratique !"", ""issue"": ""Le code fourni pour la section pratique est trop simple et ne permet pas d'appliquer r\u00e9ellement les concepts appris.""}], ""global_issues"": [""La progression de difficult\u00e9 technique n'est pas logique entre les modules."", ""Les exemples et exercices sont trop simples et ne montrent pas bien l'utilisation r\u00e9elle des concepts en Python.""]}, ""approved"": false, ""critic_rejection_reason"": ""La progression de difficult\u00e9 technique n'est pas logique entre les modules."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""Section 1: D\u00e9couvrez l'aventure Python !\"",\n      \""issue\"": \""Le vocabulaire utilis\u00e9 est trop simple et ne convient pas \u00e0 un enfant de 12 ans. Les concepts sont \u00e9galement pr\u00e9sent\u00e9s de mani\u00e8re trop simpliste.\""\n    },\n    {\n      \""module\"": \""Section 2: Les listes en Python !\"",\n      \""issue\"": \""L'exemple d'impression des lettres d'une cha\u00eene est trop simple et ne montre pas bien l'utilisation r\u00e9elle des listes en Python.\""\n    },\n    {\n      \""module\"": \""Section 3: Les boucles !\"",\n      \""issue\"": \""La fonction range() n'est pas expliqu\u00e9e de mani\u00e8re claire, ce qui peut causer des difficult\u00e9s \u00e0 comprendre les boucles en Python.\""\n    },\n    {\n      \""module\"": \""Section 4: Pratique !\"",\n      \""issue\"": \""Le code fourni pour la section pratique est trop simple et ne permet pas d'appliquer r\u00e9ellement les concepts appris.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""La progression de difficult\u00e9 technique n'est pas logique entre les modules.\"",\n    \""Les exemples et exercices sont trop simples et ne montrent pas bien l'utilisation r\u00e9elle des concepts en Python.\""\n  ]\n}"", ""ttft_ms"": 15306.5, ""llm_score"": 42.1, ""rag_score"": null, ""final_score"": 65.13}",0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""Section 1: Découvrez l'aventure Python !"",
+      ""issue"": ""Le vocabulaire utilisé est trop simple et ne convient pas à un enfant de 12 ans. Les concepts sont également présentés de manière trop simpliste.""
+    },
+    {
+      ""module"": ""Section 2: Les listes en Python !"",
+      ""issue"": ""L'exemple d'impression des lettres d'une chaîne est trop simple et ne montre pas bien l'utilisation réelle des listes en Python.""
+    },
+    {
+      ""module"": ""Section 3: Les boucles !"",
+      ""issue"": ""La fonction range() n'est pas expliquée de manière claire, ce qui peut causer des difficultés à comprendre les boucles en Python.""
+    },
+    {
+      ""module"": ""Section 4: Pratique !"",
+      ""issue"": ""Le code fourni pour la section pratique est trop simple et ne permet pas d'appliquer réellement les concepts appris.""
+    }
+  ],
+  ""global_issues"": [
+    ""La progression de difficulté technique n'est pas logique entre les modules."",
+    ""Les exemples et exercices sont trop simples et ne montrent pas bien l'utilisation réelle des concepts en Python.""
+  ]
+}",100,,True
+Python,12,beginner,llama3.1:latest,critic,2,43,3,True,True,14068.6,205.08,42.05,75,65.11,1834,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 205.08, ""response_length"": 1834, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""D\u00e9couvrez l'aventure Python !"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop simple et ne convient pas \u00e0 un enfant de 12 ans. Le cours devrait utiliser des termes plus pr\u00e9cis et techniques pour d\u00e9crire les concepts de programmation.""}, {""module"": ""Type annotations - Les super-pouvoirs de la programmation !"", ""issue"": ""La comparaison avec les super-pouvoirs est trop simpliste et ne permet pas une compr\u00e9hension approfondie des type annotations. Le cours devrait utiliser un exemple plus r\u00e9aliste pour illustrer le concept.""}, {""module"": ""Les listes - Un peu comme un classement de vos amis pr\u00e9f\u00e9r\u00e9s !"", ""issue"": ""L'analogie avec les amis est trop vague et ne permet pas une compr\u00e9hension claire des listes en Python. Le cours devrait utiliser un exemple plus concret pour illustrer le concept.""}, {""module"": ""Le for-in loop - Une boucle infinie de possibilit\u00e9s !"", ""issue"": ""L'analogie avec la boucle infinie est trop simpliste et ne permet pas une compr\u00e9hension approfondie du for-in loop. Le cours devrait utiliser un exemple plus r\u00e9aliste pour illustrer le concept.""}, {""module"": ""Pratique - Alors, vous \u00eates pr\u00eat \u00e0 essayer ?"", ""issue"": ""L'exemple de cr\u00e9ation d'une liste et d'utilisation d'un for-in loop est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Le cours devrait utiliser un exemple plus complexe pour illustrer les capacit\u00e9s du langage.""}], ""global_issues"": [""Le cours manque de coh\u00e9rence globale et ne pr\u00e9sente pas une progression logique entre les modules."", ""Le cours n'est pas adapt\u00e9 \u00e0 l'\u00e2ge cibl\u00e9 (12 ans) et utilise des termes trop simples pour d\u00e9crire les concepts de programmation.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de coh\u00e9rence globale et ne pr\u00e9sente pas une progression logique entre les modules."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""D\u00e9couvrez l'aventure Python !\"",\n      \""issue\"": \""Le vocabulaire utilis\u00e9 est trop simple et ne convient pas \u00e0 un enfant de 12 ans. Le cours devrait utiliser des termes plus pr\u00e9cis et techniques pour d\u00e9crire les concepts de programmation.\""\n    },\n    {\n      \""module\"": \""Type annotations - Les super-pouvoirs de la programmation !\"",\n      \""issue\"": \""La comparaison avec les super-pouvoirs est trop simpliste et ne permet pas une compr\u00e9hension approfondie des type annotations. Le cours devrait utiliser un exemple plus r\u00e9aliste pour illustrer le concept.\""\n    },\n    {\n      \""module\"": \""Les listes - Un peu comme un classement de vos amis pr\u00e9f\u00e9r\u00e9s !\"",\n      \""issue\"": \""L'analogie avec les amis est trop vague et ne permet pas une compr\u00e9hension claire des listes en Python. Le cours devrait utiliser un exemple plus concret pour illustrer le concept.\""\n    },\n    {\n      \""module\"": \""Le for-in loop - Une boucle infinie de possibilit\u00e9s !\"",\n      \""issue\"": \""L'analogie avec la boucle infinie est trop simpliste et ne permet pas une compr\u00e9hension approfondie du for-in loop. Le cours devrait utiliser un exemple plus r\u00e9aliste pour illustrer le concept.\""\n    },\n    {\n      \""module\"": \""Pratique - Alors, vous \u00eates pr\u00eat \u00e0 essayer ?\"",\n      \""issue\"": \""L'exemple de cr\u00e9ation d'une liste et d'utilisation d'un for-in loop est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Le cours devrait utiliser un exemple plus complexe pour illustrer les capacit\u00e9s du langage.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""Le cours manque de coh\u00e9rence globale et ne pr\u00e9sente pas une progression logique entre les modules.\"",\n    \""Le cours n'est pas adapt\u00e9 \u00e0 l'\u00e2ge cibl\u00e9 (12 ans) et utilise des termes trop simples pour d\u00e9crire les concepts de programmation.\""\n  ]\n}"", ""ttft_ms"": 14068.6, ""llm_score"": 42.05, ""rag_score"": null, ""final_score"": 65.11}",0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""Découvrez l'aventure Python !"",
+      ""issue"": ""Le vocabulaire utilisé est trop simple et ne convient pas à un enfant de 12 ans. Le cours devrait utiliser des termes plus précis et techniques pour décrire les concepts de programmation.""
+    },
+    {
+      ""module"": ""Type annotations - Les super-pouvoirs de la programmation !"",
+      ""issue"": ""La comparaison avec les super-pouvoirs est trop simpliste et ne permet pas une compréhension approfondie des type annotations. Le cours devrait utiliser un exemple plus réaliste pour illustrer le concept.""
+    },
+    {
+      ""module"": ""Les listes - Un peu comme un classement de vos amis préférés !"",
+      ""issue"": ""L'analogie avec les amis est trop vague et ne permet pas une compréhension claire des listes en Python. Le cours devrait utiliser un exemple plus concret pour illustrer le concept.""
+    },
+    {
+      ""module"": ""Le for-in loop - Une boucle infinie de possibilités !"",
+      ""issue"": ""L'analogie avec la boucle infinie est trop simpliste et ne permet pas une compréhension approfondie du for-in loop. Le cours devrait utiliser un exemple plus réaliste pour illustrer le concept.""
+    },
+    {
+      ""module"": ""Pratique - Alors, vous êtes prêt à essayer ?"",
+      ""issue"": ""L'exemple de création d'une liste et d'utilisation d'un for-in loop est trop simple et ne permet pas une compréhension approfondie des concepts. Le cours devrait utiliser un exemple plus complexe pour illustrer les capacités du langage.""
+    }
+  ],
+  ""global_issues"": [
+    ""Le cours manque de cohérence globale et ne présente pas une progression logique entre les modules."",
+    ""Le cours n'est pas adapté à l'âge ciblé (12 ans) et utilise des termes trop simples pour décrire les concepts de programmation.""
+  ]
+}",100,,True
+Python,12,beginner,llama3.1:latest,critic,3,44,3,True,True,18405.1,167.02,40.99,75,64.8,1305,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 167.02, ""response_length"": 1305, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""Section 1: D\u00e9couvrez le monde incroyable de Python !"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop g\u00e9n\u00e9ral et ne convient pas \u00e0 un enfant de 12 ans. Par exemple, 'incroyable' peut \u00eatre consid\u00e9r\u00e9 comme trop emphatique.""}, {""module"": ""Section 2: Les types de donn\u00e9es"", ""issue"": ""L'analogie du panier de fruits n'est pas tr\u00e8s claire et pourrait \u00eatre remplac\u00e9e par une autre qui soit plus pertinente pour les enfants de 12 ans.""}, {""module"": ""Section 3: Les listes et les boucles"", ""issue"": ""La comparaison avec un classeur et des pages est trop simple et ne rend pas compte de la complexit\u00e9 r\u00e9elle des listes et des boucles en Python.""}, {""module"": ""Section 4: La pratique"", ""issue"": ""Le code \u00e0 \u00e9crire n'est pas suffisamment d\u00e9taill\u00e9 pour permettre aux enfants de comprendre les concepts cl\u00e9s.""}, {""module"": ""Section 5: R\u00e9capitulatif"", ""issue"": ""La conclusion est trop br\u00e8ve et ne donne pas une bonne id\u00e9e des progr\u00e8s r\u00e9alis\u00e9s par les \u00e9l\u00e8ves.""}], ""global_issues"": [""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques augmentent trop rapidement pour les enfants de 12 ans."", ""L'adaptation au langage Python est incompl\u00e8te et n\u00e9cessite une mise \u00e0 jour pour refl\u00e9ter les sp\u00e9cificit\u00e9s du langage.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques augmentent trop rapidement pour les enfants de 12 ans."", ""generated_content"": ""{\n\n\""score\"": 60,\n\""approved\"": false,\n\""module_issues\"": [\n{\n\""module\"": \""Section 1: D\u00e9couvrez le monde incroyable de Python !\"",\n\""issue\"": \""Le vocabulaire utilis\u00e9 est trop g\u00e9n\u00e9ral et ne convient pas \u00e0 un enfant de 12 ans. Par exemple, 'incroyable' peut \u00eatre consid\u00e9r\u00e9 comme trop emphatique.\""\n},\n{\n\""module\"": \""Section 2: Les types de donn\u00e9es\"",\n\""issue\"": \""L'analogie du panier de fruits n'est pas tr\u00e8s claire et pourrait \u00eatre remplac\u00e9e par une autre qui soit plus pertinente pour les enfants de 12 ans.\""\n},\n{\n\""module\"": \""Section 3: Les listes et les boucles\"",\n\""issue\"": \""La comparaison avec un classeur et des pages est trop simple et ne rend pas compte de la complexit\u00e9 r\u00e9elle des listes et des boucles en Python.\""\n},\n{\n\""module\"": \""Section 4: La pratique\"",\n\""issue\"": \""Le code \u00e0 \u00e9crire n'est pas suffisamment d\u00e9taill\u00e9 pour permettre aux enfants de comprendre les concepts cl\u00e9s.\""\n},\n{\n\""module\"": \""Section 5: R\u00e9capitulatif\"",\n\""issue\"": \""La conclusion est trop br\u00e8ve et ne donne pas une bonne id\u00e9e des progr\u00e8s r\u00e9alis\u00e9s par les \u00e9l\u00e8ves.\""\n}\n],\n\""global_issues\"": [\n\""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques augmentent trop rapidement pour les enfants de 12 ans.\"",\n\""L'adaptation au langage Python est incompl\u00e8te et n\u00e9cessite une mise \u00e0 jour pour refl\u00e9ter les sp\u00e9cificit\u00e9s du langage.\""\n]\n\n}"", ""ttft_ms"": 18405.1, ""llm_score"": 40.99, ""rag_score"": null, ""final_score"": 64.8}",0,"{
+
+""score"": 60,
+""approved"": false,
+""module_issues"": [
+{
+""module"": ""Section 1: Découvrez le monde incroyable de Python !"",
+""issue"": ""Le vocabulaire utilisé est trop général et ne convient pas à un enfant de 12 ans. Par exemple, 'incroyable' peut être considéré comme trop emphatique.""
+},
+{
+""module"": ""Section 2: Les types de données"",
+""issue"": ""L'analogie du panier de fruits n'est pas très claire et pourrait être remplacée par une autre qui soit plus pertinente pour les enfants de 12 ans.""
+},
+{
+""module"": ""Section 3: Les listes et les boucles"",
+""issue"": ""La comparaison avec un classeur et des pages est trop simple et ne rend pas compte de la complexité réelle des listes et des boucles en Python.""
+},
+{
+""module"": ""Section 4: La pratique"",
+""issue"": ""Le code à écrire n'est pas suffisamment détaillé pour permettre aux enfants de comprendre les concepts clés.""
+},
+{
+""module"": ""Section 5: Récapitulatif"",
+""issue"": ""La conclusion est trop brève et ne donne pas une bonne idée des progrès réalisés par les élèves.""
+}
+],
+""global_issues"": [
+""Le cours manque de progression logique entre les modules. Les difficultés techniques augmentent trop rapidement pour les enfants de 12 ans."",
+""L'adaptation au langage Python est incomplète et nécessite une mise à jour pour refléter les spécificités du langage.""
+]
+
+}",100,,True

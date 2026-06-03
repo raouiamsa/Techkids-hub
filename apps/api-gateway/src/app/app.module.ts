@@ -9,6 +9,7 @@ import { ParentModule } from './parent/parent.module';
 import { AiController } from './ai/ai.controller';
 import { AiGateway } from './ai/ai.gateway';
 import { MessagingModule } from '@org/messaging';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { MessagingModule } from '@org/messaging';
     EduTrackerModule,
     SharedAuthModule,
     ParentModule,
+    UsersModule,
     MessagingModule,   // ← Enregistre RABBITMQ_CLIENT pour AiController
   ],
   controllers: [AppController, AiController],

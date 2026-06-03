@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '../contexts/auth.context';
-import { BookOpen, LayoutDashboard, LogOut, ChevronDown } from 'lucide-react';
+import { BookOpen, LayoutDashboard, LogOut, ChevronDown, User as UserIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@org/ui-components';
 
@@ -69,8 +69,14 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">
-                  {user.email[0].toUpperCase()}
+                <div className="h-8 w-8 rounded-full overflow-hidden">
+                  {user.avatar ? (
+                    <img src={user.avatar.startsWith('http') ? user.avatar : `${(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api').replace(/\/api\/?$/, '')}${user.avatar.startsWith('/') ? user.avatar : `/${user.avatar}`}`} alt="avatar" className="h-8 w-8 object-cover" />
+                  ) : (
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">
+                      {user.email[0].toUpperCase()}
+                    </div>
+                  )}
                 </div>
                 <div className="hidden sm:block text-left">
                   <p className="text-sm font-semibold text-slate-900 dark:text-white leading-none">
@@ -108,7 +114,7 @@ export default function Navbar() {
                       href="/profile"
                       className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                     >
-                      <LogOut className="h-4 w-4" /> {/* TODO: Better icon later */}
+                      <UserIcon className="h-4 w-4" />
                       Mon Profil
                     </Link>
                   </div>

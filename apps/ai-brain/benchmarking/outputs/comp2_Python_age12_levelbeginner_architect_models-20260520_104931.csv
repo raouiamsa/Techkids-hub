@@ -1,0 +1,105 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,context_docs_count,generated_content,module_completeness,module_count,pedagogical_structure,score
+Python,12,beginner,llama3.1:latest,architect,1,42,3,True,True,2684.3,122.02,45.6,100,83.68,1106,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 2, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 122.02, ""response_length"": 1106, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""L'aventure Python\"",\n  \""programmingLanguage\"": \""Python\"",\n  \""level\"": \""beginner\"",\n  \""totalDuration\"": \""3 heures\"",\n  \""objectives\"": [\n    \""Ma\u00eetriser les types de donn\u00e9es en Python\"",\n    \""Comprendre les boucles en Python\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le secret des variables\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""Apprendre \u00e0 d\u00e9clarer et utiliser les variables en Python pour stocker des informations importantes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""D\u00e9clarer une variable avec le type appropri\u00e9 (ex: integer, string)\"",\n        \""Utiliser les variables dans des expressions\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les boucles magiques\"",\n      \""duration\"": \""30 mins\"",\n      \""description\"": \""Apprendre \u00e0 utiliser les boucles pour r\u00e9p\u00e9ter des actions en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Utiliser la boucle for pour it\u00e9rer sur une liste ou un string\"",\n        \""Utiliser la boucle while pour ex\u00e9cuter un bloc de code tant que certaine condition est vraie\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 2684.3, ""llm_score"": 45.6, ""rag_score"": null, ""final_score"": 83.68, ""context_docs_count"": 2}",2,"{
+
+  ""courseTitle"": ""L'aventure Python"",
+  ""programmingLanguage"": ""Python"",
+  ""level"": ""beginner"",
+  ""totalDuration"": ""3 heures"",
+  ""objectives"": [
+    ""Maîtriser les types de données en Python"",
+    ""Comprendre les boucles en Python""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le secret des variables"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Apprendre à déclarer et utiliser les variables en Python pour stocker des informations importantes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Déclarer une variable avec le type approprié (ex: integer, string)"",
+        ""Utiliser les variables dans des expressions""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les boucles magiques"",
+      ""duration"": ""30 mins"",
+      ""description"": ""Apprendre à utiliser les boucles pour répéter des actions en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Utiliser la boucle for pour itérer sur une liste ou un string"",
+        ""Utiliser la boucle while pour exécuter un bloc de code tant que certaine condition est vraie""
+      ]
+    }
+  ]
+
+}",100.0,2,100,
+Python,12,beginner,llama3.1:latest,architect,2,43,3,True,True,2403.1,124.26,44.08,100,83.22,1130,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 2, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 124.26, ""response_length"": 1130, ""agent_score"": 100, ""generated_content"": ""{\n  \""courseTitle\"": \""L'aventure Python\"",\n  \""programmingLanguage\"": \""Python\"",\n  \""level\"": \""beginner\"",\n  \""totalDuration\"": \""3 heures\"",\n  \""objectives\"": [\n    \""Ma\u00eetriser les types de donn\u00e9es en Python\"",\n    \""Comprendre les boucles et les conditions\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le secret des variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprendre \u00e0 d\u00e9clarer et utiliser les variables en Python pour stocker des informations importantes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""D\u00e9clarer une variable avec le type appropri\u00e9 (ex: entier, cha\u00eene de caract\u00e8res)\"",\n        \""Utiliser les variables dans des expressions\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les boucles et les conditions\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprendre \u00e0 utiliser les boucles (for et while) et les conditions pour traiter des donn\u00e9es en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Utiliser la boucle for pour it\u00e9rer sur une liste ou un tuple\"",\n        \""Utiliser la condition if-else pour prendre des d\u00e9cisions\""\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 2403.1, ""llm_score"": 44.08, ""rag_score"": null, ""final_score"": 83.22, ""context_docs_count"": 2}",2,"{
+  ""courseTitle"": ""L'aventure Python"",
+  ""programmingLanguage"": ""Python"",
+  ""level"": ""beginner"",
+  ""totalDuration"": ""3 heures"",
+  ""objectives"": [
+    ""Maîtriser les types de données en Python"",
+    ""Comprendre les boucles et les conditions""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le secret des variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprendre à déclarer et utiliser les variables en Python pour stocker des informations importantes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Déclarer une variable avec le type approprié (ex: entier, chaîne de caractères)"",
+        ""Utiliser les variables dans des expressions""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les boucles et les conditions"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprendre à utiliser les boucles (for et while) et les conditions pour traiter des données en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Utiliser la boucle for pour itérer sur une liste ou un tuple"",
+        ""Utiliser la condition if-else pour prendre des décisions""
+      ]
+    }
+  ]
+}",100.0,2,100,
+Python,12,beginner,llama3.1:latest,architect,3,44,3,True,True,2570.8,126.89,44.08,100,83.22,1130,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 2, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 126.89, ""response_length"": 1130, ""agent_score"": 100, ""generated_content"": ""{\n  \""courseTitle\"": \""L'aventure Python\"",\n  \""programmingLanguage\"": \""Python\"",\n  \""level\"": \""beginner\"",\n  \""totalDuration\"": \""3 heures\"",\n  \""objectives\"": [\n    \""Ma\u00eetriser les types de donn\u00e9es en Python\"",\n    \""Comprendre les boucles et les conditions\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le secret des variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprendre \u00e0 d\u00e9clarer et utiliser les variables en Python pour stocker des informations importantes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""D\u00e9clarer une variable avec le type appropri\u00e9 (ex: entier, cha\u00eene de caract\u00e8res)\"",\n        \""Utiliser les variables dans des expressions\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les boucles et les conditions\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprendre \u00e0 utiliser les boucles (for et while) et les conditions pour traiter des donn\u00e9es en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Utiliser la boucle for pour it\u00e9rer sur une liste ou un tuple\"",\n        \""Utiliser la condition if-else pour prendre des d\u00e9cisions\""\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 2570.8, ""llm_score"": 44.08, ""rag_score"": null, ""final_score"": 83.22, ""context_docs_count"": 2}",2,"{
+  ""courseTitle"": ""L'aventure Python"",
+  ""programmingLanguage"": ""Python"",
+  ""level"": ""beginner"",
+  ""totalDuration"": ""3 heures"",
+  ""objectives"": [
+    ""Maîtriser les types de données en Python"",
+    ""Comprendre les boucles et les conditions""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le secret des variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprendre à déclarer et utiliser les variables en Python pour stocker des informations importantes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Déclarer une variable avec le type approprié (ex: entier, chaîne de caractères)"",
+        ""Utiliser les variables dans des expressions""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les boucles et les conditions"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprendre à utiliser les boucles (for et while) et les conditions pour traiter des données en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Utiliser la boucle for pour itérer sur une liste ou un tuple"",
+        ""Utiliser la condition if-else pour prendre des décisions""
+      ]
+    }
+  ]
+}",100.0,2,100,

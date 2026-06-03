@@ -12,6 +12,9 @@ export interface AuthUser {
     role: UserRole;
     firstName?: string;
     lastName?: string;
+    phoneNumber?: string;
+    address?: string;
+    avatar?: string;
 }
 
 interface AuthContextValue {
@@ -21,6 +24,7 @@ interface AuthContextValue {
     login: (email: string, password: string) => Promise<void>;
     register: (email: string, password: string, firstName: string, lastName: string, role?: 'PARENT' | 'STUDENT') => Promise<void>;
     logout: () => void;
+    updateUser: (updates: Partial<AuthUser>) => void;
 }
 
 // ─── Context ─────────────────────────────────────────────────────────────────
@@ -66,10 +70,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const data = await res.json();
         const { access_token, user: userInfo } = data;
 
+        // Récupérer le profil complet (avec avatar) depuis /users/profile
+        let fullUser = userInfo;
+        try {
+            const profileRes = await fetch(`${API_URL}/users/profile`, {
+                headers: { Authorization: `Bearer ${access_token}` },
+            });
+            if (profileRes.ok) {
+                fullUser = await profileRes.json();
+            }
+        } catch { /* fallback sur userInfo si le profil ne répond pas */ }
+
         localStorage.setItem('tk_token', access_token);
-        localStorage.setItem('tk_user', JSON.stringify(userInfo));
+        localStorage.setItem('tk_user', JSON.stringify(fullUser));
         setToken(access_token);
-        setUser(userInfo);
+        setUser(fullUser);
     };
 
     const register = async (email: string, password: string, firstName: string, lastName: string, role: 'PARENT' | 'STUDENT' = 'STUDENT') => {
@@ -93,8 +108,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(null);
     };
 
+    const updateUser = (updates: Partial<AuthUser>) => {
+        setUser((prev) => {
+            if (!prev) return null;
+            const updated = { ...prev, ...updates };
+            localStorage.setItem('tk_user', JSON.stringify(updated));
+            return updated;
+        });
+    };
+
     return (
-        <AuthContext.Provider value={{ user, token, isLoading, login, register, logout }}>
+        <AuthContext.Provider value={{ user, token, isLoading, login, register, logout, updateUser }}>
             {children}
         </AuthContext.Provider>
     );

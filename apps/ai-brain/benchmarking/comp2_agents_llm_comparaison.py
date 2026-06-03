@@ -213,6 +213,17 @@ def format_context_for_prompt(documents: List[str]) -> str:
     return "\n--- CONTEXTE ---\n" + "\n\n".join(documents) + "\n--- FIN ---\n"
 
 
+def count_modules_from_response(response: str) -> int:
+    """Best-effort module count extracted from an architect JSON response."""
+    parsed = extract_json_from_text(response) or {}
+    if isinstance(parsed, list) and parsed and isinstance(parsed[0], dict):
+        parsed = parsed[0]
+    if not isinstance(parsed, dict):
+        return 0
+    modules = parsed.get("modules", [])
+    return len(modules) if isinstance(modules, list) else 0
+
+
 # ============================================================
 # Result Building
 # ============================================================
@@ -270,6 +281,8 @@ def build_result_row(
 
     if agent == "writer":
         row["hallucination_rate"] = metrics.get("hallucination_rate", "")
+        row["critic_approved"] = metrics.get("critic_approved", "")
+        row["critic_rejection_reason"] = metrics.get("critic_rejection_reason", "")
 
     # ── Colonnes spécifiques par agent ────────────────────────────────────────
     if agent == "architect":
@@ -400,6 +413,7 @@ def run_comp2_comparison(config: Config):
         age = topic_cfg.get("age", 12)
         level = topic_cfg.get("level", "beginner")
         reference_answer = topic_cfg.get("reference_answer", "")
+        module_count = int(topic_cfg.get("module_count", 0) or 0)
         repeats = int(topic_cfg.get("repeats", 1) or 1)
         seed_base = topic_cfg.get("seed_base")
 
@@ -427,6 +441,10 @@ def run_comp2_comparison(config: Config):
 
                 # ── Phase 1: Architect + Writer (with RAG context) ──
                 detected_language = detect_language_from_topic(topic, model=model)
+                module_count_instructions = (
+                    f"CONTRAINTE DE BENCHMARK: génère exactement {module_count} modules, pas plus, pas moins."
+                    if module_count > 0 else ""
+                )
                 phase1_tests = [
                     ("architect", config.load_prompt(
                         "architect",
@@ -434,7 +452,8 @@ def run_comp2_comparison(config: Config):
                         age=topic_cfg["age"],
                         level=topic_cfg["level"],
                         language=detected_language,
-                        context=context_block
+                        context=context_block,
+                        module_count_instructions=module_count_instructions,
                     )),
                     ("writer", config.load_prompt(
                         "writer",
@@ -464,6 +483,29 @@ def run_comp2_comparison(config: Config):
                         seed=run_seed,
                         temperature=agent_temp
                     )
+
+                    if agent == "architect" and response and module_count > 0:
+                        returned_module_count = count_modules_from_response(response)
+                        if returned_module_count != module_count:
+                            log(
+                                f"    Architect returned {returned_module_count} module(s), expected {module_count}. Retrying with stricter constraint.",
+                                "WARN",
+                            )
+                            strict_prompt = prompt + (
+                                f"\n\nCONTRAINTE FINALE: retourne exactement {module_count} modules dans le JSON. "
+                                f"Ne réponds pas tant que la structure n'est pas exactement de {module_count} modules."
+                            )
+                            retry_response, retry_latency, retry_ttft_ms = call_ollama_api(
+                                model,
+                                strict_prompt,
+                                api_url=config.ollama_url,
+                                max_tokens=max_tok,
+                                timeout=config.ollama_timeout,
+                                seed=run_seed,
+                                temperature=agent_temp
+                            )
+                            if retry_response:
+                                response, latency, ttft_ms = retry_response, retry_latency, retry_ttft_ms
 
                     if not response:
                         log(f"    No response from {agent}", "WARN")
@@ -499,6 +541,8 @@ def run_comp2_comparison(config: Config):
                                 log(f"    RAGAS eval failed: {e}", "WARN")
                                 ragas_runtime_status = "eval_failed"
                         metrics = writer_metrics(response, latency, ragas_scores=ragas_scores, topic=topic, age=topic_cfg["age"], level=topic_cfg["level"], groq_api_key=ragas_evaluator.api_key if ragas_evaluator else None)
+                        metrics["critic_approved"] = ""
+                        metrics["critic_rejection_reason"] = ""
 
                     # ── LLM-layer & composite scores ──
                     ragas_faith = (
@@ -589,6 +633,53 @@ def run_comp2_comparison(config: Config):
                         metrics = enricher_metrics(response, latency, level=topic_cfg["level"])
                     else:  # critic
                         metrics = critic_metrics(response, latency, level=topic_cfg["level"])
+
+                    try:
+                        parsed_critic = extract_json_from_text(response) or {}
+                        if isinstance(parsed_critic, list) and parsed_critic and isinstance(parsed_critic[0], dict):
+                            parsed_critic = parsed_critic[0]
+                    except Exception:
+                        parsed_critic = {}
+
+                    approved = None
+                    if isinstance(parsed_critic, dict):
+                        approved = parsed_critic.get("approved")
+                        metrics["critic_parsed_json"] = parsed_critic
+
+                    metrics["approved"] = approved
+                    rejection_reason = ""
+                    if approved is False:
+                        if isinstance(parsed_critic, dict):
+                            issues = parsed_critic.get("global_issues") or parsed_critic.get("module_issues") or []
+                            if isinstance(issues, list) and issues:
+                                first = issues[0]
+                                if isinstance(first, dict):
+                                    rejection_reason = first.get("issue", "")
+                                elif isinstance(first, str):
+                                    rejection_reason = first
+                            else:
+                                rejection_reason = "critic_rejected"
+                        else:
+                            rejection_reason = "critic_rejected"
+
+                    metrics["critic_rejection_reason"] = rejection_reason
+
+                    try:
+                        writer_run_index = repeat_index + 1
+                        for prev in reversed(results):
+                            if prev.get("agent") == "writer" and prev.get("topic") == topic and prev.get("model") == model and prev.get("run_index") == writer_run_index and prev.get("seed") == run_seed:
+                                try:
+                                    prev_details = json.loads(prev.get("details", "{}"))
+                                except Exception:
+                                    prev_details = {}
+                                prev_details["critic_approved"] = approved
+                                prev_details["critic_rejection_reason"] = rejection_reason
+                                prev["details"] = json.dumps(prev_details, ensure_ascii=False)
+                                prev["critic_approved"] = approved
+                                prev["critic_rejection_reason"] = rejection_reason
+                                break
+                    except Exception:
+                        pass
 
                     # LLM-layer & composite scores
                     log_context_quality(context_docs, topic)
@@ -753,6 +844,12 @@ if __name__ == "__main__":
         help="Base seed for deterministic runs (defaults to 42; repeats use seed, seed+1, seed+2, ...)."
     )
     parser.add_argument(
+        "--module-count",
+        type=int,
+        default=2,
+        help="Target number of modules to request from the architect prompt for the raw COMP2 benchmark."
+    )
+    parser.add_argument(
         "--temp-writer",
         type=float,
         default=0.6,
@@ -786,6 +883,7 @@ if __name__ == "__main__":
             "age": args.age if args.age is not None else (config.topics[0].get("age") if config.topics else 12),
             "level": args.level if args.level is not None else (config.topics[0].get("level") if config.topics else "beginner"),
             "reference_answer": args.reference if args.reference is not None else (config.topics[0].get("reference_answer") if config.topics else ""),
+            "module_count": args.module_count,
             "repeats": args.repeats,
             "seed_base": args.seed_base,
         }
@@ -795,6 +893,7 @@ if __name__ == "__main__":
         for topic_cfg in config.topics:
             topic_cfg["repeats"] = args.repeats
             topic_cfg["seed_base"] = args.seed_base
+            topic_cfg["module_count"] = args.module_count
 
     # Pass config to main function (FIX: was creating new config inside function)
     run_comp2_comparison(config)

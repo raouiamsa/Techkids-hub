@@ -1,0 +1,81 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,consistency_score,generated_content,issue_completeness,score_range_validity
+Python,12,beginner,llama3.1:latest,critic,1,42,3,True,True,18358.9,202.84,80.0,75,76.5,1645,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 202.84, ""response_length"": 1645, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""Section 1: L'aventure commence !"", ""issue"": ""Le vocabulaire et les concepts utilis\u00e9s sont trop simples pour un enfant de 12 ans. Les analogies utilis\u00e9es (comme le sac rempli de balles) ne sont pas claires.""}, {""module"": ""Section 2: Les variables et leurs types de donn\u00e9es"", ""issue"": ""Les explications sur les types de donn\u00e9es sont trop succinctes et peuvent \u00eatre confusantes pour un enfant de 12 ans. La d\u00e9finition des op\u00e9rateurs arithm\u00e9tiques est manquante.""}, {""module"": ""Section 3: Attribuer une valeur \u00e0 une variable"", ""issue"": ""L'exemple utilis\u00e9 pour attribuer une valeur \u00e0 une variable n'est pas clair et pourrait \u00eatre simplifi\u00e9. Les op\u00e9rateurs arithm\u00e9tiques ne sont pas explicitement d\u00e9finis.""}, {""module"": ""Section 4: Les op\u00e9rateurs arithm\u00e9tiques"", ""issue"": ""L'explication sur les op\u00e9rateurs arithm\u00e9tiques est manquante et pourrait \u00eatre am\u00e9lior\u00e9e. Les exemples utilis\u00e9s pour illustrer l'utilisation des op\u00e9rateurs sont trop simples.""}, {""module"": ""Section 5: Pratique"", ""issue"": ""Les exercices propos\u00e9s ne sont pas adapt\u00e9s \u00e0 un enfant de 12 ans et n\u00e9cessitent une compr\u00e9hension plus avanc\u00e9e du sujet. Les options propos\u00e9es pour les r\u00e9ponses attendues sont trop limit\u00e9es.""}], ""global_issues"": [""Le cours manque d'une structure claire et progressive, ce qui pourrait rendre difficile la compr\u00e9hension des concepts pour un enfant de 12 ans."", ""Les exemples utilis\u00e9s pour illustrer les concepts ne sont pas toujours pertinents ou r\u00e9els.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque d'une structure claire et progressive, ce qui pourrait rendre difficile la compr\u00e9hension des concepts pour un enfant de 12 ans."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""Section 1: L'aventure commence !\"",\n      \""issue\"": \""Le vocabulaire et les concepts utilis\u00e9s sont trop simples pour un enfant de 12 ans. Les analogies utilis\u00e9es (comme le sac rempli de balles) ne sont pas claires.\""\n    },\n    {\n      \""module\"": \""Section 2: Les variables et leurs types de donn\u00e9es\"",\n      \""issue\"": \""Les explications sur les types de donn\u00e9es sont trop succinctes et peuvent \u00eatre confusantes pour un enfant de 12 ans. La d\u00e9finition des op\u00e9rateurs arithm\u00e9tiques est manquante.\""\n    },\n    {\n      \""module\"": \""Section 3: Attribuer une valeur \u00e0 une variable\"",\n      \""issue\"": \""L'exemple utilis\u00e9 pour attribuer une valeur \u00e0 une variable n'est pas clair et pourrait \u00eatre simplifi\u00e9. Les op\u00e9rateurs arithm\u00e9tiques ne sont pas explicitement d\u00e9finis.\""\n    },\n    {\n      \""module\"": \""Section 4: Les op\u00e9rateurs arithm\u00e9tiques\"",\n      \""issue\"": \""L'explication sur les op\u00e9rateurs arithm\u00e9tiques est manquante et pourrait \u00eatre am\u00e9lior\u00e9e. Les exemples utilis\u00e9s pour illustrer l'utilisation des op\u00e9rateurs sont trop simples.\""\n    },\n    {\n      \""module\"": \""Section 5: Pratique\"",\n      \""issue\"": \""Les exercices propos\u00e9s ne sont pas adapt\u00e9s \u00e0 un enfant de 12 ans et n\u00e9cessitent une compr\u00e9hension plus avanc\u00e9e du sujet. Les options propos\u00e9es pour les r\u00e9ponses attendues sont trop limit\u00e9es.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""Le cours manque d'une structure claire et progressive, ce qui pourrait rendre difficile la compr\u00e9hension des concepts pour un enfant de 12 ans.\"",\n    \""Les exemples utilis\u00e9s pour illustrer les concepts ne sont pas toujours pertinents ou r\u00e9els.\""\n  ]\n}"", ""ttft_ms"": 18358.9, ""llm_score"": 80.0, ""rag_score"": null, ""final_score"": 76.5}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""Section 1: L'aventure commence !"",
+      ""issue"": ""Le vocabulaire et les concepts utilisés sont trop simples pour un enfant de 12 ans. Les analogies utilisées (comme le sac rempli de balles) ne sont pas claires.""
+    },
+    {
+      ""module"": ""Section 2: Les variables et leurs types de données"",
+      ""issue"": ""Les explications sur les types de données sont trop succinctes et peuvent être confusantes pour un enfant de 12 ans. La définition des opérateurs arithmétiques est manquante.""
+    },
+    {
+      ""module"": ""Section 3: Attribuer une valeur à une variable"",
+      ""issue"": ""L'exemple utilisé pour attribuer une valeur à une variable n'est pas clair et pourrait être simplifié. Les opérateurs arithmétiques ne sont pas explicitement définis.""
+    },
+    {
+      ""module"": ""Section 4: Les opérateurs arithmétiques"",
+      ""issue"": ""L'explication sur les opérateurs arithmétiques est manquante et pourrait être améliorée. Les exemples utilisés pour illustrer l'utilisation des opérateurs sont trop simples.""
+    },
+    {
+      ""module"": ""Section 5: Pratique"",
+      ""issue"": ""Les exercices proposés ne sont pas adaptés à un enfant de 12 ans et nécessitent une compréhension plus avancée du sujet. Les options proposées pour les réponses attendues sont trop limitées.""
+    }
+  ],
+  ""global_issues"": [
+    ""Le cours manque d'une structure claire et progressive, ce qui pourrait rendre difficile la compréhension des concepts pour un enfant de 12 ans."",
+    ""Les exemples utilisés pour illustrer les concepts ne sont pas toujours pertinents ou réels.""
+  ]
+}",100,True
+Python,12,beginner,llama3.1:latest,critic,2,43,3,True,True,16464.0,138.73,80.0,75,76.5,1140,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 138.73, ""response_length"": 1140, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""L'aventure commence : Introduction \u00e0 Python"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop complexe pour un enfant de 12 ans. Par exemple, le terme 'langage de programmation' pourrait \u00eatre remplac\u00e9 par 'outil pour cr\u00e9er des jeux vid\u00e9o ou des applications'.""}, {""module"": ""Concept 1 : Variables et types de donn\u00e9es"", ""issue"": ""L'analogie avec les bo\u00eetes en plastique est trop simple et ne permet pas une compr\u00e9hension approfondie du concept. Il faudrait utiliser un exemple plus r\u00e9aliste.""}, {""module"": ""Concept 2 : Op\u00e9rateurs arithm\u00e9tiques"", ""issue"": ""L'exemple utilis\u00e9 pour l'addition est trop simple et ne montre pas clairement la diff\u00e9rence entre les op\u00e9rateurs arithm\u00e9tiques. Il faudrait ajouter des exemples plus complexes.""}], ""global_issues"": [""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire."", ""Les exercices ne sont pas adapt\u00e9s \u00e0 l'\u00e2ge cibl\u00e9 (12 ans). Ils devraient \u00eatre plus interactifs et moins th\u00e9oriques.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""L'aventure commence : Introduction \u00e0 Python\"",\n      \""issue\"": \""Le vocabulaire utilis\u00e9 est trop complexe pour un enfant de 12 ans. Par exemple, le terme 'langage de programmation' pourrait \u00eatre remplac\u00e9 par 'outil pour cr\u00e9er des jeux vid\u00e9o ou des applications'.\""\n    },\n    {\n      \""module\"": \""Concept 1 : Variables et types de donn\u00e9es\"",\n      \""issue\"": \""L'analogie avec les bo\u00eetes en plastique est trop simple et ne permet pas une compr\u00e9hension approfondie du concept. Il faudrait utiliser un exemple plus r\u00e9aliste.\""\n    },\n    {\n      \""module\"": \""Concept 2 : Op\u00e9rateurs arithm\u00e9tiques\"",\n      \""issue\"": \""L'exemple utilis\u00e9 pour l'addition est trop simple et ne montre pas clairement la diff\u00e9rence entre les op\u00e9rateurs arithm\u00e9tiques. Il faudrait ajouter des exemples plus complexes.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire.\"",\n    \""Les exercices ne sont pas adapt\u00e9s \u00e0 l'\u00e2ge cibl\u00e9 (12 ans). Ils devraient \u00eatre plus interactifs et moins th\u00e9oriques.\""\n  ]\n}"", ""ttft_ms"": 16464.0, ""llm_score"": 80.0, ""rag_score"": null, ""final_score"": 76.5}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""L'aventure commence : Introduction à Python"",
+      ""issue"": ""Le vocabulaire utilisé est trop complexe pour un enfant de 12 ans. Par exemple, le terme 'langage de programmation' pourrait être remplacé par 'outil pour créer des jeux vidéo ou des applications'.""
+    },
+    {
+      ""module"": ""Concept 1 : Variables et types de données"",
+      ""issue"": ""L'analogie avec les boîtes en plastique est trop simple et ne permet pas une compréhension approfondie du concept. Il faudrait utiliser un exemple plus réaliste.""
+    },
+    {
+      ""module"": ""Concept 2 : Opérateurs arithmétiques"",
+      ""issue"": ""L'exemple utilisé pour l'addition est trop simple et ne montre pas clairement la différence entre les opérateurs arithmétiques. Il faudrait ajouter des exemples plus complexes.""
+    }
+  ],
+  ""global_issues"": [
+    ""Le cours manque de progression logique entre les modules. Les concepts sont présentés sans une structure claire."",
+    ""Les exercices ne sont pas adaptés à l'âge ciblé (12 ans). Ils devraient être plus interactifs et moins théoriques.""
+  ]
+}",100,True
+Python,12,beginner,llama3.1:latest,critic,3,44,3,True,True,13119.7,158.11,80.0,75,76.5,1345,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 158.11, ""response_length"": 1345, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""Section 1: D\u00e9couvrez la magie de Python !"", ""issue"": ""Le titre du module est trop vague et ne donne pas d'indications sur le contenu du cours. Il faudrait pr\u00e9ciser que le cours sera ax\u00e9 sur les bases de programmation en Python.""}, {""module"": ""Section 2: Variables et types de donn\u00e9es"", ""issue"": ""L'exemple fourni pour illustrer la diff\u00e9rence entre les variables 'str', 'int' et 'float' est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Il faudrait fournir des exemples plus complexes.""}, {""module"": ""Section 3: Op\u00e9rateurs arithm\u00e9tiques"", ""issue"": ""L'exemple fourni pour illustrer l'utilisation d'op\u00e9rateurs arithm\u00e9tiques est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Il faudrait fournir des exemples plus complexes.""}, {""module"": ""Section 4: Pratique"", ""issue"": ""Les questions pos\u00e9es pour la pratique sont trop simples et ne permettent pas d'\u00e9valuer les comp\u00e9tences acquises par les \u00e9l\u00e8ves. Il faudrait fournir des exercices plus complexes et vari\u00e9s.""}], ""global_issues"": [""Le cours n'est pas adapt\u00e9 \u00e0 un enfant de 12 ans car il pr\u00e9sente des concepts trop avanc\u00e9s pour son \u00e2ge."", ""L'ordre des modules est incorrect : les bases de programmation devraient \u00eatre pr\u00e9sent\u00e9es avant les op\u00e9rateurs arithm\u00e9tiques.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours n'est pas adapt\u00e9 \u00e0 un enfant de 12 ans car il pr\u00e9sente des concepts trop avanc\u00e9s pour son \u00e2ge."", ""generated_content"": ""{\n\n\""score\"": 60,\n\""approved\"": false,\n\""module_issues\"": [\n{\n\""module\"": \""Section 1: D\u00e9couvrez la magie de Python !\"",\n\""issue\"": \""Le titre du module est trop vague et ne donne pas d'indications sur le contenu du cours. Il faudrait pr\u00e9ciser que le cours sera ax\u00e9 sur les bases de programmation en Python.\""\n},\n{\n\""module\"": \""Section 2: Variables et types de donn\u00e9es\"",\n\""issue\"": \""L'exemple fourni pour illustrer la diff\u00e9rence entre les variables 'str', 'int' et 'float' est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Il faudrait fournir des exemples plus complexes.\""\n},\n{\n\""module\"": \""Section 3: Op\u00e9rateurs arithm\u00e9tiques\"",\n\""issue\"": \""L'exemple fourni pour illustrer l'utilisation d'op\u00e9rateurs arithm\u00e9tiques est trop simple et ne permet pas une compr\u00e9hension approfondie des concepts. Il faudrait fournir des exemples plus complexes.\""\n},\n{\n\""module\"": \""Section 4: Pratique\"",\n\""issue\"": \""Les questions pos\u00e9es pour la pratique sont trop simples et ne permettent pas d'\u00e9valuer les comp\u00e9tences acquises par les \u00e9l\u00e8ves. Il faudrait fournir des exercices plus complexes et vari\u00e9s.\""\n}\n],\n\""global_issues\"": [\n\""Le cours n'est pas adapt\u00e9 \u00e0 un enfant de 12 ans car il pr\u00e9sente des concepts trop avanc\u00e9s pour son \u00e2ge.\"",\n\""L'ordre des modules est incorrect : les bases de programmation devraient \u00eatre pr\u00e9sent\u00e9es avant les op\u00e9rateurs arithm\u00e9tiques.\""\n]\n\n}"", ""ttft_ms"": 13119.7, ""llm_score"": 80.0, ""rag_score"": null, ""final_score"": 76.5}",apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260516_011718.json,0,"{
+
+""score"": 60,
+""approved"": false,
+""module_issues"": [
+{
+""module"": ""Section 1: Découvrez la magie de Python !"",
+""issue"": ""Le titre du module est trop vague et ne donne pas d'indications sur le contenu du cours. Il faudrait préciser que le cours sera axé sur les bases de programmation en Python.""
+},
+{
+""module"": ""Section 2: Variables et types de données"",
+""issue"": ""L'exemple fourni pour illustrer la différence entre les variables 'str', 'int' et 'float' est trop simple et ne permet pas une compréhension approfondie des concepts. Il faudrait fournir des exemples plus complexes.""
+},
+{
+""module"": ""Section 3: Opérateurs arithmétiques"",
+""issue"": ""L'exemple fourni pour illustrer l'utilisation d'opérateurs arithmétiques est trop simple et ne permet pas une compréhension approfondie des concepts. Il faudrait fournir des exemples plus complexes.""
+},
+{
+""module"": ""Section 4: Pratique"",
+""issue"": ""Les questions posées pour la pratique sont trop simples et ne permettent pas d'évaluer les compétences acquises par les élèves. Il faudrait fournir des exercices plus complexes et variés.""
+}
+],
+""global_issues"": [
+""Le cours n'est pas adapté à un enfant de 12 ans car il présente des concepts trop avancés pour son âge."",
+""L'ordre des modules est incorrect : les bases de programmation devraient être présentées avant les opérateurs arithmétiques.""
+]
+
+}",100,True

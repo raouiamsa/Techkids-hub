@@ -21,10 +21,14 @@ Basé sur le sujet "{topic}", tu dois détecter et utiliser le langage de progra
 SOURCES RAG (BASE DE TRAVAIL EXCLUSIVE) : 
 {context}
 
+{module_count_instructions}
+
 ===================================================
 ARCHITECTURE STRATÉGIQUE (STRICTE)
 ===================================================
-Tu dois générer entre 4 et 6 modules maximum, en respectant impérativement cet arc narratif :
+Tu dois générer entre 4 et 6 modules maximum, sauf si une consigne explicite de nombre de modules est fournie juste au-dessus.
+Dans ce cas, respecte strictement ce nombre de modules.
+Dans tous les cas, respecte impérativement cet arc narratif :
 1. LE HOOK (M1) : L'utilité concrète dans le monde réel (scénario).
 2. LES FONDATIONS (M2-M3) : Concepts clés expliqués via des métaphores.
 3. LA MANIPULATION (M4-M5) : Mise en pratique et "petites victoires" techniques.

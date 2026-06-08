@@ -105,40 +105,42 @@ export default async function CourseDetailsPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
-        {/* Left: Enrollment / Course Content */}
-        <div className="lg:col-span-2">
-          <CourseEnrolledView
-            courseId={course.id}
-            courseTitle={course.title}
-            modules={course.modules ?? []}
-          />
-        </div>
-
-        {/* Right: Sidebar */}
-        <div className="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-800 pt-12 lg:pt-0 lg:pl-12">
-          <div className="sticky top-24 space-y-6">
-            <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
-                Informations Clés
-              </h3>
-              <ul className="space-y-4 text-slate-600 dark:text-slate-400">
-                <li className="flex items-center gap-3">
-                  <Signal className="h-5 w-5 text-slate-400" />
-                  Niveau {course.level}
-                </li>
-                <li className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-slate-400" />
-                  À votre rythme
-                </li>
-                <li className="flex items-center gap-3">
-                  <Users className="h-5 w-5 text-slate-400" />
-                  Communauté d&apos;apprenants
-                </li>
-              </ul>
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <CourseEnrolledView
+          courseId={course.id}
+          courseTitle={course.title}
+          modules={course.modules ?? []}
+          sidebar={
+            <div className="sticky top-24 space-y-6">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-[100px] -mr-10 -mt-10" />
+                <h3 className="text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-6">
+                  Informations Clés
+                </h3>
+                <ul className="space-y-5 text-slate-700 dark:text-slate-300 font-medium">
+                  <li className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 shrink-0">
+                      <Signal className="h-5 w-5 text-indigo-500" />
+                    </div>
+                    Niveau {course.level}
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 shrink-0">
+                      <Clock className="h-5 w-5 text-blue-500" />
+                    </div>
+                    À votre rythme
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 shrink-0">
+                      <Users className="h-5 w-5 text-emerald-500" />
+                    </div>
+                    Communauté d'apprenants
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>
+          }
+        />
       </div>
     </div>
   );

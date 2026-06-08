@@ -1,0 +1,214 @@
+{
+  "topic": "Circuits électriques",
+  "age": 12,
+  "level": "beginner",
+  "language": "French",
+  "generated_at": "2026-06-08T13:01:57.103790",
+  "model_name": "llama3.1:latest",
+  "modules": {
+    "m1": {
+      "id": "m1",
+      "name": "Introduction aux circuits électriques",
+      "description": "Comprendre les principes de base des circuits électriques",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_1",
+        "concept_2"
+      ],
+      "learning_objectives": [
+        "obj_m1_1"
+      ],
+      "exercises": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "prerequisites_modules": [],
+      "estimated_duration": 60,
+      "order_in_curriculum": 1
+    },
+    "m2": {
+      "id": "m2",
+      "name": "Circuits électriques : Application pratique",
+      "description": "Appliquer les concepts de base des circuits électriques à des situations pratiques",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_3",
+        "concept_4"
+      ],
+      "learning_objectives": [
+        "obj_m2_1"
+      ],
+      "exercises": [
+        "ex_m2_1",
+        "ex_m2_2"
+      ],
+      "prerequisites_modules": [
+        "m1"
+      ],
+      "estimated_duration": 60,
+      "order_in_curriculum": 2
+    }
+  },
+  "concepts": {
+    "concept_1": {
+      "id": "concept_1",
+      "name": "Circuits série et parallèle",
+      "definition": "Les circuits série et parallèle sont des types de circuits électriques utilisés pour la transmission d'électricité.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_2": {
+      "id": "concept_2",
+      "name": "Puissance électrique",
+      "definition": "La puissance électrique est le taux de transfert d'énergie électrique.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_3": {
+      "id": "concept_3",
+      "name": "Calcul de la puissance électrique",
+      "definition": "La puissance électrique peut être calculée en multipliant la tension et le courant.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_2"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_4": {
+      "id": "concept_4",
+      "name": "Sécurité des circuits électriques",
+      "definition": "La sécurité des circuits électriques est essentielle pour éviter les accidents.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_1"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    }
+  },
+  "objectives": {
+    "obj_m1_1": {
+      "id": "obj_m1_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les concepts de base des circuits électriques",
+      "associated_concepts": [
+        "concept_1",
+        "concept_2"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_1": {
+      "id": "obj_m2_1",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer les concepts de base des circuits électriques à des situations pratiques",
+      "associated_concepts": [
+        "concept_3",
+        "concept_4"
+      ],
+      "assessment_criteria": null
+    }
+  },
+  "exercises": {
+    "ex_m1_1": {
+      "id": "ex_m1_1",
+      "type": "qcm",
+      "question": "Quel est le type de circuit qui permet à plusieurs branches d'être connectées en série?",
+      "answer": "Circuit combiné",
+      "options": [
+        "Circuit série",
+        "Circuit parallèle",
+        "Circuit combiné"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_1",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 5
+    },
+    "ex_m1_2": {
+      "id": "ex_m1_2",
+      "type": "fill_blank",
+      "question": "La puissance électrique est égale à la tension multipliée par le ______________.",
+      "answer": "courant",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_2",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 3
+    },
+    "ex_m2_1": {
+      "id": "ex_m2_1",
+      "type": "qcm",
+      "question": "Quel est le type de circuit qui permet à plusieurs branches d'être connectées en parallèle?",
+      "answer": "Circuit parallèle",
+      "options": [
+        "Circuit série",
+        "Circuit parallèle",
+        "Circuit combiné"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_3",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 5
+    },
+    "ex_m2_2": {
+      "id": "ex_m2_2",
+      "type": "fill_blank",
+      "question": "La sécurité des circuits électriques est essentielle pour ______________.",
+      "answer": "éviter les accidents",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_4",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 3
+    }
+  },
+  "relationships": {
+    "concept_prerequisites": {
+      "concept_1": [],
+      "concept_2": [],
+      "concept_3": [
+        "concept_2"
+      ],
+      "concept_4": [
+        "concept_1"
+      ]
+    },
+    "concept_exercises": {
+      "concept_1": [
+        "ex_m1_1"
+      ],
+      "concept_2": [
+        "ex_m1_2"
+      ],
+      "concept_3": [
+        "ex_m2_1"
+      ],
+      "concept_4": [
+        "ex_m2_2"
+      ]
+    },
+    "objective_concepts": {
+      "obj_m1_1": [
+        "concept_1",
+        "concept_2"
+      ],
+      "obj_m2_1": [
+        "concept_3",
+        "concept_4"
+      ]
+    }
+  }
+}

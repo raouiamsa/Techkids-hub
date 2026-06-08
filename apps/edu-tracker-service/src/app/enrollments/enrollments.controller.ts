@@ -20,4 +20,10 @@ export class EnrollmentsController {
     console.log('EDU-SERVICE: MY_ENROLLMENTS', studentId);
     return this.enrollmentsService.getMyEnrollments(studentId);
   }
+
+  @MessagePattern('edu.enrollments.complete')
+  async completeEnrollment(@Payload() data: { studentId: string; courseId: string }) {
+    console.log('EDU-SERVICE: ENROLL_COMPLETE', data);
+    return this.enrollmentsService.completeCourse(data.studentId, data.courseId);
+  }
 }

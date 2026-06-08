@@ -1,0 +1,217 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Circuits électriques,12,beginner,llama3.1:latest,architect,1,42,3,True,True,82911.2,294.7,57.54,100,87.26,1883,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 294.7, ""response_length"": 1883, ""agent_score"": 100, ""generated_content"": ""{ \n  \""courseTitle\"": \""L'aventure des circuits \u00e9lectriques\"", \n  \""programmingLanguage\"": \""None\"", \n  \""level\"": \""beginner\"", \n  \""totalDuration\"": \""4 heures\"", \n  \""objectives\"": [\n    \""Comprendre les concepts de base des circuits \u00e9lectriques\"",\n    \""Appliquer les concepts \u00e0 des situations pratiques\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le myst\u00e8re du courant et de la puissance\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez comment le courant et la puissance sont li\u00e9s aux circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        \""Circuits s\u00e9rie et parall\u00e8le\"",\n        \""Puissance \u00e9lectrique\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les fondements des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Comprenez les concepts cl\u00e9s derri\u00e8re les circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        \""Calcul de la puissance \u00e9lectrique\"",\n        \""S\u00e9curit\u00e9 des circuits \u00e9lectriques\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""La manipulation des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Apprenez \u00e0 appliquer les concepts \u00e0 des situations pratiques\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        \""Type de circuit qui permet \u00e0 plusieurs branches d'\u00eatre connect\u00e9es en parall\u00e8le\"",\n        \""Importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'expansion des concepts\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez comment les concepts plus complexes sont li\u00e9s aux circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        \""Calcul de la puissance \u00e9lectrique en fonction de la tension et du courant\"",\n        \""S\u00e9curit\u00e9 des circuits \u00e9lectriques dans diff\u00e9rents sc\u00e9narios\""\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 82911.2, ""llm_score"": 57.54, ""rag_score"": null, ""final_score"": 87.26, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Circuits électriques_age12_llama3.1_latest_20260608_130157.json,"{ 
+  ""courseTitle"": ""L'aventure des circuits électriques"", 
+  ""programmingLanguage"": ""None"", 
+  ""level"": ""beginner"", 
+  ""totalDuration"": ""4 heures"", 
+  ""objectives"": [
+    ""Comprendre les concepts de base des circuits électriques"",
+    ""Appliquer les concepts à des situations pratiques""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le mystère du courant et de la puissance"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez comment le courant et la puissance sont liés aux circuits électriques"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        ""Circuits série et parallèle"",
+        ""Puissance électrique""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les fondements des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Comprenez les concepts clés derrière les circuits électriques"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        ""Calcul de la puissance électrique"",
+        ""Sécurité des circuits électriques""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""La manipulation des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Apprenez à appliquer les concepts à des situations pratiques"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        ""Type de circuit qui permet à plusieurs branches d'être connectées en parallèle"",
+        ""Importance de la sécurité dans les circuits électriques""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'expansion des concepts"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez comment les concepts plus complexes sont liés aux circuits électriques"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        ""Calcul de la puissance électrique en fonction de la tension et du courant"",
+        ""Sécurité des circuits électriques dans différents scénarios""
+      ]
+    }
+  ]
+}",100.0,4,100
+Circuits électriques,12,beginner,llama3.1:latest,architect,2,43,3,True,True,5868.9,231.19,56.36,100,86.91,2893,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 231.19, ""response_length"": 2893, ""agent_score"": 100, ""generated_content"": ""{ \n  \""courseTitle\"": \""L'aventure des circuits \u00e9lectriques\"", \n  \""programmingLanguage\"": \""None\"", \n  \""level\"": \""beginner\"", \n  \""totalDuration\"": \""4 heures\"", \n  \""objectives\"": [\n    \""Comprendre les concepts de base des circuits \u00e9lectriques\"",\n    \""Appliquer les concepts \u00e0 des situations pratiques\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le myst\u00e8re du courant et de la puissance\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez comment le courant et la puissance sont li\u00e9s aux circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Circuits s\u00e9rie et parall\u00e8le\"",\n          \""description\"": \""Comprenez les diff\u00e9rences entre les circuits s\u00e9rie et parall\u00e8le\""\n        },\n        {\n          \""title\"": \""Puissance \u00e9lectrique\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        }\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les fondations des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Apprenez les concepts cl\u00e9s pour comprendre les circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Calcul de la puissance \u00e9lectrique\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        },\n        {\n          \""title\"": \""S\u00e9curit\u00e9 des circuits \u00e9lectriques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\""\n        }\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""La manipulation des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Mettez en pratique vos connaissances pour r\u00e9soudre des probl\u00e8mes\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Type de circuit qui permet \u00e0 plusieurs branches d'\u00eatre connect\u00e9es en parall\u00e8le\"",\n          \""description\"": \""Choisissez le type de circuit correct\""\n        },\n        {\n          \""title\"": \""Importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\""\n        }\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'expansion des concepts\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez des concepts plus complexes et cr\u00e9atifs\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Calcul de la puissance \u00e9lectrique en fonction de la tension et du courant\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        },\n        {\n          \""title\"": \""S\u00e9curit\u00e9 des circuits \u00e9lectriques dans les situations pratiques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques dans les situations pratiques\""\n        }\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 5868.9, ""llm_score"": 56.36, ""rag_score"": null, ""final_score"": 86.91, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Circuits électriques_age12_llama3.1_latest_20260608_130157.json,"{ 
+  ""courseTitle"": ""L'aventure des circuits électriques"", 
+  ""programmingLanguage"": ""None"", 
+  ""level"": ""beginner"", 
+  ""totalDuration"": ""4 heures"", 
+  ""objectives"": [
+    ""Comprendre les concepts de base des circuits électriques"",
+    ""Appliquer les concepts à des situations pratiques""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le mystère du courant et de la puissance"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez comment le courant et la puissance sont liés aux circuits électriques"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Circuits série et parallèle"",
+          ""description"": ""Comprenez les différences entre les circuits série et parallèle""
+        },
+        {
+          ""title"": ""Puissance électrique"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        }
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les fondations des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Apprenez les concepts clés pour comprendre les circuits électriques"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Calcul de la puissance électrique"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        },
+        {
+          ""title"": ""Sécurité des circuits électriques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques""
+        }
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""La manipulation des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Mettez en pratique vos connaissances pour résoudre des problèmes"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Type de circuit qui permet à plusieurs branches d'être connectées en parallèle"",
+          ""description"": ""Choisissez le type de circuit correct""
+        },
+        {
+          ""title"": ""Importance de la sécurité dans les circuits électriques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques""
+        }
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'expansion des concepts"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez des concepts plus complexes et créatifs"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Calcul de la puissance électrique en fonction de la tension et du courant"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        },
+        {
+          ""title"": ""Sécurité des circuits électriques dans les situations pratiques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques dans les situations pratiques""
+        }
+      ]
+    }
+  ]
+}",100.0,4,100
+Circuits électriques,12,beginner,llama3.1:latest,architect,3,44,3,True,True,3537.4,293.09,56.36,100,86.91,2893,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 293.09, ""response_length"": 2893, ""agent_score"": 100, ""generated_content"": ""{ \n  \""courseTitle\"": \""L'aventure des circuits \u00e9lectriques\"", \n  \""programmingLanguage\"": \""None\"", \n  \""level\"": \""beginner\"", \n  \""totalDuration\"": \""4 heures\"", \n  \""objectives\"": [\n    \""Comprendre les concepts de base des circuits \u00e9lectriques\"",\n    \""Appliquer les concepts \u00e0 des situations pratiques\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le myst\u00e8re du courant et de la puissance\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez comment le courant et la puissance sont li\u00e9s aux circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Circuits s\u00e9rie et parall\u00e8le\"",\n          \""description\"": \""Comprenez les diff\u00e9rences entre les circuits s\u00e9rie et parall\u00e8le\""\n        },\n        {\n          \""title\"": \""Puissance \u00e9lectrique\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        }\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les fondations des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Apprenez les concepts cl\u00e9s pour comprendre les circuits \u00e9lectriques\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Calcul de la puissance \u00e9lectrique\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        },\n        {\n          \""title\"": \""S\u00e9curit\u00e9 des circuits \u00e9lectriques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\""\n        }\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""La manipulation des circuits \u00e9lectriques\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""Mettez en pratique vos connaissances pour r\u00e9soudre des probl\u00e8mes\"",\n      \""exercise_mode\"": \""qcm\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Type de circuit qui permet \u00e0 plusieurs branches d'\u00eatre connect\u00e9es en parall\u00e8le\"",\n          \""description\"": \""Choisissez le type de circuit correct\""\n        },\n        {\n          \""title\"": \""Importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques\""\n        }\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'expansion des concepts\"", \n      \""duration\"": \""45 mins\"", \n      \""description\"": \""D\u00e9couvrez des concepts plus complexes et cr\u00e9atifs\"",\n      \""exercise_mode\"": \""fill_blank\"", \n      \""subTopics\"": [\n        {\n          \""title\"": \""Calcul de la puissance \u00e9lectrique en fonction de la tension et du courant\"",\n          \""description\"": \""Calculez la puissance \u00e9lectrique en multipliant la tension et le courant\""\n        },\n        {\n          \""title\"": \""S\u00e9curit\u00e9 des circuits \u00e9lectriques dans les situations pratiques\"",\n          \""description\"": \""Comprenez l'importance de la s\u00e9curit\u00e9 dans les circuits \u00e9lectriques dans les situations pratiques\""\n        }\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 3537.4, ""llm_score"": 56.36, ""rag_score"": null, ""final_score"": 86.91, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Circuits électriques_age12_llama3.1_latest_20260608_130157.json,"{ 
+  ""courseTitle"": ""L'aventure des circuits électriques"", 
+  ""programmingLanguage"": ""None"", 
+  ""level"": ""beginner"", 
+  ""totalDuration"": ""4 heures"", 
+  ""objectives"": [
+    ""Comprendre les concepts de base des circuits électriques"",
+    ""Appliquer les concepts à des situations pratiques""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le mystère du courant et de la puissance"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez comment le courant et la puissance sont liés aux circuits électriques"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Circuits série et parallèle"",
+          ""description"": ""Comprenez les différences entre les circuits série et parallèle""
+        },
+        {
+          ""title"": ""Puissance électrique"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        }
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les fondations des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Apprenez les concepts clés pour comprendre les circuits électriques"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Calcul de la puissance électrique"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        },
+        {
+          ""title"": ""Sécurité des circuits électriques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques""
+        }
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""La manipulation des circuits électriques"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Mettez en pratique vos connaissances pour résoudre des problèmes"",
+      ""exercise_mode"": ""qcm"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Type de circuit qui permet à plusieurs branches d'être connectées en parallèle"",
+          ""description"": ""Choisissez le type de circuit correct""
+        },
+        {
+          ""title"": ""Importance de la sécurité dans les circuits électriques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques""
+        }
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'expansion des concepts"", 
+      ""duration"": ""45 mins"", 
+      ""description"": ""Découvrez des concepts plus complexes et créatifs"",
+      ""exercise_mode"": ""fill_blank"", 
+      ""subTopics"": [
+        {
+          ""title"": ""Calcul de la puissance électrique en fonction de la tension et du courant"",
+          ""description"": ""Calculez la puissance électrique en multipliant la tension et le courant""
+        },
+        {
+          ""title"": ""Sécurité des circuits électriques dans les situations pratiques"",
+          ""description"": ""Comprenez l'importance de la sécurité dans les circuits électriques dans les situations pratiques""
+        }
+      ]
+    }
+  ]
+}",100.0,4,100

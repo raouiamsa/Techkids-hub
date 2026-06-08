@@ -1,0 +1,46 @@
+﻿topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,answer_index_validity,diversity_score,exercise_count,generated_content,options_validity,schema_validity,score,valid_exercises
+Circuits électriques,12,beginner,llama3.1:latest,enricher,1,42,3,True,20084.9,81.53,48.52,100,84.56,899,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 81.53, ""response_length"": 899, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Qu'est-ce que la puissance ?"", ""options"": [""La capacit\u00e9 \u00e0 faire quelque chose"", ""Le taux auquel cette \u00e9nergie est transf\u00e9r\u00e9e"", ""L'unit\u00e9 de mesure de la puissance"", ""La quantit\u00e9 d'\u00e9nergie transf\u00e9r\u00e9e en une seconde""], ""correct_index"": 1, ""explanation"": ""Bravo ! En fait, la puissance est le taux auquel cette \u00e9nergie est transf\u00e9r\u00e9e.""}, {""question"": ""Qu'est-ce que la r\u00e9sistance dans un circuit \u00e9lectrique ?"", ""options"": [""La force qui pousse l'\u00e9nergie \u00e0 travers le circuit"", ""Le d\u00e9bit d'\u00e9nergie en une seconde"", ""Un peu comme les obstacles que rencontre l'\u00e9nergie pour atteindre son destination"", ""L'unit\u00e9 de mesure du courant""], ""correct_index"": 2, ""explanation"": ""Super ! N'oublie pas que la r\u00e9sistance est un peu comme les obstacles que rencontre l'\u00e9nergie pour atteindre son destination.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""questions\"": [\n    {\n      \""question\"": \""Qu'est-ce que la puissance ?\"",\n      \""options\"": [\""La capacit\u00e9 \u00e0 faire quelque chose\"", \""Le taux auquel cette \u00e9nergie est transf\u00e9r\u00e9e\"", \""L'unit\u00e9 de mesure de la puissance\"", \""La quantit\u00e9 d'\u00e9nergie transf\u00e9r\u00e9e en une seconde\""],\n      \""correct_index\"": 1,\n      \""explanation\"": \""Bravo ! En fait, la puissance est le taux auquel cette \u00e9nergie est transf\u00e9r\u00e9e.\""\n    },\n    {\n      \""question\"": \""Qu'est-ce que la r\u00e9sistance dans un circuit \u00e9lectrique ?\"",\n      \""options\"": [\""La force qui pousse l'\u00e9nergie \u00e0 travers le circuit\"", \""Le d\u00e9bit d'\u00e9nergie en une seconde\"", \""Un peu comme les obstacles que rencontre l'\u00e9nergie pour atteindre son destination\"", \""L'unit\u00e9 de mesure du courant\""],\n      \""correct_index\"": 2,\n      \""explanation\"": \""Super ! N'oublie pas que la r\u00e9sistance est un peu comme les obstacles que rencontre l'\u00e9nergie pour atteindre son destination.\""\n    }\n  ]\n}"", ""ttft_ms"": 20084.9, ""llm_score"": 48.52, ""rag_score"": null, ""final_score"": 84.56}",100.0,100.0,2,"{ 
+  ""questions"": [
+    {
+      ""question"": ""Qu'est-ce que la puissance ?"",
+      ""options"": [""La capacité à faire quelque chose"", ""Le taux auquel cette énergie est transférée"", ""L'unité de mesure de la puissance"", ""La quantité d'énergie transférée en une seconde""],
+      ""correct_index"": 1,
+      ""explanation"": ""Bravo ! En fait, la puissance est le taux auquel cette énergie est transférée.""
+    },
+    {
+      ""question"": ""Qu'est-ce que la résistance dans un circuit électrique ?"",
+      ""options"": [""La force qui pousse l'énergie à travers le circuit"", ""Le débit d'énergie en une seconde"", ""Un peu comme les obstacles que rencontre l'énergie pour atteindre son destination"", ""L'unité de mesure du courant""],
+      ""correct_index"": 2,
+      ""explanation"": ""Super ! N'oublie pas que la résistance est un peu comme les obstacles que rencontre l'énergie pour atteindre son destination.""
+    }
+  ]
+}",100.0,100.0,,2
+Circuits électriques,12,beginner,llama3.1:latest,enricher,2,43,3,True,6770.6,43.73,52.71,0,15.81,524,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 0, ""options_validity"": 0, ""answer_index_validity"": 0, ""diversity_score"": 0, ""exercise_count"": 0, ""valid_exercises"": 0, ""latency"": 43.73, ""response_length"": 524, ""agent_score"": 0, ""critic_parsed_json"": {""module_content"": {""introduction"": ""Bienvenue dans ce module sur les nombres et leurs op\u00e9rations !"", ""section1"": {""title"": ""Les nombres entiers"", ""text"": ""Un nombre entier est un nombre qui n'a pas de partie d\u00e9cimale. Par exemple, 5, -3 ou 0 sont des nombres entiers.""}, ""section2"": {""title"": ""Les op\u00e9rations avec les nombres entiers"", ""text"": ""Nous pouvons additionner, soustraire, multiplier et diviser des nombres entiers. Par exemple, 5 + 3 = 8 ou 7 - 1 = 6.""}}}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""module_content\"": {\n    \""introduction\"": \""Bienvenue dans ce module sur les nombres et leurs op\u00e9rations !\"",\n    \""section1\"": {\n      \""title\"": \""Les nombres entiers\"",\n      \""text\"": \""Un nombre entier est un nombre qui n'a pas de partie d\u00e9cimale. Par exemple, 5, -3 ou 0 sont des nombres entiers.\""\n    },\n    \""section2\"": {\n      \""title\"": \""Les op\u00e9rations avec les nombres entiers\"",\n      \""text\"": \""Nous pouvons additionner, soustraire, multiplier et diviser des nombres entiers. Par exemple, 5 + 3 = 8 ou 7 - 1 = 6.\""\n    }\n  }\n}"", ""ttft_ms"": 6770.6, ""llm_score"": 52.71, ""rag_score"": null, ""final_score"": 15.81}",0,0,0,"{ 
+  ""module_content"": {
+    ""introduction"": ""Bienvenue dans ce module sur les nombres et leurs opérations !"",
+    ""section1"": {
+      ""title"": ""Les nombres entiers"",
+      ""text"": ""Un nombre entier est un nombre qui n'a pas de partie décimale. Par exemple, 5, -3 ou 0 sont des nombres entiers.""
+    },
+    ""section2"": {
+      ""title"": ""Les opérations avec les nombres entiers"",
+      ""text"": ""Nous pouvons additionner, soustraire, multiplier et diviser des nombres entiers. Par exemple, 5 + 3 = 8 ou 7 - 1 = 6.""
+    }
+  }
+}",0,0,,0
+Circuits électriques,12,beginner,llama3.1:latest,enricher,3,44,3,True,15793.2,67.13,56.81,100,87.04,783,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 67.13, ""response_length"": 783, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Qu'est-ce qui pousse les \u00e9lectrons \u00e0 se d\u00e9placer dans un circuit ?"", ""options"": [""La r\u00e9sistance"", ""Le courant"", ""Le voltage"", ""La puissance""], ""correct_index"": 2, ""explanation"": ""Bravo ! En fait, le voltage est comme une pression qui pousse les \u00e9lectrons \u00e0 se d\u00e9placer.""}, {""question"": ""Comment calculer la puissance d'un appareil qui consomme 120 volts et 10 amperes ?"", ""options"": [""Multipliez le voltage par la r\u00e9sistance"", ""Multipliez le courant par la r\u00e9sistance"", ""Multipliez le voltage par le courant"", ""Multipliez le courant par la puissance""], ""correct_index"": 2, ""explanation"": ""Super ! N'oublie pas que la puissance est \u00e9gale au produit du voltage et du courant.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""questions\"": [\n    {\n      \""question\"": \""Qu'est-ce qui pousse les \u00e9lectrons \u00e0 se d\u00e9placer dans un circuit ?\"",\n      \""options\"": [\""La r\u00e9sistance\"", \""Le courant\"", \""Le voltage\"", \""La puissance\""],\n      \""correct_index\"": 2,\n      \""explanation\"": \""Bravo ! En fait, le voltage est comme une pression qui pousse les \u00e9lectrons \u00e0 se d\u00e9placer.\""\n    },\n    {\n      \""question\"": \""Comment calculer la puissance d'un appareil qui consomme 120 volts et 10 amperes ?\"",\n      \""options\"": [\""Multipliez le voltage par la r\u00e9sistance\"", \""Multipliez le courant par la r\u00e9sistance\"", \""Multipliez le voltage par le courant\"", \""Multipliez le courant par la puissance\""],\n      \""correct_index\"": 2,\n      \""explanation\"": \""Super ! N'oublie pas que la puissance est \u00e9gale au produit du voltage et du courant.\""\n    }\n  ]\n}"", ""ttft_ms"": 15793.2, ""llm_score"": 56.81, ""rag_score"": null, ""final_score"": 87.04}",100.0,100.0,2,"{ 
+  ""questions"": [
+    {
+      ""question"": ""Qu'est-ce qui pousse les électrons à se déplacer dans un circuit ?"",
+      ""options"": [""La résistance"", ""Le courant"", ""Le voltage"", ""La puissance""],
+      ""correct_index"": 2,
+      ""explanation"": ""Bravo ! En fait, le voltage est comme une pression qui pousse les électrons à se déplacer.""
+    },
+    {
+      ""question"": ""Comment calculer la puissance d'un appareil qui consomme 120 volts et 10 amperes ?"",
+      ""options"": [""Multipliez le voltage par la résistance"", ""Multipliez le courant par la résistance"", ""Multipliez le voltage par le courant"", ""Multipliez le courant par la puissance""],
+      ""correct_index"": 2,
+      ""explanation"": ""Super ! N'oublie pas que la puissance est égale au produit du voltage et du courant.""
+    }
+  ]
+}",100.0,100.0,,2

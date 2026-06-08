@@ -7,7 +7,7 @@ import Link from 'next/link';
 import {
   Users, BookOpen, Trophy, TrendingUp, Clock,
   CheckCircle2, PlayCircle, BookText, ChevronRight, AlertCircle,
-  UserPlus, X, Loader2, Trash2, PlusCircle
+  UserPlus, X, Loader2, Trash2, PlusCircle, Medal, Download
 } from 'lucide-react';
 import { Button, Badge, Card, CardContent, Input } from '@org/ui-components';
 
@@ -240,9 +240,10 @@ export default function ParentDashboardPage() {
   const selectedChild = safeChildren.find(c => c.id === selectedChildId) ?? null;
   const totalActiveCourses = selectedChild?.enrollments.length ?? 0;
   const overallProgress = selectedChild ? getOverallProgress(selectedChild) : 0;
-  const completedCourses = selectedChild?.enrollments.filter(
+  const completedCoursesList = selectedChild?.enrollments.filter(
     enr => getCourseProgress(enr, selectedChild.progressions) === 100
-  ).length ?? 0;
+  ) ?? [];
+  const completedCoursesCount = completedCoursesList.length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50/30 dark:from-slate-950 dark:to-indigo-950/20">
@@ -397,37 +398,37 @@ export default function ParentDashboardPage() {
                 {/* KPI Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <Card className="rounded-2xl">
-                    <CardContent className="p-5 flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+                    <CardContent className="p-5 flex items-center gap-4 relative z-10">
+                      <div className="h-12 w-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0">
                         <BookOpen className="h-6 w-6 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">{totalActiveCourses}</p>
-                        <p className="text-sm text-slate-500">Cours inscrits</p>
+                        <p className="text-3xl font-black text-slate-800 dark:text-white drop-shadow-sm">{totalActiveCourses}</p>
+                        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mt-1">Cours inscrits</p>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="rounded-2xl">
-                    <CardContent className="p-5 flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center">
+                  <Card className="rounded-2xl overflow-hidden relative">
+                    <CardContent className="p-5 flex items-center gap-4 relative z-10">
+                      <div className="h-12 w-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center shrink-0">
                         <Trophy className="h-6 w-6 text-emerald-600" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">{overallProgress}%</p>
-                        <p className="text-sm text-slate-500">Progression globale</p>
+                        <p className="text-3xl font-black text-slate-800 dark:text-white drop-shadow-sm">{overallProgress}%</p>
+                        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mt-1">Progression globale</p>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="rounded-2xl">
-                    <CardContent className="p-5 flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-2xl bg-violet-50 dark:bg-violet-900/20 flex items-center justify-center">
+                  <Card className="rounded-2xl overflow-hidden relative">
+                    <CardContent className="p-5 flex items-center gap-4 relative z-10">
+                      <div className="h-12 w-12 rounded-2xl bg-violet-50 dark:bg-violet-900/20 flex items-center justify-center shrink-0">
                         <CheckCircle2 className="h-6 w-6 text-violet-600" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">{completedCourses}</p>
-                        <p className="text-sm text-slate-500">Cours terminés</p>
+                        <p className="text-3xl font-black text-slate-800 dark:text-white drop-shadow-sm">{completedCoursesCount}</p>
+                        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mt-1">Cours terminés</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -449,7 +450,7 @@ export default function ParentDashboardPage() {
                     />
                   </div>
                   <p className="text-indigo-200 text-sm mt-2">
-                    {completedCourses} cours terminé{completedCourses > 1 ? 's' : ''} sur {totalActiveCourses}
+                    {completedCoursesCount} cours terminé{completedCoursesCount > 1 ? 's' : ''} sur {totalActiveCourses}
                   </p>
                 </div>
 
@@ -613,6 +614,59 @@ export default function ParentDashboardPage() {
                     </div>
                   )}
                 </div>
+
+                {/* Certificates Section */}
+                {completedCoursesList.length > 0 && (
+                  <div className="space-y-4 pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <Medal className="h-5 w-5 text-amber-500" />
+                      Certificats Obtenus
+                    </h3>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {completedCoursesList.map(enrollment => (
+                        <div key={`cert-${enrollment.id}`} className="group relative w-full perspective-1000">
+                          <div className="absolute -inset-1 bg-gradient-to-br from-amber-400 via-yellow-300 to-orange-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-700 min-h-[400px]" />
+                          <div className="relative min-h-[400px] w-full bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700/50 rounded-3xl p-1 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 shadow-2xl flex flex-col justify-between">
+                            <div className="absolute inset-[2px] bg-slate-900 rounded-[22px] overflow-hidden flex flex-col">
+                              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/50 pointer-events-none" />
+                              <div className="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[30deg] translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-out" />
+                              <div className="p-6 flex flex-col items-center text-center h-full relative z-10">
+                                <div className="relative mb-4">
+                                  <div className="absolute inset-0 bg-amber-500 blur-2xl opacity-40 rounded-full" />
+                                  <div className="relative w-20 h-20 bg-gradient-to-br from-amber-100 to-amber-300 rounded-full flex items-center justify-center shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2),0_10px_20px_rgba(245,158,11,0.4)] border-4 border-amber-400/50">
+                                    <Medal className="h-10 w-10 text-amber-600 drop-shadow-md" />
+                                  </div>
+                                </div>
+                                <h2 className="text-xl font-black text-white mb-1 tracking-wide uppercase">
+                                  Certificat d'Initiation
+                                </h2>
+                                <p className="text-amber-400 font-bold mb-2 text-sm">{enrollment.course?.title || 'Cours inconnu'}</p>
+                                <div className="h-1 w-12 bg-amber-500 rounded-full mb-4" />
+                                <p className="text-slate-300 text-xs mb-auto">
+                                  Décerné avec les honneurs à <span className="font-bold text-white text-base block mt-1">{getChildDisplayName(selectedChild)}</span> 
+                                  <br/>pour avoir complété ce parcours.
+                                </p>
+                                <div className="w-full bg-slate-950/50 rounded-xl p-3 border border-slate-800 backdrop-blur-sm mt-4">
+                                  <div className="flex items-center justify-between">
+                                    <div className="text-left">
+                                      <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest">Délivré le</p>
+                                      <p className="text-xs font-bold text-slate-300">{new Date(enrollment.enrolledAt).toLocaleDateString('fr-FR')}</p>
+                                    </div>
+                                    <div className="text-right">
+                                      <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest">Plateforme</p>
+                                      <p className="text-xs font-bold text-amber-500">TechKids Hub</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ) : null}
           </div>

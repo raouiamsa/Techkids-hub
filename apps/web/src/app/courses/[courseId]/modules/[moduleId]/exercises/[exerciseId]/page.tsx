@@ -70,6 +70,7 @@ export default function ExercisePage() {
   const exerciseId = params.exerciseId as string;
 
   const [exercise, setExercise] = useState<Exercise | null>(null);
+  const [course, setCourse] = useState<any>(null);
   const [moduleName, setModuleName] = useState('');
   const [answer, setAnswer] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,8 +95,9 @@ export default function ExercisePage() {
           }),
         ]);
 
-        const course = await courseRes.json();
-        const mod: Module = course?.modules?.find((m: Module) => m.id === moduleId);
+        const courseData = await courseRes.json();
+        setCourse(courseData);
+        const mod: Module = courseData?.modules?.find((m: Module) => m.id === moduleId);
         if (mod) {
           setModuleName(mod.title);
           const ex = mod.exercises?.find((e: Exercise) => e.id === exerciseId);
@@ -287,30 +289,51 @@ export default function ExercisePage() {
 
         {/* Result Display */}
         {result ? (
-          <div className="p-8 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl text-center space-y-4">
-            <CheckCircle2 className="h-16 w-16 text-emerald-500 mx-auto" />
-            <h2 className="text-2xl font-bold text-emerald-800 dark:text-emerald-300">
-              Bravo ! Exercice soumis avec succès !
-            </h2>
-            <p className="text-emerald-700 dark:text-emerald-400">
-              Score : <strong>{result.score}%</strong> — Tentative #{result.attempt}
-            </p>
-            <div className="flex justify-center gap-4 pt-2">
-              <Link
-                href={`/courses/${courseId}`}
-                className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors"
-              >
-                Continuer le cours →
-              </Link>
-              <button
-                onClick={() => { setResult(null); }}
-                className="px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-2"
-              >
-                <RefreshCw className="h-4 w-4" />
-                Réessayer
-              </button>
+          result.score === 100 ? (
+            <div className="p-8 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl text-center space-y-4">
+              <CheckCircle2 className="h-16 w-16 text-emerald-500 mx-auto" />
+              <h2 className="text-2xl font-bold text-emerald-800 dark:text-emerald-300">
+                Bravo ! Exercice parfaitement réussi !
+              </h2>
+              <p className="text-emerald-700 dark:text-emerald-400">
+                Score : <strong>{result.score}%</strong> — Tentative #{result.attempt}
+              </p>
+              <div className="flex justify-center gap-4 pt-2">
+                <Link
+                  href={`/courses/${courseId}`}
+                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors"
+                >
+                  Continuer le cours →
+                </Link>
+                <button
+                  onClick={() => { setResult(null); }}
+                  className="px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-2"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                  Réessayer
+                </button>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="p-8 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-2xl text-center space-y-4">
+              <XCircle className="h-16 w-16 text-red-500 mx-auto" />
+              <h2 className="text-2xl font-bold text-red-800 dark:text-red-300">
+                Oups ! Ta réponse n'est pas correcte.
+              </h2>
+              <p className="text-red-700 dark:text-red-400">
+                Score : <strong>{result.score}%</strong> — Tentative #{result.attempt}
+              </p>
+              <div className="flex justify-center gap-4 pt-2">
+                <button
+                  onClick={() => { setResult(null); }}
+                  className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors flex items-center gap-2"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                  Corriger ma réponse
+                </button>
+              </div>
+            </div>
+          )
         ) : (
           /* Answer Form */
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -321,6 +344,7 @@ export default function ExercisePage() {
               <VirtualLab
                 exerciseId={exercise.id}
                 studentId={user?.id || 'anonymous'}
+                language={course?.language || 'python'}
                 starterCode={config.placeholder}
                 instructions={exercise.instructions}
                 value={answer}
@@ -331,7 +355,35 @@ export default function ExercisePage() {
                 <CircuitLab
                   exerciseId={exercise.id}
                   studentId={user?.id || 'anonymous'}
+                  allowedComponents={['Arduino_Uno', 'LED_Rouge', 'Resistor_220']} // Composants restreints dynamiquement
+                  onChange={setAnswer}
                 />
+              </div>
+            ) : (exercise as any).options && (exercise as any).options.length > 0 ? (
+              <div className="space-y-3">
+                {(exercise as any).options.map((option: string, index: number) => (
+                  <label
+                    key={index}
+                    className={`flex items-center p-4 rounded-xl border cursor-pointer transition-all ${
+                      answer === option
+                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 ring-1 ring-blue-500'
+                        : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="qcm-option"
+                      value={option}
+                      checked={answer === option}
+                      onChange={(e) => setAnswer(e.target.value)}
+                      className="w-5 h-5 text-blue-600 border-gray-300 focus:ring-blue-500 dark:bg-slate-700 dark:border-slate-600"
+                      required
+                    />
+                    <span className="ml-3 text-slate-700 dark:text-slate-200 font-medium">
+                      {option}
+                    </span>
+                  </label>
+                ))}
               </div>
             ) : (
               <textarea

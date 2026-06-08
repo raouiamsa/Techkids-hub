@@ -1,0 +1,5 @@
+model,topic,age,latency_s,json_valid,schema_compliance,validation_error
+llama3.1:latest,Python Variables,12,90.17,False,False,too many values to unpack (expected 2)
+llama3.1:latest,Python Loops,10,44.88,False,False,too many values to unpack (expected 2)
+llama3.1:latest,Python Conditionals,14,48.39,False,False,too many values to unpack (expected 2)
+llama3.1:latest,Arduino Blink LED,11,56.05,False,False,too many values to unpack (expected 2)

@@ -4,7 +4,9 @@
   "private": true,
   "nx": {
     "name": "web",
-    "implicitDependencies": ["api-gateway"],
+    "implicitDependencies": [
+      "api-gateway"
+    ],
     "targets": {
       "serve": {
         "continuous": true,
@@ -38,7 +40,9 @@
     }
   },
   "dependencies": {
+    "@types/canvas-confetti": "^1.9.0",
     "autoprefixer": "^10.4.27",
+    "canvas-confetti": "^1.9.4",
     "lucide-react": "^0.577.0",
     "next": "^16.1.6",
     "postcss": "^8.5.8",

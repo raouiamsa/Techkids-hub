@@ -1,4 +1,10 @@
 import os
+import faulthandler
+faulthandler.enable()
+
+# Empêcher HF de faire des requêtes réseau (contourne le crash de socket.getaddrinfo sous Windows)
+os.environ["HF_HUB_OFFLINE"] = "1"
+
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 from .ingest_config import AI_BRAIN_DIR, EMBEDDING_MODEL_NAME

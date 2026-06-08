@@ -1,151 +1,119 @@
 /**
  * seeds/courses.seed.ts
  * Création des données de test détaillées (Rich Content Ready).
- * 2 cours × 3 modules × 2 exercices = 12 exercices au total.
+ * Cours testables de bout-en-bout (Code Challenges fonctionnels).
  */
 
 import { PrismaClient, CourseLevel, ExerciseType } from '@prisma/client';
 
 const coursesData = [
     {
-        title: 'Arduino pour débutants',
-        description: "Découverte de l'électronique avec Arduino — LED, capteurs, et circuits simples.",
+        title: 'Apprendre Python en s\'amusant',
+        description: "Découverte de Python pas à pas ! Des variables aux conditions, deviens un as du code.",
         level: CourseLevel.BEGINNER,
+        language: 'python',
         placementBank: [],
         certificationBank: [],
         finalProject: {
-            title: "Station Météo Intelligente",
-            description: "Crée une station qui affiche la température et allume une alarme si la chaleur est trop forte.",
-            steps: ["Brancher le capteur DHT11", "Configurer le seuil de température", "Tester l'alarme sonore"],
-            solution: "void setup() { ... }"
+            title: "Créer un calculateur magique",
+            description: "Applique tout ce que tu as appris pour créer un calculateur qui demande l'âge de l'utilisateur et lui dit s'il est majeur.",
+            steps: ["Créer la variable age", "Utiliser input() pour lire la valeur", "Faire un if/else pour afficher le bon message"],
+            solution: "age = 18\nif age >= 18:\n    print('Majeur')\nelse:\n    print('Mineur')"
         },
         modules: [
             {
-                title: 'Introduction à Arduino',
+                title: 'Variables et Affichage',
                 order: 1,
-                content: '# Introduction à Arduino\n\nArduino est une plateforme open-source permettant de créer des projets électroniques interactifs.',
+                content: '# Variables et Affichage\n\nEn Python, on utilise `print()` pour afficher du texte et on peut stocker des informations dans des *variables*.',
                 exercises: [
                     {
-                        title: 'Quiz : Les composants de base',
-                        instructions: 'Identifiez les composants suivants : résistance, LED, condensateur.',
+                        title: 'Quiz : La fonction magique',
+                        instructions: 'Quelle fonction utilise-t-on en Python pour afficher du texte à l\'écran ?',
                         exerciseType: ExerciseType.QUIZ,
-                        solution: "Résistance = limite le courant | LED = diode électroluminescente",
+                        options: ["echo()", "print()", "show()", "display()"],
+                        solution: "print()",
                     },
                     {
-                        title: 'Circuit : Première LED',
-                        instructions: 'Montez un circuit simple avec une LED et une résistance de 220Ω sur le pin 13.',
-                        exerciseType: ExerciseType.CIRCUIT_BUILD,
-                        solution: 'LED(+) → 220Ω → pin13 | LED(-) → GND',
+                        title: 'Défi : Ton premier message',
+                        instructions: 'Écris un programme Python qui affiche exactement le message "Bonjour le monde !". Attention aux majuscules et à l\'orthographe.',
+                        exerciseType: ExerciseType.CODE_CHALLENGE,
+                        solution: 'print("Bonjour le monde !")',
                     },
                 ],
             },
             {
-                title: 'LEDs et résistances',
+                title: 'Conditions et Choix',
                 order: 2,
-                content: "# LEDs et résistances\n\nUne LED sans résistance = LED grillée ! La résistance protège la LED en limitant le courant.",
+                content: "# Les Conditions\n\nParfois, le programme doit prendre des décisions. C'est le rôle de `if` et `else` !",
                 exercises: [
                     {
-                        title: 'Quiz : Calcul de résistance',
-                        instructions: 'Calculez la résistance pour une LED rouge (Vf=2V, If=20mA) alimentée en 5V.',
+                        title: 'Quiz : Les comparaisons',
+                        instructions: 'Quel symbole utilise-t-on en Python pour vérifier si deux variables sont égales ?',
                         exerciseType: ExerciseType.QUIZ,
-                        solution: 'R = (5-2) / 0.02 = 150Ω → arrondir à 220Ω',
+                        options: ["=", "==", "===", "=>"],
+                        solution: "==",
                     },
                     {
-                        title: 'Code : LED clignotante',
-                        instructions: 'Écrivez le code Arduino pour faire clignoter une LED toutes les 500ms.',
+                        title: 'Défi : Majeur ou Mineur ?',
+                        instructions: 'Crée une variable `age` égale à 18. Ensuite, utilise `if` pour afficher "Majeur". (Attention à l\'indentation !)',
                         exerciseType: ExerciseType.CODE_CHALLENGE,
-                        solution: 'void loop() { digitalWrite(13, HIGH); delay(500); digitalWrite(13, LOW); delay(500); }',
-                    },
-                ],
-            },
-            {
-                title: 'Capteurs et entrées',
-                order: 3,
-                content: '# Capteurs et entrées\n\nLes capteurs permettent à Arduino de lire le monde réel : température, lumière, distance...',
-                exercises: [
-                    {
-                        title: 'Quiz : Types de capteurs',
-                        instructions: 'Quel capteur utilise-t-on pour mesurer la température ?',
-                        exerciseType: ExerciseType.QUIZ,
-                        solution: 'Température : DHT11/DS18B20 | Luminosité : LDR',
-                    },
-                    {
-                        title: 'Code : Lecture capteur température',
-                        instructions: "Écrivez le code pour lire la température avec un DHT11.",
-                        exerciseType: ExerciseType.CODE_CHALLENGE,
-                        solution: 'dht.read11(DHT_PIN); Serial.println(dht.temperature);',
+                        solution: 'age = 18\nif age >= 18:\n    print("Majeur")',
                     },
                 ],
             },
         ],
     },
     {
-        title: 'Programmation avec Scratch',
-        description: 'Initiation à la programmation visuelle par blocs — logique, boucles, conditions.',
-        level: CourseLevel.BEGINNER,
+        title: 'Les Secrets du C++',
+        description: 'Plonge dans les fondations de la programmation avec le langage C++. Parfait pour préparer Arduino !',
+        level: CourseLevel.INTERMEDIATE,
+        language: 'cpp',
         placementBank: [],
         certificationBank: [],
         finalProject: {
-            title: "Labyrinthe Interactif",
-            description: "Crée un jeu de labyrinthe où le personnage doit éviter les murs pour atteindre un trésor.",
-            steps: ["Dessiner le labyrinthe", "Gérer les déplacements fléchés", "Détecter la collision avec le noir"],
-            solution: "Bloc Si [Touche couleur Noir] alors [Retour Départ]"
+            title: "Le Compteur Intelligent",
+            description: "Crée un programme C++ complet qui utilise une boucle pour compter de 1 à 5, puis qui affiche 'Terminé !'.",
+            steps: ["Déclarer la boucle for", "Afficher chaque nombre", "Afficher Terminé à la fin"],
+            solution: "#include <iostream>\nusing namespace std;\nint main() {\n  for(int i=1; i<=5; i++) cout << i << endl;\n  cout << \"Termine !\" << endl;\n  return 0;\n}"
         },
         modules: [
             {
-                title: 'Introduction à Scratch',
+                title: 'Introduction et Syntaxe',
                 order: 1,
-                content: '# Introduction à Scratch\n\nScratch est un langage de programmation visuel créé par le MIT.',
+                content: '# Introduction au C++\n\nEn C++, chaque programme doit contenir une fonction `main()`. Et surtout, chaque instruction se termine par un point-virgule `;` !',
                 exercises: [
                     {
-                        title: "Quiz : L'interface Scratch",
-                        instructions: "Identifiez les zones de l'interface Scratch.",
+                        title: "Quiz : La fin d'une ligne",
+                        instructions: "Par quel caractère doit obligatoirement se terminer une instruction en C++ ?",
                         exerciseType: ExerciseType.QUIZ,
-                        solution: "Scène = zone d'exécution | Lutins = personnages",
+                        options: ["Un point (.)", "Deux points (:)", "Un point-virgule (;)", "Une virgule (,)"],
+                        solution: "Un point-virgule (;)",
                     },
                     {
-                        title: 'Code : Premier programme',
-                        instructions: 'Faire bouger le lutin quand on appuie sur la flèche droite.',
+                        title: 'Défi : Hello World en C++',
+                        instructions: 'Complète ce programme pour qu\'il affiche "Hello" avec cout. N\'oublie pas le std::endl et le point-virgule !',
                         exerciseType: ExerciseType.CODE_CHALLENGE,
-                        solution: 'Quand [flèche droite] pressée → Avancer de (10) pas',
+                        solution: '#include <iostream>\n\nint main() {\n    std::cout << "Hello" << std::endl;\n    return 0;\n}',
                     },
                 ],
             },
             {
-                title: 'Boucles et conditions',
+                title: 'Mathématiques et Variables',
                 order: 2,
-                content: '# Boucles et conditions\n\nLes boucles répètent des actions. Les conditions décident quoi faire.',
+                content: '# Les Variables\n\nEn C++, il faut toujours préciser le *type* de la variable (par exemple, `int` pour un entier).',
                 exercises: [
                     {
-                        title: 'Quiz : Boucles vs répétitions',
-                        instructions: "Différence entre 'Répéter 10 fois' et 'Jusqu'à ce que' ?",
+                        title: 'Quiz : Le type des nombres',
+                        instructions: "Quel type de variable utilise-t-on pour stocker un nombre entier comme 42 en C++ ?",
                         exerciseType: ExerciseType.QUIZ,
-                        solution: "'Répéter N fois' = boucle bornée | 'Jusqu'à ce que' = boucle conditionnelle",
+                        options: ["string", "int", "float", "bool"],
+                        solution: "int",
                     },
                     {
-                        title: 'Code : Jeu de déplacement',
-                        instructions: 'Lutin rebondit sur les bords et change de couleur.',
+                        title: 'Défi : Addition',
+                        instructions: 'Crée deux variables `int a = 5;` et `int b = 3;`. Affiche leur somme avec cout.',
                         exerciseType: ExerciseType.CODE_CHALLENGE,
-                        solution: 'Répéter indéfiniment → Avancer(10) → Si au bord, rebondir',
-                    },
-                ],
-            },
-            {
-                title: 'Projet final : Animation',
-                order: 3,
-                content: "# Projet final\n\nAppliquez tout ce que vous avez appris pour créer une animation.",
-                exercises: [
-                    {
-                        title: 'Quiz : Récapitulatif',
-                        instructions: 'Quels blocs pour : jouer un son, changer de costume ?',
-                        exerciseType: ExerciseType.QUIZ,
-                        solution: 'Son = [jouer son] | Costume = [basculer costume]',
-                    },
-                    {
-                        title: 'Code : Mini-jeu complet',
-                        instructions: 'Attraper des étoiles tombantes et compter le score.',
-                        exerciseType: ExerciseType.CODE_CHALLENGE,
-                        solution: 'Variable Score | Si touche lutin → Score +1',
+                        solution: '#include <iostream>\n\nint main() {\n    int a = 5;\n    int b = 3;\n    std::cout << a + b << std::endl;\n    return 0;\n}',
                     },
                 ],
             },
@@ -173,16 +141,17 @@ export async function seedCourses(prisma: PrismaClient) {
                     level: courseData.level,
                     isPublished: true,
                     teacherId: teacher.id,
+                    language: courseData.language,
                     placementBank: courseData.placementBank,
                     certificationBank: courseData.certificationBank,
                     finalProject: courseData.finalProject
                 },
             });
         } else {
-            // Mise à jour pour s'assurer que les nouveaux champs JSON existent
             course = await prisma.course.update({
                 where: { id: course.id },
                 data: {
+                    language: courseData.language,
                     placementBank: course.placementBank ?? [],
                     certificationBank: course.certificationBank ?? [],
                     finalProject: course.finalProject ?? courseData.finalProject
@@ -218,9 +187,19 @@ export async function seedCourses(prisma: PrismaClient) {
                             title: ex.title,
                             instructions: ex.instructions,
                             exerciseType: ex.exerciseType,
+                            options: (ex as any).options || [],
                             solution: ex.solution,
                             moduleId: module.id,
                         },
+                    });
+                } else {
+                    await prisma.exercise.update({
+                        where: { id: existing.id },
+                        data: {
+                            instructions: ex.instructions,
+                            options: (ex as any).options || [],
+                            solution: ex.solution,
+                        }
                     });
                 }
             }

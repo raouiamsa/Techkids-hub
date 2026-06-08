@@ -10,8 +10,8 @@ from pathlib import Path
 class Config:
     """Central configuration for COMP2 benchmarking."""
 
-    # Model configuration (phi3 removed due to high hallucination rates)
-    models: List[str] = field(default_factory=lambda: ["mistral:latest", "llama3.1:latest"])
+    # Model configuration (phi3 and mistral removed, Llama 3.1 selected)
+    models: List[str] = field(default_factory=lambda: ["llama3.1:latest"])
 
     # Test topics configuration
     topics: List[Dict[str, Any]] = field(default_factory=lambda: [

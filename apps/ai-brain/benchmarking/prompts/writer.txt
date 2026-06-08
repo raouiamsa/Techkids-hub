@@ -6,9 +6,9 @@ MISSION:
 Rédiger le contenu complet du module intitulé "{module_title}" pour un cours sur le sujet "{topic}".
 Ton objectif est de transformer des concepts techniques complexes en une aventure passionnante et facile à comprendre.
 
- DÉTECTION AUTOMATIQUE DE LANGAGE :
-Basé sur le sujet "{topic}", détermine le langage de programmation approprié et utilise-le pour tous les exemples et explications.
-Les exemples de code (s'il y en a) doivent être dans le langage détecté, pas dans un langage générique.
+ LANGAGE CIBLE : {language}
+Utilise ce langage pour tous les exemples et explications.
+Si le langage est "None", le sujet est purement théorique ou matériel (ex: Physique, Électronique) : n'inclus absolument AUCUN bloc de code et ignore les consignes demandant du code. Remplace les exemples de code par des analogies du monde réel.
 
 ===================================================
 SOURCES DE CONNAISSANCES (RAG)
@@ -50,5 +50,5 @@ FORMAT DE SORTIE JSON (STRICTEMENT AUCUN TEXTE AVANT/APRÈS)
   "title": "{module_title}",
   "content": "## Section 1: [Titre accrocheur]\\n\\n[Texte riche en Markdown...]\\n\\n## Section 2: [L'analogie du jour]...",
   "word_count": 0,
-  "language_target": "[Langage détecté automatiquement selon le sujet]"
+  "language_target": "{language}"
 }}

@@ -27,19 +27,19 @@ export class EmailService {
     async sendVerificationCode(email: string, code: string): Promise<void> {
         if (!this.transporter) {
             // Mode développement sans SMTP : affiche dans le terminal
-            this.logger.log(`📧  [DEV] OTP pour ${email} : ${code}  (valable 15 min)`);
+            this.logger.log(`[DEV] OTP pour ${email} : ${code}  (valable 15 min)`);
             return;
         }
 
         await this.transporter.sendMail({
             from: `"TechKids Hub" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
             to: email,
-            subject: '🔐 Votre code de vérification TechKids',
+            subject: '[TechKids] Votre code de vérification',
             html: `
         <div style="font-family: 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto;
                     padding: 32px; background: #f8f8ff; border-radius: 16px;">
           <div style="text-align: center; margin-bottom: 24px;">
-            <h2 style="color: #6366f1; margin: 0;">🚀 TechKids Hub</h2>
+            <h2 style="color: #6366f1; margin: 0;">&lt;/&gt; TechKids Hub</h2>
             <p style="color: #555; margin-top: 8px;">Vérification de votre adresse email</p>
           </div>
 
@@ -54,7 +54,7 @@ export class EmailService {
           </div>
 
           <p style="color: #666; font-size: 14px; text-align: center;">
-            ⏱ Ce code expire dans <strong>15 minutes</strong>.
+            Ce code expire dans <strong>15 minutes</strong>.
           </p>
 
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
@@ -66,24 +66,24 @@ export class EmailService {
       `,
         });
 
-        this.logger.log(`📧  Email OTP envoyé à ${email}`);
+        this.logger.log(`Email OTP envoyé à ${email}`);
     }
 
     async sendPasswordResetCode(email: string, code: string): Promise<void> {
         if (!this.transporter) {
-            this.logger.log(`📧  [DEV] OTP réinitialisation mdp pour ${email} : ${code}  (valable 15 min)`);
+            this.logger.log(`[DEV] OTP réinitialisation mdp pour ${email} : ${code}  (valable 15 min)`);
             return;
         }
 
         await this.transporter.sendMail({
             from: `"TechKids Hub" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
             to: email,
-            subject: '🔑 Réinitialisation de votre mot de passe TechKids',
+            subject: '[TechKids] Réinitialisation de votre mot de passe',
             html: `
         <div style="font-family: 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto;
                     padding: 32px; background: #f8f8ff; border-radius: 16px;">
           <div style="text-align: center; margin-bottom: 24px;">
-            <h2 style="color: #6366f1; margin: 0;">🚀 TechKids Hub</h2>
+            <h2 style="color: #6366f1; margin: 0;">&lt;/&gt; TechKids Hub</h2>
             <p style="color: #555; margin-top: 8px;">Réinitialisation de mot de passe</p>
           </div>
 
@@ -98,7 +98,7 @@ export class EmailService {
           </div>
 
           <p style="color: #666; font-size: 14px; text-align: center;">
-            ⏱ Ce code expire dans <strong>15 minutes</strong>.
+            Ce code expire dans <strong>15 minutes</strong>.
           </p>
 
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
@@ -110,6 +110,6 @@ export class EmailService {
       `,
         });
 
-        this.logger.log(`📧  Email réinitialisation mdp envoyé à ${email}`);
+        this.logger.log(`Email réinitialisation mdp envoyé à ${email}`);
     }
 }

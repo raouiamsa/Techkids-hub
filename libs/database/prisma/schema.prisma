@@ -63,6 +63,12 @@ model Profile {
   avatar      String?
   dateOfBirth DateTime?
 
+  // Champs de Gamification (Sprint 2)
+  xp               Int       @default(0)
+  level            Int       @default(1)
+  currentStreak    Int       @default(0)
+  lastActivityDate DateTime?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -106,6 +112,8 @@ model Course {
   certificationBank Json?       // Examen final de certification
   finalProject      Json?       // Énoncé et corrigé du projet de synthèse
   
+  language        String?     // Langage de programmation du cours (ex: "python")
+
   isPublished     Boolean     @default(false)
   imageUrl        String?
 
@@ -143,6 +151,7 @@ model Exercise {
   title        String
   instructions String       @db.Text
   exerciseType ExerciseType @default(QUIZ)
+  options      String[]     @default([])
   solution     String?      @db.Text 
 
   moduleId    String

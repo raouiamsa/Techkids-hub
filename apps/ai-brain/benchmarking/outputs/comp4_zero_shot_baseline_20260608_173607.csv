@@ -1,0 +1,25 @@
+model,topic,age,latency_s,ttft_ms,response_length,json_valid,schema_compliance,validation_error
+llama3.1:latest,Python Variables,12,510.45,271488.9,3070,True,False,"'short' is a required property
+
+Failed validating 'required' in schema['properties']['summary']:
+    {'type': 'object',
+     'required': ['short', 'long'],
+     'properties': {'short': {'type': 'strin"
+llama3.1:latest,Python Loops,12,492.82,280561.4,2947,True,False,"'short' is a required property
+
+Failed validating 'required' in schema['properties']['summary']:
+    {'type': 'object',
+     'required': ['short', 'long'],
+     'properties': {'short': {'type': 'strin"
+llama3.1:latest,Python Conditionals,12,525.84,273347.8,3355,True,False,"'short' is a required property
+
+Failed validating 'required' in schema['properties']['summary']:
+    {'type': 'object',
+     'required': ['short', 'long'],
+     'properties': {'short': {'type': 'strin"
+llama3.1:latest,Arduino LEDs,12,557.19,265637.9,3980,True,False,"'short' is a required property
+
+Failed validating 'required' in schema['properties']['summary']:
+    {'type': 'object',
+     'required': ['short', 'long'],
+     'properties': {'short': {'type': 'strin"

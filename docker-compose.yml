@@ -52,6 +52,14 @@ services:
       - neo4j_logs:/logs
       - neo4j_plugins:/plugins
 
+  # Moteur d'exécution de code ultra-sécurisé (Sandbox)
+  piston:
+    image: ghcr.io/engineer-man/piston:latest
+    container_name: techkids-piston
+    restart: unless-stopped
+    ports:
+      - "2000:2000"
+
 volumes:
   postgres_data:
   neo4j_data:

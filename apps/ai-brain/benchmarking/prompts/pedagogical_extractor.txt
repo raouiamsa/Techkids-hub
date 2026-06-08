@@ -12,6 +12,16 @@ pour des étudiants de {age} ans, au niveau "{level}".
 - Chaque module doit progresser clairement du simple vers le plus complexe, sans sauts implicites.
 - Chaque exercice doit servir à vérifier un concept précis et un seul objectif principal.
 
+## Sources RAG (Base de connaissances stricte)
+
+Voici les documents de référence extraits de notre base de données :
+{context}
+
+RÈGLE ANTI-HALLUCINATION ABSOLUE :
+Tu ne dois INVENTER AUCUN concept, aucun objectif, et aucun exercice. 
+TOUT le contenu de ton graphe pédagogique (noms des concepts, définitions, exercices) doit être extrait ou directement inspiré des Sources RAG ci-dessus. 
+Si le texte ne couvre pas assez de concepts pour justifier plusieurs modules, réduis le nombre de modules plutôt que d'halluciner des informations externes.
+
 ## Instructions Précises
 
 1. **Structure Pédagogique**: Divise le contenu en MODULES logiques (2-4 modules recommandés).

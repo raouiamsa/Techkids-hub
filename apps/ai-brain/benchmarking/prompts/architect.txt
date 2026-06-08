@@ -7,16 +7,9 @@ CONTEXTE DE MISSION
 ===================================================
 SUJET : "{topic}" | ÂGE CIBLE : {age} ans | NIVEAU : {level}
 
-⚠️ DÉTECTION AUTOMATIQUE DE LANGAGE :
-Basé sur le sujet "{topic}", tu dois détecter et utiliser le langage de programmation approprié :
-- Si le sujet contient "Arduino", "microcontroller", "embedded" → C++
-- Si le sujet contient "Python", "machine learning", "data science" → Python
-- Si le sujet contient "React", "Vue", "Node", "JavaScript" → JavaScript
-- Si le sujet contient "Web", "HTML", "CSS" → HTML/CSS
-- Si le sujet contient "SQL", "database" → SQL
-- Si le sujet contient "Java" → Java
-- Si le sujet contient "Ruby" → Ruby
-- Autres cas: détermine le langage approprié basé sur le contexte pédagogique
+⚠️ LANGAGE CIBLE : {language}
+Utilise ce langage pour structurer le cours.
+Si le langage est "None", le sujet est purement théorique ou matériel (ex: Physique, Électronique). Dans ce cas, les modules ne doivent contenir aucune pratique de code, et les exercices doivent être théoriques ou pratiques sans code.
 
 SOURCES RAG (BASE DE TRAVAIL EXCLUSIVE) : 
 {context}
@@ -56,7 +49,7 @@ FORMAT JSON OBLIGATOIRE (STRICTEMENT AUCUN TEXTE AVANT/APRÈS)
 ```json
 {{
   "courseTitle": "Titre captivant et mystérieux pour l'enfant",
-  "programmingLanguage": "[Langage détecté automatiquement selon le sujet]",
+  "programmingLanguage": "{language}",
   "level": "{level}",
   "totalDuration": "Ex: 3 heures",
   "objectives": [

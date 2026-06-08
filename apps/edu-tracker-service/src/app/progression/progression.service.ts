@@ -46,10 +46,10 @@ export class ProgressionService {
     // 2. Évaluation (AI Grading pour le MVP)
     let score = 0;
     if (exercise.exerciseType === 'CODE_CHALLENGE') {
+      let executionOutput = "Aucune exécution effectuée.";
+      const code = data.answer || "";
+      
       try {
-        const code = data.answer;
-        let executionOutput = "Aucune exécution effectuée.";
-        
         // A. Tenter d'exécuter le code via Piston pour donner du contexte à l'IA
         try {
           // On utilise python par défaut pour tolérer les algorithmes et pseudo-codes
@@ -91,13 +91,73 @@ export class ProgressionService {
           score = 50; // Score par défaut si le cerveau IA ne répond pas
         }
       } catch (error) {
-        console.error("Erreur lors du grading IA:", error);
+        console.error("Erreur lors du grading IA (probablement serveur éteint):", error);
+        
+        // --- Fallback Démo (Sans IA) ---
+        // 1. Si on attend une solution exacte et que le code correspond (en ignorant les espaces)
+        if (exercise.solution && code.replace(/\s/g, '') === exercise.solution.replace(/\s/g, '')) {
+          score = 100;
+        } 
+        // 2. Si le code s'exécute sans générer d'erreur de syntaxe ou d'exécution
+        else if (executionOutput && !executionOutput.toLowerCase().includes("error") && !executionOutput.toLowerCase().includes("erreur")) {
+          score = 100;
+        } 
+        // 3. Sinon, la réponse est fausse
+        else {
+          score = 0;
+        }
+      }
+    } else if (exercise.exerciseType === 'CIRCUIT_BUILD') {
+      try {
+        const studentGraph = JSON.parse(data.answer);
+        
+        // Mock Validation pour Sprint 2 (Même logique que le Gateway)
+        const expectedSolution = {
+          connections: [
+            { from: "Arduino_Uno_1:Pin13", to: "Resistor_220_1:Borne 1" },
+            { from: "Resistor_220_1:Borne 2", to: "LED_Rouge_1:Anode (+)" },
+            { from: "Arduino_Uno_1:GND", to: "LED_Rouge_1:Cathode (GND)" }
+          ]
+        };
+
+        if (!studentGraph.connections || studentGraph.connections.length < 3) {
+          score = 0;
+        } else {
+          let matchCount = 0;
+          expectedSolution.connections.forEach(expectedConn => {
+            const hasMatch = studentGraph.connections.some((studentConn: any) => {
+              const matchForward = 
+                studentConn.fromComponent === expectedConn.from.split(':')[0] &&
+                studentConn.fromPin === expectedConn.from.split(':')[1] &&
+                studentConn.toComponent === expectedConn.to.split(':')[0] &&
+                studentConn.toPin === expectedConn.to.split(':')[1];
+              
+              const matchBackward = 
+                studentConn.fromComponent === expectedConn.to.split(':')[0] &&
+                studentConn.fromPin === expectedConn.to.split(':')[1] &&
+                studentConn.toComponent === expectedConn.from.split(':')[0] &&
+                studentConn.toPin === expectedConn.from.split(':')[1];
+
+              return matchForward || matchBackward;
+            });
+            if (hasMatch) matchCount++;
+          });
+          
+          score = matchCount === expectedSolution.connections.length ? 100 : 0;
+        }
+      } catch (e) {
+        score = 0; // JSON invalide ou vide
+      }
+    } else if (exercise.exerciseType === 'QUIZ') {
+      if (exercise.solution && data.answer) {
+        // Compare answer exactly (or case-insensitive) to solution
+        score = data.answer.trim().toLowerCase() === exercise.solution.trim().toLowerCase() ? 100 : 0;
+      } else {
         score = 0;
       }
     } else {
-      score = 100; // Pour les autres types (Quiz/Circuit), on laisse 100 par défaut
+      score = 100; // Default fallback for other potential types
     }
-
     // 3. Find current attempt count
     const previousSubmissions = await this.prisma.submission.count({
       where: { studentId: data.studentId, exerciseId: data.exerciseId },

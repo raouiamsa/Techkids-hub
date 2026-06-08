@@ -21,4 +21,14 @@ export class CoursesController {
   async createCourse(@Payload() data: CreateCourseDto & { teacherId: string }) {
     return this.coursesService.createCourse(data);
   }
+
+  @MessagePattern(EDU_PATTERNS.COURSES_UPDATE)
+  async updateCourse(@Payload() payload: { id: string; data: any }) {
+    return this.coursesService.updateCourse(payload.id, payload.data);
+  }
+
+  @MessagePattern(EDU_PATTERNS.COURSES_DRAFTS)
+  async getDraftCourses(@Payload() teacherId: string) {
+    return this.coursesService.getDraftCourses(teacherId);
+  }
 }

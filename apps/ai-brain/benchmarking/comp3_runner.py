@@ -150,7 +150,7 @@ class Comp3Runner:
         )
         return prompt_template + compact_msg
     
-    def generate_course_structure(self, model: str, topic: str, age: int, level: str, language: str = "French") -> Optional[Dict[str, Any]]:
+    def generate_course_structure(self, model: str, topic: str, age: int, level: str, language: str = "French", context: str = "") -> Optional[Dict[str, Any]]:
         """
         Call LLM to generate pedagogical course structure with validation and retry.
         
@@ -174,7 +174,7 @@ class Comp3Runner:
             prompt_template = f.read()
         
         # Format prompt with parameters using replace to avoid JSON bracket conflicts
-        base_prompt = prompt_template.replace("{topic}", topic).replace("{age}", str(age)).replace("{level}", level).replace("{language}", language)
+        base_prompt = prompt_template.replace("{topic}", topic).replace("{age}", str(age)).replace("{level}", level).replace("{language}", language).replace("{context}", context)
         
         print(f"  Calling {model} to generate course structure for {topic} (age {age}, {level})...")
         
@@ -373,13 +373,35 @@ class Comp3Runner:
         print(f"COMP3 Evaluation: {topic} (age {age}, {level})")
         print(f"{'='*60}")
         
+        # Get context from Neo4j
+        context_str = "Aucun contexte fourni."
+        try:
+            from benchmarking.strategy_final import get_final_strategy, get_retriever_from_strategy
+            from benchmarking.comp2_agents_llm_comparaison import translate_query_for_retrieval
+            strategy = get_final_strategy()
+            retriever = get_retriever_from_strategy(strategy)
+            
+            # RAG Query Translation
+            expanded_query = translate_query_for_retrieval(topic, models[0] if models else "llama3.1:latest")
+            print(f"  RAG Query Expansion: '{topic}' -> '{expanded_query}'")
+            
+            chunks = retriever.search_hybrid(query=expanded_query, limit=10)
+            if chunks:
+                docs = [f"Source {i+1}:\n{chunk.get('content', '')}" for i, chunk in enumerate(chunks)]
+                context_str = "\n\n".join(docs)
+                print(f"  ✓ Retrieved {len(chunks)} chunks from Neo4j for topic '{topic}'")
+            else:
+                print(f"  ⚠ No chunks found in Neo4j for topic '{topic}'. Generating without context.")
+        except Exception as e:
+            print(f"  ⚠ Failed to retrieve context (is Neo4j running?): {e}")
+        
         results = []
         
         for model in models:
             print(f"\n[{model}]")
             
             # Generate course structure
-            gen_result = self.generate_course_structure(model, topic, age, level)
+            gen_result = self.generate_course_structure(model, topic, age, level, context=context_str)
             if not gen_result:
                 print(f"  Skipping {model} (generation failed)")
                 continue
@@ -423,7 +445,7 @@ class Comp3Runner:
         
         print(f"\nExporting results to {output_path.name}...")
         
-        with open(output_path, "w", newline="", encoding="utf-8") as f:
+        with open(output_path, "w", newline="", encoding="utf-8-sig") as f:
             writer = csv.DictWriter(f, fieldnames=METRIC_KEYS)
             writer.writeheader()
             

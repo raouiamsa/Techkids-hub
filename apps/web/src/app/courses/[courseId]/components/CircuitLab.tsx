@@ -1,38 +1,107 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { io, Socket } from 'socket.io-client';
-import { Battery, Lightbulb, Activity, Zap, Play, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Cpu, Lightbulb, Activity, Zap, Play, CheckCircle2, XCircle, Plus, Trash2, Link as LinkIcon } from 'lucide-react';
+import { Button } from '@org/ui-components';
 
-interface CircuitComponent {
-  id: string;
-  type: 'battery' | 'resistor' | 'led';
-  nodes: string[];
-  value?: number;
+interface Connection {
+  fromComponent: string;
+  fromPin: string;
+  toComponent: string;
+  toPin: string;
 }
 
 interface CircuitLabProps {
   exerciseId: string;
   studentId: string;
+  allowedComponents?: string[]; // Ajout de la prop dynamique
+  onChange?: (value: string) => void;
 }
 
-export function CircuitLab({ exerciseId, studentId }: CircuitLabProps) {
-  const [components, setComponents] = useState<CircuitComponent[]>([
-    { id: 'v1', type: 'battery', nodes: ['n1', '0'], value: 9 }
-  ]);
+// Composants disponibles et leurs broches (Pins)
+const COMPONENT_CATALOG: Record<string, { label: string; icon: React.ReactNode; pins: string[]; color: string }> = {
+  'Arduino_Uno': { 
+    label: 'Arduino Uno', 
+    icon: <Cpu className="w-6 h-6" />, 
+    pins: ['Pin13', 'Pin12', 'Pin11', '5V', 'GND'],
+    color: 'bg-teal-500'
+  },
+  'Breadboard': {
+    label: 'Breadboard',
+    icon: <div className="grid grid-cols-3 gap-0.5 w-6 h-6 p-0.5"><div className="bg-white/50 rounded-full"/><div className="bg-white/50 rounded-full"/><div className="bg-white/50 rounded-full"/><div className="bg-white/50 rounded-full"/><div className="bg-white/50 rounded-full"/><div className="bg-white/50 rounded-full"/></div>,
+    pins: ['Ligne +', 'Ligne -', 'A1', 'B1', 'C1'],
+    color: 'bg-slate-500'
+  },
+  'LED_Rouge': { 
+    label: 'LED Rouge', 
+    icon: <Lightbulb className="w-6 h-6" />, 
+    pins: ['Anode (+)', 'Cathode (GND)'],
+    color: 'bg-red-500' 
+  },
+  'Resistor_220': { 
+    label: 'Résistance 220Ω', 
+    icon: <Activity className="w-6 h-6" />, 
+    pins: ['Borne 1', 'Borne 2'],
+    color: 'bg-amber-500'
+  },
+  'Bouton_Poussoir': {
+    label: 'Bouton Poussoir',
+    icon: <div className="w-6 h-6 rounded-full border-2 border-white/50 bg-white/20 flex items-center justify-center"><div className="w-3 h-3 rounded-full bg-white"/></div>,
+    pins: ['Borne A', 'Borne B'],
+    color: 'bg-indigo-500'
+  },
+  'Buzzer': {
+    label: 'Buzzer (Piezo)',
+    icon: <div className="w-6 h-6 rounded-full bg-white/20 border-2 border-white/50 relative"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"/></div>,
+    pins: ['Positif (+)', 'Négatif (-)'],
+    color: 'bg-pink-500'
+  },
+  'Capteur_DHT11': {
+    label: 'Capteur Temp.',
+    icon: <Zap className="w-6 h-6" />,
+    pins: ['VCC', 'DATA', 'GND'],
+    color: 'bg-blue-500'
+  },
+  'Pile_9V': {
+    label: 'Pile 9V',
+    icon: <div className="w-6 h-6 border-2 border-white/50 rounded-sm flex flex-col"><div className="h-1.5 w-3 bg-white/50 mx-auto rounded-t-sm"/><div className="flex-1 bg-white/20"/></div>,
+    pins: ['VCC (+)', 'GND (-)'],
+    color: 'bg-emerald-500'
+  }
+};
+
+export function CircuitLab({ exerciseId, studentId, allowedComponents, onChange }: CircuitLabProps) {
+  const [components, setComponents] = useState<string[]>([]);
+  const [connections, setConnections] = useState<Connection[]>([]);
+  
+  // États pour le constructeur de connexion
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [connFrom, setConnFrom] = useState<{ comp: string; pin: string } | null>(null);
+
   const [isSimulating, setIsSimulating] = useState(false);
   const [result, setResult] = useState<any>(null);
 
   const socketRef = useRef<Socket | null>(null);
 
+  // Mettre à jour le parent (formulaire) quand le circuit change
   useEffect(() => {
-    // Connexion au Virtual Lab Service
-    const socket = io('http://localhost:3004', {
+    if (onChange) {
+      onChange(JSON.stringify({ components, connections }, null, 2));
+    }
+  }, [components, connections, onChange]);
+
+  useEffect(() => {
+    // Connexion au Virtual Lab Service (NestJS)
+    const socketUrl = process.env.NEXT_PUBLIC_VIRTUAL_LAB_URL || 'http://localhost:3004';
+    const socket = io(socketUrl, {
       transports: ['websocket'],
       upgrade: false,
     });
     socketRef.current = socket;
 
     socket.on('connect', () => {
-      console.log(' Connecté au Circuit Lab');
+      console.log('🔗 Connecté au Virtual Lab Service');
     });
 
     socket.on('circuit-result', (data: any) => {
@@ -49,142 +118,228 @@ export function CircuitLab({ exerciseId, studentId }: CircuitLabProps) {
     if (socketRef.current) {
       setIsSimulating(true);
       setResult(null);
-      const room = `lab-circuit-${exerciseId}-${studentId}`;
-      socketRef.current.emit('simulate-circuit', { room, components });
+
+      // Création du graphe JSON exact attendu par le backend (NestJS -> Python)
+      const studentGraph = {
+        components: components,
+        connections: connections.map(c => ({
+          from: `${c.fromComponent}:${c.fromPin}`,
+          to: `${c.toComponent}:${c.toPin}`
+        }))
+      };
+
+      // Événement corrigé : validate-circuit au lieu de simulate-circuit
+      socketRef.current.emit('validate-circuit', { exerciseId, studentGraph });
     }
   };
 
-  const addComponent = (type: 'battery' | 'resistor' | 'led') => {
-    const newId = `${type[0]}${components.length + 1}`;
-    
-    // Le courant part du pôle positif de la pile (n1)
-    let lastNode = '0';
-    if (components.length === 1 && components[0].type === 'battery') {
-      lastNode = components[0].nodes[0]; // 'n1'
-    } else if (components.length > 1) {
-      lastNode = components[components.length - 1].nodes[1];
-    }
-
-    const nextNode = `n${components.length + 1}`;
-
-    let value = 0;
-    if (type === 'battery') value = 9;
-    if (type === 'resistor') value = 330;
-
-    // Fermeture du circuit si c'est la fin (la LED retourne à 0)
-    const finalNodes = [lastNode, type === 'led' ? '0' : nextNode];
-
-    setComponents([...components, { id: newId, type, nodes: finalNodes, value }]);
+  const addComponent = (typeKey: string) => {
+    // Génère un ID unique, ex: "Arduino_Uno_1"
+    const count = components.filter(c => c.startsWith(typeKey)).length + 1;
+    setComponents([...components, `${typeKey}_${count}`]);
   };
 
-  const removeComponent = (id: string) => {
-    setComponents(components.filter(c => c.id !== id));
+  const removeComponent = (compId: string) => {
+    setComponents(components.filter(c => c !== compId));
+    setConnections(connections.filter(c => c.fromComponent !== compId && c.toComponent !== compId));
+  };
+
+  const removeConnection = (index: number) => {
+    setConnections(connections.filter((_, i) => i !== index));
+  };
+
+  const handlePinClick = (comp: string, pin: string) => {
+    if (!isConnecting) {
+      setIsConnecting(true);
+      setConnFrom({ comp, pin });
+      setConnTo(null);
+    } else {
+      if (connFrom && (connFrom.comp !== comp || connFrom.pin !== pin)) {
+        setConnections([...connections, {
+          fromComponent: connFrom.comp,
+          fromPin: connFrom.pin,
+          toComponent: comp,
+          toPin: pin
+        }]);
+      }
+      setIsConnecting(false);
+      setConnFrom(null);
+    }
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+    <div className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-xl font-sans">
+      
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 bg-slate-800/50 border-b border-slate-700">
+      <div className="flex items-center justify-between px-6 py-4 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-yellow-500/20 rounded-lg">
-            <Zap className="w-5 h-5 text-yellow-500" />
+          <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
+            <Cpu className="w-6 h-6 text-blue-600 dark:text-blue-400" />
           </div>
           <div>
-            <h3 className="font-semibold text-white">Laboratoire d'Électronique</h3>
-            <p className="text-xs text-slate-400">Simulateur PySpice</p>
+            <h3 className="font-black text-slate-900 dark:text-white text-lg">Laboratoire IoT</h3>
+            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Assemble tes composants virtuels !</p>
           </div>
         </div>
-        <button
+        <Button
           onClick={handleSimulate}
-          disabled={isSimulating}
-          className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-medium rounded-xl transition shadow-lg shadow-emerald-500/20 disabled:opacity-50"
+          disabled={isSimulating || components.length === 0}
+          className="rounded-full shadow-lg font-bold px-8"
         >
-          {isSimulating ? <Activity className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4 fill-current" />}
-          Lancer la Simulation
-        </button>
+          {isSimulating ? <Activity className="w-5 h-5 animate-spin mr-2" /> : <Play className="w-5 h-5 mr-2 fill-current" />}
+          Vérifier mon Circuit
+        </Button>
       </div>
 
-      {/* Main Workspace */}
-      <div className="flex-1 flex bg-[url('/grid-dark.svg')]">
-
-        {/* Toolbox */}
-        <div className="w-64 border-r border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
-          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Composants</h4>
-
-          <button onClick={() => addComponent('battery')} className="flex items-center gap-3 p-3 bg-slate-800 hover:bg-slate-700 rounded-xl transition text-left group">
-            <Battery className="w-6 h-6 text-emerald-400" />
-            <div>
-              <p className="text-sm font-medium text-white group-hover:text-emerald-400 transition">Pile (9V)</p>
-              <p className="text-xs text-slate-400">Source d'énergie</p>
-            </div>
-          </button>
-
-          <button onClick={() => addComponent('resistor')} className="flex items-center gap-3 p-3 bg-slate-800 hover:bg-slate-700 rounded-xl transition text-left group">
-            <Activity className="w-6 h-6 text-amber-400" />
-            <div>
-              <p className="text-sm font-medium text-white group-hover:text-amber-400 transition">Résistance</p>
-              <p className="text-xs text-slate-400">330 Ohms</p>
-            </div>
-          </button>
-
-          <button onClick={() => addComponent('led')} className="flex items-center gap-3 p-3 bg-slate-800 hover:bg-slate-700 rounded-xl transition text-left group">
-            <Lightbulb className="w-6 h-6 text-red-400" />
-            <div>
-              <p className="text-sm font-medium text-white group-hover:text-red-400 transition">LED Rouge</p>
-              <p className="text-xs text-slate-400">Diode lumineuse</p>
-            </div>
-          </button>
+      <div className="flex-1 flex flex-col md:flex-row bg-slate-50 dark:bg-slate-950/50">
+        
+        {/* Boîte à outils (Composants) */}
+        <div className="w-full md:w-72 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 flex flex-col gap-3 overflow-y-auto">
+          <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 pl-2">Boîte à outils</h4>
+          {Object.entries(COMPONENT_CATALOG)
+            .filter(([key]) => !allowedComponents || allowedComponents.includes(key))
+            .map(([key, def]) => (
+            <button 
+              key={key} 
+              type="button"
+              onClick={() => addComponent(key)} 
+              className="flex items-center gap-4 p-4 rounded-2xl transition-all border-2 border-transparent hover:border-slate-200 dark:hover:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 group text-left shadow-sm hover:shadow-md"
+            >
+              <div className={`p-2 rounded-xl text-white shadow-inner ${def.color}`}>
+                {def.icon}
+              </div>
+              <div className="flex-1">
+                <p className="font-bold text-slate-800 dark:text-slate-200">{def.label}</p>
+              </div>
+              <Plus className="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors" />
+            </button>
+          ))}
         </div>
 
-        {/* Breadboard View (Simplified List for MVP) */}
-        <div className="flex-1 p-8 relative">
-          <div className="max-w-2xl mx-auto space-y-4">
-            {components.map((comp, idx) => (
-              <div key={comp.id} className="flex items-center gap-4 p-4 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-2xl">
-                <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-mono text-slate-400 text-sm">
-                  #{idx + 1}
+        {/* Espace de travail (Table de montage) */}
+        <div className="flex-1 p-6 relative flex flex-col overflow-y-auto">
+          
+          {/* Guide visuel de connexion */}
+          {isConnecting && connFrom && (
+            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-2xl flex items-center justify-between shadow-sm animate-pulse">
+              <p className="text-blue-700 dark:text-blue-300 font-bold flex items-center gap-2">
+                <LinkIcon className="w-5 h-5" /> 
+                Connecte <b>{connFrom.pin}</b> de <b>{connFrom.comp.replace(/_/g, ' ')}</b> vers un autre composant...
+              </p>
+              <Button variant="ghost" size="sm" onClick={() => setIsConnecting(false)} className="text-blue-600 hover:bg-blue-100">
+                Annuler
+              </Button>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+            
+            {/* Liste des Composants posés */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Composants placés</h4>
+              {components.length === 0 && (
+                <div className="p-8 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl text-center">
+                  <p className="text-slate-500 dark:text-slate-400 font-medium">Ajoute des composants depuis la boîte à outils.</p>
                 </div>
-                <div className="flex-1">
-                  <p className="text-white font-medium capitalize flex items-center gap-2">
-                    {comp.type === 'battery' && <Battery className="w-4 h-4 text-emerald-400" />}
-                    {comp.type === 'resistor' && <Activity className="w-4 h-4 text-amber-400" />}
-                    {comp.type === 'led' && <Lightbulb className="w-4 h-4 text-red-400" />}
-                    {comp.type}
-                  </p>
-                  <p className="text-sm text-slate-400 font-mono">Noeuds: {comp.nodes.join(' → ')} {comp.value ? `| Val: ${comp.value}` : ''}</p>
+              )}
+              {components.map((compId) => {
+                const baseType = compId.substring(0, compId.lastIndexOf('_'));
+                const def = COMPONENT_CATALOG[baseType];
+                return (
+                  <div key={compId} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden transition-all hover:shadow-md">
+                    <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/80">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-1.5 rounded-lg text-white shadow-sm ${def.color}`}>
+                          {def.icon}
+                        </div>
+                        <span className="font-bold text-slate-800 dark:text-slate-200 text-lg">{compId.replace(/_/g, ' ')}</span>
+                      </div>
+                      <button type="button" onClick={() => removeComponent(compId)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl transition">
+                        <Trash2 className="w-5 h-5" />
+                      </button>
+                    </div>
+                    {/* Pins du composant */}
+                    <div className="p-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {def.pins.map(pin => {
+                        const isSelected = connFrom?.comp === compId && connFrom?.pin === pin;
+                        return (
+                          <button
+                            key={pin}
+                            type="button"
+                            onClick={() => handlePinClick(compId, pin)}
+                            className={`px-3 py-2 text-xs font-black uppercase rounded-xl border-2 transition-all flex items-center justify-center gap-2
+                              ${isSelected 
+                                ? 'bg-blue-500 border-blue-500 text-white shadow-lg scale-105' 
+                                : 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-blue-400 hover:text-blue-500'}`}
+                          >
+                            <div className={`w-2 h-2 rounded-full ${isSelected ? 'bg-white' : 'bg-slate-300 dark:bg-slate-600'}`} />
+                            {pin}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Fils / Connexions établies */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Fils de connexion</h4>
+              {connections.length === 0 && (
+                <div className="p-8 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl text-center">
+                  <p className="text-slate-500 dark:text-slate-400 font-medium">Clique sur deux broches (pins) pour les relier par un fil.</p>
                 </div>
-                <button onClick={() => removeComponent(comp.id)} className="p-2 text-slate-500 hover:text-red-400 transition rounded-lg hover:bg-slate-700">
-                  Retirer
-                </button>
-              </div>
-            ))}
+              )}
+              {connections.map((conn, idx) => (
+                <div key={idx} className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl">
+                  <div className="flex flex-1 items-center gap-2 text-sm font-medium">
+                    <span className="text-slate-700 dark:text-slate-300 truncate max-w-[120px]">{conn.fromComponent.replace(/_/g, ' ')}</span>
+                    <span className="px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded font-black text-xs text-slate-500 dark:text-slate-400">{conn.fromPin}</span>
+                    <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 mx-2 relative">
+                      <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+                    </div>
+                    <span className="text-slate-700 dark:text-slate-300 truncate max-w-[120px]">{conn.toComponent.replace(/_/g, ' ')}</span>
+                    <span className="px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded font-black text-xs text-slate-500 dark:text-slate-400">{conn.toPin}</span>
+                  </div>
+                  <button type="button" onClick={() => removeConnection(idx)} className="ml-4 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl transition">
+                    <XCircle className="w-5 h-5" />
+                  </button>
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          {/* Result Overlay */}
+          {/* Result Alert - Centered Absolute */}
           {result && (
-            <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 px-8 py-6 rounded-2xl shadow-2xl backdrop-blur-md border border-white/10 w-[90%] max-w-lg ${result.led_status === 'EXPLODED' ? 'bg-red-900/90' :
-                result.led_status === 'ON' ? 'bg-emerald-900/90' : 'bg-slate-800/90'
-              }`}>
-              <div className="flex items-start gap-4">
-                {result.led_status === 'EXPLODED' ? <AlertTriangle className="w-8 h-8 text-red-400 shrink-0" /> :
-                  result.led_status === 'ON' ? <CheckCircle2 className="w-8 h-8 text-emerald-400 shrink-0" /> :
-                    <Lightbulb className="w-8 h-8 text-slate-400 shrink-0" />}
-
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-1">Résultat de la Simulation</h4>
-                  <p className="text-white/80">{result.message}</p>
-
-                  {result.current_mA !== undefined && (
-                    <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-black/30 rounded-lg font-mono text-sm text-white">
-                      Courant mesuré : {result.current_mA} mA
-                    </div>
-                  )}
+            <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-xl p-1 rounded-3xl shadow-2xl z-50 animate-in slide-in-from-bottom-10 fade-in duration-300 ${
+              result.status === 'success' ? 'bg-gradient-to-r from-emerald-400 to-green-500' : 'bg-gradient-to-r from-red-500 to-rose-600'
+            }`}>
+              <div className="bg-white dark:bg-slate-900 rounded-[22px] p-6 flex items-start gap-4">
+                {result.status === 'success' ? (
+                  <div className="p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl shrink-0">
+                    <CheckCircle2 className="w-8 h-8 text-emerald-500" />
+                  </div>
+                ) : (
+                  <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-2xl shrink-0">
+                    <XCircle className="w-8 h-8 text-red-500" />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <h4 className={`text-xl font-black mb-1 ${result.status === 'success' ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'}`}>
+                    {result.status === 'success' ? 'Super Travail !' : 'Oups, il y a une erreur...'}
+                  </h4>
+                  <p className="text-slate-600 dark:text-slate-300 font-medium text-lg leading-relaxed">{result.message}</p>
                 </div>
+                <button onClick={() => setResult(null)} className="text-slate-400 hover:text-slate-600 transition">
+                  <XCircle className="w-6 h-6" />
+                </button>
               </div>
             </div>
           )}
-        </div>
 
+        </div>
       </div>
     </div>
   );

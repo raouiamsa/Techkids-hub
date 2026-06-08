@@ -23,6 +23,19 @@ from dotenv import load_dotenv
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+import socket
+
+# Monkeypatch pour forcer IPv4 et éviter les crashs Windows
+original_getaddrinfo = socket.getaddrinfo
+def patched_getaddrinfo(*args, **kwargs):
+    if kwargs.get('family') == 0:
+        kwargs['family'] = socket.AF_INET
+    elif len(args) > 1 and args[1] == 0:
+        args = list(args)
+        args[1] = socket.AF_INET
+        args = tuple(args)
+    return original_getaddrinfo(*args, **kwargs)
+socket.getaddrinfo = patched_getaddrinfo
 
 AI_BRAIN_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(AI_BRAIN_DIR))
@@ -223,7 +236,9 @@ def build_pedagogical_context_documents(
             )
             if retriever:
                 try:
-                    chunks = retriever.search_hybrid(query=concept_name_val, limit=2)
+                    from benchmarking.comp2_agents_llm_comparaison import translate_query_for_retrieval
+                    expanded_query = translate_query_for_retrieval(concept_name_val, "llama3.1:latest")
+                    chunks = retriever.search_hybrid(query=expanded_query, limit=2)
                     for i, chunk in enumerate(chunks, 1):
                         content = chunk.get("content", "").replace('\n', ' ').strip()
                         if content:
@@ -836,13 +851,13 @@ def run_pedagogical_comp2(
     output_path = output_dir / f"comp2_pedagogical_graph_{topic_label}_age{age_label}_{level_label}_{timestamp}.csv"
     summary_output_path = output_dir / f"comp2_pedagogical_graph_{topic_label}_age{age_label}_{level_label}_avg_{timestamp}.csv"
 
-    with open(output_path, "w", newline="", encoding="utf-8") as f:
+    with open(output_path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
         for row in results:
             writer.writerow({key: row.get(key, "") for key in headers})
 
-    with open(summary_output_path, "w", newline="", encoding="utf-8") as f:
+    with open(summary_output_path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
         for row in summary_results:

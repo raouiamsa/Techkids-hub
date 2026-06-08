@@ -1,0 +1,238 @@
+{
+  "topic": "Introduction à Arduino",
+  "age": 12,
+  "level": "beginner",
+  "language": "French",
+  "generated_at": "2026-06-08T14:58:14.757884",
+  "model_name": "llama3.1:latest",
+  "modules": {
+    "m1": {
+      "id": "m1",
+      "name": "Module d'initiation",
+      "description": "Comprendre les bases de l'Arduino",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "arduino",
+        "microcontrôleur"
+      ],
+      "learning_objectives": [
+        "obj_m1_1",
+        "obj_m1_2"
+      ],
+      "exercises": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "prerequisites_modules": [],
+      "estimated_duration": 60,
+      "order_in_curriculum": 1
+    },
+    "m2": {
+      "id": "m2",
+      "name": "Module de programmation",
+      "description": "Comprendre les bases de la programmation avec Arduino",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "programmation",
+        "Arduino IDE"
+      ],
+      "learning_objectives": [
+        "obj_m2_1",
+        "obj_m2_2"
+      ],
+      "exercises": [
+        "ex_m2_1",
+        "ex_m2_2"
+      ],
+      "prerequisites_modules": [
+        "m1"
+      ],
+      "estimated_duration": 60,
+      "order_in_curriculum": 2
+    }
+  },
+  "concepts": {
+    "arduino": {
+      "id": "arduino",
+      "name": "Arduino",
+      "definition": "Une plate-forme de développement pour les microcontrôleurs",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "microcontrôleur": {
+      "id": "microcontrôleur",
+      "name": "Microcontrôleur",
+      "definition": "Un petit ordinateur qui contrôle des composants électroniques",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "programmation": {
+      "id": "programmation",
+      "name": "Programmation",
+      "definition": "Le processus de création d'un programme pour un ordinateur ou un microcontrôleur",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "arduino"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "Arduino IDE": {
+      "id": "Arduino IDE",
+      "name": "Arduino IDE",
+      "definition": "L'environnement de développement intégré pour Arduino",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "arduino"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    }
+  },
+  "objectives": {
+    "obj_m1_1": {
+      "id": "obj_m1_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les concepts de base",
+      "associated_concepts": [
+        "arduino",
+        "microcontrôleur"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m1_2": {
+      "id": "obj_m1_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer dans des cas simples",
+      "associated_concepts": [
+        "arduino"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_1": {
+      "id": "obj_m2_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les bases de la programmation avec Arduino",
+      "associated_concepts": [
+        "programmation",
+        "Arduino IDE"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_2": {
+      "id": "obj_m2_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer dans des cas simples",
+      "associated_concepts": [
+        "Arduino IDE"
+      ],
+      "assessment_criteria": null
+    }
+  },
+  "exercises": {
+    "ex_m1_1": {
+      "id": "ex_m1_1",
+      "type": "qcm",
+      "question": "Qu'est-ce que l'Arduino ?",
+      "answer": "Une plate-forme de développement pour les microcontrôleurs",
+      "options": [
+        "Un microcontrôleur",
+        "Une plate-forme de développement pour les microcontrôleurs"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "arduino",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 5
+    },
+    "ex_m1_2": {
+      "id": "ex_m1_2",
+      "type": "fill_blank",
+      "question": "Remplis le trou : _____ est un microcontrôleur.",
+      "answer": "arduino",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "microcontrôleur",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 3
+    },
+    "ex_m2_1": {
+      "id": "ex_m2_1",
+      "type": "qcm",
+      "question": "Qu'est-ce que la programmation ?",
+      "answer": "Le processus de création d'un programme pour un ordinateur ou un microcontrôleur",
+      "options": [
+        "Le processus de création d'un programme pour un ordinateur ou un microcontrôleur",
+        "Un langage de programmation"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "programmation",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 5
+    },
+    "ex_m2_2": {
+      "id": "ex_m2_2",
+      "type": "fill_blank",
+      "question": "Remplis le trou : _____ est l'environnement de développement intégré pour Arduino.",
+      "answer": "Arduino IDE",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "Arduino IDE",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 3
+    }
+  },
+  "relationships": {
+    "concept_prerequisites": {
+      "arduino": [],
+      "microcontrôleur": [],
+      "programmation": [
+        "arduino"
+      ],
+      "Arduino IDE": [
+        "arduino"
+      ]
+    },
+    "concept_exercises": {
+      "arduino": [
+        "ex_m1_1"
+      ],
+      "microcontrôleur": [
+        "ex_m1_2"
+      ],
+      "programmation": [
+        "ex_m2_1"
+      ],
+      "Arduino IDE": [
+        "ex_m2_2"
+      ]
+    },
+    "objective_concepts": {
+      "obj_m1_1": [
+        "arduino",
+        "microcontrôleur"
+      ],
+      "obj_m1_2": [
+        "arduino"
+      ],
+      "obj_m2_1": [
+        "programmation",
+        "Arduino IDE"
+      ],
+      "obj_m2_2": [
+        "Arduino IDE"
+      ]
+    }
+  }
+}

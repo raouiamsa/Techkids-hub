@@ -92,20 +92,29 @@ class PrerequisiteCoherenceMetric:
         return False
 
     @staticmethod
-    def _depth(graph: PedagogicalGraph, node: str, memo: Dict[str, int]) -> int:
+    def _depth(graph: PedagogicalGraph, node: str, memo: Dict[str, int], visiting: Optional[Set[str]] = None) -> int:
+        if visiting is None:
+            visiting = set()
+            
         if node in memo:
             return memo[node]
+            
+        if node in visiting:
+            return 999  # Cycle detected, return massive depth safely
 
+        visiting.add(node)
         prereqs = graph.concept_prerequisites.get(node, [])
         if not prereqs:
+            visiting.remove(node)
             memo[node] = 0
             return 0
 
         depth = 1 + max(
-            PrerequisiteCoherenceMetric._depth(graph, p, memo)
+            PrerequisiteCoherenceMetric._depth(graph, p, memo, visiting)
             for p in prereqs
         )
 
+        visiting.remove(node)
         memo[node] = depth
         return depth
 
@@ -128,11 +137,15 @@ class PrerequisiteCoherenceMetric:
             if len(prereqs) > max_prereq:
                 penalty += config.penalties.get("max_prerequisites_exceeded", 10.0)
 
-        memo = {}
-        for cid in graph.concepts:
-            d = PrerequisiteCoherenceMetric._depth(graph, cid, memo)
-            if d > max_depth:
-                penalty += config.penalties.get("max_depth_exceeded", 20.0)
+        if not has_cycle:
+            memo = {}
+            for cid in graph.concepts:
+                d = PrerequisiteCoherenceMetric._depth(graph, cid, memo)
+                if d > max_depth:
+                    penalty += config.penalties.get("max_depth_exceeded", 20.0)
+        else:
+            # If there's a cycle, depth is technically infinity, so we automatically apply depth penalty
+            penalty += config.penalties.get("max_depth_exceeded", 20.0)
 
         score = max(0.0, 100.0 - penalty)
 

@@ -60,4 +60,15 @@ export class EnrollmentsService {
       orderBy: { enrolledAt: 'desc' },
     });
   }
+
+  async completeCourse(studentId: string, courseId: string) {
+    return this.prisma.enrollment.update({
+      where: {
+        studentId_courseId: { studentId, courseId },
+      },
+      data: {
+        status: 'COMPLETED',
+      },
+    });
+  }
 }

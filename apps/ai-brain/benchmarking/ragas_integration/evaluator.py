@@ -76,6 +76,7 @@ class LocalRagasEvaluator:
             api_key=self.api_key,
             timeout=60,
             max_retries=2,
+            model_kwargs={"response_format": {"type": "json_object"}},
         )
 
         # Initialize embeddings

@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Body, Inject, UseGuards, Req } from '@nestjs/common';
+import { Controller, Post, Get, Body, Inject, UseGuards, Req, Param } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { ApiTags, ApiOperation, ApiBody, ApiBearerAuth } from '@nestjs/swagger';
 import { firstValueFrom } from 'rxjs';
@@ -41,6 +41,19 @@ export class EnrollmentsController {
   async getMyEnrollments(@Req() req: any) {
     try {
       return await firstValueFrom(this.eduClient.send(EDU_PATTERNS.MY_ENROLLMENTS, req.user.userId));
+    } catch (err) { throwRpcError(err); }
+  }
+
+  @Post(':courseId/complete')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.STUDENT)
+  @ApiOperation({ summary: "Terminer un cours et obtenir la certification" })
+  async completeCourse(@Param('courseId') courseId: string, @Req() req: any) {
+    try {
+      return await firstValueFrom(this.eduClient.send('edu.enrollments.complete', {
+        studentId: req.user.userId,
+        courseId,
+      }));
     } catch (err) { throwRpcError(err); }
   }
 }

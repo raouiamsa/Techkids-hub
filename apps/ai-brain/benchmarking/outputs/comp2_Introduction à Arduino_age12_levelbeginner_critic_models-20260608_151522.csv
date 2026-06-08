@@ -1,0 +1,82 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,consistency_score,generated_content,issue_completeness,score_range_validity
+Introduction à Arduino,12,beginner,llama3.1:latest,critic,1,42,3,True,True,18642.2,85.88,85.69,75,78.21,1162,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 85.88, ""response_length"": 1162, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 80, ""approved"": false, ""module_issues"": [{""module"": ""L'aventure commence avec Arduino !"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans. Par exemple, la phrase 'circuit imprim\u00e9' pourrait \u00eatre remplac\u00e9e par une d\u00e9finition plus simple.""}, {""module"": ""Concept 1 : Arduino, c'est quoi ?"", ""issue"": ""La description d'Arduino est trop longue et contient des termes techniques qui pourraient \u00eatre difficiles \u00e0 comprendre pour un enfant de 12 ans. Il faudrait simplifier la d\u00e9finition.""}, {""module"": ""Pratique : Cr\u00e9ez votre premier projet Arduino !"", ""issue"": ""La t\u00e2che demand\u00e9e est trop complexe pour un d\u00e9butant. Il faudrait fournir des \u00e9tapes plus d\u00e9taill\u00e9es et plus simples pour cr\u00e9er le premier projet.""}], ""global_issues"": [""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire qui montre comment ils s'articulent entre eux."", ""La qualit\u00e9 du hook est variable. Certains modules commencent par des sc\u00e9narios r\u00e9els, mais d'autres commencent directement par la th\u00e9orie.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire qui montre comment ils s'articulent entre eux."", ""generated_content"": ""{  \n  \""score\"": 80,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""L'aventure commence avec Arduino !\"",\n      \""issue\"": \""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans. Par exemple, la phrase 'circuit imprim\u00e9' pourrait \u00eatre remplac\u00e9e par une d\u00e9finition plus simple.\""\n    },\n    {\n      \""module\"": \""Concept 1 : Arduino, c'est quoi ?\"",\n      \""issue\"": \""La description d'Arduino est trop longue et contient des termes techniques qui pourraient \u00eatre difficiles \u00e0 comprendre pour un enfant de 12 ans. Il faudrait simplifier la d\u00e9finition.\""\n    },\n    {\n      \""module\"": \""Pratique : Cr\u00e9ez votre premier projet Arduino !\"",\n      \""issue\"": \""La t\u00e2che demand\u00e9e est trop complexe pour un d\u00e9butant. Il faudrait fournir des \u00e9tapes plus d\u00e9taill\u00e9es et plus simples pour cr\u00e9er le premier projet.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""Le cours manque de progression logique entre les modules. Les concepts sont pr\u00e9sent\u00e9s sans une structure claire qui montre comment ils s'articulent entre eux.\"",\n    \""La qualit\u00e9 du hook est variable. Certains modules commencent par des sc\u00e9narios r\u00e9els, mais d'autres commencent directement par la th\u00e9orie.\""\n  ]\n}"", ""ttft_ms"": 18642.2, ""llm_score"": 85.69, ""rag_score"": null, ""final_score"": 78.21}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Introduction à Arduino_age12_llama3.1_latest_20260608_145814.json,0,"{  
+  ""score"": 80,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""L'aventure commence avec Arduino !"",
+      ""issue"": ""Le vocabulaire utilisé est trop technique pour un enfant de 12 ans. Par exemple, la phrase 'circuit imprimé' pourrait être remplacée par une définition plus simple.""
+    },
+    {
+      ""module"": ""Concept 1 : Arduino, c'est quoi ?"",
+      ""issue"": ""La description d'Arduino est trop longue et contient des termes techniques qui pourraient être difficiles à comprendre pour un enfant de 12 ans. Il faudrait simplifier la définition.""
+    },
+    {
+      ""module"": ""Pratique : Créez votre premier projet Arduino !"",
+      ""issue"": ""La tâche demandée est trop complexe pour un débutant. Il faudrait fournir des étapes plus détaillées et plus simples pour créer le premier projet.""
+    }
+  ],
+  ""global_issues"": [
+    ""Le cours manque de progression logique entre les modules. Les concepts sont présentés sans une structure claire qui montre comment ils s'articulent entre eux."",
+    ""La qualité du hook est variable. Certains modules commencent par des scénarios réels, mais d'autres commencent directement par la théorie.""
+  ]
+}",100,True
+Introduction à Arduino,12,beginner,llama3.1:latest,critic,2,43,3,True,True,296363.1,470.73,80.0,100,94.0,1538,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 100, ""issue_completeness"": 100, ""latency"": 470.73, ""response_length"": 1538, ""agent_score"": 100, ""critic_parsed_json"": {""score"": 0, ""approved"": false, ""module_issues"": [{""module"": ""Bienvenue dans le monde de l'informatique !"", ""issue"": ""Le vocabulaire et les concepts utilis\u00e9s sont trop complexes pour un enfant de 12 ans. Exemple : 'plate-forme de d\u00e9veloppement pour les microcontr\u00f4leurs' est difficile \u00e0 comprendre.""}, {""module"": ""Qu'est-ce que l'Arduino ?"", ""issue"": ""L'analogie avec le robot qui peut marcher, bouger ou jouer \u00e0 des jeux vid\u00e9os est trop simpliste et ne correspond pas aux capacit\u00e9s r\u00e9elles de l'Arduino.""}, {""module"": ""Qu'est-ce qu'un microcontr\u00f4leur ?"", ""issue"": ""La d\u00e9finition du microcontr\u00f4leur est similaire \u00e0 celle de l'Arduino, ce qui cr\u00e9e une confusion entre les deux concepts.""}, {""module"": ""Qu'est-ce que la programmation ?"", ""issue"": ""L'analogie avec la cr\u00e9ation d'un jeu vid\u00e9o ou d'une application mobile est trop large et ne correspond pas aux capacit\u00e9s r\u00e9elles de la programmation.""}, {""module"": ""Qu'est-ce que l'environnement de d\u00e9veloppement int\u00e9gr\u00e9 (IDE) ?"", ""issue"": ""La d\u00e9finition de l'IDE est incompl\u00e8te et ne correspond pas \u00e0 la r\u00e9alit\u00e9 des logiciels d'\u00e9dition de code.""}], ""global_issues"": [""Le cours manque de progression technique entre les modules, ce qui rend difficile pour le jeune \u00e9l\u00e8ve de comprendre les concepts."", ""L'utilisation de sources scientifiques n'est pas clairement indiqu\u00e9e et ne correspond pas aux exigences du sujet 'Introduction \u00e0 Arduino'."", ""Les exemples et notions utilis\u00e9s sont trop simplistes et ne correspondent pas aux capacit\u00e9s r\u00e9elles des technologies pr\u00e9sent\u00e9es.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de progression technique entre les modules, ce qui rend difficile pour le jeune \u00e9l\u00e8ve de comprendre les concepts."", ""generated_content"": ""{\n\n\""score\"": 0,\n\""approved\"": false,\n\""module_issues\"": [\n{\n\""module\"": \""Bienvenue dans le monde de l'informatique !\"",\n\""issue\"": \""Le vocabulaire et les concepts utilis\u00e9s sont trop complexes pour un enfant de 12 ans. Exemple : 'plate-forme de d\u00e9veloppement pour les microcontr\u00f4leurs' est difficile \u00e0 comprendre.\""\n},\n{\n\""module\"": \""Qu'est-ce que l'Arduino ?\"",\n\""issue\"": \""L'analogie avec le robot qui peut marcher, bouger ou jouer \u00e0 des jeux vid\u00e9os est trop simpliste et ne correspond pas aux capacit\u00e9s r\u00e9elles de l'Arduino.\""\n},\n{\n\""module\"": \""Qu'est-ce qu'un microcontr\u00f4leur ?\"",\n\""issue\"": \""La d\u00e9finition du microcontr\u00f4leur est similaire \u00e0 celle de l'Arduino, ce qui cr\u00e9e une confusion entre les deux concepts.\""\n},\n{\n\""module\"": \""Qu'est-ce que la programmation ?\"",\n\""issue\"": \""L'analogie avec la cr\u00e9ation d'un jeu vid\u00e9o ou d'une application mobile est trop large et ne correspond pas aux capacit\u00e9s r\u00e9elles de la programmation.\""\n},\n{\n\""module\"": \""Qu'est-ce que l'environnement de d\u00e9veloppement int\u00e9gr\u00e9 (IDE) ?\"",\n\""issue\"": \""La d\u00e9finition de l'IDE est incompl\u00e8te et ne correspond pas \u00e0 la r\u00e9alit\u00e9 des logiciels d'\u00e9dition de code.\""\n}\n],\n\""global_issues\"": [\n\""Le cours manque de progression technique entre les modules, ce qui rend difficile pour le jeune \u00e9l\u00e8ve de comprendre les concepts.\"",\n\""L'utilisation de sources scientifiques n'est pas clairement indiqu\u00e9e et ne correspond pas aux exigences du sujet 'Introduction \u00e0 Arduino'.\"",\n\""Les exemples et notions utilis\u00e9s sont trop simplistes et ne correspondent pas aux capacit\u00e9s r\u00e9elles des technologies pr\u00e9sent\u00e9es.\""\n]\n\n}"", ""ttft_ms"": 296363.1, ""llm_score"": 80.0, ""rag_score"": null, ""final_score"": 94.0}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Introduction à Arduino_age12_llama3.1_latest_20260608_145814.json,100,"{
+
+""score"": 0,
+""approved"": false,
+""module_issues"": [
+{
+""module"": ""Bienvenue dans le monde de l'informatique !"",
+""issue"": ""Le vocabulaire et les concepts utilisés sont trop complexes pour un enfant de 12 ans. Exemple : 'plate-forme de développement pour les microcontrôleurs' est difficile à comprendre.""
+},
+{
+""module"": ""Qu'est-ce que l'Arduino ?"",
+""issue"": ""L'analogie avec le robot qui peut marcher, bouger ou jouer à des jeux vidéos est trop simpliste et ne correspond pas aux capacités réelles de l'Arduino.""
+},
+{
+""module"": ""Qu'est-ce qu'un microcontrôleur ?"",
+""issue"": ""La définition du microcontrôleur est similaire à celle de l'Arduino, ce qui crée une confusion entre les deux concepts.""
+},
+{
+""module"": ""Qu'est-ce que la programmation ?"",
+""issue"": ""L'analogie avec la création d'un jeu vidéo ou d'une application mobile est trop large et ne correspond pas aux capacités réelles de la programmation.""
+},
+{
+""module"": ""Qu'est-ce que l'environnement de développement intégré (IDE) ?"",
+""issue"": ""La définition de l'IDE est incomplète et ne correspond pas à la réalité des logiciels d'édition de code.""
+}
+],
+""global_issues"": [
+""Le cours manque de progression technique entre les modules, ce qui rend difficile pour le jeune élève de comprendre les concepts."",
+""L'utilisation de sources scientifiques n'est pas clairement indiquée et ne correspond pas aux exigences du sujet 'Introduction à Arduino'."",
+""Les exemples et notions utilisés sont trop simplistes et ne correspondent pas aux capacités réelles des technologies présentées.""
+]
+
+}",100,True
+Introduction à Arduino,12,beginner,llama3.1:latest,critic,3,44,3,True,True,14092.4,96.46,83.92,75,77.68,1381,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 96.46, ""response_length"": 1381, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""Concept 1 : Qu'est-ce que le microcontr\u00f4leur ?"", ""issue"": ""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans. Par exemple, 'petit ordinateur qui contr\u00f4le les composants \u00e9lectroniques' peut \u00eatre difficile \u00e0 comprendre.""}, {""module"": ""Concept 2 : Qu'est-ce que la programmation ?"", ""issue"": ""L'analogie avec l'\u00e9criture d'une histoire est int\u00e9ressante, mais elle pourrait \u00eatre plus claire. Les \u00e9tudiants pourraient avoir besoin de plus d'exemples concrets.""}, {""module"": ""Pratique : Cr\u00e9er votre premier projet Arduino !"", ""issue"": ""Le choix des projets est trop large et peut sembler intimidant pour les d\u00e9butants. Il faudrait fournir des exemples plus sp\u00e9cifiques ou des \u00e9tapes de d\u00e9marrage plus claires.""}, {""module"": ""Recap : R\u00e9capitulons les concepts cl\u00e9s !"", ""issue"": ""Le r\u00e9sum\u00e9 est trop court et ne permet pas aux \u00e9tudiants de bien comprendre les liens entre les diff\u00e9rents concepts.""}], ""global_issues"": [""La progression technique n'est pas tr\u00e8s logique. Les modules passent directement \u00e0 la programmation sans expliquer suffisamment le microcontr\u00f4leur."", ""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans et pourrait n\u00e9cessiter des explications plus claires.""]}, ""approved"": false, ""critic_rejection_reason"": ""La progression technique n'est pas tr\u00e8s logique. Les modules passent directement \u00e0 la programmation sans expliquer suffisamment le microcontr\u00f4leur."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""Concept 1 : Qu'est-ce que le microcontr\u00f4leur ?\"",\n      \""issue\"": \""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans. Par exemple, 'petit ordinateur qui contr\u00f4le les composants \u00e9lectroniques' peut \u00eatre difficile \u00e0 comprendre.\""\n    },\n    {\n      \""module\"": \""Concept 2 : Qu'est-ce que la programmation ?\"",\n      \""issue\"": \""L'analogie avec l'\u00e9criture d'une histoire est int\u00e9ressante, mais elle pourrait \u00eatre plus claire. Les \u00e9tudiants pourraient avoir besoin de plus d'exemples concrets.\""\n    },\n    {\n      \""module\"": \""Pratique : Cr\u00e9er votre premier projet Arduino !\"",\n      \""issue\"": \""Le choix des projets est trop large et peut sembler intimidant pour les d\u00e9butants. Il faudrait fournir des exemples plus sp\u00e9cifiques ou des \u00e9tapes de d\u00e9marrage plus claires.\""\n    },\n    {\n      \""module\"": \""Recap : R\u00e9capitulons les concepts cl\u00e9s !\"",\n      \""issue\"": \""Le r\u00e9sum\u00e9 est trop court et ne permet pas aux \u00e9tudiants de bien comprendre les liens entre les diff\u00e9rents concepts.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""La progression technique n'est pas tr\u00e8s logique. Les modules passent directement \u00e0 la programmation sans expliquer suffisamment le microcontr\u00f4leur.\"",\n    \""Le vocabulaire utilis\u00e9 est trop technique pour un enfant de 12 ans et pourrait n\u00e9cessiter des explications plus claires.\""\n  ]\n}"", ""ttft_ms"": 14092.4, ""llm_score"": 83.92, ""rag_score"": null, ""final_score"": 77.68}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Introduction à Arduino_age12_llama3.1_latest_20260608_145814.json,0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""Concept 1 : Qu'est-ce que le microcontrôleur ?"",
+      ""issue"": ""Le vocabulaire utilisé est trop technique pour un enfant de 12 ans. Par exemple, 'petit ordinateur qui contrôle les composants électroniques' peut être difficile à comprendre.""
+    },
+    {
+      ""module"": ""Concept 2 : Qu'est-ce que la programmation ?"",
+      ""issue"": ""L'analogie avec l'écriture d'une histoire est intéressante, mais elle pourrait être plus claire. Les étudiants pourraient avoir besoin de plus d'exemples concrets.""
+    },
+    {
+      ""module"": ""Pratique : Créer votre premier projet Arduino !"",
+      ""issue"": ""Le choix des projets est trop large et peut sembler intimidant pour les débutants. Il faudrait fournir des exemples plus spécifiques ou des étapes de démarrage plus claires.""
+    },
+    {
+      ""module"": ""Recap : Récapitulons les concepts clés !"",
+      ""issue"": ""Le résumé est trop court et ne permet pas aux étudiants de bien comprendre les liens entre les différents concepts.""
+    }
+  ],
+  ""global_issues"": [
+    ""La progression technique n'est pas très logique. Les modules passent directement à la programmation sans expliquer suffisamment le microcontrôleur."",
+    ""Le vocabulaire utilisé est trop technique pour un enfant de 12 ans et pourrait nécessiter des explications plus claires.""
+  ]
+}",100,True

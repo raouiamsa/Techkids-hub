@@ -39,17 +39,22 @@ export default function TeacherDashboardPage() {
   const fetchStats = async () => {
     if (!token) return;
     try {
-      const [coursesRes, draftsRes, sourcesRes] = await Promise.all([
+      const [coursesRes, draftsRes, manualDraftsRes, sourcesRes] = await Promise.all([
         fetch(`${API_URL}/courses`, { headers: { Authorization: `Bearer ${token}` } }),
         fetch(`${API_URL}/ai/drafts`, { headers: { Authorization: `Bearer ${token}` } }),
+        fetch(`${API_URL}/courses/drafts`, { headers: { Authorization: `Bearer ${token}` } }),
         fetch(`${API_URL}/ai/content-sources`, { headers: { Authorization: `Bearer ${token}` } }),
       ]);
       const courses = coursesRes.ok ? await coursesRes.json() : [];
       const drafts = draftsRes.ok ? await draftsRes.json() : [];
+      const manualDrafts = manualDraftsRes.ok ? await manualDraftsRes.json() : [];
       const sources = sourcesRes.ok ? await sourcesRes.json() : [];
 
       // On compte les drafts qui ne sont pas encore publiés
-      const pendingDrafts = Array.isArray(drafts) ? drafts.filter((d: any) => d.status !== 'PUBLISHED' && d.status !== 'FAILED').length : 0;
+      const pendingAiDrafts = Array.isArray(drafts) ? drafts.filter((d: any) => d.status !== 'PUBLISHED' && d.status !== 'FAILED').length : 0;
+      const pendingManualDrafts = Array.isArray(manualDrafts) ? manualDrafts.length : 0;
+      const pendingDrafts = pendingAiDrafts + pendingManualDrafts;
+      
       const totalCourses = Array.isArray(courses) ? courses.length : 0;
       const totalSources = Array.isArray(sources) ? sources.length : 0;
 
@@ -106,6 +111,14 @@ export default function TeacherDashboardPage() {
       color: 'bg-blue-500',
       link: '/teacher/courses/generator',
       highlight: true
+    },
+    {
+      title: 'Création Manuelle de Cours',
+      desc: 'Construisez votre cours de A à Z avec notre éditeur créatif (Modules, Exercices, Certifications).',
+      icon: FileEdit,
+      color: 'bg-teal-500',
+      link: '/teacher/courses/new',
+      highlight: false
     },
     {
       title: 'Mes Brouillons IA',

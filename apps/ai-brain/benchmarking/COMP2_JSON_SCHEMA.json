@@ -8,14 +8,6 @@
     "ageGroup": {
       "enum": ["8-10", "11-13", "14+"],
       "description": "Age group determines word count and complexity"
-    },
-    "wordCountRange": {
-      "type": "object",
-      "properties": {
-        "8-10": {"type": "object", "properties": {"min": 100, "max": 150}},
-        "11-13": {"type": "object", "properties": {"min": 150, "max": 250}},
-        "14+": {"type": "object", "properties": {"min": 250, "max": 400}}
-      }
     }
   },
 
@@ -214,7 +206,7 @@
         "properties": {
           "language": {
             "type": "string",
-            "enum": ["python", "javascript", "java", "cpp", "other"],
+            "enum": ["python", "javascript", "java", "cpp", "arduino", "other"],
             "description": "Programming language"
           },
           "title": {
@@ -248,7 +240,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["diagram", "flowchart", "illustration", "animation", "infographic"],
+            "enum": ["diagram", "flowchart", "illustration", "animation", "infographic", "circuit_diagram"],
             "description": "Visual type"
           },
           "title": {
@@ -325,7 +317,7 @@
           },
           "type": {
             "type": "string",
-            "enum": ["code", "qcm", "fill_blank", "project"],
+            "enum": ["code", "qcm", "fill_blank", "project", "circuit_build", "hardware_setup"],
             "description": "Exercise type"
           },
           "title": {
@@ -354,6 +346,11 @@
             "type": "string",
             "enum": ["easy", "medium", "hard"],
             "description": "Exercise difficulty"
+          },
+          "hardware_components": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "List of required electronic components (if circuit_build)"
           },
           "estimated_time": {
             "type": "string",

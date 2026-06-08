@@ -32,6 +32,19 @@ load_dotenv(dotenv_path=env_path)
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import socket
+
+# Monkeypatch pour forcer IPv4 et éviter les crashs Windows
+original_getaddrinfo = socket.getaddrinfo
+def patched_getaddrinfo(*args, **kwargs):
+    if kwargs.get('family') == 0:
+        kwargs['family'] = socket.AF_INET
+    elif len(args) > 1 and args[1] == 0:
+        args = list(args)
+        args[1] = socket.AF_INET
+        args = tuple(args)
+    return original_getaddrinfo(*args, **kwargs)
+socket.getaddrinfo = patched_getaddrinfo
 
 # psutil memory measurement removed — no runtime dependency here
 
@@ -186,6 +199,24 @@ def retrieve_context_documents(retriever, query: str, limit: int = 3) -> List[st
     except Exception as e:
         log(f"Retrieval error: {e}", "WARN")
         return []
+
+
+def translate_query_for_retrieval(query: str, model: str) -> str:
+    """Traduit et enrichit la requête en anglais pour améliorer le RAG multilingue (Query Translation)."""
+    prompt = f"Translate the following educational topic to English and provide 3-4 technical keywords in English. Topic: '{query}'. Answer with ONLY the translated text and keywords, no introduction."
+    
+    # On importe call_ollama_api (il est défini plus haut)
+    response, _, _ = call_ollama_api(
+        model=model,
+        prompt=prompt,
+        max_tokens=50,
+        temperature=0.0,
+        enforce_json=False
+    )
+    if response:
+        # On retourne la requête originale + les termes anglais pour une bonne couverture
+        return f"{query} {response.strip()}"
+    return query
 
 
 def log_context_quality(context_docs: List[str], query: str):
@@ -417,18 +448,21 @@ def run_comp2_comparison(config: Config):
         repeats = int(topic_cfg.get("repeats", 1) or 1)
         seed_base = topic_cfg.get("seed_base")
 
-        # Retrieve context
-        context_query = f"{topic} | age={age} | level={level}"
-        context_docs = retrieve_context_documents(retriever, context_query, limit=3)
-        context_block = format_context_for_prompt(context_docs)
-        n_docs = len(context_docs)
-        log_context_quality(context_docs, context_query)
-        if n_docs > 0:
-            log(f"  RAG context: {n_docs} doc(s) retrieved for '{topic}'")
-        else:
-            log(f"  RAG context: 0 docs found for '{topic}' — hallucination heuristique sera élevée", "WARN")
-
         for model in config.models:
+            context_query = f"{topic} | age={age} | level={level}"
+            # RAG Query Translation
+            expanded_query = translate_query_for_retrieval(context_query, model)
+            log(f"  RAG Query Expansion: '{context_query}' -> '{expanded_query}'")
+            
+            context_docs = retrieve_context_documents(retriever, expanded_query, limit=3)
+            context_block = format_context_for_prompt(context_docs)
+            n_docs = len(context_docs)
+            log_context_quality(context_docs, expanded_query)
+            if n_docs > 0:
+                log(f"  RAG context: {n_docs} doc(s) retrieved for '{topic}'")
+            else:
+                log(f"  RAG context: 0 docs found for '{topic}' — hallucination heuristique sera élevée", "WARN")
+
             for repeat_index in range(repeats):
                 topic_seed = seed_base if seed_base is not None else config.default_seed
                 run_seed = int(topic_seed) + repeat_index if topic_seed is not None else None
@@ -754,7 +788,7 @@ def run_comp2_comparison(config: Config):
         extra = [k for k in sorted(present_keys) if k not in ordered_fieldnames]
         ordered_fieldnames.extend(extra)
 
-        with open(output_path, "w", newline="", encoding="utf-8") as f:
+        with open(output_path, "w", newline="", encoding="utf-8-sig") as f:
             writer = csv.DictWriter(f, fieldnames=ordered_fieldnames)
             writer.writeheader()
             writer.writerows(agent_results)

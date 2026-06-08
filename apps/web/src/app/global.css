@@ -78,3 +78,13 @@
 .hero-glow {
   box-shadow: 0 20px 50px -20px rgba(99,102,241,0.28), 0 8px 30px -20px rgba(59,130,246,0.18);
 }
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

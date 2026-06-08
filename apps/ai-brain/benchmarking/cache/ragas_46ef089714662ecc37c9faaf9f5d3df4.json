@@ -1,0 +1,7 @@
+{
+  "faithfulness": 0.0,
+  "answer_relevancy": NaN,
+  "context_precision": NaN,
+  "context_recall": NaN,
+  "ground_truth_type": "silver"
+}

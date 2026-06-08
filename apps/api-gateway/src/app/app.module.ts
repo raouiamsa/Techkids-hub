@@ -10,6 +10,7 @@ import { AiController } from './ai/ai.controller';
 import { AiGateway } from './ai/ai.gateway';
 import { MessagingModule } from '@org/messaging';
 import { UsersModule } from './users/users.module';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -19,10 +20,10 @@ import { UsersModule } from './users/users.module';
     SharedAuthModule,
     ParentModule,
     UsersModule,
+    AdminModule,
     MessagingModule,   // ← Enregistre RABBITMQ_CLIENT pour AiController
   ],
   controllers: [AppController, AiController],
   providers: [AppService, AiGateway],
 })
 export class AppModule { }
-

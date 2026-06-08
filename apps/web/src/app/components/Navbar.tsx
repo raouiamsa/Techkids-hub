@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '../contexts/auth.context';
-import { BookOpen, LayoutDashboard, LogOut, ChevronDown, User as UserIcon } from 'lucide-react';
+import { BookOpen, LayoutDashboard, LogOut, ChevronDown, User as UserIcon, Trophy } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@org/ui-components';
 
@@ -117,6 +117,15 @@ export default function Navbar() {
                       <UserIcon className="h-4 w-4" />
                       Mon Profil
                     </Link>
+                    {user.role === 'STUDENT' && (
+                      <Link
+                        href="/student/certifications"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors"
+                      >
+                        <Trophy className="h-4 w-4" />
+                        Mes Certifications
+                      </Link>
+                    )}
                   </div>
 
                   <div className="border-t border-slate-100 dark:border-slate-800 p-2">

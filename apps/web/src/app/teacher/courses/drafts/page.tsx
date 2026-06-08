@@ -5,7 +5,7 @@ import {
   LayoutDashboard, BookOpen,
   Code, FileText, ArrowLeft, RefreshCw,
   Loader2, GraduationCap, ListChecks, Rocket, HelpCircle,
-  AlertTriangle, CheckCircle
+  AlertTriangle, CheckCircle, FileEdit, Sparkles, Bot
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
@@ -63,11 +63,24 @@ export default function DraftManagementPage() {
   const fetchDrafts = useCallback(async () => {
     if (!token) return;
     try {
-      const res = await fetch(`${API_URL}/ai/drafts`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await res.json();
-      const list = Array.isArray(data) ? data : [];
+      const [aiRes, manualRes] = await Promise.all([
+        fetch(`${API_URL}/ai/drafts`, { headers: { Authorization: `Bearer ${token}` } }),
+        fetch(`${API_URL}/courses/drafts`, { headers: { Authorization: `Bearer ${token}` } }),
+      ]);
+      const aiData = aiRes.ok ? await aiRes.json() : [];
+      const manualData = manualRes.ok ? await manualRes.json() : [];
+
+      const aiList = Array.isArray(aiData) ? aiData.map((d: any) => ({ ...d, draftType: 'AI' })) : [];
+      const manualList = Array.isArray(manualData) ? manualData.map((d: any) => ({
+        ...d,
+        draftType: 'MANUAL',
+        status: 'PENDING_REVIEW',
+        progressPercent: 100,
+        // Mocking structure for existing UI
+        content: [{ modules: d.modules, finalProject: null }]
+      })) : [];
+
+      const list = [...aiList, ...manualList];
       setDrafts(list);
 
       // On sauvegarde qu'on a vu ces drafts
@@ -111,13 +124,18 @@ export default function DraftManagementPage() {
   }, [fetchDrafts]);
 
   // 2. Logique de Publication
-  const handlePublish = async (id: string) => {
+  const handlePublish = async (draft: any) => {
     if (!confirm('Voulez-vous vraiment publier ce cours ? Il sera visible par les élèves.')) return;
     setIsPublishing(true);
     try {
-      const res = await fetch(`${API_URL}/ai/publish/${id}`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${token}` },
+      const url = draft.draftType === 'MANUAL' ? `${API_URL}/courses/${draft.id}` : `${API_URL}/ai/publish/${draft.id}`;
+      const method = 'POST'; // /courses/:id uses POST currently (from frontend teacher dashboard logic)
+      const body = draft.draftType === 'MANUAL' ? JSON.stringify({ isPublished: true, title: draft.title, level: draft.level, language: draft.language }) : undefined;
+      
+      const res = await fetch(url, {
+        method,
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body
       });
       if (!res.ok) throw new Error();
       alert(' Cours publié avec succès !');
@@ -130,12 +148,15 @@ export default function DraftManagementPage() {
   };
 
   // 3. Logique de Rejet (Suppression)
-  const handleReject = async (id: string) => {
+  const handleReject = async (draft: any) => {
     if (!confirm('Supprimer définitivement ce brouillon ?')) return;
     setIsRejecting(true);
     try {
-      const res = await fetch(`${API_URL}/ai/reject/${id}`, {
-        method: 'POST',
+      const url = draft.draftType === 'MANUAL' ? `${API_URL}/courses/${draft.id}` : `${API_URL}/ai/reject/${draft.id}`;
+      const method = draft.draftType === 'MANUAL' ? 'DELETE' : 'POST';
+      
+      const res = await fetch(url, {
+        method,
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error();
@@ -253,7 +274,10 @@ export default function DraftManagementPage() {
                       <span className="text-[10px] font-black">{d.progressPercent}%</span>
                     </div>
 
-                    <h3 className="font-bold text-sm truncate">{d.title || d.source?.title || 'Cours sans titre'}</h3>
+                    <h3 className="font-bold text-sm truncate flex items-center gap-2">
+                      {d.draftType === 'MANUAL' ? <FileText size={14} className="text-teal-400 shrink-0" /> : <Bot size={14} className="text-blue-400 shrink-0" />}
+                      {d.title || d.source?.title || 'Cours sans titre'}
+                    </h3>
 
                     {/* Badge AI Score */}
                     {d.aiScore != null && (
@@ -346,7 +370,7 @@ export default function DraftManagementPage() {
                                 )}
                               </div>
                               <div className="prose prose-invert max-w-none bg-slate-800/40 p-8 rounded-[2.5rem] border border-slate-800 leading-relaxed italic text-slate-300">
-                                <ReactMarkdown>{m.content}</ReactMarkdown>
+                                <ReactMarkdown>{typeof m.content === 'string' ? m.content : (m.content ? JSON.stringify(m.content) : '')}</ReactMarkdown>
                               </div>
 
                               {m.exercises_code?.length > 0 && (
@@ -473,8 +497,8 @@ export default function DraftManagementPage() {
                 {/* --- FOOTER --- */}
                 <div className="bg-slate-900 border-t border-slate-800 relative z-10">
 
-                  {/* Zone Feedback (visible uniquement si PENDING_REVIEW) */}
-                  {selectedDraft.status === 'PENDING_REVIEW' && (
+                  {/* Zone Feedback (visible uniquement si PENDING_REVIEW et IA) */}
+                  {selectedDraft.status === 'PENDING_REVIEW' && selectedDraft.draftType !== 'MANUAL' && (
                     <div id="feedback-box" className="px-10 pt-8 pb-4 border-b border-slate-800/60 space-y-3">
                       <p className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-500 flex items-center gap-2">
                         <RefreshCw size={10} /> Feedback pour Régénération (Human-in-the-loop)
@@ -493,14 +517,14 @@ export default function DraftManagementPage() {
                     <div className="flex gap-3">
                       <Button
                         variant="destructive"
-                        onClick={() => handleReject(selectedDraft.id)}
+                        onClick={() => handleReject(selectedDraft)}
                         disabled={isRejecting || selectedDraft.status === 'APPROVED' || selectedDraft.status === 'PROCESSING'}
                       >
                         {isRejecting ? <Loader2 className="animate-spin w-4 h-4" /> : null}
                         Rejeter
                       </Button>
 
-                      {selectedDraft.status === 'PENDING_REVIEW' && (
+                      {selectedDraft.status === 'PENDING_REVIEW' && selectedDraft.draftType !== 'MANUAL' && (
                         <Button
                           variant="amber"
                           onClick={() => handleRectify(selectedDraft.id)}
@@ -510,11 +534,22 @@ export default function DraftManagementPage() {
                           Régénérer avec feedback
                         </Button>
                       )}
+
+                      {selectedDraft.draftType === 'MANUAL' && (
+                        <Button
+                          variant="outline"
+                          asChild
+                        >
+                          <Link href={`/teacher/courses/new?id=${selectedDraft.id}`}>
+                            <FileEdit size={14} className="mr-2" /> Éditer manuellement
+                          </Link>
+                        </Button>
+                      )}
                     </div>
 
                     <Button
                       size="lg"
-                      onClick={() => handlePublish(selectedDraft.id)}
+                      onClick={() => handlePublish(selectedDraft)}
                       disabled={isPublishing || selectedDraft.status === 'APPROVED' || selectedDraft.status === 'PROCESSING'}
                       className="shadow-2xl shadow-blue-500/40"
                     >

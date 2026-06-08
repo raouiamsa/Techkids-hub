@@ -1,0 +1,7 @@
+﻿Topic,Model,TTFT_ms,Latency_s,Output_Length,Faithfulness_Ragas,Hallucination_Rate,Answer_Relevance
+"Variables en Python (types, affectation, affichage)",mistral:latest,97359.9,160.36,799,1.0,0.0,0.9058
+"Variables en Python (types, affectation, affichage)",llama3.1:latest,86645.9,181.28,1542,1.0,0.0,0.9229
+Circuits électriques en série et en parallèle,mistral:latest,23392.5,129.53,1589,0.2222,0.7778,0.885
+Circuits électriques en série et en parallèle,llama3.1:latest,22015.2,60.11,641,0.75,0.25,0.0
+"Introduction à Arduino (microcontrôleur, broches, programmation)",mistral:latest,31452.3,78.49,619,0.0,1.0,0.8758
+"Introduction à Arduino (microcontrôleur, broches, programmation)",llama3.1:latest,36026.2,62.68,466,0.6667,0.3333,0.8313

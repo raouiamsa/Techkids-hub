@@ -17,6 +17,11 @@ export class CreateCourseDto {
     @IsOptional()
     @IsIn(['BEGINNER', 'INTERMEDIATE', 'ADVANCED'])
     level?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED';
+
+    @ApiPropertyOptional({ example: 'python' })
+    @IsOptional()
+    @IsString()
+    language?: string;
 }
 
 export class EnrollDto {
@@ -70,4 +75,44 @@ export class GetMyProgressDto {
     @ApiProperty({ description: "ID de l'étudiant", example: 'uuid-of-student' })
     @IsUUID()
     studentId!: string;
+}
+
+export class UpdateCourseDto {
+    @ApiPropertyOptional() @IsOptional() @IsString() @MaxLength(100) title?: string;
+    @ApiPropertyOptional() @IsOptional() @IsString() description?: string;
+    @ApiPropertyOptional() @IsOptional() @IsIn(['BEGINNER', 'INTERMEDIATE', 'ADVANCED']) level?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED';
+    @ApiPropertyOptional() @IsOptional() @IsString() language?: string;
+    @ApiPropertyOptional() @IsOptional() @IsString() imageUrl?: string;
+    @ApiPropertyOptional() @IsOptional() certificationBank?: any;
+    @ApiPropertyOptional() @IsOptional() placementBank?: any;
+    @ApiPropertyOptional() @IsOptional() finalProject?: any;
+    @ApiPropertyOptional() @IsOptional() isPublished?: boolean;
+}
+
+export class CreateModuleDto {
+    @ApiProperty() @IsNotEmpty() @IsString() title!: string;
+    @ApiProperty() @IsNotEmpty() @IsNumber() order!: number;
+    @ApiPropertyOptional() @IsOptional() @IsString() content?: string;
+    @ApiProperty() @IsUUID() courseId!: string;
+}
+
+export class UpdateModuleDto {
+    @ApiPropertyOptional() @IsOptional() @IsString() title?: string;
+    @ApiPropertyOptional() @IsOptional() @IsNumber() order?: number;
+    @ApiPropertyOptional() @IsOptional() @IsString() content?: string;
+}
+
+export class CreateExerciseDto {
+    @ApiProperty() @IsNotEmpty() @IsString() title!: string;
+    @ApiProperty() @IsIn(['QUIZ', 'CIRCUIT_BUILD', 'CODE_CHALLENGE']) exerciseType!: 'QUIZ' | 'CIRCUIT_BUILD' | 'CODE_CHALLENGE';
+    @ApiPropertyOptional() @IsOptional() @IsString() content?: string;
+    @ApiPropertyOptional() @IsOptional() data?: any;
+    @ApiProperty() @IsUUID() moduleId!: string;
+}
+
+export class UpdateExerciseDto {
+    @ApiPropertyOptional() @IsOptional() @IsString() title?: string;
+    @ApiPropertyOptional() @IsOptional() @IsIn(['QUIZ', 'CIRCUIT_BUILD', 'CODE_CHALLENGE']) exerciseType?: 'QUIZ' | 'CIRCUIT_BUILD' | 'CODE_CHALLENGE';
+    @ApiPropertyOptional() @IsOptional() @IsString() content?: string;
+    @ApiPropertyOptional() @IsOptional() data?: any;
 }

@@ -1,4 +1,8 @@
 {
   "llama3.1:latest::python": "Python",
-  "llama3.1:latest::Python": "Python"
+  "llama3.1:latest::Python": "Python",
+  "llama3.1:latest::Circuits \u00e9lectriques en s\u00e9rie et en parall\u00e8le": "Python",
+  "llama3.1:latest::Introduction \u00e0 Arduino (microcontr\u00f4leur, broches, programmation)": "C++",
+  "llama3.1:latest::Circuits \u00e9lectriques": "None",
+  "llama3.1:latest::Introduction \u00e0 Arduino": "C++"
 }

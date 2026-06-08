@@ -75,7 +75,7 @@ LANGUAGE_PATTERNS: Dict[str, list] = {
 VALID_LANGUAGES = {
     "Python", "JavaScript", "C++", "Java", "SQL", "HTML/CSS",
     "Ruby", "PHP", "Go", "Rust", "Swift", "Kotlin", "TypeScript",
-    "R", "MATLAB", "C#", "VB.NET", "Scala", "Clojure", "Perl",
+    "R", "MATLAB", "C#", "VB.NET", "Scala", "Clojure", "Perl", "None",
 }
 
 
@@ -127,12 +127,12 @@ def detect_language_from_topic_manual(topic: str) -> str:
         if score > 0:
             scores[language] = score
     
-    # Return language with highest score, or Python as default
+    # Return language with highest score, or "None" as default
     if scores:
         detected = max(scores.items(), key=lambda x: x[1])[0]
         return detected
     
-    return "Python"  # Safe default
+    return "None"  # Safe default for non-programming subjects
 
 
 def detect_language_from_topic(topic: str, model: Optional[str] = None) -> str:
@@ -198,6 +198,7 @@ def _detect_language_with_llm(topic: str, model: str) -> str:
 Topic: {topic}
 
 Answer with ONLY the language name (e.g., Python, C++, JavaScript, Java, SQL, HTML/CSS, Go, Rust, etc.).
+If the topic is purely theoretical, hardware, or physics-based with no programming (e.g., Electrical Circuits, Math), respond with EXACTLY the word: None
 If unsure, respond with the most appropriate language. Do not include explanations."""
         
         # Call Ollama API
@@ -208,7 +209,7 @@ If unsure, respond with the most appropriate language. Do not include explanatio
                 "prompt": prompt,
                 "stream": False,
             },
-            timeout=15
+            timeout=60
         )
         
         if response.status_code == 200:

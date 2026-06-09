@@ -1,0 +1,64 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Python,12,beginner,llama3.1:latest,architect,1,42,1,True,True,17837.8,186.05,52.5,100,85.75,1629,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 186.05, ""response_length"": 1629, ""agent_score"": 100, ""generated_content"": ""{\n\n  \""courseTitle\"": \""L'aventure Pythonique\"",\n\n  \""programmingLanguage\"": \""Python\"",\n\n  \""level\"": \""beginner\"",\n\n  \""totalDuration\"": \""6 heures\"",\n\n  \""objectives\"": [\n    \""Comp\u00e9tence active 1 (ex: Ma\u00eetriser les boucles)\"",\n    \""Comp\u00e9tence active 2\""\n  ],\n\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Variables\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment stocker et manipuler vos donn\u00e9es avec les variables en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Types de donn\u00e9es (chaine, entier, r\u00e9el, bool\u00e9en)\"",\n        \""D\u00e9clarer et utiliser des variables\""\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Conditions et les Boucles\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 prendre des d\u00e9cisions et \u00e0 r\u00e9p\u00e9ter des actions avec les conditionnels et les boucles en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Conditionnels (if-else, if)\"",\n        \""Boucles (for, while)\""\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Petites Victoires Techniques\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Mettez en pratique vos connaissances avec des exercices interactifs.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Exercice de conditionnel\"",\n        \""Exercice de boucle\""\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""Les Concepts Avanc\u00e9s\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez les concepts plus complexes et cr\u00e9atifs en Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        \""Listes et tuples\"",\n        \""Dictionnaires\""\n      ]\n    }\n  ]\n\n}"", ""ttft_ms"": 17837.8, ""llm_score"": 52.5, ""rag_score"": null, ""final_score"": 85.75, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260608_221818.json,"{
+
+  ""courseTitle"": ""L'aventure Pythonique"",
+
+  ""programmingLanguage"": ""Python"",
+
+  ""level"": ""beginner"",
+
+  ""totalDuration"": ""6 heures"",
+
+  ""objectives"": [
+    ""Compétence active 1 (ex: Maîtriser les boucles)"",
+    ""Compétence active 2""
+  ],
+
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Variables"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment stocker et manipuler vos données avec les variables en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Types de données (chaine, entier, réel, booléen)"",
+        ""Déclarer et utiliser des variables""
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Conditions et les Boucles"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à prendre des décisions et à répéter des actions avec les conditionnels et les boucles en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Conditionnels (if-else, if)"",
+        ""Boucles (for, while)""
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Petites Victoires Techniques"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Mettez en pratique vos connaissances avec des exercices interactifs."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Exercice de conditionnel"",
+        ""Exercice de boucle""
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""Les Concepts Avancés"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez les concepts plus complexes et créatifs en Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        ""Listes et tuples"",
+        ""Dictionnaires""
+      ]
+    }
+  ]
+
+}",100.0,4,100

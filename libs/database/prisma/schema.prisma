@@ -135,6 +135,10 @@ model Module {
   order   Int
   content String? @db.Text // Contenu Markdown long
 
+  // 🌟 NOUVEAU : Support des Visuels générés par l'IA (Web Search / Image)
+  visualType String?
+  imageUrl   String?
+
   courseId     String
   course       Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
   exercises    Exercise[]
@@ -153,6 +157,7 @@ model Exercise {
   exerciseType ExerciseType @default(QUIZ)
   options      String[]     @default([])
   solution     String?      @db.Text 
+  starterCode  String?      @db.Text
 
   moduleId    String
   module      Module       @relation(fields: [moduleId], references: [id], onDelete: Cascade)

@@ -1,0 +1,81 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Introduction à Arduino,12,beginner,llama3.1:latest,architect,1,42,1,True,True,40543.1,260.62,53.66,100,86.1,2985,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 260.62, ""response_length"": 2985, ""agent_score"": 100, ""generated_content"": ""{ \n  \""courseTitle\"": \""L'Aventure Arduino\"", \n  \""programmingLanguage\"": \""C++\"", \n  \""level\"": \""beginner\"", \n  \""totalDuration\"": \""4 heures\"", \n  \""objectives\"": [\n    \""Comprendre les concepts de base d'Arduino et de programmation\"",\n    \""Apprendre \u00e0 utiliser l'environnement de d\u00e9veloppement int\u00e9gr\u00e9 pour Arduino\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Robots\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment les robots peuvent \u00eatre programm\u00e9s pour accomplir des t\u00e2ches sp\u00e9cifiques.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""name\"": \""Concept: Arduino\"",\n          \""description\"": \""D\u00e9finition d'Arduino et son utilit\u00e9 concr\u00e8te dans le monde r\u00e9el\""\n        },\n        {\n          \""name\"": \""Concept: Microcontr\u00f4leur\"",\n          \""description\"": \""Pr\u00e9sentation du microcontr\u00f4leur comme petit ordinateur qui contr\u00f4le des composants \u00e9lectroniques\""\n        }\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Fondations de la Programmation\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez les bases de la programmation avec Arduino et d\u00e9couvrez comment cr\u00e9er des programmes pour les microcontr\u00f4leurs.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""name\"": \""Concept: Programmation\"",\n          \""description\"": \""D\u00e9finition de la programmation comme processus de cr\u00e9ation d'un programme pour un ordinateur ou un microcontr\u00f4leur\""\n        },\n        {\n          \""name\"": \""Concept: Arduino IDE\"",\n          \""description\"": \""Pr\u00e9sentation de l'environnement de d\u00e9veloppement int\u00e9gr\u00e9 pour Arduino et son utilit\u00e9 dans la programmation\""\n        }\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""La Programmation en Action\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""Apprenez \u00e0 utiliser les concepts appris pr\u00e9c\u00e9demment pour cr\u00e9er des programmes r\u00e9els avec Arduino.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""name\"": \""Exercice: QCM - Qu'est-ce que la programmation?\"",\n          \""description\"": \""Testez vos connaissances sur la d\u00e9finition de la programmation\""\n        },\n        {\n          \""name\"": \""Exercice: Fill-blank - Remplis le trou : _____ est l'environnement de d\u00e9veloppement int\u00e9gr\u00e9 pour Arduino.\"",\n          \""description\"": \""V\u00e9rifiez votre compr\u00e9hension du concept d'Arduino IDE\""\n        }\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""Les Projets Cr\u00e9atifs\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les concepts appris pour cr\u00e9er des projets cr\u00e9atifs avec Arduino.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""name\"": \""Concept: Projet cr\u00e9atif\"",\n          \""description\"": \""Pr\u00e9sentation de l'objectif du projet cr\u00e9atif et son utilit\u00e9 dans la programmation\""\n        },\n        {\n          \""name\"": \""Exercice: QCM - Qu'est-ce que le projet cr\u00e9atif?\"",\n          \""description\"": \""Testez vos connaissances sur la d\u00e9finition du projet cr\u00e9atif\""\n        }\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 40543.1, ""llm_score"": 53.66, ""rag_score"": null, ""final_score"": 86.1, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Introduction à Arduino_age12_llama3.1_latest_20260608_145814.json,"{ 
+  ""courseTitle"": ""L'Aventure Arduino"", 
+  ""programmingLanguage"": ""C++"", 
+  ""level"": ""beginner"", 
+  ""totalDuration"": ""4 heures"", 
+  ""objectives"": [
+    ""Comprendre les concepts de base d'Arduino et de programmation"",
+    ""Apprendre à utiliser l'environnement de développement intégré pour Arduino""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Robots"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment les robots peuvent être programmés pour accomplir des tâches spécifiques."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""name"": ""Concept: Arduino"",
+          ""description"": ""Définition d'Arduino et son utilité concrète dans le monde réel""
+        },
+        {
+          ""name"": ""Concept: Microcontrôleur"",
+          ""description"": ""Présentation du microcontrôleur comme petit ordinateur qui contrôle des composants électroniques""
+        }
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Fondations de la Programmation"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez les bases de la programmation avec Arduino et découvrez comment créer des programmes pour les microcontrôleurs."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""name"": ""Concept: Programmation"",
+          ""description"": ""Définition de la programmation comme processus de création d'un programme pour un ordinateur ou un microcontrôleur""
+        },
+        {
+          ""name"": ""Concept: Arduino IDE"",
+          ""description"": ""Présentation de l'environnement de développement intégré pour Arduino et son utilité dans la programmation""
+        }
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""La Programmation en Action"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Apprenez à utiliser les concepts appris précédemment pour créer des programmes réels avec Arduino."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""name"": ""Exercice: QCM - Qu'est-ce que la programmation?"",
+          ""description"": ""Testez vos connaissances sur la définition de la programmation""
+        },
+        {
+          ""name"": ""Exercice: Fill-blank - Remplis le trou : _____ est l'environnement de développement intégré pour Arduino."",
+          ""description"": ""Vérifiez votre compréhension du concept d'Arduino IDE""
+        }
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""Les Projets Créatifs"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser les concepts appris pour créer des projets créatifs avec Arduino."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""name"": ""Concept: Projet créatif"",
+          ""description"": ""Présentation de l'objectif du projet créatif et son utilité dans la programmation""
+        },
+        {
+          ""name"": ""Exercice: QCM - Qu'est-ce que le projet créatif?"",
+          ""description"": ""Testez vos connaissances sur la définition du projet créatif""
+        }
+      ]
+    }
+  ]
+}",100.0,4,100

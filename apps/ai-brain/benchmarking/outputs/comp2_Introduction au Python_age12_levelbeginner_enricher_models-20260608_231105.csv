@@ -1,0 +1,17 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,answer_index_validity,diversity_score,exercise_count,generated_content,options_validity,schema_validity,valid_exercises
+Introduction au Python,12,beginner,llama3.1:latest,enricher,1,42,1,True,11734.0,53.56,91.07,100,97.32,561,"{""agent"": ""enricher"", ""json_valid"": true, ""schema_validity"": 100.0, ""options_validity"": 100.0, ""answer_index_validity"": 100.0, ""diversity_score"": 100.0, ""exercise_count"": 2, ""valid_exercises"": 2, ""latency"": 53.56, ""response_length"": 561, ""agent_score"": 100, ""critic_parsed_json"": {""questions"": [{""question"": ""Qu'est-ce qu'une variable en Python ?"", ""options"": [""Un nombre"", ""Une phrase"", ""Un contenant qui stocke une valeur"", ""Un jeu""], ""correct_index"": 2, ""explanation"": ""Bravo ! En fait, une variable est comme un contenant qui stocke une valeur.""}, {""question"": ""Quel est le r\u00e9sultat de l'op\u00e9ration 15 / 2 en Python ?"", ""options"": [""7"", ""8"", ""15"", ""30""], ""correct_index"": 0, ""explanation"": ""Super ! N'oublie pas que la division (/) donne un nombre flottant.""}]}, ""approved"": null, ""critic_rejection_reason"": """", ""generated_content"": ""{ \n  \""questions\"": [\n    {\n      \""question\"": \""Qu'est-ce qu'une variable en Python ?\"",\n      \""options\"": [\""Un nombre\"", \""Une phrase\"", \""Un contenant qui stocke une valeur\"", \""Un jeu\""],\n      \""correct_index\"": 2,\n      \""explanation\"": \""Bravo ! En fait, une variable est comme un contenant qui stocke une valeur.\""\n    },\n    {\n      \""question\"": \""Quel est le r\u00e9sultat de l'op\u00e9ration 15 / 2 en Python ?\"",\n      \""options\"": [\""7\"", \""8\"", \""15\"", \""30\""],\n      \""correct_index\"": 0,\n      \""explanation\"": \""Super ! N'oublie pas que la division (/) donne un nombre flottant.\""\n    }\n  ]\n}"", ""ttft_ms"": 11734.0, ""llm_score"": 91.07, ""rag_score"": null, ""final_score"": 97.32}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Inroduction au Python_age12_llama3.1_latest_20260608_230737.json,100.0,100.0,2,"{ 
+  ""questions"": [
+    {
+      ""question"": ""Qu'est-ce qu'une variable en Python ?"",
+      ""options"": [""Un nombre"", ""Une phrase"", ""Un contenant qui stocke une valeur"", ""Un jeu""],
+      ""correct_index"": 2,
+      ""explanation"": ""Bravo ! En fait, une variable est comme un contenant qui stocke une valeur.""
+    },
+    {
+      ""question"": ""Quel est le résultat de l'opération 15 / 2 en Python ?"",
+      ""options"": [""7"", ""8"", ""15"", ""30""],
+      ""correct_index"": 0,
+      ""explanation"": ""Super ! N'oublie pas que la division (/) donne un nombre flottant.""
+    }
+  ]
+}",100.0,100.0,2

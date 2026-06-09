@@ -1,0 +1,161 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,generated_content,module_completeness,module_count,pedagogical_structure
+Introduction au Python,12,beginner,llama3.1:latest,architect,1,42,1,True,True,38206.8,389.58,61.9,100,88.57,5618,"{""agent"": ""architect"", ""json_valid"": true, ""schema_compliance"": true, ""module_count"": 4, ""module_completeness"": 100.0, ""pedagogical_structure"": 100, ""latency"": 389.58, ""response_length"": 5618, ""agent_score"": 100, ""generated_content"": ""{ \n  \""courseTitle\"": \""L'aventure Python : D\u00e9couvrez les secrets du langage !\"", \n  \""programmingLanguage\"": \""Python\"", \n  \""level\"": \""beginner\"", \n  \""totalDuration\"": \""4 heures\"", \n  \""objectives\"": [\n    \""Comprendre les concepts de base du langage Python\"",\n    \""Apprendre \u00e0 effectuer des op\u00e9rations arithm\u00e9tiques et utiliser des fonctions\""\n  ],\n  \""modules\"": [\n    {\n      \""order\"": 1,\n      \""title\"": \""Le Secret des Variables : Un tr\u00e9sor cach\u00e9 !\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment stocker des valeurs dans Python et comprendre les diff\u00e9rents types de donn\u00e9es.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""title\"": \""Variables et types de donn\u00e9es : Un jeu de cat\u00e9gories !\"",\n          \""duration\"": \""15 mins\"",\n          \""description\"": \""Comprenez comment les variables sont utilis\u00e9es pour stocker des valeurs dans Python.\"",\n          \""exercise_mode\"": \""qcm\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""qcm\"",\n              \""question\"": \""Quel est le type de donn\u00e9es utilis\u00e9 pour stocker un nombre ?\"",\n              \""options\"": [\""entier\"", \""flottant\"", \""cha\u00eene de caract\u00e8res\""],\n              \""correct_answer\"": \""entier\""\n            }\n          ]\n        },\n        {\n          \""title\"": \""Diff\u00e9rents types de variables : Un monde vari\u00e9 !\"",\n          \""duration\"": \""15 mins\"",\n          \""description\"": \""Apprenez \u00e0 identifier les diff\u00e9rents types de variables en Python.\"",\n          \""exercise_mode\"": \""fill_blank\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""fill_blank\"",\n              \""question\"": \""La variable ______ est utilis\u00e9e pour stocker une cha\u00eene de caract\u00e8res.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \""order\"": 2,\n      \""title\"": \""Les Op\u00e9rations Arithm\u00e9tiques : Un jeu de calcul !\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment effectuer des op\u00e9rations arithm\u00e9tiques avec Python.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""title\"": \""Op\u00e9rations Arithm\u00e9tiques : Un monde de calcul !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Comprenez comment effectuer des op\u00e9rations arithm\u00e9tiques avec Python.\"",\n          \""exercise_mode\"": \""qcm\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""qcm\"",\n              \""question\"": \""Ecrire le code pour calculer la somme de 5 et 3.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        },\n        {\n          \""title\"": \""Fonctions : Un outil puissant !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Apprenez \u00e0 utiliser des fonctions pour effectuer des calculs simples.\"",\n          \""exercise_mode\"": \""fill_blank\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""fill_blank\"",\n              \""question\"": \""La fonction ______ est utilis\u00e9e pour calculer la racine carr\u00e9e d'un nombre.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \""order\"": 3,\n      \""title\"": \""Les Fonctions : Un outil puissant !\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser des fonctions pour effectuer des calculs simples.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""title\"": \""Fonctions : Un outil puissant !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Apprenez \u00e0 utiliser des fonctions pour effectuer des calculs simples.\"",\n          \""exercise_mode\"": \""qcm\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""qcm\"",\n              \""question\"": \""Ecrire le code pour calculer la somme de 5 et 3.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        },\n        {\n          \""title\"": \""Manipulation des donn\u00e9es : Un jeu de manipulation !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Apprenez \u00e0 manipuler les donn\u00e9es avec Python.\"",\n          \""exercise_mode\"": \""fill_blank\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""fill_blank\"",\n              \""question\"": \""La fonction ______ est utilis\u00e9e pour calculer la racine carr\u00e9e d'un nombre.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \""order\"": 4,\n      \""title\"": \""L'Expansion : Un monde de cr\u00e9ativit\u00e9 !\"",\n      \""duration\"": \""45 mins\"",\n      \""description\"": \""D\u00e9couvrez comment utiliser les concepts appris pour cr\u00e9er des programmes plus complexes.\"",\n      \""exercise_mode\"": \""code\"",\n      \""subTopics\"": [\n        {\n          \""title\"": \""Cr\u00e9ation de programmes : Un monde de cr\u00e9ativit\u00e9 !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Apprenez \u00e0 utiliser les concepts appris pour cr\u00e9er des programmes plus complexes.\"",\n          \""exercise_mode\"": \""qcm\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""qcm\"",\n              \""question\"": \""Ecrire le code pour calculer la somme de 5 et 3.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        },\n        {\n          \""title\"": \""Manipulation des donn\u00e9es : Un jeu de manipulation !\"",\n          \""duration\"": \""20 mins\"",\n          \""description\"": \""Apprenez \u00e0 manipuler les donn\u00e9es avec Python.\"",\n          \""exercise_mode\"": \""fill_blank\"",\n          \""exercises\"": [\n            {\n              \""type\"": \""fill_blank\"",\n              \""question\"": \""La fonction ______ est utilis\u00e9e pour calculer la racine carr\u00e9e d'un nombre.\"",\n              \""options\"": [],\n              \""correct_answer\"": \""\""\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}"", ""ttft_ms"": 38206.8, ""llm_score"": 61.9, ""rag_score"": null, ""final_score"": 88.57, ""context_docs_count"": 4}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Inroduction au Python_age12_llama3.1_latest_20260608_230737.json,"{ 
+  ""courseTitle"": ""L'aventure Python : Découvrez les secrets du langage !"", 
+  ""programmingLanguage"": ""Python"", 
+  ""level"": ""beginner"", 
+  ""totalDuration"": ""4 heures"", 
+  ""objectives"": [
+    ""Comprendre les concepts de base du langage Python"",
+    ""Apprendre à effectuer des opérations arithmétiques et utiliser des fonctions""
+  ],
+  ""modules"": [
+    {
+      ""order"": 1,
+      ""title"": ""Le Secret des Variables : Un trésor caché !"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment stocker des valeurs dans Python et comprendre les différents types de données."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""title"": ""Variables et types de données : Un jeu de catégories !"",
+          ""duration"": ""15 mins"",
+          ""description"": ""Comprenez comment les variables sont utilisées pour stocker des valeurs dans Python."",
+          ""exercise_mode"": ""qcm"",
+          ""exercises"": [
+            {
+              ""type"": ""qcm"",
+              ""question"": ""Quel est le type de données utilisé pour stocker un nombre ?"",
+              ""options"": [""entier"", ""flottant"", ""chaîne de caractères""],
+              ""correct_answer"": ""entier""
+            }
+          ]
+        },
+        {
+          ""title"": ""Différents types de variables : Un monde varié !"",
+          ""duration"": ""15 mins"",
+          ""description"": ""Apprenez à identifier les différents types de variables en Python."",
+          ""exercise_mode"": ""fill_blank"",
+          ""exercises"": [
+            {
+              ""type"": ""fill_blank"",
+              ""question"": ""La variable ______ est utilisée pour stocker une chaîne de caractères."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      ""order"": 2,
+      ""title"": ""Les Opérations Arithmétiques : Un jeu de calcul !"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment effectuer des opérations arithmétiques avec Python."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""title"": ""Opérations Arithmétiques : Un monde de calcul !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Comprenez comment effectuer des opérations arithmétiques avec Python."",
+          ""exercise_mode"": ""qcm"",
+          ""exercises"": [
+            {
+              ""type"": ""qcm"",
+              ""question"": ""Ecrire le code pour calculer la somme de 5 et 3."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        },
+        {
+          ""title"": ""Fonctions : Un outil puissant !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Apprenez à utiliser des fonctions pour effectuer des calculs simples."",
+          ""exercise_mode"": ""fill_blank"",
+          ""exercises"": [
+            {
+              ""type"": ""fill_blank"",
+              ""question"": ""La fonction ______ est utilisée pour calculer la racine carrée d'un nombre."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      ""order"": 3,
+      ""title"": ""Les Fonctions : Un outil puissant !"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser des fonctions pour effectuer des calculs simples."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""title"": ""Fonctions : Un outil puissant !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Apprenez à utiliser des fonctions pour effectuer des calculs simples."",
+          ""exercise_mode"": ""qcm"",
+          ""exercises"": [
+            {
+              ""type"": ""qcm"",
+              ""question"": ""Ecrire le code pour calculer la somme de 5 et 3."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        },
+        {
+          ""title"": ""Manipulation des données : Un jeu de manipulation !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Apprenez à manipuler les données avec Python."",
+          ""exercise_mode"": ""fill_blank"",
+          ""exercises"": [
+            {
+              ""type"": ""fill_blank"",
+              ""question"": ""La fonction ______ est utilisée pour calculer la racine carrée d'un nombre."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      ""order"": 4,
+      ""title"": ""L'Expansion : Un monde de créativité !"",
+      ""duration"": ""45 mins"",
+      ""description"": ""Découvrez comment utiliser les concepts appris pour créer des programmes plus complexes."",
+      ""exercise_mode"": ""code"",
+      ""subTopics"": [
+        {
+          ""title"": ""Création de programmes : Un monde de créativité !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Apprenez à utiliser les concepts appris pour créer des programmes plus complexes."",
+          ""exercise_mode"": ""qcm"",
+          ""exercises"": [
+            {
+              ""type"": ""qcm"",
+              ""question"": ""Ecrire le code pour calculer la somme de 5 et 3."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        },
+        {
+          ""title"": ""Manipulation des données : Un jeu de manipulation !"",
+          ""duration"": ""20 mins"",
+          ""description"": ""Apprenez à manipuler les données avec Python."",
+          ""exercise_mode"": ""fill_blank"",
+          ""exercises"": [
+            {
+              ""type"": ""fill_blank"",
+              ""question"": ""La fonction ______ est utilisée pour calculer la racine carrée d'un nombre."",
+              ""options"": [],
+              ""correct_answer"": """"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}",100.0,4,100

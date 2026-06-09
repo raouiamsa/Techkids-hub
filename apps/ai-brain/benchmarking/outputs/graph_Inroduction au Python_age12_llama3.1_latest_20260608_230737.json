@@ -1,0 +1,219 @@
+{
+  "topic": "Inroduction au Python",
+  "age": 12,
+  "level": "beginner",
+  "language": "French",
+  "generated_at": "2026-06-08T23:07:37.312100",
+  "model_name": "llama3.1:latest",
+  "modules": {
+    "m1": {
+      "id": "m1",
+      "name": "Module 1 : Introduction au langage Python",
+      "description": "Dans ce module, nous allons découvrir les bases du langage Python.",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_1"
+      ],
+      "learning_objectives": [
+        "obj_m1_1",
+        "obj_m1_2"
+      ],
+      "exercises": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "prerequisites_modules": [],
+      "estimated_duration": 60,
+      "order_in_curriculum": 1
+    },
+    "m2": {
+      "id": "m2",
+      "name": "Module 2 : Opérations arithmétiques et fonctions",
+      "description": "Dans ce module, nous allons découvrir comment effectuer des opérations arithmétiques avec Python et comment utiliser les fonctions.",
+      "difficulty_level": "beginner",
+      "concepts": [
+        "concept_2",
+        "concept_3"
+      ],
+      "learning_objectives": [
+        "obj_m2_1",
+        "obj_m2_2"
+      ],
+      "exercises": [
+        "ex_m2_1",
+        "ex_m2_2"
+      ],
+      "prerequisites_modules": [
+        "m1"
+      ],
+      "estimated_duration": 60,
+      "order_in_curriculum": 2
+    }
+  },
+  "concepts": {
+    "concept_1": {
+      "id": "concept_1",
+      "name": "Variables et types de données",
+      "definition": "Les variables sont utilisées pour stocker des valeurs dans Python. Les types de données sont les catégories dans lesquelles ces valeurs peuvent être classifiées.",
+      "difficulty_level": "beginner",
+      "prerequisites": [],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_2": {
+      "id": "concept_2",
+      "name": "Opérations arithmétiques",
+      "definition": "Les opérations arithmétiques sont utilisées pour effectuer des calculs avec Python. Elles incluent les addition, soustraction, multiplication et division.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_1"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    },
+    "concept_3": {
+      "id": "concept_3",
+      "name": "Fonctions",
+      "definition": "Les fonctions sont des blocs de code qui peuvent être utilisés plusieurs fois dans un programme. Elles prennent en entrée une ou plusieurs valeurs et renvoient une valeur de sortie.",
+      "difficulty_level": "beginner",
+      "prerequisites": [
+        "concept_1"
+      ],
+      "related_concepts": [],
+      "importance": 1.0
+    }
+  },
+  "objectives": {
+    "obj_m1_1": {
+      "id": "obj_m1_1",
+      "type": "understand",
+      "description": "L'étudiant comprend les concepts de base du langage Python.",
+      "associated_concepts": [
+        "concept_1"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m1_2": {
+      "id": "obj_m1_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer dans des cas simples avec Python.",
+      "associated_concepts": [
+        "concept_1"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_1": {
+      "id": "obj_m2_1",
+      "type": "understand",
+      "description": "L'étudiant comprend comment effectuer des opérations arithmétiques avec Python.",
+      "associated_concepts": [
+        "concept_2"
+      ],
+      "assessment_criteria": null
+    },
+    "obj_m2_2": {
+      "id": "obj_m2_2",
+      "type": "apply",
+      "description": "L'étudiant peut appliquer les fonctions pour effectuer des calculs simples.",
+      "associated_concepts": [
+        "concept_3"
+      ],
+      "assessment_criteria": null
+    }
+  },
+  "exercises": {
+    "ex_m1_1": {
+      "id": "ex_m1_1",
+      "type": "qcm",
+      "question": "Quel est le type de données utilisé pour stocker un nombre ?",
+      "answer": "entier",
+      "options": [
+        "entier",
+        "flottant",
+        "chaîne de caractères"
+      ],
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_1",
+      "tests_objective": "obj_m1_1",
+      "estimated_time": 5
+    },
+    "ex_m1_2": {
+      "id": "ex_m1_2",
+      "type": "fill_blank",
+      "question": "La variable ______ est utilisée pour stocker une chaîne de caractères.",
+      "answer": "nom_de_variable",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_1",
+      "tests_objective": "obj_m1_2",
+      "estimated_time": 3
+    },
+    "ex_m2_1": {
+      "id": "ex_m2_1",
+      "type": "qcm",
+      "question": "Ecrire le code pour calculer la somme de 5 et 3.",
+      "answer": "print(5+3)",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_2",
+      "tests_objective": "obj_m2_1",
+      "estimated_time": 10
+    },
+    "ex_m2_2": {
+      "id": "ex_m2_2",
+      "type": "fill_blank",
+      "question": "La fonction ______ est utilisée pour calculer la racine carrée d'un nombre.",
+      "answer": "math.sqrt()",
+      "options": null,
+      "starter_code": null,
+      "solution": null,
+      "difficulty": "beginner",
+      "tests_concept": "concept_3",
+      "tests_objective": "obj_m2_2",
+      "estimated_time": 5
+    }
+  },
+  "relationships": {
+    "concept_prerequisites": {
+      "concept_1": [],
+      "concept_2": [
+        "concept_1"
+      ],
+      "concept_3": [
+        "concept_1"
+      ]
+    },
+    "concept_exercises": {
+      "concept_1": [
+        "ex_m1_1",
+        "ex_m1_2"
+      ],
+      "concept_2": [
+        "ex_m2_1"
+      ],
+      "concept_3": [
+        "ex_m2_2"
+      ]
+    },
+    "objective_concepts": {
+      "obj_m1_1": [
+        "concept_1"
+      ],
+      "obj_m1_2": [
+        "concept_1"
+      ],
+      "obj_m2_1": [
+        "concept_2"
+      ],
+      "obj_m2_2": [
+        "concept_3"
+      ]
+    }
+  }
+}

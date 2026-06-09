@@ -1,4 +1,5 @@
 from langgraph.graph import StateGraph, END
+from langgraph.checkpoint.memory import MemorySaver
 from core.state import AgentState
 from .architect import architect_node
 from .writer import writer_node
@@ -43,5 +44,17 @@ def create_course_graph():
     )
     workflow.add_edge("enricher", END)
     
-    # Compilation du graphe pour exécution
-    return workflow.compile()
+    # Compilation du graphe avec Persistance et Points d'arrêt (Human-in-the-Loop)
+    memory = MemorySaver()
+    app = workflow.compile(
+        checkpointer=memory,
+        interrupt_after=["architect", "enricher"]
+    )
+    
+    # Génération et affichage du code Mermaid pour ton Rapport de PFE !
+    print("\n\n" + "="*50)
+    print("📊 CODE MERMAID DU GRAPHE LANGGRAPH (POUR LE RAPPORT) :")
+    print(app.get_graph().draw_mermaid())
+    print("="*50 + "\n\n")
+    
+    return app

@@ -32,6 +32,13 @@ class AgentState(TypedDict):
     has_code_in_pdf: bool        # True si le PDF source contient du code réel extractible
     pdf_code_strategy: str       # type exercice : 'code_from_pdf'|'code_from_llm'|'calculation'|'qcm_only'
 
+    #  ESTHÉTIQUE ET IDENTITÉ VISUELLE (Phase 4)
+    style_conceptuel: str        # Style pour l'IA (ex: "3D Pixar")
+    style_technique: str         # Style pour la recherche Web Fritzing (ex: "Schéma plat 2D")
+    proposed_images: list        # Liste des images proposées (générées et extraites) en attente de validation
+    is_syllabus_approved: bool   # Statut de validation de l'architecte par l'enseignant
+    is_content_approved: bool    # Statut de validation du contenu final et des images par l'enseignant
+
     # ── RECTIFICATION CHIRURGICALE ──
     existing_content: dict       # Contenu existant à préserver lors d'une rectification partielle
     existing_syllabus: str       # Syllabus existant à réutiliser 

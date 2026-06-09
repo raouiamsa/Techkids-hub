@@ -1,0 +1,35 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,consistency_score,generated_content,issue_completeness,score_range_validity
+Python,12,beginner,llama3.1:latest,critic,1,42,1,True,True,15309.2,113.76,81.04,100,94.31,1450,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 100, ""issue_completeness"": 100, ""latency"": 113.76, ""response_length"": 1450, ""agent_score"": 100, ""critic_parsed_json"": {""score"": 0, ""approved"": false, ""module_issues"": [{""module"": ""Le monde de Python est pr\u00eat \u00e0 \u00eatre d\u00e9couvert !"", ""issue"": ""La structure du cours semble trop lin\u00e9aire et manque d'interactivit\u00e9. Les notions sont pr\u00e9sent\u00e9es de mani\u00e8re th\u00e9orique sans exemple concret pour les aider \u00e0 comprendre.""}, {""module"": ""Qu'est-ce que les types de donn\u00e9es en Python ?"", ""issue"": ""Le vocabulaire utilis\u00e9 est adapt\u00e9, mais la d\u00e9finition des types de donn\u00e9es pourrait \u00eatre plus d\u00e9taill\u00e9e. Les exemples donn\u00e9s sont simples et faciles \u00e0 comprendre.""}, {""module"": ""Qu'est-ce que les variables en Python ?"", ""issue"": ""La notion de variable est bien expliqu\u00e9e, mais il faudrait donner un exemple concret pour montrer comment utiliser une variable dans le code.""}, {""module"": ""Qu'est-ce que les conditionnels en Python ?"", ""issue"": ""Les conditionnels sont pr\u00e9sent\u00e9s de mani\u00e8re claire, mais il faudrait donner plus d'exemples pour illustrer leur utilisation pratique.""}, {""module"": ""Qu'est-ce que les boucles en Python ?"", ""issue"": ""La notion de boucle est bien expliqu\u00e9e, mais il faudrait donner un exemple concret pour montrer comment utiliser une boucle dans le code.""}], ""global_issues"": [""Le cours manque d'interactivit\u00e9 et de cas pratiques pour aider les \u00e9l\u00e8ves \u00e0 comprendre les notions th\u00e9oriques."", ""L'\u00e2ge cible (12 ans) est bien pris en compte, mais il faudrait adapter la difficult\u00e9 technique et les exemples donn\u00e9s pour correspondre \u00e0 cet \u00e2ge.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque d'interactivit\u00e9 et de cas pratiques pour aider les \u00e9l\u00e8ves \u00e0 comprendre les notions th\u00e9oriques."", ""generated_content"": ""{\n\n\""score\"": 0,\n\""approved\"": false,\n\n\""module_issues\"": [\n{\n\""module\"": \""Le monde de Python est pr\u00eat \u00e0 \u00eatre d\u00e9couvert !\"",\n\""issue\"": \""La structure du cours semble trop lin\u00e9aire et manque d'interactivit\u00e9. Les notions sont pr\u00e9sent\u00e9es de mani\u00e8re th\u00e9orique sans exemple concret pour les aider \u00e0 comprendre.\""\n},\n{\n\""module\"": \""Qu'est-ce que les types de donn\u00e9es en Python ?\"",\n\""issue\"": \""Le vocabulaire utilis\u00e9 est adapt\u00e9, mais la d\u00e9finition des types de donn\u00e9es pourrait \u00eatre plus d\u00e9taill\u00e9e. Les exemples donn\u00e9s sont simples et faciles \u00e0 comprendre.\""\n},\n{\n\""module\"": \""Qu'est-ce que les variables en Python ?\"",\n\""issue\"": \""La notion de variable est bien expliqu\u00e9e, mais il faudrait donner un exemple concret pour montrer comment utiliser une variable dans le code.\""\n},\n{\n\""module\"": \""Qu'est-ce que les conditionnels en Python ?\"",\n\""issue\"": \""Les conditionnels sont pr\u00e9sent\u00e9s de mani\u00e8re claire, mais il faudrait donner plus d'exemples pour illustrer leur utilisation pratique.\""\n},\n{\n\""module\"": \""Qu'est-ce que les boucles en Python ?\"",\n\""issue\"": \""La notion de boucle est bien expliqu\u00e9e, mais il faudrait donner un exemple concret pour montrer comment utiliser une boucle dans le code.\""\n}\n],\n\n\""global_issues\"": [\n\""Le cours manque d'interactivit\u00e9 et de cas pratiques pour aider les \u00e9l\u00e8ves \u00e0 comprendre les notions th\u00e9oriques.\"",\n\""L'\u00e2ge cible (12 ans) est bien pris en compte, mais il faudrait adapter la difficult\u00e9 technique et les exemples donn\u00e9s pour correspondre \u00e0 cet \u00e2ge.\""\n]\n\n}"", ""ttft_ms"": 15309.2, ""llm_score"": 81.04, ""rag_score"": null, ""final_score"": 94.31}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Python_age12_llama3.1_latest_20260608_221818.json,100,"{
+
+""score"": 0,
+""approved"": false,
+
+""module_issues"": [
+{
+""module"": ""Le monde de Python est prêt à être découvert !"",
+""issue"": ""La structure du cours semble trop linéaire et manque d'interactivité. Les notions sont présentées de manière théorique sans exemple concret pour les aider à comprendre.""
+},
+{
+""module"": ""Qu'est-ce que les types de données en Python ?"",
+""issue"": ""Le vocabulaire utilisé est adapté, mais la définition des types de données pourrait être plus détaillée. Les exemples donnés sont simples et faciles à comprendre.""
+},
+{
+""module"": ""Qu'est-ce que les variables en Python ?"",
+""issue"": ""La notion de variable est bien expliquée, mais il faudrait donner un exemple concret pour montrer comment utiliser une variable dans le code.""
+},
+{
+""module"": ""Qu'est-ce que les conditionnels en Python ?"",
+""issue"": ""Les conditionnels sont présentés de manière claire, mais il faudrait donner plus d'exemples pour illustrer leur utilisation pratique.""
+},
+{
+""module"": ""Qu'est-ce que les boucles en Python ?"",
+""issue"": ""La notion de boucle est bien expliquée, mais il faudrait donner un exemple concret pour montrer comment utiliser une boucle dans le code.""
+}
+],
+
+""global_issues"": [
+""Le cours manque d'interactivité et de cas pratiques pour aider les élèves à comprendre les notions théoriques."",
+""L'âge cible (12 ans) est bien pris en compte, mais il faudrait adapter la difficulté technique et les exemples donnés pour correspondre à cet âge.""
+]
+
+}",100,True

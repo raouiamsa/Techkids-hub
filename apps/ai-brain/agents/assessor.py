@@ -64,10 +64,9 @@ def _clean_json(raw) -> str:
 
 def assessor_node(state: AgentState):
     """
-    Noeud Evaluateur : Genere le test de placement (initial) 
-    ET l'examen final de certification (20 questions).
+    Noeud Evaluateur : Genere l'examen final de certification (20 questions).
     """
-    print("[Evaluateur] Generation des examens (Diagnostic + Certification)...")
+    print("[Evaluateur] Generation de l'examen de certification...")
 
     # Recuperation des parametres contextuels depuis le State
     age = state.get("age_group", 12)
@@ -94,21 +93,17 @@ SYLLABUS DU COURS :
 {syllabus}
 
 LIVRABLES ATTENDUS (JSON STRICT) :
-1. PLACEMENT_BANK : 10 questions simples pour evaluer les pre-requis avant de commencer.
-2. CERTIFICATION_BANK : 20 questions couvrant l'ensemble du syllabus pour valider l'obtention du diplome final.
+1. CERTIFICATION_BANK : 20 questions couvrant l'ensemble du syllabus pour valider l'obtention du diplome final.
 
 REGLES DE REDACTION :
 - Langage technique obligatoire : {language}.
 - Structure QCM : 1 bonne reponse et 3 distracteurs (mauvaises reponses) credibles.
-- Chaque question doit avoir un ID unique (ex: p1, p2... pour placement, c1, c2... pour certif).
+- Chaque question doit avoir un ID unique (ex: c1, c2...).
 - Inclus une explication pedagogique claire pour chaque reponse.
 - Les questions doivent IMPERATIVEMENT respecter les directives du professeur et s'adapter a l'age cible.
 
 FORMAT JSON OBLIGATOIRE :
 {{
-  "placement_bank": [
-    {{ "id": "p1", "question": "...", "options": ["A", "B", "C", "D"], "correct_answer": "...", "explanation": "..." }}
-  ],
   "certification_bank": [
     {{ "id": "c1", "question": "...", "options": ["A", "B", "C", "D"], "correct_answer": "...", "explanation": "..." }}
   ]
@@ -130,7 +125,7 @@ FORMAT JSON OBLIGATOIRE :
                     f"http://localhost:3000/api/ai/internal/drafts/{draft_id}/progress", 
                     json={
                         "progressPercent": 85,
-                        "agent_status": "📝 [Évaluateur] Génération des examens de certification et de placement..."
+                        "agent_status": "📝 [Évaluateur] Génération de l'examen final de certification..."
                     },
                     headers=headers,
                     timeout=5
@@ -138,9 +133,9 @@ FORMAT JSON OBLIGATOIRE :
             except Exception as e:
                 print(f"[Avertissement] Evaluateur : Erreur de notification de progression : {e}")
             
-        # On retourne les deux banques serialisees en JSON pour le State de LangGraph
+        # On retourne la banque serialisee en JSON pour le State de LangGraph (placement reste vide)
         return {
-            "placement_bank": json.dumps(data.get("placement_bank", []), ensure_ascii=False),
+            "placement_bank": "[]",
             "certification_bank": json.dumps(data.get("certification_bank", []), ensure_ascii=False)
         }
         

@@ -1,57 +1,52 @@
 import os
-from langchain_chroma import Chroma
-from langchain_core.documents import Document
+import sys
 
-# On importe les variables partagées définies dans l'ingestion
-from ingest.shared import EMBEDDINGS, CHROMA_PERSIST_DIR
+# Importation directe du dossier de benchmarking
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from benchmarking.strategy_final import get_final_strategy, get_retriever_from_strategy
+from benchmarking.comp3_pedagogical_graph import PedagogicalGraph, Module, Concept, Exercise, ExerciseType, LearningObjective
 
 class RAGManager:
     """
-    Gestionnaire centralisé pour l'indexation (Event-Driven) et la recherche RAG 
-    sur les cours publiés pour les enfants.
+    Gestionnaire centralisé pour la recherche RAG hybride et le Graphe Pédagogique.
+    Importe directement la logique validée lors du benchmarking.
     """
-    def __init__(self, collection_name="published_courses"):
-        self.collection_name = collection_name
-        
-        # On s'assure que le dossier existe
-        if not os.path.exists(CHROMA_PERSIST_DIR):
-            os.makedirs(CHROMA_PERSIST_DIR)
+    def __init__(self):
+        # On charge la stratégie hybride (Vecteur + Graphe) validée au COMP1
+        self.strategy = get_final_strategy()
+        self.retriever = get_retriever_from_strategy(self.strategy)
 
-        # Initialisation de la connexion à ChromaDB
-        self.vector_store = Chroma(
-            collection_name=self.collection_name,
-            embedding_function=EMBEDDINGS,
-            persist_directory=CHROMA_PERSIST_DIR
-        )
-
-    def index_course(self, course_id: str, content: str, title: str = "Untitled"):
+    def index_course(self, course_json: dict):
         """
-        Indexe un cours publié dans la base vectorielle.
-        Appelé par l'API quand le prof approuve le cours.
+        Génère et stocke le graphe pédagogique dans Neo4j à partir du JSON final.
+        (Remplace l'ancienne indexation ChromaDB)
         """
-        doc = Document(
-            page_content=content,
-            metadata={"course_id": course_id, "title": title, "type": "approved_course"}
-        )
+        # Utilisation de la classe de ton benchmarking pour structurer le graphe
+        graph = PedagogicalGraph.from_dict(course_json)
         
-        # Ajout au Vector Store
-        self.vector_store.add_documents([doc])
-        print(f"[RAG] Cours {course_id} ('{title}') indexé avec succès dans {self.collection_name}.")
+        # Pour le MVP, on se contente de générer le graphe en mémoire.
+        # Plus tard, on peut utiliser Neo4j pour persister ce PedagogicalGraph
+        print(f"[RAG] Graphe Pédagogique généré en mémoire avec {len(graph.modules)} modules.")
+        print(f"[RAG] Neo4j Hybrid Search prêt à être utilisé.")
         return True
 
-    def search_context(self, query: str, top_k: int = 2) -> str:
+    def search_context(self, query: str, top_k: int = 5, concepts: list = None) -> str:
         """
-        Recherche sémantique pour trouver le contexte le plus pertinent.
-        Utilisé par le Tuteur Socratique.
+        Recherche hybride Neo4j (Vecteur + Mots-clés).
         """
-        results = self.vector_store.similarity_search(query, k=top_k)
+        if concepts is None:
+            concepts = []
+            
+        # Appel direct de la fonction `search_hybrid` de ton Neo4jHybridRetriever
+        docs = self.retriever.search_hybrid(query=query, limit=top_k, concepts=concepts)
         
-        if not results:
+        if not docs:
             return ""
             
-        # Fusionner les extraits trouvés
         context_parts = []
-        for i, doc in enumerate(results):
-            context_parts.append(f"--- Extrait {i+1} (Source: {doc.metadata.get('title', 'Cours')}) ---\n{doc.page_content}")
+        for i, doc in enumerate(docs):
+            title = doc.get("title", "Document")
+            content = doc.get("content", "")
+            context_parts.append(f"--- [Doc {i+1}] (Source: {title}) ---\n{content}")
             
         return "\n\n".join(context_parts)

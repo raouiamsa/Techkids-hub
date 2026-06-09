@@ -3,6 +3,7 @@ import json
 import json_repair
 import requests
 from dotenv import load_dotenv
+from duckduckgo_search import DDGS
 
 from core.state import AgentState
 from core.prompts_library import (
@@ -140,6 +141,68 @@ def enricher_node(state: AgentState):
     except Exception as e:
         print(f"      [Erreur Projet Final] {e}")
 
+    # 3. Génération des requêtes Visuelles (Hybride : LoRA vs Fritzing)
+    print("    [Enricher] Création des requêtes visuelles (Séparation Conceptuel/Hardware)...")
+    if draft_id:
+        try:
+            requests.patch(
+                f"http://localhost:3000/api/ai/internal/drafts/{draft_id}/progress",
+                json={"progressPercent": 98, "agent_status": "🎨 [Enrichisseur] Création des requêtes visuelles hybrides..."},
+                headers={"x-ai-secret": internal_secret}, timeout=2
+            )
+        except: pass
+
+    style_concept = state.get("style_conceptuel", "techkids_style, 3D Pixar style illustration")
+    style_tech = state.get("style_technique", "Fritzing 2D diagram")
+    proposed_images = []
+
+    for index, mod in enumerate(course_data.get("modules", [])):
+        vision_prompt = f"""
+Analyse le titre et le contenu de ce module éducatif :
+Titre : {mod.get('title')}
+Contenu : {mod.get('content')}
+
+Ce module parle-t-il d'un composant électronique matériel précis (ex: Arduino, capteur, résistance, circuit physique) nécessitant un schéma technique exact (Fritzing) pour la sécurité de l'enfant, OU parle-t-il d'un concept abstrait/logiciel (ex: boucle, IA, théorie) nécessitant une illustration artistique ?
+Réponds UNIQUEMENT par un objet JSON valide avec ce format exact :
+{{"type": "hardware", "query": "mots clés simples en anglais, ex: HC-SR04 arduino wiring"}}
+OU
+{{"type": "concept", "query": "description de l'action pour un robot, ex: cute robot holding a glowing lightbulb"}}
+"""
+        try:
+            vis_res = _invoke_with_fallback(vision_prompt)
+            vis_data = _ensure_dict(json_repair.loads(_clean_json(vis_res)))
+            
+            img_type = vis_data.get("type", "concept")
+            query = vis_data.get("query", "")
+            
+            if img_type == "hardware":
+                final_search = f"{query} {style_tech}"
+                
+                # Exécution de l'Agent Web Search
+                image_url = ""
+                try:
+                    with DDGS() as ddgs:
+                        # Cherche 1 seule image correspondante
+                        results = list(ddgs.images(final_search, max_results=1))
+                        if results:
+                            image_url = results[0].get("image", "")
+                except Exception as e:
+                    print(f"      [Web Search] Erreur DuckDuckGo : {e}")
+
+                mod["visual"] = {
+                    "type": "hardware", 
+                    "search_query": final_search, 
+                    "image_url": image_url,
+                    "source": "Web Search API"
+                }
+                proposed_images.append(mod["visual"])
+            else:
+                final_prompt = f"{style_concept}, {query}, clean white background, vibrant colors, premium educational kids aesthetic"
+                mod["visual"] = {"type": "concept", "prompt": final_prompt, "source": "Stable Diffusion LoRA API"}
+                proposed_images.append(mod["visual"])
+        except Exception as e:
+            print(f"      [Erreur Visuel] {e}")
+
     # Télémétrie Finale (100%)
     if draft_id:
         try:
@@ -147,7 +210,7 @@ def enricher_node(state: AgentState):
                 f"http://localhost:3000/api/ai/internal/drafts/{draft_id}/progress",
                 json={
                     "progressPercent": 100,
-                    "agent_status": "✅ [Enrichisseur] Cours complet généré avec succès !"
+                    "agent_status": "✅ [Enrichisseur] Cours et Illustrations générés avec succès ! En attente de validation."
                 },
                 headers={"x-ai-secret": internal_secret}, timeout=2
             )
@@ -156,5 +219,6 @@ def enricher_node(state: AgentState):
     # Mettre à jour le state final
     return {
         "content": [json.dumps(course_data, ensure_ascii=False)],
-        "final_project": json.dumps(course_data.get("final_project", {}))
+        "final_project": json.dumps(course_data.get("final_project", {})),
+        "proposed_images": proposed_images
     }

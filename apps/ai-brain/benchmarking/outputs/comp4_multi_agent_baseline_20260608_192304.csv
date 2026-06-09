@@ -1,3 +1,0 @@
-model,topic,age,latency_s,json_valid,schema_compliance,validation_error
-llama3.1:latest,Python Variables,12,268.32,False,False,"the JSON object must be str, bytes or bytearray, not dict"
-llama3.1:latest,Python Loops,10,318.74,False,False,"the JSON object must be str, bytes or bytearray, not dict"

@@ -120,11 +120,18 @@ class CourseRequest(BaseModel):
     level: str = "BEGINNER"
     teacher_feedback: Optional[str] = ""
     include_code_exercises: bool = False
-    draft_id: Optional[str] = None
+    draft_id: str  # Requis pour le thread LangGraph
     programming_language: Optional[str] = "Python"
     internal_secret: Optional[str] = "" #  Passé par le Gateway NestJS
     existing_content: Optional[str] = None
     existing_syllabus: Optional[str] = None
+    style_conceptuel: Optional[str] = "3D Pixar style illustration"
+    style_technique: Optional[str] = "Fritzing 2D diagram"
+
+class ResumeRequest(BaseModel):
+    draft_id: str
+    action: str # "approve_syllabus", "reject_syllabus", "approve_final"
+    feedback: Optional[str] = ""
 
 class SyllabusRequest(BaseModel):
     input_request: str
@@ -187,10 +194,17 @@ async def api_generate(req: CourseRequest):
             "internal_secret": req.internal_secret or INTERNAL_SECRET,
             "content": [req.existing_content] if req.existing_content else [],
             "syllabus": req.existing_syllabus or "",
+            "style_conceptuel": req.style_conceptuel,
+            "style_technique": req.style_technique,
+            "is_syllabus_approved": False,
+            "is_content_approved": False
         }
         
+        # Configuration du Thread pour la Persistance (Human-in-the-loop)
+        config = {"configurable": {"thread_id": req.draft_id}}
+        
         # Invocation du graphe d'agents (bloquant, donc on l'isole en thread)
-        result = await asyncio.to_thread(graph.invoke, initial_state)
+        result = await asyncio.to_thread(graph.invoke, initial_state, config)
         
         return {
             "status": "success",
@@ -206,6 +220,37 @@ async def api_generate(req: CourseRequest):
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Erreur Génération : {str(e)}")
+
+@app.post("/resume")
+async def api_resume(req: ResumeRequest):
+    """Reprise du workflow LangGraph après la validation de l'enseignant."""
+    try:
+        graph = create_course_graph()
+        config = {"configurable": {"thread_id": req.draft_id}}
+        
+        state_update = {}
+        if req.action == "approve_syllabus":
+            state_update = {"is_syllabus_approved": True, "teacher_feedback": ""}
+        elif req.action == "reject_syllabus":
+            state_update = {"is_syllabus_approved": False, "teacher_feedback": req.feedback}
+        elif req.action == "approve_final":
+            state_update = {"is_content_approved": True}
+            
+        # On met à jour l'état dans la mémoire de LangGraph
+        graph.update_state(config, state_update)
+        
+        # On relance le graphe à partir de l'interruption
+        result = await asyncio.to_thread(graph.invoke, None, config)
+        
+        return {
+            "status": "success",
+            "syllabus": result.get("syllabus"),
+            "content": result.get("content", [])[-1] if result.get("content") else "",
+            "proposed_images": result.get("proposed_images", []),
+            "final_project": result.get("final_project")
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur de reprise : {str(e)}")
 
 @app.post("/generate-syllabus")
 async def api_generate_syllabus(req: SyllabusRequest):

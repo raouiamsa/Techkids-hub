@@ -1,0 +1,23 @@
+topic,age,level,model,agent,run_index,seed,repeat_count,json_valid,schema_compliance,ttft_ms,latency,llm_score,agent_score,final_score,response_length,details,pedagogical_graph_json,consistency_score,generated_content,issue_completeness,score_range_validity
+Introduction à Arduino,12,beginner,llama3.1:latest,critic,1,42,1,True,True,13570.1,81.07,86.49,75,78.45,1090,"{""agent"": ""critic"", ""json_valid"": true, ""schema_compliance"": true, ""score_range_validity"": true, ""consistency_score"": 0, ""issue_completeness"": 100, ""latency"": 81.07, ""response_length"": 1090, ""agent_score"": 75, ""critic_parsed_json"": {""score"": 60, ""approved"": false, ""module_issues"": [{""module"": ""L'aventure commence avec Arduino !"", ""issue"": ""Le vocabulaire et les concepts utilis\u00e9s sont trop complexes pour un enfant de 12 ans. Par exemple, le terme 'microcontr\u00f4leur' n'est pas clairement d\u00e9fini.""}, {""module"": ""Un petit ordinateur pour contr\u00f4ler des composants \u00e9lectroniques"", ""issue"": ""L'analogie avec un robot qui marche en ligne droite est int\u00e9ressante, mais elle ne permet pas de comprendre r\u00e9ellement comment fonctionne le microcontr\u00f4leur.""}, {""module"": ""Pratique : Cr\u00e9ez votre premier projet Arduino !"", ""issue"": ""L'exemple d'allumer une LED \u00e0 l'aide d'Arduino est trop simple et ne permet pas de comprendre les capacit\u00e9s r\u00e9elles de la plate-forme.""}], ""global_issues"": [""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques ne sont pas graduellement pr\u00e9sent\u00e9es."", ""Les exemples et exercices propos\u00e9s ne sont pas suffisamment vari\u00e9s pour permettre une bonne compr\u00e9hension des concepts.""]}, ""approved"": false, ""critic_rejection_reason"": ""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques ne sont pas graduellement pr\u00e9sent\u00e9es."", ""generated_content"": ""{  \n  \""score\"": 60,\n  \""approved\"": false,\n  \""module_issues\"": [ \n    {\n      \""module\"": \""L'aventure commence avec Arduino !\"",\n      \""issue\"": \""Le vocabulaire et les concepts utilis\u00e9s sont trop complexes pour un enfant de 12 ans. Par exemple, le terme 'microcontr\u00f4leur' n'est pas clairement d\u00e9fini.\""\n    },\n    {\n      \""module\"": \""Un petit ordinateur pour contr\u00f4ler des composants \u00e9lectroniques\"",\n      \""issue\"": \""L'analogie avec un robot qui marche en ligne droite est int\u00e9ressante, mais elle ne permet pas de comprendre r\u00e9ellement comment fonctionne le microcontr\u00f4leur.\""\n    },\n    {\n      \""module\"": \""Pratique : Cr\u00e9ez votre premier projet Arduino !\"",\n      \""issue\"": \""L'exemple d'allumer une LED \u00e0 l'aide d'Arduino est trop simple et ne permet pas de comprendre les capacit\u00e9s r\u00e9elles de la plate-forme.\""\n    }\n  ],\n  \""global_issues\"": [\n    \""Le cours manque de progression logique entre les modules. Les difficult\u00e9s techniques ne sont pas graduellement pr\u00e9sent\u00e9es.\"",\n    \""Les exemples et exercices propos\u00e9s ne sont pas suffisamment vari\u00e9s pour permettre une bonne compr\u00e9hension des concepts.\""\n  ]\n}"", ""ttft_ms"": 13570.1, ""llm_score"": 86.49, ""rag_score"": null, ""final_score"": 78.45}",C:\Users\raoui\OneDrive\Bureau\TechKids\techkids-hub\apps\ai-brain\benchmarking\outputs\graph_Introduction à Arduino_age12_llama3.1_latest_20260608_145814.json,0,"{  
+  ""score"": 60,
+  ""approved"": false,
+  ""module_issues"": [ 
+    {
+      ""module"": ""L'aventure commence avec Arduino !"",
+      ""issue"": ""Le vocabulaire et les concepts utilisés sont trop complexes pour un enfant de 12 ans. Par exemple, le terme 'microcontrôleur' n'est pas clairement défini.""
+    },
+    {
+      ""module"": ""Un petit ordinateur pour contrôler des composants électroniques"",
+      ""issue"": ""L'analogie avec un robot qui marche en ligne droite est intéressante, mais elle ne permet pas de comprendre réellement comment fonctionne le microcontrôleur.""
+    },
+    {
+      ""module"": ""Pratique : Créez votre premier projet Arduino !"",
+      ""issue"": ""L'exemple d'allumer une LED à l'aide d'Arduino est trop simple et ne permet pas de comprendre les capacités réelles de la plate-forme.""
+    }
+  ],
+  ""global_issues"": [
+    ""Le cours manque de progression logique entre les modules. Les difficultés techniques ne sont pas graduellement présentées."",
+    ""Les exemples et exercices proposés ne sont pas suffisamment variés pour permettre une bonne compréhension des concepts.""
+  ]
+}",100,True

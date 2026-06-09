@@ -212,6 +212,8 @@ export class DraftsService {
             title: m.title || `Module ${idx + 1}`,
             order: m.order || idx + 1,
             content: String(moduleContent),
+            visualType: m.visual?.type || null,
+            imageUrl: m.visual?.image_url || null,
             courseId: course.id,
           },
         });
@@ -229,15 +231,16 @@ export class DraftsService {
           });
         }
 
-        // Importation des Défis de Code
+        // Importation des Défis de Code (et Circuits)
         const exercisesCode = Array.isArray(m.exercises_code) ? m.exercises_code : [];
         for (const codeEx of exercisesCode) {
           await this.prisma.exercise.create({
             data: {
-              title: codeEx.title || 'Défi de programmation',
-              instructions: codeEx.instructions || '',
+              title: codeEx.title || (codeEx.type === 'circuit_build' ? 'Défi Électronique' : 'Défi de programmation'),
+              instructions: codeEx.instructions || codeEx.problem_statement || '',
               solution: codeEx.solution || '',
-              exerciseType: ExerciseType.CODE_CHALLENGE,
+              starterCode: codeEx.starter_code || '',
+              exerciseType: codeEx.type === 'circuit_build' ? ExerciseType.CIRCUIT_BUILD : ExerciseType.CODE_CHALLENGE,
               moduleId: createdModule.id,
             },
           });
